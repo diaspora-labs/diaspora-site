@@ -1,8 +1,9 @@
 import { NextPage } from "next"
-import Link from "next/link"
+
 import Head from "next/head"
 import { Center, Box, Flex, Text } from "@chakra-ui/react"
 import { DiasporaLogo } from "../components/DiasporaLogo"
+import { Nav } from "../components/Nav"
 
 const Home: NextPage = () => {
   return (
@@ -14,23 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Flex color="white" alignItems="flex-end" width="100%" p="2">
-        <Flex flexDirection="row">
-          <Box mx="2">
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </Box>
-          <Box mx="2">
-            <Link href="/team">
-              <a>Team</a>
-            </Link>
-          </Box>
-          <Box mx="2">
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-          </Box>
-        </Flex>
+        <Nav />
       </Flex>
 
       <Center bg="black" color="white" height="100vh">
