@@ -6,7 +6,7 @@ export const Layout: React.FC<any> = ({ children }) => {
       className={`
           bg-container flex 
           min-h-screen flex-col items-center
-          justify-center bg-black bg-home-bg 
+          justify-center bg-black 
           bg-contain bg-center 
           bg-no-repeat 
           py-2 
