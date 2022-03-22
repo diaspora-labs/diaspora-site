@@ -4,7 +4,7 @@ import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
 
 const Team = () => {
-  const Person = ({ name, bio, image }: { name: string; bio: string; image: string }) => {
+  const Person = ({ name, bio, image, title }: { name: string; bio: string; image: string, title: string }) => {
     return (
       <div className="my-5 mb-20 flex">
         <div className="">
@@ -14,7 +14,8 @@ const Team = () => {
           ></div>
         </div>
         <div className="pl-10">
-          <div className="mb-4 text-xl">{name}</div>
+          <div className="mb-1 text-xl">{name}</div>
+          <div className="mb-4 text-md text-indigo-600">{title}</div>
           <div className="text-neutral-500">{bio}</div>
         </div>
       </div>
