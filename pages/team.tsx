@@ -4,7 +4,7 @@ import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
 
 const Team = () => {
-  const Person = ({ name, bio, image, title }: { name: string; bio: string; image: string, title: string }) => {
+  const Person = ({ name, bio, image, title }: { name: string; bio: string; image: string; title: string }) => {
     return (
       <div className="my-5 mb-20 flex">
         <div className="">
@@ -15,7 +15,7 @@ const Team = () => {
         </div>
         <div className="pl-10">
           <div className="mb-1 text-xl">{name}</div>
-          <div className="mb-4 text-md text-indigo-600">{title}</div>
+          <div className="text-md mb-4 text-indigo-600">{title}</div>
           <div className="text-neutral-500">{bio}</div>
         </div>
       </div>
@@ -46,7 +46,7 @@ const Team = () => {
     },
     {
       id: "4",
-      name: "Luc Sucess",
+      name: "Luc Succès",
       title: "Technical Lead",
       bio: "A 2x Start up Founder, Web and Mobile Engineer with 10+ Years of Development experience. He has worked namely at Spotify on discover weekly, and at Artsy as a Tech Lead. Luc has a passion for music production and Traveling.",
       image: "/images/luc-succes.jpg",
