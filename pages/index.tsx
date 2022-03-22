@@ -1,38 +1,39 @@
 import { NextPage } from "next"
-
+import Image from "next/image"
 import Head from "next/head"
-import { Center, Box, Flex, Text } from "@chakra-ui/react"
-import { DiasporaLogo } from "../components/DiasporaLogo"
+import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
 import { Nav } from "../components/Nav"
 
 const Home: NextPage = () => {
   return (
-    <Box bg="black" width="100%" height="100vh">
+    <div
+      className={`
+        bg-container flex 
+        min-h-screen flex-col items-center
+        justify-center bg-black bg-home-bg 
+        bg-contain bg-center 
+        bg-no-repeat 
+        py-2 
+        text-white`}
+    >
       <Head>
         <title>Diaspora</title>
-        <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Flex color="white" alignItems="flex-end" width="100%" p="2">
+      <div className="grid place-items-center">
+        <div className="m-4">
+          <div className="mb-5">
+            <div className="ml-32 mb-[100px] text-lg uppercase text-white">Coming soon</div>
+          </div>
+          <DiasporaLogo />
+        </div>
+      </div>
+
+      <div className="absolute bottom-10 right-10">
         <Nav />
-      </Flex>
-
-      <Center bg="black" color="white" height="100vh">
-        <Flex padding="4" direction="column" align="center" justify="center">
-          <Box m={4}>
-            <Box mb="5">
-              <Text fontSize="large" fontWeight="bold" textTransform="uppercase">
-                Coming soon
-              </Text>
-            </Box>
-            <DiasporaLogo />
-          </Box>
-        </Flex>
-      </Center>
-
-      <footer></footer>
-    </Box>
+      </div>
+    </div>
   )
 }
 
