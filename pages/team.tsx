@@ -1,5 +1,5 @@
 import React from "react"
-import { DiasporaLogoSmall } from "../components/DiasporaLogoSmall"
+
 import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
 
@@ -8,12 +8,12 @@ const Team = () => {
     return (
       <div className="my-5 flex">
         <div className="">
-          <div className="relative h-[80px] w-[80px] overflow-hidden rounded-full border-2 border-indigo-600">
-            <img src="https://www.fillmurray.com/80/80" className="absolute inset-0" />
+          <div className="relative h-[92px] w-[92px] overflow-hidden rounded-full border-2 border-indigo-600">
+            <img src="https://www.fillmurray.com/92/92" className="absolute inset-0" />
           </div>
         </div>
-        <div className="pl-2">
-          <div className="text-lg">{name}</div>
+        <div className="pl-10">
+          <div className="mb-4 text-xl">{name}</div>
           <div className="text-neutral-500">{bio}</div>
         </div>
       </div>
@@ -31,7 +31,6 @@ const Team = () => {
 
   return (
     <Layout>
-      <DiasporaLogoSmall />
       <div className="container">
         <div className="mx-auto max-w-3xl">
           {people.map((person, i) => (

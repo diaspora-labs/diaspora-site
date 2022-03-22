@@ -7,7 +7,12 @@ import { Layout } from "../components/Layout"
 
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <Layout
+      classes={`
+        bg-container items-center
+        justify-center bg-black 
+        text-white`}
+    >
       <Head>
         <title>Diaspora</title>
         <link rel="icon" href="/favicon.ico" />
