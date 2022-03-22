@@ -10,7 +10,7 @@ const Team = () => {
         <div className="">
           <div
             style={{ backgroundImage: `url(${image})` }}
-            className={`relative h-[120px] w-[120px] overflow-hidden rounded-full border-2 border-indigo-600 bg-cover bg-center`}
+            className={`relative h-[120px] w-[120px] overflow-hidden rounded-full border-2 border-indigo-600 bg-cover bg-top`}
           ></div>
         </div>
         <div className="pl-10">
@@ -82,7 +82,7 @@ const Team = () => {
           ))}
         </div>
       </div>
-      <div className="absolute bottom-10 right-10">
+      <div className="fixed bottom-10 right-10">
         <Nav />
       </div>
     </Layout>

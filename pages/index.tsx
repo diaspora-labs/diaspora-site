@@ -1,5 +1,4 @@
 import { NextPage } from "next"
-import Image from "next/image"
 import Head from "next/head"
 import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
 import { Nav } from "../components/Nav"
