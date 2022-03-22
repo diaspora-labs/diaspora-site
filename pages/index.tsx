@@ -3,19 +3,11 @@ import Image from "next/image"
 import Head from "next/head"
 import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
 import { Nav } from "../components/Nav"
+import { Layout } from "../components/Layout"
 
 const Home: NextPage = () => {
   return (
-    <div
-      className={`
-        bg-container flex 
-        min-h-screen flex-col items-center
-        justify-center bg-black bg-home-bg 
-        bg-contain bg-center 
-        bg-no-repeat 
-        py-2 
-        text-white`}
-    >
+    <Layout>
       <Head>
         <title>Diaspora</title>
         <link rel="icon" href="/favicon.ico" />
@@ -33,7 +25,7 @@ const Home: NextPage = () => {
       <div className="absolute bottom-10 right-10">
         <Nav />
       </div>
-    </div>
+    </Layout>
   )
 }
 
