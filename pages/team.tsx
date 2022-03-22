@@ -10,7 +10,7 @@ const Team = () => {
         <div className="">
           <div
             style={{ backgroundImage: `url(${image})` }}
-            className={`relative h-[92px] w-[92px] overflow-hidden rounded-full border-2 border-indigo-600 bg-cover bg-center`}
+            className={`relative h-[120px] w-[120px] overflow-hidden rounded-full border-2 border-indigo-600 bg-cover bg-center`}
           ></div>
         </div>
         <div className="pl-10">
@@ -27,21 +27,21 @@ const Team = () => {
       name: "Dervin E. Dimanche",
       title: "Project Lead, Founder",
       bio: "Born & raised Haitian American, Dervin is a Technologist and Networker with extensive experience building high performance teams, advising Start-Ups, Product Development & leveraging Technology trends to Seize Market Opportunities - namely coming from Google & Meta. Dervin has an insatiable thirst for leveraging technology to push the global Diaspora forward and has made it a LifeLong Quest. He is passionate about History, Traveling, Design, Fashion, Philanthropy and the synergy of them all with Tech.",
-      image: "/images/dervin-dimanche.jpg",
+      image: "/images/dervin-dimanche.png",
     },
     {
       id: "2",
       name: "Isaac Udogwu",
       title: "Artist & Co-Founder",
       bio: "A Nigerian-American digital Artist & Martial Artist that creates worlds that allow people of the African Diaspora to be fully liberated and just simply exist as humans. Using afro-futurism as a means to create these worlds because, as a friend once told him, “Afro-Futurism is simply black people existing in the future”. ",
-      image: "/images/isaac-udogwu.jpg",
+      image: "/images/isaac-udogwu.png",
     },
     {
       id: "3",
       name: "Jesse Aridoux",
       title: "Design Lead",
       bio: "A seasoned visual designer with over a decade of experience, and a diverse background in the design field. He has built many brands and worked with companies in various industries from fashion/lifestyle, cosmetics, tech and more. He also leverages his craft as a fine artist to influence his design work.",
-      image: "/images/jesse-aridoux.jpg",
+      image: "/images/jesse-aridoux.png",
     },
     {
       id: "4",
