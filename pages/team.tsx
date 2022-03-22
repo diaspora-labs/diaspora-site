@@ -62,7 +62,7 @@ const Team = () => {
       name: "Pedro Acosta",
       title: "Sr. Software Engineer",
       bio: "Passionate about the future of the world and what innovative Tech can bring, Pedro pivoted careers transitioning from Law Enforcement to Tech. Building his expertise at an AI company, and founding TrueBonds - a platform that enables planning Funeral Services online. Pedro is also in addition to Engineering an avid Real Estate & Crypto investor by day- while holding top 75 ranking in NYC on Super Smash Brothers Ultimate by night. (Greninja main)",
-      image: "/images/pedro-acosta.png",
+      image: "/images/pedro-acosta.jpg",
     },
     {
       id: "7",
