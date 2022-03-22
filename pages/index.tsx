@@ -12,6 +12,7 @@ const Home: NextPage = () => {
         bg-container items-center
         justify-center bg-black 
         text-white`}
+      showLogo={false}
     >
       <Head>
         <title>Diaspora</title>

@@ -9,7 +9,6 @@ const Team = () => {
       <div className="my-5 mb-20 flex">
         <div className="">
           <div
-            // @ts-ignore
             style={{ backgroundImage: `url(${image})` }}
             className={`relative h-[92px] w-[92px] overflow-hidden rounded-full border-2 border-indigo-600 bg-cover bg-center`}
           ></div>
