@@ -26,23 +26,23 @@ const Team = () => {
     {
       id: "1",
       name: "Dervin E. Dimanche",
-      title: "",
-      bio: "",
-      image: "",
+      title: "Project Lead, Founder",
+      bio: "Born & raised Haitian American, Dervin is a Technologist and Networker with extensive experience building high performance teams, advising Start-Ups, Product Development & leveraging Technology trends to Seize Market Opportunities - namely coming from Google & Meta. Dervin has an insatiable thirst for leveraging technology to push the global Diaspora forward and has made it a LifeLong Quest. He is passionate about History, Traveling, Design, Fashion, Philanthropy and the synergy of them all with Tech.",
+      image: "/images/dervin-dimanche.jpg",
     },
     {
       id: "2",
       name: "Isaac Udogwu",
       title: "Artist & Co-Founder",
       bio: "A Nigerian-American digital Artist & Martial Artist that creates worlds that allow people of the African Diaspora to be fully liberated and just simply exist as humans. Using afro-futurism as a means to create these worlds because, as a friend once told him, “Afro-Futurism is simply black people existing in the future”. ",
-      image: "",
+      image: "/images/isaac-udogwu.jpg",
     },
     {
       id: "3",
       name: "Jesse Aridoux",
       title: "Design Lead",
       bio: "A seasoned visual designer with over a decade of experience, and a diverse background in the design field. He has built many brands and worked with companies in various industries from fashion/lifestyle, cosmetics, tech and more. He also leverages his craft as a fine artist to influence his design work.",
-      image: "",
+      image: "/images/jesse-aridoux.jpg",
     },
     {
       id: "4",
