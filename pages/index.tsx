@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import { Center, Box, Flex } from "@chakra-ui/react";
-import { DiasporaLogo } from "../components/DiasporaLogo";
+import type { NextPage } from "next"
+import Head from "next/head"
+import { Center, Box, Flex } from "@chakra-ui/react"
+import { DiasporaLogo } from "../components/DiasporaLogo"
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +21,7 @@ const Home: NextPage = () => {
 
       <footer></footer>
     </Box>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
