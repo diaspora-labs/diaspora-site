@@ -18,12 +18,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="grid place-items-center">
-        <div className="m-4">
-          <div className="mb-5">
-            <div className="ml-32 mb-[100px] text-lg uppercase text-white">Coming soon</div>
+      <div className="grid w-full place-items-center">
+        <div className="m-4 w-full">
+          <div className="mx-auto mb-5 w-[60%]">
+            <div className="mb-10 text-lg uppercase text-white">Coming soon</div>
+            <DiasporaLogo />
           </div>
-          <DiasporaLogo />
         </div>
       </div>
 

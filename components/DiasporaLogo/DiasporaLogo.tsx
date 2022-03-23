@@ -11,5 +11,5 @@ export const DiasporaLogo = () => {
     animationData: animationData,
   }
 
-  return <Lottie options={params} />
+  return <Lottie options={params} width="100%" height="auto" />
 }
