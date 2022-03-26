@@ -52,7 +52,7 @@ const Whitepaper = () => {
       <div className="container mx-auto">
         <div className="flex flex-shrink flex-col">
           <Document className="my-5 mx-auto" file="/DiasporaWhitePaper.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-            <div ref={wrapperEl} className="relative  w-[70vw]">
+            <div ref={wrapperEl} className="relative w-[95vw] md:w-[70vw]">
               <div className="absolute top-0 left-0 w-[98%] bg-neutral-300 pb-[64.5%]"></div>
               <Page pageNumber={pageNumber} width={pdfWidth} />
             </div>
