@@ -1,5 +1,6 @@
 import { NextPage } from "next"
 import Head from "next/head"
+import Link from "next/link"
 import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
 import { Nav } from "../components/Nav"
 import { Layout } from "../components/Layout"
@@ -22,9 +23,11 @@ const Home: NextPage = () => {
         <div className="m-4 w-full">
           <div className="mx-auto mb-5 w-[60%]">
             <div className="mb-10 text-lg uppercase text-white">Coming soon</div>
-            <a href="/">
-              <DiasporaLogo />
-            </a>
+            <Link href="/">
+              <a>
+                <DiasporaLogo />
+              </a>
+            </Link>
           </div>
         </div>
       </div>
