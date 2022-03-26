@@ -22,7 +22,9 @@ const Home: NextPage = () => {
         <div className="m-4 w-full">
           <div className="mx-auto mb-5 w-[60%]">
             <div className="mb-10 text-lg uppercase text-white">Coming soon</div>
-            <DiasporaLogo />
+            <a href="/">
+              <DiasporaLogo />
+            </a>
           </div>
         </div>
       </div>
