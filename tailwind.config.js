@@ -8,6 +8,12 @@ module.exports = {
       backgroundImage: {
         "home-bg": 'url("/images/Dutty-Boukman.jpg")',
       },
+      colors: {
+        purple: {
+          light: "#7233ff",
+          dark: "#451087",
+        },
+      },
     },
   },
   plugins: [],

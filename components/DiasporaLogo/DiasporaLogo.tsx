@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Lottie from "react-lottie"
 
 import { animationData } from "./animationData"

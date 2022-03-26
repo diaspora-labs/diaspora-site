@@ -7,18 +7,18 @@ export const Nav = () => {
 
   return (
     <div className="text-right">
-      <div className="p-2">
+      <div className="bg-black p-2">
         <Link href="/">
           <a className={router.pathname == "/" ? "text-indigo-600" : ""}>Home</a>
         </Link>
       </div>
-      <div className="p-2">
+      <div className="bg-black p-2">
         <Link href="/team">
           <a className={router.pathname == "/team" ? "text-indigo-600" : ""}>Team</a>
         </Link>
       </div>
-      <div className="p-2">
-        <Link href="/about">
+      <div className="bg-black p-2">
+        <Link href="/whitepaper">
           <a className={router.pathname == "/white-paper" ? "text-indigo-600" : ""}>White Paper</a>
         </Link>
       </div>
