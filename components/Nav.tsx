@@ -19,7 +19,7 @@ export const Nav = () => {
       </div>
       <div className="bg-black p-2">
         <Link href="/whitepaper">
-          <a className={router.pathname == "/white-paper" ? "text-indigo-600" : ""}>White Paper</a>
+          <a className={router.pathname == "/whitepaper" ? "text-indigo-600" : ""}>White Paper</a>
         </Link>
       </div>
     </div>
