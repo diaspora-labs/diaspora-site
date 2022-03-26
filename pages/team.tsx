@@ -37,28 +37,28 @@ const Team = () => {
             <div className="ml-3 mt-[-3px] flex">
               {linkedIn && (
                 <div className="mr-2">
-                  <a href={linkedIn}>
+                  <a target="_blank" href={linkedIn}>
                     <social.linkedIn.icon width="24" height="24" background="#fff" />
                   </a>
                 </div>
               )}
               {twitter && (
                 <div className="mr-2">
-                  <a href={twitter}>
+                  <a target="_blank" href={twitter}>
                     <social.twitter.icon width="24" height="24" background="#fff" />
                   </a>
                 </div>
               )}
               {instagram && (
                 <div className="mr-2">
-                  <a href={instagram}>
+                  <a target="_blank" href={instagram}>
                     <social.instagram.icon width="24" height="24" background="#fff" />
                   </a>
                 </div>
               )}
               {dribbble && (
                 <div className="mr-2">
-                  <a href={dribbble}>
+                  <a target="_blank" href={dribbble}>
                     <social.dribbble.icon width="24" height="24" background="#fff" />
                   </a>
                 </div>
