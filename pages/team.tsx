@@ -24,14 +24,14 @@ const Team = () => {
     dribbble?: string
   }) => {
     return (
-      <div className="my-5 mb-20 flex">
-        <div className="">
+      <div className="my-5 mb-20 flex flex-col items-center md:flex-row md:items-start">
+        <div className="mb-10">
           <div
             style={{ backgroundImage: `url(${image})` }}
             className={`relative h-[120px] w-[120px] overflow-hidden rounded-full border-2 border-indigo-600 bg-cover bg-top`}
           ></div>
         </div>
-        <div className="pl-10">
+        <div className="px-10 text-justify">
           <div className="flex items-center">
             <div className="mb-1 text-xl">{name}</div>
             <div className="ml-3 mt-[-3px] flex">

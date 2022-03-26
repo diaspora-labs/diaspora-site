@@ -6,7 +6,7 @@ export const Nav = () => {
   const router = useRouter()
 
   return (
-    <div className="text-right">
+    <div className="flex w-full flex-row text-right md:flex-col">
       <div className="bg-black p-2">
         <Link href="/">
           <a className={router.pathname == "/" ? "text-indigo-600" : ""}>Home</a>
