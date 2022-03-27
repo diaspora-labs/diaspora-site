@@ -34,7 +34,7 @@ const Team = () => {
             className={`relative h-[120px] w-[120px] overflow-hidden rounded-full border-2 border-indigo-600 bg-cover bg-top`}
           ></div>
         </div>
-        <div className="px-10 text-justify">
+        <div className="px-10 text-left">
           <div className="flex items-center">
             <div className="mb-1 text-xl">{name}</div>
             <div className="ml-3 mt-[-3px] flex">
