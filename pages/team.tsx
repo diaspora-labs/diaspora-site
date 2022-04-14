@@ -177,20 +177,20 @@ const Team = () => {
     },
     {
       id: "5",
+      name: "Corey Neufville",
+      title: "Program & Partnerships Lead",
+      bio: "Multi Disciplined background in the tech space for over 13 years. Has experience in leading strategic initiatives from brand building to product development.  Spent 12+ years at Meta helping external partners & businesses fulfilling their business objectives on the platform.",
+      image: "/images/corey-neufville.png",
+      linkedIn: "https://www.linkedin.com/in/corey-neufville-3424346b/",
+    },
+    {
+      id: "6",
       name: "Luc Succès",
       title: "Technical Lead",
       bio: "A 2x Start up Founder, Web and Mobile Engineer with 10+ Years of Development experience. He has worked namely at Spotify on discover weekly, and at Artsy as a Tech Lead. Luc has a passion for music production and Traveling.",
       image: "/images/luc-succes.jpg",
       linkedIn: "https://www.linkedin.com/in/lucsucces/",
       twitter: "https://twitter.com/lucsucces",
-    },
-    {
-      id: "6",
-      name: "Corey Neufville",
-      title: "Program & Partnerships Lead",
-      bio: "Multi Disciplined background in the tech space for over 13 years. Has experience in leading strategic initiatives from brand building to product development.  Spent 12+ years at Meta helping external partners & businesses fulfilling their business objectives on the platform.",
-      image: "/images/corey-neufville.png",
-      linkedIn: "https://www.linkedin.com/in/corey-neufville-3424346b/",
     },
     {
       id: "7",
