@@ -169,6 +169,14 @@ const Team = () => {
     },
     {
       id: "4",
+      name: "Farrah Jean",
+      title: "Social Media",
+      bio: "Farrah is a social media connoisseur and software engineer. She has a passion for helping others in achieving their vision and finding innovative ways to connect clients to brands. She has worked with the likes of Sony Music/ RED Music, Cornerstone Agency, Future Boston Alliance as well as Hill Holliday predominantly within the digital marketing departments.",
+      image: "/images/farrah-jean.jpg",
+      linkedIn: "https://www.linkedin.com/in/farrah-jean/",
+    },
+    {
+      id: "5",
       name: "Luc Succès",
       title: "Technical Lead",
       bio: "A 2x Start up Founder, Web and Mobile Engineer with 10+ Years of Development experience. He has worked namely at Spotify on discover weekly, and at Artsy as a Tech Lead. Luc has a passion for music production and Traveling.",
@@ -177,7 +185,7 @@ const Team = () => {
       twitter: "https://twitter.com/lucsucces",
     },
     {
-      id: "5",
+      id: "6",
       name: "Corey Neufville",
       title: "Program & Partnerships Lead",
       bio: "Multi Disciplined background in the tech space for over 13 years. Has experience in leading strategic initiatives from brand building to product development.  Spent 12+ years at Meta helping external partners & businesses fulfilling their business objectives on the platform.",
@@ -185,7 +193,7 @@ const Team = () => {
       linkedIn: "https://www.linkedin.com/in/corey-neufville-3424346b/",
     },
     {
-      id: "6",
+      id: "7",
       name: "Pedro Acosta",
       title: "Sr. Software Engineer",
       bio: "Passionate about the future of the world and what innovative Tech can bring, Pedro pivoted careers transitioning from Law Enforcement to Tech. Building his expertise at an AI company, and founding TrueBonds - a platform that enables planning Funeral Services online. Pedro is also in addition to Engineering an avid Real Estate & Crypto investor by day- while holding top 75 ranking in NYC on Super Smash Brothers Ultimate by night. (Greninja main)",
@@ -194,7 +202,7 @@ const Team = () => {
       instagram: "https://www.instagram.com/pedro.acosta824/",
     },
     {
-      id: "7",
+      id: "8",
       name: "Rashawn Evans",
       title: "Sr. Software Engineer",
       bio: "User Centered Product Strategist and Gifted Front-End Developer with a passion for building and designing technology of the future. Rashawn is also founder of Start-up ‘PledgeNexus’ an Video Streaming Platform for Poets, Musicians, & Comedians giving young amateur artists a platform to grow, collaborate, and gain exposure. ",
