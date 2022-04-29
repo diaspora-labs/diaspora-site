@@ -199,7 +199,7 @@ const Team = () => {
       image: "/images/jesse-aridoux.png",
       linkedIn: "https://www.linkedin.com/in/jesse-aridoux-337b20b5/",
       instagram: "https://www.instagram.com/aridoux_art/",
-      // streetArt: "https://mainstreetartscs.org/blog/jesse-aridoux/",
+      streetArt: "https://mainstreetartscs.org/blog/jesse-aridoux/",
     },
     {
       id: "4",
