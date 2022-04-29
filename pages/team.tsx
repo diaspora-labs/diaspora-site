@@ -2,7 +2,7 @@ import React from "react"
 
 import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
-import { OnCyber } from "../components/Icons"
+import { OnCyber, StreetArt } from "../components/Icons"
 
 const Team = () => {
   const Person = ({
@@ -15,6 +15,8 @@ const Team = () => {
     instagram,
     dribbble,
     cyber,
+    foundation,
+    streetArt
   }: {
     name: string
     bio: string
@@ -25,6 +27,8 @@ const Team = () => {
     instagram?: string
     dribbble?: string
     cyber?: string
+    foundation?: string
+    streetArt?: string
   }) => {
     return (
       <div className="my-5 mb-20 flex flex-col items-center md:flex-row md:items-start">
@@ -70,6 +74,20 @@ const Team = () => {
                 <div className="mr-2">
                   <a target="_blank" rel="noreferrer" href={cyber} className="mt-1 block">
                     <social.cyber.icon width="24" background="#fff" />
+                  </a>
+                </div>
+              )}
+              {foundation && (
+                <div className="mr-2">
+                  <a target="_blank" rel="noreferrer" href={foundation} className="mt-1 block">
+                    <social.foundation.icon width="24" background="#fff" />
+                  </a>
+                </div>
+              )}
+              {streetArt && (
+                <div className="mr-2">
+                  <a target="_blank" rel="noreferrer" href={streetArt} className="mt-1 block">
+                    <social.streetArt.icon width="24" background="#fff" />
                   </a>
                 </div>
               )}
@@ -139,6 +157,18 @@ const Team = () => {
       name: "Cyber",
       icon: OnCyber,
     },
+    streetArt: {
+      name: "StreetArt",
+      icon: StreetArt,
+    },
+    foundation: {
+      name: "Foundation",
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 100 30" width="55" background="#fff">
+          <path fill-rule="evenodd" d="M64.894 16.456c0 9.088-7.368 16.456-16.457 16.456s-16.455-7.368-16.455-16.456S39.349 0 48.438 0s16.455 7.368 16.455 16.456zM16.902 1.567a.784.784 0 011.358 0L35.056 30.66a.784.784 0 01-.679 1.176H.785a.784.784 0 01-.679-1.176zM68.614.98c-.865 0-1.567.702-1.567 1.568v27.818c0 .866.702 1.567 1.567 1.567h27.819c.865 0 1.567-.701 1.567-1.567V2.547c0-.866-.702-1.568-1.567-1.568z" clip-rule="evenodd"></path>
+        </svg>
+      ),
+    },
   }
 
   const people = [
@@ -158,6 +188,8 @@ const Team = () => {
       bio: "A Nigerian-American digital Artist & Martial Artist that creates worlds that allow people of the African Diaspora to be fully liberated and just simply exist as humans. Using afro-futurism as a means to create these worlds because, as a friend once told him, “Afro-Futurism is simply black people existing in the future”. ",
       image: "/images/isaac-udogwu.png",
       dribbble: "https://masterpiece.so/artist/12559",
+      instagram: "https://www.instagram.com/eyesackudawgoo/?hl=en",
+      foundation: "https://foundation.app/@eyesackudawgoo",
     },
     {
       id: "3",
@@ -166,6 +198,8 @@ const Team = () => {
       bio: "A seasoned visual designer with over a decade of experience, and a diverse background in the design field. He has built many brands and worked with companies in various industries from fashion/lifestyle, cosmetics, tech and more. He also leverages his craft as a fine artist to influence his design work.",
       image: "/images/jesse-aridoux.png",
       linkedIn: "https://www.linkedin.com/in/jesse-aridoux-337b20b5/",
+      instagram: "https://www.instagram.com/aridoux_art/",
+      // streetArt: "https://mainstreetartscs.org/blog/jesse-aridoux/",
     },
     {
       id: "4",
@@ -174,6 +208,7 @@ const Team = () => {
       bio: "Farrah is a social media connoisseur and software engineer. She has a passion for helping others in achieving their vision and finding innovative ways to connect clients to brands. She has worked with the likes of Sony Music/ RED Music, Cornerstone Agency, Future Boston Alliance as well as Hill Holliday predominantly within the digital marketing departments.",
       image: "/images/farrah-jean.jpg",
       linkedIn: "https://www.linkedin.com/in/farrah-jean/",
+      instagram: "https://instagram.com/farrahevita?igshid=YmMyMTA2M2Y=",
     },
     {
       id: "5",
