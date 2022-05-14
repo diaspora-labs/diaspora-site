@@ -4,6 +4,7 @@ import Link from "next/link"
 import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
 import { Nav } from "../components/Nav"
 import { Layout } from "../components/Layout"
+import GoldMaskLogo from "../components/DiasporaLogo/GoldMaskLogo"
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
         bg-container items-center
         justify-center bg-black 
         text-white`}
-      showLogo={false}
+      showLogo={true}
     >
       <Head>
         <title>Diaspora</title>
@@ -23,11 +24,11 @@ const Home: NextPage = () => {
         <div className="m-4 w-full">
           <div className="mx-auto mb-5 w-[60%]">
             <div className="mb-10 text-lg uppercase text-white">Coming soon</div>
-            <Link href="/">
-              <a>
-                <DiasporaLogo />
-              </a>
-            </Link>
+            {/*<Link href="/">
+              <a>*/}
+                <GoldMaskLogo />
+              {/*</a>
+            </Link>*/}
           </div>
         </div>
       </div>
