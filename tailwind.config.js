@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
+        koro: ["Light Korolev"],
       },
       backgroundImage: {
         "home-bg": 'url("/images/Dutty-Boukman.jpg")',
