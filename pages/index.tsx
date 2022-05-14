@@ -1,9 +1,12 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import Link from "next/link"
-import { DiasporaLogo, DiasporaGoldMask } from "../components/DiasporaLogo/DiasporaLogo"
+import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
+// import { GoldMaskData }  from "../components/DiasporaLogo/GoldMaskData"
 import { Nav } from "../components/Nav"
 import { Layout } from "../components/Layout"
+// import Spline from '@splinetool/react-spline';
+// import { Spline } from 'react-spline'
 
 const Home: NextPage = () => {
   return (
@@ -25,7 +28,7 @@ const Home: NextPage = () => {
             <div className="mb-10 text-lg uppercase text-white">Coming soon</div>
             <Link href="/">
               <a>
-                <DiasporaGoldMask />
+                {/*<Spline scene={"https://prod.spline.design/z9ZrPk6mKAs97Rxq/scene.splinecode"} />*/}
               </a>
             </Link>
           </div>

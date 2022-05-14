@@ -6,7 +6,7 @@ export const Nav = () => {
   const router = useRouter()
 
   return (
-    <div class="hidden md:flex items-center space-x-1">
+    <div className="hidden md:flex items-center space-x-1">
       <div className="bg-black p-4">
           <Link href="/team">
             <a className={router.pathname == "/team" ? "text-indigo-600 koro" : ""}>GALLERY</a>

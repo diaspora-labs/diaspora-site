@@ -24,26 +24,20 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
 
       </div>*/}
 
-      <nav class="bg-inherit">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="flex justify-between">
-            <div class="flex space-x-7">
-            
-              <div>
-                <a href="#" class="flex items-center py-4 px-2">
-                  {showLogo && (
-                    <Link href="/">
-                      <a>
-                        <DiasporaLogoSmall />
-                      </a>
-                    </Link>
-                  )}
-                </a>
+      <nav className="bg-inherit">
+          <div className="flex justify-between">
+              <div className=" top-0 left-0">
+                {showLogo && (
+                  <Link href="/">
+                    <a className="flex items-center py-4 px-2">
+                      <DiasporaLogoSmall />
+                    </a>
+                  </Link>
+                )}
               </div>
 
               <Nav />
-            </div>
-          </div>
+            
         </div>
       </nav>
 
