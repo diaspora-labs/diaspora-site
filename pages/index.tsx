@@ -5,6 +5,8 @@ import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
 import { Nav } from "../components/Nav"
 import { Layout } from "../components/Layout"
 import GoldMaskLogo from "../components/DiasporaLogo/GoldMaskLogo"
+import GoldMaskThree from "../components/DiasporaLogo/GoldMaskThree"
+
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +22,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-                <GoldMaskLogo />
+      <GoldMaskThree />
       <div className="grid w-full place-items-center">
         <div className="m-4 w-full">
           <div className="mx-auto mb-5 w-[60%]">
