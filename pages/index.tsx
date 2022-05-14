@@ -20,13 +20,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+                <GoldMaskLogo />
       <div className="grid w-full place-items-center">
         <div className="m-4 w-full">
           <div className="mx-auto mb-5 w-[60%]">
             <div className="mb-10 text-lg uppercase text-white">Coming soon</div>
             {/*<Link href="/">
               <a>*/}
-                <GoldMaskLogo />
               {/*</a>
             </Link>*/}
           </div>
