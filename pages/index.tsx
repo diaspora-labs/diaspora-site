@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import Head from "next/head"
 import Link from "next/link"
-import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
+import { DiasporaLogo, DiasporaGoldMask } from "../components/DiasporaLogo/DiasporaLogo"
 import { Nav } from "../components/Nav"
 import { Layout } from "../components/Layout"
 
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
             <div className="mb-10 text-lg uppercase text-white">Coming soon</div>
             <Link href="/">
               <a>
-                <DiasporaLogo />
+                <DiasporaGoldMask />
               </a>
             </Link>
           </div>

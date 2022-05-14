@@ -13,3 +13,14 @@ export const DiasporaLogo = () => {
 
   return <Lottie options={params} width="100%" height="auto" />
 }
+
+export const DiasporaGoldMask = () => {
+  const params = {
+    renderer: "svg",
+    loop: false,
+    autoplay: true,
+    animationData: animationData,
+  }
+
+  return <Lottie options={params} width="100%" height="auto" />
+}
