@@ -6,7 +6,8 @@ import { Nav } from "../components/Nav"
 import { Layout } from "../components/Layout"
 import GoldMaskLogo from "../components/DiasporaLogo/GoldMaskLogo"
 import GoldMaskThree from "../components/DiasporaLogo/GoldMaskThree"
-
+import { Canvas } from '@react-three/fiber'
+import { Suspense } from 'react'
 
 const Home: NextPage = () => {
   return (
@@ -22,22 +23,28 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <GoldMaskThree />
-      <div className="grid w-full place-items-center">
+      <Canvas>
+        <Suspense fallback={null}>
+          <GoldMaskLogo />
+        </Suspense>
+      </Canvas>
+
+      {/*<GoldMaskThree />*/}
+      {/*<div className="grid w-full place-items-center">
         <div className="m-4 w-full">
           <div className="mx-auto mb-5 w-[60%]">
-            <div className="mb-10 text-lg uppercase text-white">Coming soon</div>
+            <div className="mb-10 text-lg uppercase text-white">Coming soon</div>*/}
             {/*<Link href="/">
               <a>*/}
               {/*</a>
             </Link>*/}
-          </div>
+          {/*</div>
         </div>
-      </div>
+      </div>*/}
 
-      <div className="absolute bottom-10 right-10">
+      {/*<div className="absolute bottom-10 right-10">
         <Nav />
-      </div>
+      </div>*/}
     </Layout>
   )
 }
