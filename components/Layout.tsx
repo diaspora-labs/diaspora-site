@@ -51,4 +51,3 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
     </div>
   )
 }
-

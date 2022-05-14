@@ -2,6 +2,7 @@ import { NextPage } from "next"
 import Head from "next/head"
 import Link from "next/link"
 import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
+// import { GoldMaskData }  from "../components/DiasporaLogo/GoldMaskData"
 import { Nav } from "../components/Nav"
 import { Layout } from "../components/Layout"
 import GoldMaskLogo from "../components/DiasporaLogo/GoldMaskLogo"
@@ -33,9 +34,6 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 right-10">
-        <Nav />
-      </div>
     </Layout>
   )
 }
