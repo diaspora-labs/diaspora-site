@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         bg-container items-center
         justify-center bg-black 
         text-white`}
-      showLogo={false}
+      showLogo={true}
     >
       <Head>
         <title>Diaspora</title>
@@ -32,9 +32,6 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-10 right-10">
-        <Nav />
-      </div>
     </Layout>
   )
 }
