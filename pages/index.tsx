@@ -1,4 +1,8 @@
 import { NextPage } from "next"
+import { Discord } from "../components/Icons/Discord"
+import { Envelop } from "../components/Icons/Envelop"
+import { Instagram } from "../components/Icons/Instagram"
+import { Twitter } from "../components/Icons/Twitter"
 import { Layout } from "../components/Layout"
 import { NavHeader } from "../components/NavHeader"
 
@@ -22,6 +26,25 @@ const Home: NextPage = () => {
                   for the culture
                   <br />& mint an ancestor
                 </div>
+              </div>
+            </div>
+            <div className="col-span-2 flex h-full flex-col items-center justify-center space-y-6">
+              <div className="mt-[80px] text-center text-4xl font-light">
+                Great things
+                <br />
+                are coming
+              </div>
+              <div className="text-lg font-normal">Connect with us to stay updated</div>
+              <div className="flex  space-x-10">
+                <Discord />
+                <Instagram />
+                <Twitter />
+                <Envelop />
+              </div>
+              <div className="p-2">
+                <button className="rounded-xl bg-[#F05E17] px-4 py-2 font-bold uppercase text-black">
+                  Connect Wallet
+                </button>
               </div>
             </div>
           </div>
