@@ -9,23 +9,25 @@ const Home: NextPage = () => {
         <GoldMaskLogo />
       </Canvas> */}
 
-      <section className="h-full min-h-screen p-10">
-        <NavHeader />
+      <section className="h-full min-h-screen">
+        <div className="p-10">
+          <NavHeader />
 
-        <div className="grid grid-cols-4">
-          <div className="col-span-2 flex h-full flex-col items-start justify-center">
-            <div className="my-[200px]">
-              <div className="text-5xl font-light leading-tight text-neutral-600">
-                Building a bridge
-                <br />
-                for the culture
-                <br />& mint an ancestor
+          <div className="grid grid-cols-4">
+            <div className="col-span-2 flex h-full flex-col items-start justify-center">
+              <div className="my-[200px] mb-[160px]">
+                <div className="text-5xl font-light leading-tight text-neutral-600">
+                  Building a bridge
+                  <br />
+                  for the culture
+                  <br />& mint an ancestor
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="w-full">
+        <div className="w-full border-t-[1px] border-neutral-800 py-10 px-10">
           <div className="flex">
             <div className="shrink rounded-tl-lg rounded-bl-lg bg-neutral-800 py-2 px-4">
               <input placeholder="Email address" className="bg-transparent pr-10" />
