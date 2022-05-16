@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link"
+import Head from "next/head"
 import { DiasporaLogoSmall } from "../components/DiasporaLogoSmall"
 import cls from "classnames"
 import { Nav } from "../components/Nav"
@@ -25,22 +26,20 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
       </div>*/}
 
       <nav className="bg-inherit">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="mx-auto w-full px-4">
           <div className="flex justify-between">
             <div className="flex space-x-7">
-            
-              <div>
-                <a href="#" className="flex items-center py-4 px-2">
-                  {showLogo && (
-                    <Link href="/">
-                      <a>
-                        <DiasporaLogoSmall />
-                      </a>
-                    </Link>
-                  )}
-                </a>
+              <div className="flex items-center py-4 px-2">
+                {showLogo && (
+                  <Link href="/">
+                    <a>
+                      <DiasporaLogoSmall />
+                    </a>
+                  </Link>
+                )}
               </div>
 
+              <div className="flex flex-grow"></div>
               <Nav />
             </div>
           </div>
