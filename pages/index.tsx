@@ -14,11 +14,11 @@ const Home: NextPage = () => {
         <GoldMaskLogo />
       </Canvas> */}
 
-      <div className="fixed inset-0">
+      <div className="fixed inset-0 z-0">
         <GoldMaskLogo />
       </div>
 
-      <section className="h-full min-h-screen">
+      <section className="z-10 h-full min-h-screen">
         <div className="p-10">
           <NavHeader />
 
