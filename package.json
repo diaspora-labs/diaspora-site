@@ -24,6 +24,7 @@
     "react-dom": "^18.1.0",
     "react-lottie": "^1.2.3",
     "react-pdf": "^5.7.1",
+    "sal.js": "^0.8.5",
     "three": "^0.140.2"
   },
   "devDependencies": {
