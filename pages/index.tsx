@@ -1,4 +1,5 @@
 import { NextPage } from "next"
+import { GoldMaskLogo } from "../components/DiasporaLogo/GoldMaskLogo"
 import { Discord } from "../components/Icons/Discord"
 import { Envelop } from "../components/Icons/Envelop"
 import { Instagram } from "../components/Icons/Instagram"
@@ -12,6 +13,10 @@ const Home: NextPage = () => {
       {/* <Canvas>
         <GoldMaskLogo />
       </Canvas> */}
+
+      <div className="fixed inset-0">
+        <GoldMaskLogo />
+      </div>
 
       <section className="h-full min-h-screen">
         <div className="p-10">
