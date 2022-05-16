@@ -1,4 +1,4 @@
-import React from "React"
+import React from "react"
 import { DiasporaLogoSmall } from "../components/DiasporaLogoSmall"
 import Link from "next/link"
 import { Nav } from "./Nav"
