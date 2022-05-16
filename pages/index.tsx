@@ -44,7 +44,7 @@ const Home: NextPage = () => {
                   <Twitter />
                   <Envelop />
                 </div>
-                <div className="p-2">
+                <div className="hidden p-2">
                   <button className="rounded-xl bg-[#F05E17] px-4 py-2 font-bold uppercase text-black">
                     Connect Wallet
                   </button>
