@@ -1,50 +1,30 @@
 import { NextPage } from "next"
-import Head from "next/head"
-import Link from "next/link"
-import { DiasporaLogo } from "../components/DiasporaLogo/DiasporaLogo"
-import { Nav } from "../components/Nav"
 import { Layout } from "../components/Layout"
-import GoldMaskLogo from "../components/DiasporaLogo/GoldMaskLogo"
-import GoldMaskThree from "../components/DiasporaLogo/GoldMaskThree"
-import { Canvas } from '@react-three/fiber'
-import { Suspense } from 'react'
+import { NavHeader } from "../components/NavHeader"
 
 const Home: NextPage = () => {
   return (
-    <Layout
-      classes={`
-        bg-container items-center
-        justify-center bg-black 
-        text-white`}
-      showLogo={true}
-    >
-      <Head>
-        <title>Diaspora</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout showLogo>
+      {/* <Canvas>
+        <GoldMaskLogo />
+      </Canvas> */}
 
-      <Canvas>
-        <Suspense fallback={null}>
-          <GoldMaskLogo />
-        </Suspense>
-      </Canvas>
+      <section className="h-full min-h-screen p-10">
+        <NavHeader />
 
-      {/*<GoldMaskThree />*/}
-      {/*<div className="grid w-full place-items-center">
-        <div className="m-4 w-full">
-          <div className="mx-auto mb-5 w-[60%]">
-            <div className="mb-10 text-lg uppercase text-white">Coming soon</div>*/}
-            {/*<Link href="/">
-              <a>*/}
-              {/*</a>
-            </Link>*/}
-          {/*</div>
+        <div className="grid grid-cols-4">
+          <div className="col-span-2 flex h-full flex-col items-start justify-center">
+            <div className="my-[200px]">
+              <div className="text-5xl font-light leading-tight text-neutral-600">
+                Building a bridge
+                <br />
+                for the culture
+                <br />& mint an ancestor
+              </div>
+            </div>
+          </div>
         </div>
-      </div>*/}
-
-      {/*<div className="absolute bottom-10 right-10">
-        <Nav />
-      </div>*/}
+      </section>
     </Layout>
   )
 }

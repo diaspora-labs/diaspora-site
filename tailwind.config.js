@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Roboto", "sans-serif"],
+        sans: ["Korolev", "Roboto", "sans-serif"],
       },
       backgroundImage: {
         "home-bg": 'url("/images/Dutty-Boukman.jpg")',
