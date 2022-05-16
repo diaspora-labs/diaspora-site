@@ -1,8 +1,15 @@
 import React from "react"
 
-export const DiasporaLogoSmall = () => {
+export const DiasporaLogoSmall: React.FC<{ width?: string; height?: string }> = (props) => {
+  const { width, height } = props
+
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="175.983" height="37.948" viewBox="0 0 175.983 37.948">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width ?? "175.983"}
+      height={height ?? "37.948"}
+      viewBox="0 0 175.983 37.948"
+    >
       <defs>
         <clipPath id="clip-path">
           <path fill="none" d="M0 0H175.983V37.948H0z" data-name="Rectangle 7"></path>
