@@ -6,7 +6,7 @@ const Spline = dynamic(() => import("@splinetool/react-spline"), {
 })
 
 export const GoldMaskLogo = () => {
-  return <Spline scene="https://prod.spline.design/z9ZrPk6mKAs97Rxq/scene.splinecode" className="absolute inset-0" />
+  return <Spline scene="https://prod.spline.design/9I5EiVB3Oko8EpdM/scene.splinecode" className="absolute inset-0" />
 }
 
 // import { useGLTF, PerspectiveCamera } from "@react-three/drei"

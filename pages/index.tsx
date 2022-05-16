@@ -33,7 +33,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-2 flex h-full flex-col items-center justify-center space-y-6">
+            <div className="col-span-2 ml-40 flex h-full flex-col items-center justify-center space-y-6">
               <div className="mt-[80px] text-center text-4xl font-light">
                 Great things
                 <br />
