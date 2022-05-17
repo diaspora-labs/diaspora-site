@@ -304,6 +304,11 @@
   resolved "https://registry.yarnpkg.com/@splinetool/loader/-/loader-0.9.52.tgz#bef8f133c6d530f1b2a07e8eb1fbaf4ab25dcf84"
   integrity sha512-2DCA1aop24u/ttyGsaQUrTnGKgFVoSCvoimqBRJLw8HDw6XwnSrq7DyxaPlI+JKrZ0EY9EQL+BtgWlh1xvb6Pw==
 
+"@splinetool/r3f-spline@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@splinetool/r3f-spline/-/r3f-spline-1.0.1.tgz#8d6de6e0b8b9677d7a6c57a102cd7fa557d17358"
+  integrity sha512-lAVXna69B67L3W4S7laHy3vA6fuIDQmdmtYoZ/OjGLKUzwJRAU5xTJGrW95c+dnIZdDqTtCe/IBmKASfh5mppw==
+
 "@splinetool/react-spline@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npmjs.org/@splinetool/react-spline/-/react-spline-2.2.1.tgz"

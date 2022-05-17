@@ -1,6 +1,7 @@
-import { useEffect } from "react"
+import React, { Suspense, useEffect } from "react"
 import { NextPage } from "next"
-import { GoldMaskLogo } from "../components/DiasporaLogo/GoldMaskLogo"
+import dynamic from "next/dynamic"
+// import GoldMaskLogo from "../components/DiasporaLogo/GoldMaskLogo"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { Discord } from "../components/Icons/Discord"
 import { Envelop } from "../components/Icons/Envelop"
@@ -10,21 +11,28 @@ import { Layout } from "../components/Layout"
 import { NavHeader } from "../components/NavHeader"
 import sal from "sal.js"
 
+const GoldMaskLogo = dynamic(() => import("../components/DiasporaLogo/GoldMaskLogo"), {
+  ssr: false,
+})
+
 const Home: NextPage = () => {
-  useEffect(() => {
-    // @ts-ignore
-    sal({
-      threshold: 0.1,
-    })
-  })
+  // useEffect(() => {
+  //   // @ts-ignore
+  //   sal({
+  //     threshold: 0.1,
+  //   })
+  // })
 
   return (
     <Layout showLogo>
       <div className="fixed inset-0 z-0">
-        <GoldMaskLogo />
+        {/* @ts-ignore */}
+        <Suspense fallback={null} r3f>
+          <GoldMaskLogo />
+        </Suspense>
       </div>
 
-      <section className="z-10 flex h-full min-h-screen flex-col">
+      <section className="pointer-events-none z-10 flex h-full min-h-screen flex-col">
         <div className="flex grow flex-col p-10">
           <NavHeader />
 
@@ -53,7 +61,7 @@ const Home: NextPage = () => {
                   are coming
                 </div>
                 <div className="text-lg font-normal">Connect with us to stay updated</div>
-                <div className="flex  space-x-10">
+                <div className="pointer-events-auto flex space-x-10">
                   <Discord />
                   <Instagram />
                   <Twitter />
