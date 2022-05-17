@@ -14,7 +14,7 @@ export default function GoldMaskLogo() {
 
   return (
     <Spline
-      scene="https://prod.spline.design/9I5EiVB3Oko8EpdM/scene.splinecode"
+      scene="https://prod.spline.design/QZQ39MAcUPi3F1Dl/scene.splinecode"
       onLoad={onLoad}
       className="absolute inset-0"
     />
