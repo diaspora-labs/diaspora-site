@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import lottie from "lottie-web"
 import animation from "../roadmap-animation/data.json"
 
 const Roadmap = () => {
-  React.useEffect(() => {
+  // start animation
+  useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector(".roadmap-animation"),
       animationData: animation,
@@ -13,6 +14,7 @@ const Roadmap = () => {
     })
   }, [])
 
+  // define strings
   const pageTitle = `A "Nonlinear" Journey Through Lineage and Future`
   const pageSubTitle = `Transparency is key for the Diaspora DAO. It is important that we share our journey as we build the community. Decentralization is not only a part of the foundation of the organization, but also the pathway through lineage. Diaspora’s journey to building a DAO, as well as every members own journey within it, is a non linear path. We will continue to iterate and learn from the past to create pathways for the future.`
   const sectionOneText =
@@ -44,8 +46,9 @@ const Roadmap = () => {
   const sectionSixText = `*Building this DAO is both a digital and physical revolutionary act. In order to sustain it, future facing, mechanisms have to be built in place to future proof.*`
   const sectionSixlist = ["Buy Land in Metaverse", "Launch the Diaspora Token"]
 
+  // ui components
   return (
-    <div className="roadmapBackground">
+    <div className="roadmap-background">
       <div className="roadmap-animation" />
       <p className="roadmap-section-title text-4xl font-bold">{pageTitle}</p>
       <p className="roadmap-sub-text">{pageSubTitle}</p>
