@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 .roadmap-background {
   width: 100vw;
   min-height: 100vh;
@@ -21,12 +25,36 @@
   z-index: -1;
 }
 
+.roadmap-pagnation {
+  position: fixed;
+  top: 44%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roadmap-pagnation-dot-active {
+  background: #fec821 0% 0% no-repeat padding-box;
+  border-radius: 100%;
+  padding: 8px;
+  margin: 6px 0px;
+}
+
+.roadmap-pagnation-dot-unactive {
+  background: #fec821 0% 0% no-repeat padding-box;
+  border-radius: 100%;
+  padding: 3px;
+  margin: 6px 0px;
+}
+
 .roadmap-section-title {
   text-align: center;
   font: normal normal medium 18px/22px Korolev;
   letter-spacing: 0.36px;
   color: #ffffff;
-  margin-top: 110px;
+  margin-top: 90px;
+  padding-top: 20px;
 }
 
 .roadmap-section-title-smaller {
@@ -34,7 +62,8 @@
   font: normal normal medium 18px/22px Korolev;
   letter-spacing: 0.36px;
   color: #ffffff;
-  margin-top: -80px;
+  margin-top: -60px;
+  padding-top: 20px;
 }
 
 .roadmap-sub-text {
@@ -48,8 +77,7 @@
 }
 
 .roadmap-section-text {
-  margin-top: 88vh;
-  /* margin-top: 70vh; */
+  margin-top: 86vh;
   marign-bottom: 10px;
   text-align: center;
   font: normal normal medium 18px/22px Korolev;

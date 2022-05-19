@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import lottie from "lottie-web"
 import animation from "../roadmap-animation/data.json"
 
@@ -13,6 +13,17 @@ const Roadmap = () => {
       autoplay: true,
     })
   }, [])
+
+  // initialize active index
+  const [activeIndex, setActiveIndex] = useState(1)
+
+  // create References
+  const sectionOne: any = useRef(null)
+  const sectionTwo: any = useRef(null)
+  const sectionThree: any = useRef(null)
+  const sectionFour: any = useRef(null)
+  const sectionFive: any = useRef(null)
+  const sectionSix: any = useRef(null)
 
   // define strings
   const pageTitle = `A "Nonlinear" Journey Through Lineage and Future`
@@ -49,8 +60,55 @@ const Roadmap = () => {
   // ui components
   return (
     <div className="roadmap-background">
+      <div className="roadmap-pagnation">
+        <p
+          className={`${activeIndex === 1 ? "roadmap-pagnation-dot-active" : "roadmap-pagnation-dot-unactive"}`}
+          onClick={() => {
+            setActiveIndex(1)
+            !!sectionOne.current && sectionOne.current.scrollIntoView()
+          }}
+        />
+        <p
+          className={`${activeIndex === 2 ? "roadmap-pagnation-dot-active" : "roadmap-pagnation-dot-unactive"}`}
+          onClick={() => {
+            setActiveIndex(2)
+            !!sectionTwo.current && sectionTwo.current.scrollIntoView()
+          }}
+        />
+        <p
+          className={`${activeIndex === 3 ? "roadmap-pagnation-dot-active" : "roadmap-pagnation-dot-unactive"}`}
+          onClick={() => {
+            setActiveIndex(3)
+            !!sectionThree.current && sectionThree.current.scrollIntoView()
+          }}
+        />
+        <p
+          className={`${activeIndex === 4 ? "roadmap-pagnation-dot-active" : "roadmap-pagnation-dot-unactive"}`}
+          onClick={() => {
+            setActiveIndex(4)
+            !!sectionFour.current && sectionFour.current.scrollIntoView()
+          }}
+        />
+        <p
+          className={`${activeIndex === 5 ? "roadmap-pagnation-dot-active" : "roadmap-pagnation-dot-unactive"}`}
+          onClick={() => {
+            setActiveIndex(5)
+            !!sectionFive.current && sectionFive.current.scrollIntoView()
+          }}
+        />
+        <p
+          className={`${activeIndex === 6 ? "roadmap-pagnation-dot-active" : "roadmap-pagnation-dot-unactive"}`}
+          onClick={() => {
+            setActiveIndex(6)
+            !!sectionSix.current && sectionSix.current.scrollIntoView()
+          }}
+        />
+      </div>
+
       <div className="roadmap-animation" />
-      <p className="roadmap-section-title text-4xl font-bold">{pageTitle}</p>
+      <p ref={sectionOne} className="roadmap-section-title text-4xl font-bold">
+        {pageTitle}
+      </p>
       <p className="roadmap-sub-text">{pageSubTitle}</p>
 
       <div className="right-section">
@@ -64,7 +122,7 @@ const Roadmap = () => {
         })}
       </div>
 
-      <div className="left-section">
+      <div ref={sectionTwo} className="left-section">
         <p className="roadmap-section-title text-4xl font-bold">{sectionTwoTitle}</p>
         <p className="roadmap-section-text">{sectionTwoText}</p>
         {sectionTwolist.map((item) => {
@@ -76,7 +134,7 @@ const Roadmap = () => {
         })}
       </div>
 
-      <div className="right-section">
+      <div ref={sectionThree} className="right-section">
         <p className="roadmap-section-title-smaller text-4xl font-bold">{sectionThreeTitle}</p>
         <p className="roadmap-section-text">{sectionThreeText}</p>
         {sectionThreelist.map((item) => {
@@ -88,7 +146,7 @@ const Roadmap = () => {
         })}
       </div>
 
-      <div className="left-section">
+      <div ref={sectionFour} className="left-section">
         <p className="roadmap-section-title-smaller text-4xl font-bold">{sectionFourTitle}</p>
         <p className="roadmap-section-text">{sectionFourText}</p>
         {sectionFourlist.map((item) => {
@@ -100,11 +158,11 @@ const Roadmap = () => {
         })}
       </div>
 
-      <div className="right-section">
+      <div ref={sectionFive} className="right-section">
         <p className="roadmap-section-title text-4xl font-bold">{sectionFiveTitle}</p>
       </div>
 
-      <div className="left-section">
+      <div ref={sectionSix} className="left-section">
         <p className="roadmap-section-title text-4xl font-bold">{sectionSixTitle}</p>
       </div>
 
