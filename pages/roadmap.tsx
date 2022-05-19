@@ -6,7 +6,7 @@ const Roadmap = () => {
   // start animation
   useEffect(() => {
     lottie.loadAnimation({
-      container: document.querySelector(".roadmap-animation"),
+      container: document.querySelector(".roadmap-animation") as HTMLElement,
       animationData: animation,
       renderer: "svg", // "canvas", "html"
       loop: false,
