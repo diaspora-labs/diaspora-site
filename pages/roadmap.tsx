@@ -47,56 +47,74 @@ const Roadmap = () => {
   return (
     <div className="roadmapBackground">
       <div className="roadmap-animation" />
-      <p className="roadmap-section-title text-4xl font-medium text-white">{pageTitle}</p>
-      <p>{pageSubTitle}</p>
-      <p>{sectionOneText}</p>
-      {sectionOneList.map((item) => {
-        return (
-          <div key={item}>
-            <p>{item}</p>
-          </div>
-        )
-      })}
-      <p className="roadmap-section-title text-4xl font-medium text-white">{sectionTwoTitle}</p>
-      <p>{sectionTwoText}</p>
-      {sectionTwolist.map((item) => {
-        return (
-          <div key={item}>
-            <p>{item}</p>
-          </div>
-        )
-      })}
+      <p className="roadmap-section-title text-4xl font-bold">{pageTitle}</p>
+      <p className="roadmap-sub-text">{pageSubTitle}</p>
 
-      <p className="roadmap-section-title text-4xl font-medium text-white">{sectionThreeTitle}</p>
-      <p>{sectionThreeText}</p>
-      {sectionThreelist.map((item) => {
-        return (
-          <div key={item}>
-            <p>{item}</p>
-          </div>
-        )
-      })}
+      <div className="right-section">
+        <p className="roadmap-section-text">{sectionOneText}</p>
+        {sectionOneList.map((item) => {
+          return (
+            <div key={item}>
+              <p className="roadmap-section-list-text font-bold">{item}</p>
+            </div>
+          )
+        })}
+      </div>
 
-      <p className="roadmap-section-title text-4xl font-medium text-white">{sectionFourTitle}</p>
-      <p>{sectionFourText}</p>
-      {sectionFourlist.map((item) => {
-        return (
-          <div key={item}>
-            <p>{item}</p>
-          </div>
-        )
-      })}
-      <p className="roadmap-section-title text-4xl font-medium text-white">{sectionFiveTitle}</p>
+      <div className="left-section">
+        <p className="roadmap-section-title text-4xl font-bold">{sectionTwoTitle}</p>
+        <p className="roadmap-section-text">{sectionTwoText}</p>
+        {sectionTwolist.map((item) => {
+          return (
+            <div key={item}>
+              <p className="roadmap-section-list-text font-bold">{item}</p>
+            </div>
+          )
+        })}
+      </div>
 
-      <p className="roadmap-section-title text-4xl font-medium text-white">{sectionSixTitle}</p>
-      <p className="roadmap-section-title text-4xl font-medium text-white">{sectionSixText}</p>
-      {sectionSixlist.map((item) => {
-        return (
-          <div key={item}>
-            <p>{item}</p>
-          </div>
-        )
-      })}
+      <div className="right-section">
+        <p className="roadmap-section-title-smaller text-4xl font-bold">{sectionThreeTitle}</p>
+        <p className="roadmap-section-text">{sectionThreeText}</p>
+        {sectionThreelist.map((item) => {
+          return (
+            <div key={item}>
+              <p className="roadmap-section-list-text font-bold">{item}</p>
+            </div>
+          )
+        })}
+      </div>
+
+      <div className="left-section">
+        <p className="roadmap-section-title-smaller text-4xl font-bold">{sectionFourTitle}</p>
+        <p className="roadmap-section-text">{sectionFourText}</p>
+        {sectionFourlist.map((item) => {
+          return (
+            <div key={item}>
+              <p className="roadmap-section-list-text font-bold">{item}</p>
+            </div>
+          )
+        })}
+      </div>
+
+      <div className="right-section">
+        <p className="roadmap-section-title text-4xl font-bold">{sectionFiveTitle}</p>
+      </div>
+
+      <div className="left-section">
+        <p className="roadmap-section-title text-4xl font-bold">{sectionSixTitle}</p>
+      </div>
+
+      <div className="right-section">
+        <p className="roadmap-section-text">{sectionSixText}</p>
+        {sectionSixlist.map((item) => {
+          return (
+            <div key={item}>
+              <p className="roadmap-section-list-text font-bold">{item}</p>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
