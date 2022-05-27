@@ -94,6 +94,8 @@ const Home: NextPage = () => {
             </p>
           </div>
 
+          <Team />
+
         </div>
 
         <HomeFooter />
