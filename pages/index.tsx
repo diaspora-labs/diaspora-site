@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect } from "react"
 import { NextPage } from "next"
+import Image from 'next/image'
 import dynamic from "next/dynamic"
 // import GoldMaskLogo from "../components/DiasporaLogo/GoldMaskLogo"
 import { HomeFooter } from "../components/Home/HomeFooter"
@@ -80,7 +81,14 @@ const Home: NextPage = () => {
 
       <section className="pointer-events-none z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800">
         <div className="flex grow flex-col p-10">
+          <div className={`mx-auto`}>
+            <img src="/images/logos/diaspora-team-logo.png" 
+              alt="screenshot" 
+              width="652" 
+              height="172" />
+          </div>
           <div className="grid h-full grow grid-cols-4">
+
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
               <div
                 className="text-5xl font-light leading-tight text-neutral-600"
