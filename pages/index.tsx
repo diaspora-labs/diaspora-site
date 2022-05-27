@@ -87,7 +87,13 @@ const Home: NextPage = () => {
               width="652" 
               height="172" />
           </div>
-          <div className="grid h-full grow grid-cols-4">
+
+          <div className={`container mx-auto mt-10 max-w-2xl`}>
+            <p className={`text-center tracking-wide text-lg font-normal text-gray-400 `}>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            </p>
+          </div>
+          {/*<div className="grid h-full grow grid-cols-4">
 
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
               <div
@@ -126,7 +132,8 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
+
         </div>
 
         <HomeFooter />
