@@ -31,17 +31,17 @@ const Team = () => {
     streetArt?: string
   }) => {
     return (
-      <div className="my-5 mb-20 flex flex-col items-center md:flex-row md:items-start">
-        <div className="mb-10">
+      <div className="w-10/12 h-[130px] mb-5 flex flex-col items-center md:flex-row border-2 rounded-[40px] border-neutral-800">
+        <div className="mb-10 mt-10 ml-7">
           <div
             style={{ backgroundImage: `url(${image})` }}
-            className={`relative h-[120px] w-[120px] overflow-hidden rounded-full border-2 border-indigo-600 bg-cover bg-top`}
+            className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
           ></div>
         </div>
-        <div className="px-10 text-left">
+        <div className="px-5 text-left">
           <div className="flex items-center">
             <div className="mb-1 text-xl">{name}</div>
-            <div className="ml-3 mt-[-3px] flex">
+            {/*<div className="ml-3 mt-[-3px] flex">
               {linkedIn && (
                 <div className="mr-2">
                   <a target="_blank" rel="noreferrer" href={linkedIn}>
@@ -91,10 +91,10 @@ const Team = () => {
                   </a>
                 </div>
               )}
-            </div>
+            </div>*/}
           </div>
           <div className="text-md mb-4 text-indigo-600">{title}</div>
-          <div className="text-neutral-500">{bio}</div>
+          {/*<div className="text-neutral-500">{bio}</div>*/}
         </div>
       </div>
     )
@@ -256,11 +256,10 @@ const Team = () => {
         <p className={`text-center tracking-wide text-3xl font-bold text-gray-400 mb-20`} >
           The Team
         </p>
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-6xl grid grid-rows-4 grid-flow-col gap-4">
           {people.map((person, i) => (
             <Person key={i} {...person} />
           ))}
-
         </div>
       </div>
     </Layout>
