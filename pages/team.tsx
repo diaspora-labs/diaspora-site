@@ -2,7 +2,7 @@ import React from "react"
 
 import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
-import { OnCyber, StreetArt } from "../components/Icons"
+import { OnCyber, StreetArt, Profile } from "../components/Icons"
 
 const Team = () => {
   const Person = ({
@@ -16,7 +16,7 @@ const Team = () => {
     dribbble,
     cyber,
     foundation,
-    streetArt
+    streetArt,
   }: {
     name: string
     bio: string
@@ -28,7 +28,7 @@ const Team = () => {
     dribbble?: string
     cyber?: string
     foundation?: string
-    streetArt?: string
+    streetArt?: string,
   }) => {
     return (
       <div className="w-11/12 h-[130px] mb-5 flex flex-col items-center md:flex-row border-2 rounded-[40px] border-neutral-800">
@@ -96,6 +96,10 @@ const Team = () => {
           <div className="text-md mb-4 text-gray-400">{title}</div>
           {/*<div className="text-neutral-500">{bio}</div>*/}
         </div>
+          <div className="ml-10">
+            <Profile />
+          </div>
+
       </div>
     )
   }
