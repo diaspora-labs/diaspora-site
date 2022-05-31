@@ -31,9 +31,17 @@ const Team = () => {
     streetArt?: string,
   }) => {
     return (
-      <div className="ml-10 mb-5 border-2 rounded-[40px] border-neutral-800">
+      <div className="lg:ml-10 mb-5 border-2 rounded-[40px] border-neutral-800">
+        
+        <div class="relative">
+          <div class="absolute top-10 right-7">
+            <Profile  />
+          </div>
+        </div>
+
         <div className="flex flex-col items-center lg:flex-row">
-          <div className="mb-5 mt-5 ml-7">
+
+          <div className="mb-5 mt-5 lg:ml-7">
             <div
               style={{ backgroundImage: `url(${image})` }}
               className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
@@ -94,13 +102,12 @@ const Team = () => {
                 )}
               </div>*/}
             </div>
-            <div className="text-md mb-4 text-gray-400">{title}</div>
+            <div className="text-md mb-4 text-gray-400 text-center">{title}</div>
             {/*<div className="text-neutral-500">{bio}</div>*/}
           </div>
 
-          <div className="">
-            <Profile />
-          </div>
+          
+
         </div>
 
 
