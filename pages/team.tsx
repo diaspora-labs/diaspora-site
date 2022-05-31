@@ -31,74 +31,78 @@ const Team = () => {
     streetArt?: string,
   }) => {
     return (
-      <div className="ml-10 mb-5 flex flex-col items-center md:flex-row border-2 rounded-[40px] border-neutral-800">
-        <div className="mb-5 mt-5 ml-7">
-          <div
-            style={{ backgroundImage: `url(${image})` }}
-            className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
-          ></div>
-        </div>
-        <div className="px-5 text-left">
-          <div className="flex items-center">
-            <div className="mb-1 text-xl">{name}</div>
-            {/*<div className="ml-3 mt-[-3px] flex">
-              {linkedIn && (
-                <div className="mr-2">
-                  <a target="_blank" rel="noreferrer" href={linkedIn}>
-                    <social.linkedIn.icon width="24" height="24" background="#fff" />
-                  </a>
-                </div>
-              )}
-              {twitter && (
-                <div className="mr-2">
-                  <a target="_blank" rel="noreferrer" href={twitter}>
-                    <social.twitter.icon width="24" height="24" background="#fff" />
-                  </a>
-                </div>
-              )}
-              {instagram && (
-                <div className="mr-2">
-                  <a target="_blank" rel="noreferrer" href={instagram}>
-                    <social.instagram.icon width="24" height="24" background="#fff" />
-                  </a>
-                </div>
-              )}
-              {dribbble && (
-                <div className="mr-2">
-                  <a target="_blank" rel="noreferrer" href={dribbble}>
-                    <social.dribbble.icon width="24" height="24" background="#fff" />
-                  </a>
-                </div>
-              )}
-              {cyber && (
-                <div className="mr-2">
-                  <a target="_blank" rel="noreferrer" href={cyber} className="mt-1 block">
-                    <social.cyber.icon width="24" background="#fff" />
-                  </a>
-                </div>
-              )}
-              {foundation && (
-                <div className="mr-2">
-                  <a target="_blank" rel="noreferrer" href={foundation} className="mt-1 block">
-                    <social.foundation.icon width="24" background="#fff" />
-                  </a>
-                </div>
-              )}
-              {streetArt && (
-                <div className="mr-2">
-                  <a target="_blank" rel="noreferrer" href={streetArt} className="mt-1 block">
-                    <social.streetArt.icon width="24" background="#fff" />
-                  </a>
-                </div>
-              )}
-            </div>*/}
+      <div className="ml-10 mb-5 border-2 rounded-[40px] border-neutral-800">
+        <div className="flex flex-col items-center lg:flex-row">
+          <div className="mb-5 mt-5 ml-7">
+            <div
+              style={{ backgroundImage: `url(${image})` }}
+              className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
+            ></div>
           </div>
-          <div className="text-md mb-4 text-gray-400">{title}</div>
-          {/*<div className="text-neutral-500">{bio}</div>*/}
-        </div>
-          <div className="ml-10">
+          <div className="px-5 text-left">
+            <div className="flex items-center">
+              <div className="mb-1 text-xl">{name}</div>
+              {/*<div className="ml-3 mt-[-3px] flex">
+                {linkedIn && (
+                  <div className="mr-2">
+                    <a target="_blank" rel="noreferrer" href={linkedIn}>
+                      <social.linkedIn.icon width="24" height="24" background="#fff" />
+                    </a>
+                  </div>
+                )}
+                {twitter && (
+                  <div className="mr-2">
+                    <a target="_blank" rel="noreferrer" href={twitter}>
+                      <social.twitter.icon width="24" height="24" background="#fff" />
+                    </a>
+                  </div>
+                )}
+                {instagram && (
+                  <div className="mr-2">
+                    <a target="_blank" rel="noreferrer" href={instagram}>
+                      <social.instagram.icon width="24" height="24" background="#fff" />
+                    </a>
+                  </div>
+                )}
+                {dribbble && (
+                  <div className="mr-2">
+                    <a target="_blank" rel="noreferrer" href={dribbble}>
+                      <social.dribbble.icon width="24" height="24" background="#fff" />
+                    </a>
+                  </div>
+                )}
+                {cyber && (
+                  <div className="mr-2">
+                    <a target="_blank" rel="noreferrer" href={cyber} className="mt-1 block">
+                      <social.cyber.icon width="24" background="#fff" />
+                    </a>
+                  </div>
+                )}
+                {foundation && (
+                  <div className="mr-2">
+                    <a target="_blank" rel="noreferrer" href={foundation} className="mt-1 block">
+                      <social.foundation.icon width="24" background="#fff" />
+                    </a>
+                  </div>
+                )}
+                {streetArt && (
+                  <div className="mr-2">
+                    <a target="_blank" rel="noreferrer" href={streetArt} className="mt-1 block">
+                      <social.streetArt.icon width="24" background="#fff" />
+                    </a>
+                  </div>
+                )}
+              </div>*/}
+            </div>
+            <div className="text-md mb-4 text-gray-400">{title}</div>
+            {/*<div className="text-neutral-500">{bio}</div>*/}
+          </div>
+
+          <div className="">
             <Profile />
           </div>
+        </div>
+
 
       </div>
     )
@@ -256,8 +260,8 @@ const Team = () => {
 
   return (
     <Layout>
-      <div className="mt-40">
-        <p className={`text-center tracking-wide text-3xl font-bold text-gray-400 mb-20`} >
+      <div className="lg:mt-40 mt-20">
+        <p className={`text-center tracking-wide text-3xl font-bold text-gray-400 lg:mb-20 mb-10`} >
           The Team
         </p>
         <div className="mx-auto max-w-6xl grid sm:auto-cols-auto lg:grid-cols-2 ">
