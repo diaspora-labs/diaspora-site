@@ -260,7 +260,7 @@ const Team = () => {
         <p className={`text-center tracking-wide text-3xl font-bold text-gray-400 mb-20`} >
           The Team
         </p>
-        <div className="space-x-6 mx-auto max-w-6xl grid grid-rows-4 grid-flow-col gap-4 lg:grid-cols-2 ">
+        <div className="space-x-6 mx-auto max-w-6xl grid grid-rows-4 sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person, i) => (
             <Person key={i} {...person} />
           ))}
