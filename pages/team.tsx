@@ -31,7 +31,7 @@ const Team = () => {
     streetArt?: string,
   }) => {
     return (
-      <div className="mb-5 flex flex-col items-center md:flex-row border-2 rounded-[40px] border-neutral-800">
+      <div className="ml-10 mb-5 flex flex-col items-center md:flex-row border-2 rounded-[40px] border-neutral-800">
         <div className="mb-5 mt-5 ml-7">
           <div
             style={{ backgroundImage: `url(${image})` }}
@@ -260,7 +260,7 @@ const Team = () => {
         <p className={`text-center tracking-wide text-3xl font-bold text-gray-400 mb-20`} >
           The Team
         </p>
-        <div className="space-x-6 mx-auto max-w-6xl grid grid-rows-4 sm:auto-cols-auto lg:grid-cols-2 ">
+        <div className="mx-auto max-w-6xl grid sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person, i) => (
             <Person key={i} {...person} />
           ))}
