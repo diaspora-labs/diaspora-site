@@ -15,12 +15,12 @@ html {
 
 .roadmap-animation {
   width: 100vw;
-  min-height: 100%;
-  max-height: 740vh;
+  min-height: 100vh;
+  max-height: 640vh;
   overflow: hidden;
   position: absolute;
   top: 0px;
-  padding-top: 180px;
+  padding-top: 280px;
   background-color: #7134fe;
   z-index: -1;
 }
@@ -48,13 +48,22 @@ html {
   margin: 6px 0px;
 }
 
-.roadmap-section-title {
+.roadmap-page-title {
   text-align: center;
   font: normal normal medium 18px/22px Korolev;
   letter-spacing: 0.36px;
   color: #ffffff;
   margin-top: 90px;
   padding-top: 20px;
+}
+
+.roadmap-section-title {
+  text-align: left;
+  letter-spacing: 0.36px;
+  color: #ffffff;
+  margin-top: 85vh;
+  padding-top: 20px;
+  font: normal normal bold 60px/62px Korolev;
 }
 
 .roadmap-section-title-smaller {
@@ -86,16 +95,16 @@ html {
 }
 
 .roadmap-section-list-text {
-  margin: 10px 0px;
-  text-align: center;
-  font: normal normal medium 18px/22px Korolev;
+  margin: 14px 0px;
+  text-align: left;
+  font: normal normal bold 20px/19px Korolev;
   letter-spacing: 0.36px;
   color: #ffffff;
 }
 
 .right-section {
-  margin-right: 20%;
-  margin-left: 45%;
+  margin-right: 10%;
+  margin-left: 55%;
   width: 35%;
 }
 
