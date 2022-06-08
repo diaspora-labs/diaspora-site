@@ -1,21 +1,30 @@
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { useParallax } from "react-scroll-parallax"
-import BackgroundSVG from "../public/images/bg-pattern.svg"
 import lottie from "lottie-web"
+import { useParallax } from "react-scroll-parallax"
+import VisibilitySensor from "react-visibility-sensor"
 // @ts-ignore
 import { Roll, Flip } from "react-reveal"
 
 import animation from "../roadmap-animation/data.json"
+import BackgroundSVG from "../public/images/bg-pattern.svg"
 
 const Roadmap = () => {
-  // start animation
+  // initialize active index
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  // update pagination on scroll
+  function onChange(isVisible: any, index: number) {
+    setActiveIndex(index)
+  }
+
+  // laod animation
   useEffect(() => {
     var animDuration = 4000
     const anim = lottie.loadAnimation({
       container: document.querySelector(".roadmap-animation") as HTMLElement,
       animationData: animation,
-      renderer: "svg", // "canvas", "html"
+      renderer: "svg",
       loop: false,
       autoplay: false,
     })
@@ -23,14 +32,11 @@ const Roadmap = () => {
     function animatebodymovin(duration: number) {
       const scrollPosition = window.scrollY
       const maxFrames = anim.totalFrames
-
       const frame = (maxFrames / 100) * (scrollPosition / (duration / 100))
-
       anim.goToAndStop(frame, true)
     }
 
     const onScroll = () => {
-      console.log("Scrolling")
       animatebodymovin(animDuration)
     }
 
@@ -42,8 +48,7 @@ const Roadmap = () => {
     }
   }, [])
 
-  // initialize active index
-  const [activeIndex, setActiveIndex] = useState(0)
+  // create page sections
   const sections = [
     {
       title: "The Journey",
@@ -80,8 +85,8 @@ const Roadmap = () => {
   const pageTitle = `A "Nonlinear" Journey Through Lineage and Future`
   const pageSubTitle = `Transparency is key for the Diaspora DAO. It is important that we share our journey as we build the community. Decentralization is not only a part of the foundation of the organization, but also the pathway through lineage. Diaspora’s journey to building a DAO, as well as every members own journey within it, is a non linear path. We will continue to iterate and learn from the past to create pathways for the future.`
 
+  // background parallax element
   const parallax = useParallax<HTMLDivElement>({
-    // rotate: [0, 360],
     translateY: ["-400px", "0px"],
   })
 
@@ -100,7 +105,7 @@ const Roadmap = () => {
               className={`${activeIndex === index ? "roadmap-pagnation-dot-active" : "roadmap-pagnation-dot-unactive"}`}
               onClick={() => {
                 setActiveIndex(index)
-                !!refArray.current && refArray.current[index].scrollIntoView()
+                !!refArray.current && refArray.current[index].scrollIntoView({ block: "end", inline: "nearest" })
               }}
             />
           )
@@ -113,20 +118,22 @@ const Roadmap = () => {
 
       {sections.map((item, index) => {
         return (
-          <div ref={addToRefs} className={index % 2 === 0 ? "right-section" : "left-section"} key={index}>
-            <Flip left={index % 2 === 1} right={index % 2 === 0}>
-              <p className="roadmap-section-title text-4xl font-bold">{item.title}</p>
-            </Flip>
-            <Roll left={index % 2 === 1} right={index % 2 === 0}>
-              {item.list.map((item) => {
-                return (
-                  <div key={item}>
-                    <p className="roadmap-section-list-text font-bold">{item}</p>
-                  </div>
-                )
-              })}
-            </Roll>
-          </div>
+          <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
+            <div ref={addToRefs} className={index % 2 === 0 ? "right-section" : "left-section"}>
+              <Flip left={index % 2 === 1} right={index % 2 === 0}>
+                <p className="roadmap-section-title text-4xl font-bold">{item.title}</p>
+              </Flip>
+              <Roll left={index % 2 === 1} right={index % 2 === 0}>
+                {item.list.map((item) => {
+                  return (
+                    <div key={item}>
+                      <p className="roadmap-section-list-text font-bold">{item}</p>
+                    </div>
+                  )
+                })}
+              </Roll>
+            </div>
+          </VisibilitySensor>
         )
       })}
     </div>
