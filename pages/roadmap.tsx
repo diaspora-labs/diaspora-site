@@ -3,7 +3,6 @@ import Image from "next/image"
 import lottie from "lottie-web"
 import { useParallax } from "react-scroll-parallax"
 import VisibilitySensor from "react-visibility-sensor"
-// @ts-ignore
 import { Roll, Flip } from "react-reveal"
 
 import animation from "../roadmap-animation/data.json"
