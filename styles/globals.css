@@ -6,7 +6,16 @@ html {
   scroll-behavior: smooth;
 }
 
+.parallax {
+  height: 100%;
+  width: 100vw;
+  position: fixed;
+  top: 150px;
+  opacity: 0.1;
+}
+
 .roadmap-background {
+  position: relative;
   width: 100vw;
   min-height: 100vh;
   height: 100%;

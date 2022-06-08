@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
+import Image from "next/image"
+import { useParallax } from "react-scroll-parallax"
+import BackgroundSVG from "../public/images/bg-pattern.svg"
 import lottie from "lottie-web"
 // @ts-ignore
 import { Roll, Flip } from "react-reveal"
@@ -8,7 +11,7 @@ import animation from "../roadmap-animation/data.json"
 const Roadmap = () => {
   // start animation
   useEffect(() => {
-    var animDuration = 4100
+    var animDuration = 4000
     const anim = lottie.loadAnimation({
       container: document.querySelector(".roadmap-animation") as HTMLElement,
       animationData: animation,
@@ -77,9 +80,18 @@ const Roadmap = () => {
   const pageTitle = `A "Nonlinear" Journey Through Lineage and Future`
   const pageSubTitle = `Transparency is key for the Diaspora DAO. It is important that we share our journey as we build the community. Decentralization is not only a part of the foundation of the organization, but also the pathway through lineage. Diaspora’s journey to building a DAO, as well as every members own journey within it, is a non linear path. We will continue to iterate and learn from the past to create pathways for the future.`
 
+  const parallax = useParallax<HTMLDivElement>({
+    // rotate: [0, 360],
+    translateY: ["-400px", "0px"],
+  })
+
   // ui components
   return (
     <div className="roadmap-background">
+      <div className="parallax" ref={parallax.ref}>
+        <Image src={BackgroundSVG} alt="DISAPORA" layout="fill" />
+      </div>
+
       <div className="roadmap-pagnation">
         {sections.map((item: any, index: number) => {
           return (

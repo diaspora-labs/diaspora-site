@@ -27,6 +27,7 @@
     "react-lottie": "^1.2.3",
     "react-pdf": "^5.7.1",
     "react-reveal": "^1.2.2",
+    "react-scroll-parallax": "^3.2.0",
     "sal.js": "^0.8.5",
     "three": "^0.140.2"
   },
