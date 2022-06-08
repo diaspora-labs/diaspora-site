@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react"
 import lottie from "lottie-web"
 // @ts-ignore
-import { Roll } from "react-reveal"
+import { Roll, Flip } from "react-reveal"
 
 import animation from "../roadmap-animation/data.json"
 
@@ -79,9 +79,11 @@ const Roadmap = () => {
 
       {sections.map((item, index) => {
         return (
-          <Roll left={index % 2 === 1} right={index % 2 === 0} key={index}>
-            <div ref={addToRefs} className={index % 2 === 0 ? "right-section" : "left-section"}>
+          <div ref={addToRefs} className={index % 2 === 0 ? "right-section" : "left-section"} key={index}>
+            <Flip left={index % 2 === 1} right={index % 2 === 0}>
               <p className="roadmap-section-title text-4xl font-bold">{item.title}</p>
+            </Flip>
+            <Roll left={index % 2 === 1} right={index % 2 === 0}>
               {item.list.map((item) => {
                 return (
                   <div key={item}>
@@ -89,8 +91,8 @@ const Roadmap = () => {
                   </div>
                 )
               })}
-            </div>
-          </Roll>
+            </Roll>
+          </div>
         )
       })}
     </div>
