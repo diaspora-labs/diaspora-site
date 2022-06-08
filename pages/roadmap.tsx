@@ -8,13 +8,35 @@ import animation from "../roadmap-animation/data.json"
 const Roadmap = () => {
   // start animation
   useEffect(() => {
-    lottie.loadAnimation({
+    var animDuration = 4100
+    const anim = lottie.loadAnimation({
       container: document.querySelector(".roadmap-animation") as HTMLElement,
       animationData: animation,
       renderer: "svg", // "canvas", "html"
       loop: false,
-      autoplay: true,
+      autoplay: false,
     })
+
+    function animatebodymovin(duration: number) {
+      const scrollPosition = window.scrollY
+      const maxFrames = anim.totalFrames
+
+      const frame = (maxFrames / 100) * (scrollPosition / (duration / 100))
+
+      anim.goToAndStop(frame, true)
+    }
+
+    const onScroll = () => {
+      console.log("Scrolling")
+      animatebodymovin(animDuration)
+    }
+
+    document.addEventListener("scroll", onScroll)
+
+    return () => {
+      anim.destroy()
+      document.removeEventListener("scroll", onScroll)
+    }
   }, [])
 
   // initialize active index
