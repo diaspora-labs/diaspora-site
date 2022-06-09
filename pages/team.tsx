@@ -20,7 +20,6 @@ const Team = () => {
     cyber,
     foundation,
     streetArt,
-    currentKey
   }: {
     name: string
     bio: string
@@ -33,7 +32,6 @@ const Team = () => {
     cyber?: string
     foundation?: string
     streetArt?: string
-    currentKey: string
   }) => {
     
     return (
@@ -276,96 +274,96 @@ const Team = () => {
         </p>
         <div className="mx-auto max-w-6xl grid sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person, i) => (
-              <Person key={i} {...person} currentKey={i} /> 
+              <Person key={i} {...person} /> 
           ))}
 
-          {showModal &&
-                (<div  id="defaultModal" aria-hidden="true" className="flex flex-col items-center overflow-y-auto overflow-x-hidden  z-50 w-full md:inset-0 h-modal md:h-full">
-                  <div className="relative p-4 w-full max-w-[866px] h-full md:h-auto content-center ...">
-                      
-                      <div className="relative bg-[#9b9b9b] rounded-[2.5rem] shadow dark:bg-gray-700">
-
-                        <div className="relative">
-                          <div className="absolute top-10 right-7">
-                            <Profile  />
-                          </div>
-                        </div>
-
-                        <div  className="flex flex-col items-center lg:flex-row">
-
-                          <div className="mb-5 mt-5 lg:ml-7">
-                            <div
-                              style={{ backgroundImage: `url(${showPerson.image})` }}
-                              className={`h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
-                            ></div>
-                          </div>
-                          <div className="px-5 text-left py-20 pr-20">
-                            <div className="flex items-center">
-                              
-                              {/*<div className="ml-3 mt-[-3px] flex">
-                                {linkedIn && (
-                                  <div className="mr-2">
-                                    <a target="_blank" rel="noreferrer" href={linkedIn}>
-                                      <social.linkedIn.icon width="24" height="24" background="#fff" />
-                                    </a>
-                                  </div>
-                                )}
-                                {twitter && (
-                                  <div className="mr-2">
-                                    <a target="_blank" rel="noreferrer" href={twitter}>
-                                      <social.twitter.icon width="24" height="24" background="#fff" />
-                                    </a>
-                                  </div>
-                                )}
-                                {instagram && (
-                                  <div className="mr-2">
-                                    <a target="_blank" rel="noreferrer" href={instagram}>
-                                      <social.instagram.icon width="24" height="24" background="#fff" />
-                                    </a>
-                                  </div>
-                                )}
-                                {dribbble && (
-                                  <div className="mr-2">
-                                    <a target="_blank" rel="noreferrer" href={dribbble}>
-                                      <social.dribbble.icon width="24" height="24" background="#fff" />
-                                    </a>
-                                  </div>
-                                )}
-                                {cyber && (
-                                  <div className="mr-2">
-                                    <a target="_blank" rel="noreferrer" href={cyber} className="mt-1 block">
-                                      <social.cyber.icon width="24" background="#fff" />
-                                    </a>
-                                  </div>
-                                )}
-                                {foundation && (
-                                  <div className="mr-2">
-                                    <a target="_blank" rel="noreferrer" href={foundation} className="mt-1 block">
-                                      <social.foundation.icon width="24" background="#fff" />
-                                    </a>
-                                  </div>
-                                )}
-                                {streetArt && (
-                                  <div className="mr-2">
-                                    <a target="_blank" rel="noreferrer" href={streetArt} className="mt-1 block">
-                                      <social.streetArt.icon width="24" background="#fff" />
-                                    </a>
-                                  </div>
-                                )}
-                              </div>*/}
-                            </div>
-                            <div className="text-lg mb-1 text-xl text-black">{showPerson.name}</div>
-                            <div className="text-md mb-4 text-black">{showPerson.title}</div>
-                            <div className="text-black">{showPerson.bio}</div>
-                          </div>
-
-                        </div>
-
-                      </div>
-                  </div>
-                </div>) 
-              }
         </div>
+        {showModal &&
+          (<div  id="defaultModal" aria-hidden="true" className={`absolute top-[200px] inset-x-0 mt-50 flex flex-col items-center overflow-y-auto overflow-x-hidden z-50 w-full md:inset-x-0 h-modal md:h-full`}>
+            <div className="relative p-4 w-full max-w-[866px] h-full md:h-auto content-center ...">
+                
+                <div className="relative bg-[#9b9b9b] rounded-[2.5rem] shadow dark:bg-gray-700">
+
+                  <div className="relative">
+                    <div className="absolute top-10 right-7">
+                      <Profile  />
+                    </div>
+                  </div>
+
+                  <div  className="flex flex-col items-center lg:flex-row">
+
+                    <div className="mb-5 mt-5 lg:ml-7">
+                      <div
+                        style={{ backgroundImage: `url(${showPerson.image})` }}
+                        className={`h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
+                      ></div>
+                    </div>
+                    <div className="px-5 text-left py-20 pr-20">
+                      <div className="flex items-center">
+                        
+                        {/*<div className="ml-3 mt-[-3px] flex">
+                          {linkedIn && (
+                            <div className="mr-2">
+                              <a target="_blank" rel="noreferrer" href={linkedIn}>
+                                <social.linkedIn.icon width="24" height="24" background="#fff" />
+                              </a>
+                            </div>
+                          )}
+                          {twitter && (
+                            <div className="mr-2">
+                              <a target="_blank" rel="noreferrer" href={twitter}>
+                                <social.twitter.icon width="24" height="24" background="#fff" />
+                              </a>
+                            </div>
+                          )}
+                          {instagram && (
+                            <div className="mr-2">
+                              <a target="_blank" rel="noreferrer" href={instagram}>
+                                <social.instagram.icon width="24" height="24" background="#fff" />
+                              </a>
+                            </div>
+                          )}
+                          {dribbble && (
+                            <div className="mr-2">
+                              <a target="_blank" rel="noreferrer" href={dribbble}>
+                                <social.dribbble.icon width="24" height="24" background="#fff" />
+                              </a>
+                            </div>
+                          )}
+                          {cyber && (
+                            <div className="mr-2">
+                              <a target="_blank" rel="noreferrer" href={cyber} className="mt-1 block">
+                                <social.cyber.icon width="24" background="#fff" />
+                              </a>
+                            </div>
+                          )}
+                          {foundation && (
+                            <div className="mr-2">
+                              <a target="_blank" rel="noreferrer" href={foundation} className="mt-1 block">
+                                <social.foundation.icon width="24" background="#fff" />
+                              </a>
+                            </div>
+                          )}
+                          {streetArt && (
+                            <div className="mr-2">
+                              <a target="_blank" rel="noreferrer" href={streetArt} className="mt-1 block">
+                                <social.streetArt.icon width="24" background="#fff" />
+                              </a>
+                            </div>
+                          )}
+                        </div>*/}
+                      </div>
+                      <div className="mb-1 text-2xl text-black">{showPerson.name}</div>
+                      <div className="text-lg mb-4 text-black">{showPerson.title}</div>
+                      <div className="text-sm text-black">{showPerson.bio}</div>
+                    </div>
+
+                  </div>
+
+                </div>
+            </div>
+          </div>) 
+        }
       </div>
 
 
