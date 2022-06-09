@@ -60,7 +60,7 @@ html {
 
 .roadmap-page-title {
   text-align: center;
-  font: normal normal medium 18px/22px Korolev;
+  font: normal normal bold 45px/54px Korolev;
   letter-spacing: 0.36px;
   color: #ffffff;
   margin-top: 90px;
@@ -68,12 +68,13 @@ html {
 }
 
 .roadmap-section-title {
+  font: normal normal bold 60px/64px Korolev;
+  letter-spacing: 1.2px;
   text-align: left;
   letter-spacing: 0.36px;
   color: #ffffff;
   margin-top: 85vh;
   padding-top: 20px;
-  font: normal normal bold 60px/62px Korolev;
 }
 
 .roadmap-section-title-smaller {
