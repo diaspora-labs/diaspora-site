@@ -6,6 +6,7 @@ import { OnCyber, StreetArt, Profile } from "../components/Icons"
 
 const Team = () => {
   const [showModal, setShowModal] = React.useState(false);
+  const [showPerson, setPerson] = React.useState({});
 
   const Person = ({
     name,
@@ -34,7 +35,7 @@ const Team = () => {
     streetArt?: string
     currentKey: string
   }) => {
-
+    
     return (
       <div >
         <div className="relative">
@@ -44,7 +45,7 @@ const Team = () => {
         </div>
 
 
-        <div onClick={() => setShowModal(true)}  className="flex flex-col items-center lg:flex-row">
+        <div onClick={() => {setShowModal(true), setPerson({...showPerson,name: name, bio: bio,image: image,title: title,linkedIn: linkedIn,twitter: twitter,instagram: instagram,dribbble: dribbble,cyber: cyber,foundation: foundation,streetArt: streetArt,})} }  className="flex flex-col items-center lg:flex-row">
 
           <div className="mb-5 mt-5 lg:ml-7">
             <div
@@ -266,7 +267,7 @@ const Team = () => {
       linkedIn: "https://www.linkedin.com/in/rashawn-evans-41b782a0/",
     },
   ]
-
+  console.log("showPerson ", showPerson)
   return (
     <Layout>
       <div className="lg:mt-40 mt-20">
@@ -275,13 +276,14 @@ const Team = () => {
         </p>
         <div className="mx-auto max-w-6xl grid sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person, i) => (
-            <>
-              <Person key={i} {...person} currentKey={i} />
-              {showModal &&
-                (<div  id="defaultModal" aria-hidden="true" className=" overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-                  <div className="relative p-4 w-full max-w-2xl h-full md:h-auto content-center ...">
+              <Person key={i} {...person} currentKey={i} /> 
+          ))}
+
+          {showModal &&
+                (<div  id="defaultModal" aria-hidden="true" className="flex flex-col items-center overflow-y-auto overflow-x-hidden  z-50 w-full md:inset-0 h-modal md:h-full">
+                  <div className="relative p-4 w-full max-w-[866px] h-full md:h-auto content-center ...">
                       
-                      <div className="relative bg-[#9b9b9b] rounded-lg shadow dark:bg-gray-700">
+                      <div className="relative bg-[#9b9b9b] rounded-[2.5rem] shadow dark:bg-gray-700">
 
                         <div className="relative">
                           <div className="absolute top-10 right-7">
@@ -293,7 +295,7 @@ const Team = () => {
 
                           <div className="mb-5 mt-5 lg:ml-7">
                             <div
-                              style={{ backgroundImage: `url(${person.image})` }}
+                              style={{ backgroundImage: `url(${showPerson.image})` }}
                               className={`h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
                             ></div>
                           </div>
@@ -352,9 +354,9 @@ const Team = () => {
                                 )}
                               </div>*/}
                             </div>
-                            <div className="text-lg mb-1 text-xl text-black">{person.name}</div>
-                            <div className="text-md mb-4 text-black">{person.title}</div>
-                            <div className="text-black">{person.bio}</div>
+                            <div className="text-lg mb-1 text-xl text-black">{showPerson.name}</div>
+                            <div className="text-md mb-4 text-black">{showPerson.title}</div>
+                            <div className="text-black">{showPerson.bio}</div>
                           </div>
 
                         </div>
@@ -363,8 +365,6 @@ const Team = () => {
                   </div>
                 </div>) 
               }
-            </>
-          ))}
         </div>
       </div>
 
