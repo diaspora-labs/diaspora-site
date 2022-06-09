@@ -272,14 +272,14 @@ const Team = () => {
         <p className={`text-center tracking-wide text-3xl font-bold text-gray-400 lg:mb-20 mb-10`} >
           The Team
         </p>
-        <div className="mx-auto max-w-6xl grid sm:auto-cols-auto lg:grid-cols-2 ">
+        <div className="backdrop-blur-sm mx-auto max-w-6xl grid sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person, i) => (
               <Person key={i} {...person} /> 
           ))}
 
         </div>
         {showModal &&
-          (<div  id="defaultModal" aria-hidden="true" className={`absolute top-[200px] inset-x-0 mt-50 flex flex-col items-center overflow-y-auto overflow-x-hidden z-50 w-full md:inset-x-0 h-modal md:h-full`}>
+          (<div  id="defaultModal" aria-hidden="true" className={`backdrop-blur-lg absolute top-[200px] inset-x-0 mt-50 flex flex-col items-center overflow-y-auto overflow-x-hidden z-50 w-full md:inset-x-0 h-modal md:h-full`}>
             <div className="relative p-4 w-full max-w-[866px] h-full md:h-auto content-center ...">
                 
                 <div className="relative bg-[#9b9b9b] rounded-[2.5rem] shadow dark:bg-gray-700">
