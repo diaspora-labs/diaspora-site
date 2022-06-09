@@ -8,7 +8,6 @@ const Team = () => {
   const [showModal, setShowModal] = React.useState(false);
 
   const Person = ({
-    id,
     name,
     bio,
     image,
@@ -22,7 +21,6 @@ const Team = () => {
     streetArt,
     currentKey
   }: {
-    id: string
     name: string
     bio: string
     image: string
@@ -36,13 +34,11 @@ const Team = () => {
     streetArt?: string
     currentKey: string
   }) => {
-    console.log('currentKey ', currentKey)
-    console.log('id ', id)
-    console.log('id ', id === currentKey)
+
     return (
       <div >
         {showModal &&
-          (<div id={{currentKey}} aria-hidden="true" className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+          (<div id="defaultModal" aria-hidden="true" className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
             <div className="relative p-4 w-full max-w-2xl h-full md:h-auto">
                 
                 <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -365,7 +361,7 @@ const Team = () => {
         </p>
         <div className="mx-auto max-w-6xl grid sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person, i) => (
-            <Person key={i+1} {...person} currentKey={i + 1} />
+            <Person key={i} {...person} currentKey={i} />
           ))}
         </div>
       </div>
