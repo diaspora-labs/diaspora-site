@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       <div className="fixed inset-0 z-0">
         {/* @ts-ignore */}
         <Suspense fallback={null} r3f>
-          {/*<GoldMaskLogo />*/}
+          <GoldMaskLogo />
         </Suspense>
       </div>
 
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         <div className="flex grow flex-col p-10">
           <NavHeader />
 
-          <div className="grid h-full grow grid-cols-4">
+          <div className="md:grid md:h-full md:grow md:grid-cols-4 sm:text-center">
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
               <div
                 className="text-5xl font-light leading-tight text-neutral-600"
