@@ -286,8 +286,8 @@ const Team = () => {
 
                   <div className="relative">
                     <div className="absolute top-10 right-7">
-                      <button onClick={() => {setShowModal(false) }} type="button" class="text-black bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
-                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+                      <button onClick={() => {setShowModal(false) }} type="button" className="text-black bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                        <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
                       </button>
                     </div>
                   </div>
@@ -297,7 +297,7 @@ const Team = () => {
                     <div className="mb-5 mt-5 lg:ml-7">
                       <div
                         style={{ backgroundImage: `url(${showPerson.image})` }}
-                        className={`h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
+                        className={`h-[100px] w-[100px] overflow-hidden rounded-full bg-cover bg-top`}
                       ></div>
                     </div>
                     <div className="px-5 text-left py-20 pr-20">
