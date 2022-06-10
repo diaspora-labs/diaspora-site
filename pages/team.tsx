@@ -291,19 +291,20 @@ const Team = () => {
                     </div>
                   </div>
 
-                  <div  className="flex flex-col items-center lg:flex-row">
+                  <div className="flex flex-col items-center lg:flex-row">
 
-                    <div className="mb-5 mt-5 mr-5 lg:ml-7">
+                    <div className="lg:mb-5 lg:mt-5 lg:mr-5 lg:ml-7 mb-5 mt-9 mr-5 ml-7">
                       <div
                         style={{ backgroundImage: `url(${showPerson.image})` }}
                         className={`h-[132px] w-[132px] overflow-hidden rounded-full bg-cover bg-top`}
                       ></div>
                     </div>
-                    <div className="px-5 text-left py-20 pr-20">
+
+                    <div className="lg:px-5 lg:text-left lg:py-20 lg:pr-20 text-center px-10 pb-10">
                       
                       <div className="text-2xl text-black">{showPerson.name}</div>
-                      <div className="text-md mb-4 text-black">{showPerson.title}</div>
-                      <div className="mr-20 text-sm text-black">{showPerson.bio}</div>
+                      <div className="text-md lg:mb-4 mb-5 text-black">{showPerson.title}</div>
+                      <div className="lg:mr-20 text-sm text-black">{showPerson.bio}</div>
 
                       <div className="mt-7 flex items-center">
                         
