@@ -293,7 +293,7 @@ const Team = () => {
 
                   <div className="flex flex-col items-center lg:flex-row">
 
-                    <div className="lg:mb-5 lg:mt-5 lg:mr-5 lg:ml-7 mb-5 mt-9 mr-5 ml-7">
+                    <div className="lg:mb-5 lg:mt-5 lg:mr-5 lg:ml-7 mb-5 mt-9 mr-7 ml-7">
                       <div
                         style={{ backgroundImage: `url(${showPerson.image})` }}
                         className={`h-[132px] w-[132px] overflow-hidden rounded-full bg-cover bg-top`}
@@ -306,53 +306,53 @@ const Team = () => {
                       <div className="text-md lg:mb-4 mb-5 text-black">{showPerson.title}</div>
                       <div className="lg:mr-20 text-sm text-black">{showPerson.bio}</div>
 
-                      <div className="mt-7 flex items-center">
+                      <div className="mt-7 flex lg:items-center lg:justify-start justify-center">
                         
                         <div className="mt-[-3px] flex">
                           {showPerson.linkedIn && (
-                            <div className="mr-2">
+                            <div className="lg:mr-2 mr-5">
                               <a target="_blank" rel="noreferrer" href={showPerson.linkedIn}>
                                 <social.linkedIn.icon width="24" height="24" background="#000" />
                               </a>
                             </div>
                           )}
                           {showPerson.twitter && (
-                            <div className="mr-2">
+                            <div className="lg:mr-2 mr-5">
                               <a target="_blank" rel="noreferrer" href={showPerson.twitter}>
                                 <social.twitter.icon width="24" height="24" background="#000" />
                               </a>
                             </div>
                           )}
                           {showPerson.instagram && (
-                            <div className="mr-2">
+                            <div className="lg:mr-2 mr-5">
                               <a target="_blank" rel="noreferrer" href={showPerson.instagram}>
                                 <social.instagram.icon width="24" height="24" background="#000" />
                               </a>
                             </div>
                           )}
                           {showPerson.dribbble && (
-                            <div className="mr-2">
+                            <div className="lg:mr-2 mr-5">
                               <a target="_blank" rel="noreferrer" href={showPerson.dribbble}>
                                 <social.dribbble.icon width="24" height="24" background="#000" />
                               </a>
                             </div>
                           )}
                           {showPerson.cyber && (
-                            <div className="mr-2">
+                            <div className="lg:mr-2 mr-5">
                               <a target="_blank" rel="noreferrer" href={showPerson.cyber} className="mt-1 block">
                                 <social.cyber.icon width="24" background="#000" />
                               </a>
                             </div>
                           )}
                           {showPerson.foundation && (
-                            <div className="mr-2">
+                            <div className="lg:mr-2 mr-5">
                               <a target="_blank" rel="noreferrer" href={showPerson.foundation} className="mt-1 block">
                                 <social.foundation.icon width="24" background="#000" />
                               </a>
                             </div>
                           )}
                           {showPerson.streetArt && (
-                            <div className="mr-2">
+                            <div className="lg:mr-2 mr-5">
                               <a target="_blank" rel="noreferrer" href={showPerson.streetArt} className="mt-1 block">
                                 <social.streetArt.icon width="24" background="#000" />
                               </a>
