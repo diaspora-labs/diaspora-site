@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout showLogo>
-      <div className="fixed inset-0 z-0">
+      <div className="fixed inset-0 md:z-0">
         {/* @ts-ignore */}
         <Suspense fallback={null} r3f>
           <GoldMaskLogo />
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
           <div className="md:grid md:h-full md:grow md:grid-cols-4 sm:text-center">
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
               <div
-                className="text-5xl font-light leading-tight text-neutral-600"
+                className="text-5xl font-light leading-tight text-neutral-600 text-center"
                 data-sal="slide-up"
                 data-sal-delay="300"
               >
