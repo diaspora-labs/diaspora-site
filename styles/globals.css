@@ -6,13 +6,8 @@ html {
   scroll-behavior: smooth;
 }
 
-.svgImage {
-  max-width: 50vw;
-}
-
 .parallax {
-  /* min-height: 100%; */
-  width: 100vw;
+  min-height: 500%;
   position: fixed;
   top: 0;
   opacity: 0.1;
@@ -23,13 +18,11 @@ html {
   width: 100vw;
   min-height: 100vh;
   height: 100%;
-  /* overflow: scroll; */
-  /* background-color: blue; */
 }
 
 .roadmap-animation {
-  width: 100vw;
-  min-height: 100vh;
+  min-width: 100vw;
+  min-height: 640vh;
   max-height: 640vh;
   overflow: hidden;
   position: absolute;

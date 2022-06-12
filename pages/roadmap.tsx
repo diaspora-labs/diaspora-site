@@ -93,10 +93,7 @@ const Roadmap = () => {
   return (
     <div className="roadmap-background">
       <div className="parallax" ref={parallax.ref}>
-        <Image className="svgImage" src={BackgroundSVG} alt="diaspora" layout="fixed" />
-        <Image className="svgImage" src={BackgroundSVG} alt="diaspora" layout="fixed" />
-        <Image className="svgImage" src={BackgroundSVG} alt="diaspora" layout="fixed" />
-        {/* <Image src={BackgroundSVG} alt="diaspora" layout="responsive" /> */}
+        <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
       </div>
 
       <div className="roadmap-pagnation">
