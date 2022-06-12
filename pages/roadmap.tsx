@@ -86,14 +86,17 @@ const Roadmap = () => {
 
   // background parallax element
   const parallax = useParallax<HTMLDivElement>({
-    translateY: ["-400px", "0px"],
+    speed: -10,
   })
 
   // ui components
   return (
     <div className="roadmap-background">
       <div className="parallax" ref={parallax.ref}>
-        <Image src={BackgroundSVG} alt="diaspora" layout="fill" />
+        <Image className="svgImage" src={BackgroundSVG} alt="diaspora" layout="fixed" />
+        <Image className="svgImage" src={BackgroundSVG} alt="diaspora" layout="fixed" />
+        <Image className="svgImage" src={BackgroundSVG} alt="diaspora" layout="fixed" />
+        {/* <Image src={BackgroundSVG} alt="diaspora" layout="responsive" /> */}
       </div>
 
       <div className="roadmap-pagnation">
@@ -116,7 +119,7 @@ const Roadmap = () => {
       <p className="roadmap-sub-text">{pageSubTitle}</p>
 
       {sections.map((item, index) => {
-        const isEven = index % 2 === 0 
+        const isEven = index % 2 === 0
         const isOdd = !isEven
         return (
           <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
