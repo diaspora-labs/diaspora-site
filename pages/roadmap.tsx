@@ -93,7 +93,7 @@ const Roadmap = () => {
   return (
     <div className="roadmap-background">
       <div className="parallax" ref={parallax.ref}>
-        <Image src={BackgroundSVG} alt="DISAPORA" layout="fill" />
+        <Image src={BackgroundSVG} alt="diaspora" layout="fill" />
       </div>
 
       <div className="roadmap-pagnation">
@@ -116,13 +116,15 @@ const Roadmap = () => {
       <p className="roadmap-sub-text">{pageSubTitle}</p>
 
       {sections.map((item, index) => {
+        const isEven = index % 2 === 0 
+        const isOdd = !isEven
         return (
           <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
-            <div ref={addToRefs} className={index % 2 === 0 ? "right-section" : "left-section"}>
-              <Flip left={index % 2 === 1} right={index % 2 === 0}>
+            <div ref={addToRefs} className={isEven ? "right-section" : "left-section"}>
+              <Flip left={isOdd} right={isEven}>
                 <p className="roadmap-section-title text-4xl font-bold">{item.title}</p>
               </Flip>
-              <Roll left={index % 2 === 1} right={index % 2 === 0}>
+              <Roll left={isOdd} right={isEven}>
                 {item.list.map((item) => {
                   return (
                     <div key={item}>
