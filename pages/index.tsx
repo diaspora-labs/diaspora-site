@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout showLogo>
-      <div className="fixed inset-0 md:z-0">
+      <div className="md:fixed md:mt-10 inset-0 md:z-0">
         {/* @ts-ignore */}
         <Suspense fallback={null} r3f>
           <GoldMaskLogo />
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
           <div className="md:grid md:h-full md:grow md:grid-cols-4 sm:text-center">
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
               <div
-                className="text-5xl font-light leading-tight text-neutral-600 text-center"
+                className="md:text-5xl text-4xl font-light leading-tight text-neutral-600 text-center"
                 data-sal="slide-up"
                 data-sal-delay="300"
               >
@@ -51,12 +51,12 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div
-              className="col-span-2 mx-20 flex h-full flex-col items-end justify-center"
+              className="col-span-2 md:mx-20 md:flex h-full md:flex-col items-end justify-center"
               data-sal="slide-up"
               data-sal-delay="500"
             >
               <div className="flex flex-col items-center justify-center space-y-6">
-                <div className="mt-[80px] text-center text-4xl font-light">
+                <div className="sm:hidden mt-[80px] text-center text-4xl font-light">
                   Great things
                   <br />
                   are coming

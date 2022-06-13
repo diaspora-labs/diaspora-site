@@ -2,7 +2,6 @@ import React from "react"
 
 export function Instagram(props: { color?: string }) {
   const color = props.color ?? "#7233ff"
-  console.log("color ", color)
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="13.488" height="13.488" viewBox="0 0 13.488 13.488">
       <defs>
