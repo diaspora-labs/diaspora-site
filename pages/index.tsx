@@ -95,12 +95,13 @@ const Home: NextPage = () => {
           </div> 
 
           {showModal && <NavHeader /> }
-          <Team showModal={showModal} setShowModal={setShowModal} />
 
+          <Team showModal={showModal} setShowModal={setShowModal} />
         </div>
 
-        <HomeFooter />
       </section>
+      
+      <HomeFooter />
     </Layout>
   )
 }
