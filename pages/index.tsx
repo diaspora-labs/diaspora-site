@@ -23,17 +23,18 @@ const Home: NextPage = () => {
   //     threshold: 0.1,
   //   })
   // })
-
+  const [showModal, setShowModal] = React.useState(false);
+  console.log('showModal ', showModal)
   return (
     <Layout showLogo>
-      <div className="md:fixed md:mt-10 inset-0 md:z-0">
+      <div className={["md:fixed md:mt-10 inset-0 md:z-0"], (showModal ? 'hidden' : undefined)}>
         {/* @ts-ignore */}
         <Suspense fallback={null} r3f>
           <GoldMaskLogo />
         </Suspense>
       </div>
 
-      <section className="pointer-events-auto z-10 flex h-full min-h-screen flex-col">
+      <section className={["pointer-events-auto z-10 flex h-full min-h-screen flex-col"], (showModal ? 'hidden' : undefined)}>
         <div className="flex grow flex-col p-10">
           <NavHeader />
 
@@ -81,20 +82,20 @@ const Home: NextPage = () => {
 
       <section className="pointer-events-auto z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800">
         <div className="flex grow flex-col p-10">
-          <div className={`mx-auto`}>
+          <div className={[`mx-auto`], (showModal ? 'hidden' : undefined)}>
             <img src="/images/logos/diaspora-team-logo.png" 
               alt="screenshot" 
               width="652" 
               height="172" />
           </div>
 
-          <div className={`container mx-auto mt-10 max-w-3xl`}>
+          <div className={[`container mx-auto mt-10 max-w-3xl`], (showModal && 'hidden')}>
             <p className={`text-center tracking-wide text-lg font-normal text-gray-400 `}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
             </p>
           </div>
-
-          <Team />
+          {showModal && <NavHeader />}
+          <Team showModal={showModal} setShowModal={setShowModal} />
 
         </div>
 

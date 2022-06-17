@@ -4,10 +4,9 @@ import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
 import { OnCyber, StreetArt, Profile } from "../components/Icons"
 
-const Team = () => {
-  const [showModal, setShowModal] = React.useState(false);
+const Team = (props) => {
+  // const [showModal, props.setShowModal] = React.useState(false);
   const [showPerson, setPerson] = React.useState({});
-
   const Person = ({
     name,
     bio,
@@ -33,7 +32,7 @@ const Team = () => {
     foundation?: string
     streetArt?: string
   }) => {
-    
+    // console.log('showPerson ', showPerson)
     return (
       <div >
         <div className="relative">
@@ -43,7 +42,7 @@ const Team = () => {
         </div>
 
 
-        <div onClick={() => {setShowModal(true), setPerson({...showPerson,name: name, bio: bio,image: image,title: title,linkedIn: linkedIn,twitter: twitter,instagram: instagram,dribbble: dribbble,cyber: cyber,foundation: foundation,streetArt: streetArt,})} }  className="flex flex-col items-center lg:flex-row">
+        <div onClick={() => { setPerson({...showPerson,name: name, bio: bio,image: image,title: title,linkedIn: linkedIn,twitter: twitter,instagram: instagram,dribbble: dribbble,cyber: cyber,foundation: foundation,streetArt: streetArt,}), props.setShowModal(true)} }  className="flex flex-col items-center lg:flex-row">
 
           <div className="mb-5 mt-5 lg:ml-7">
             <div
@@ -277,7 +276,7 @@ const Team = () => {
           ))}
 
         </div>
-        {showModal &&
+        {props.showModal &&
           (<div  id="defaultModal" aria-hidden="true" className={`backdrop-blur-lg absolute top-[200px] inset-x-0 mt-50 flex flex-col items-center overflow-y-auto overflow-x-hidden z-50 w-full md:inset-x-0 h-modal md:h-full`}>
             <div className="relative p-4 w-full max-w-[866px] h-full md:h-auto content-center ...">
                 
@@ -285,7 +284,7 @@ const Team = () => {
 
                   <div className="relative">
                     <div className="absolute top-10 right-7">
-                      <button onClick={() => {setShowModal(false) }} type="button" className="text-black bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                      <button onClick={() => {props.setShowModal(false) }} type="button" className="text-black bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
                         <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>  
                       </button>
                     </div>
