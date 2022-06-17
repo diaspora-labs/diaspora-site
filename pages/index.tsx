@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         </Suspense>*/}
       </div>
 
-      {!showModal && <section className={"pointer-events-auto z-10 flex h-full min-h-screen flex-col"}>
+      <section className={(showModal ? 'md:hidden' : "pointer-events-auto z-10 flex h-full min-h-screen flex-col")}>
         <div className="flex grow flex-col p-10">
           <NavHeader />
 
@@ -77,7 +77,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </section> }
+      </section> 
 
       <section className="pointer-events-auto z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800">
         <div className="flex grow flex-col p-10">
