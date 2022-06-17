@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       </div>
 
       <section className={(showModal ? 'md:hidden' : "pointer-events-auto z-10 flex h-full min-h-screen flex-col")}>
-        <div className="flex grow flex-col p-10">
+        <div className={["flex grow flex-col p-10"]}>
           <NavHeader />
 
           <div className="md:grid md:h-full md:grow md:grid-cols-4 sm:text-center">
@@ -81,18 +81,18 @@ const Home: NextPage = () => {
 
       <section className="pointer-events-auto z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800">
         <div className="flex grow flex-col p-10">
-          {!showModal && <div className={`mx-auto`}>
+          <div className={(showModal ? 'md:hidden' : 'mx-auto')}>
             <img src="/images/logos/diaspora-team-logo.png" 
               alt="screenshot" 
               width="652" 
               height="172" />
-          </div>}
+          </div>
 
-          {!showModal &&<div className={`container mx-auto mt-10 max-w-3xl`}>
+          <div className={(showModal ? 'md:hidden' : 'container mx-auto mt-10 max-w-3xl')}>
             <p className={`text-center tracking-wide text-lg font-normal text-gray-400 `}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
             </p>
-          </div> }
+          </div> 
 
           {showModal && <NavHeader /> }
           <Team showModal={showModal} setShowModal={setShowModal} />
