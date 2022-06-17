@@ -277,7 +277,7 @@ const Team = (props) => {
 
         </div>
         {props.showModal &&
-          (<div  id="defaultModal" aria-hidden="true" className={`backdrop-blur-lg absolute top-[200px] inset-x-0 mt-50 flex flex-col items-center overflow-y-auto overflow-x-hidden z-50 w-full md:inset-x-0 h-modal md:h-full`}>
+          (<div  id="defaultModal" aria-hidden="true" className={`backdrop-blur-lg absolute top-[150px] inset-x-0 mt-50 flex flex-col items-center overflow-y-auto overflow-x-hidden z-50 w-full md:inset-x-0 h-modal md:h-full`}>
             <div className="relative p-4 w-full max-w-[866px] h-full md:h-auto content-center ...">
                 
                 <div className="relative md:bg-[#9b9b9b] rounded-[2.5rem] shadow dark:bg-gray-700">
