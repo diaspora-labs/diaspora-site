@@ -1,7 +1,7 @@
 import "../styles/globals.css"
 import type { AppProps } from "next/app"
 import "@fontsource/roboto"
-import { ParallaxProvider, useParallax } from "react-scroll-parallax"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

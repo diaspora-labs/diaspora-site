@@ -95,7 +95,7 @@ const Roadmap = () => {
 
   // ui components
   return (
-    <div className="h-[300rem] bg-purple-med">
+    <div className="h-[350rem] w-[90rem] bg-purple-med">
       <div className="fixed top-0 w-1/6 opacity-10" ref={parallax.ref}>
         <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
       </div>
@@ -120,6 +120,7 @@ const Roadmap = () => {
       </div>
 
       <div className="roadmap-animation" />
+
       <div className="flex w-screen flex-col items-center">
         <p className="max-w-2xl p-8 pt-24 text-center text-5xl font-bold tracking-wide text-white">{pageTitle}</p>
         <p className="w-6/12 text-center text-white">{pageSubTitle}</p>
