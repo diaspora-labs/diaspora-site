@@ -2,20 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
 .roadmap-animation {
   min-width: 100vw;
   min-height: 630vh;
   max-height: 630vh;
   overflow: hidden;
   position: absolute;
+  float: left;
   top: 0px;
-  padding-top: 280px;
-  background-color: #7134fe;
-  z-index: -1;
+  padding-top: 320px;
 }
 
 @media (max-width: 800px) {
@@ -25,9 +20,8 @@ html {
     max-height: 140%;
     overflow: hidden;
     position: absolute;
+    float: left;
     top: 0px;
-    padding-top: 280px;
-    background-color: #7134fe;
-    z-index: -1;
+    padding-top: 320px;
   }
 }

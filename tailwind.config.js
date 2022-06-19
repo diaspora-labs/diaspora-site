@@ -12,6 +12,7 @@ module.exports = {
         purple: {
           light: "#7233ff",
           dark: "#451087",
+          med: "#7134fe",
         },
       },
     },

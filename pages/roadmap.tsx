@@ -34,7 +34,9 @@ const Roadmap = () => {
       const scrollPosition = window.scrollY
       const maxFrames = anim.totalFrames
       const frame = (maxFrames / 100) * (scrollPosition / (duration / 100))
-      anim.goToAndStop(frame, true)
+      if (frame <= maxFrames) {
+        anim.goToAndStop(frame, true)
+      }
     }
 
     const onScroll = () => {
@@ -93,7 +95,7 @@ const Roadmap = () => {
 
   // ui components
   return (
-    <div className="w-screen">
+    <div className="h-[300rem] bg-purple-med">
       <div className="fixed top-0 w-1/6 opacity-10" ref={parallax.ref}>
         <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
       </div>
