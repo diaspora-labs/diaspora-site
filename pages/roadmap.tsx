@@ -135,7 +135,7 @@ const Roadmap = () => {
               <div ref={addToRefs} className={isEven ? "mt-56 ml-96 w-1/3" : "mt-56 mr-96 w-1/3"}>
                 <div className={`${isEven ? "ml-24" : "mr-24"}`}>
                   <Flip left={isOdd} right={isEven}>
-                    <p className={`+ mt-96 text-5xl font-bold text-white`}>{item.title}</p>
+                    <p className={`mt-96 text-5xl font-bold text-white`}>{item.title}</p>
                   </Flip>
                   <Roll left={isOdd} right={isEven}>
                     {item.list.map((item) => {
