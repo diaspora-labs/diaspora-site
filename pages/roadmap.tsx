@@ -4,8 +4,10 @@ import lottie from "lottie-web"
 import { useParallax } from "react-scroll-parallax"
 import VisibilitySensor from "react-visibility-sensor"
 import { Roll, Flip } from "react-reveal"
+import { isMobile } from "react-device-detect"
 
 import animation from "../roadmap-animation/data.json"
+import mobileAnimation from "../roadmap-animation/data_mobile.json"
 import BackgroundSVG from "../public/images/bg-pattern.svg"
 
 const Roadmap = () => {
@@ -19,10 +21,10 @@ const Roadmap = () => {
 
   // laod animation
   useEffect(() => {
-    var animDuration = 4000
+    var animDuration = 3800
     const anim = lottie.loadAnimation({
       container: document.querySelector(".roadmap-animation") as HTMLElement,
-      animationData: animation,
+      animationData: isMobile ? mobileAnimation : animation,
       renderer: "svg",
       loop: false,
       autoplay: false,
@@ -91,17 +93,21 @@ const Roadmap = () => {
 
   // ui components
   return (
-    <div className="roadmap-background">
-      <div className="parallax" ref={parallax.ref}>
+    <div className="w-screen">
+      <div className="fixed top-0 w-1/6 opacity-10" ref={parallax.ref}>
         <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
       </div>
 
-      <div className="roadmap-pagnation">
+      <div className="fixed top-2/4 right-20 flex-col items-center">
         {sections.map((item: any, index: number) => {
           return (
-            <p
+            <div
               key={index}
-              className={`${activeIndex === index ? "roadmap-pagnation-dot-active" : "roadmap-pagnation-dot-unactive"}`}
+              className={`${
+                activeIndex === index
+                  ? "z-10 mb-3 h-2 w-2 rounded-full bg-yellow-300"
+                  : "z-10 mb-3 h-1 w-1 rounded-full bg-yellow-300"
+              }`}
               onClick={() => {
                 setActiveIndex(index)
                 !!refArray.current && refArray.current[index].scrollIntoView({ block: "end", inline: "nearest" })
@@ -112,31 +118,37 @@ const Roadmap = () => {
       </div>
 
       <div className="roadmap-animation" />
-      <p className="roadmap-page-title text-4xl font-bold">{pageTitle}</p>
-      <p className="roadmap-sub-text">{pageSubTitle}</p>
+      <div className="flex w-screen flex-col items-center">
+        <p className="max-w-2xl p-8 pt-24 text-center text-5xl font-bold tracking-wide text-white">{pageTitle}</p>
+        <p className="w-6/12 text-center text-white">{pageSubTitle}</p>
+      </div>
 
-      {sections.map((item, index) => {
-        const isEven = index % 2 === 0
-        const isOdd = !isEven
-        return (
-          <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
-            <div ref={addToRefs} className={isEven ? "right-section" : "left-section"}>
-              <Flip left={isOdd} right={isEven}>
-                <p className="roadmap-section-title text-4xl font-bold">{item.title}</p>
-              </Flip>
-              <Roll left={isOdd} right={isEven}>
-                {item.list.map((item) => {
-                  return (
-                    <div key={item}>
-                      <p className="roadmap-section-list-text font-bold">{item}</p>
-                    </div>
-                  )
-                })}
-              </Roll>
-            </div>
-          </VisibilitySensor>
-        )
-      })}
+      <div className="flex w-screen flex-col items-center">
+        {sections.map((item, index) => {
+          const isEven = index % 2 === 0
+          const isOdd = !isEven
+          return (
+            <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
+              <div ref={addToRefs} className={isEven ? "mt-56 ml-96 w-1/3" : "mt-56 mr-96 w-1/3"}>
+                <div className={`${isEven ? "ml-24" : "mr-24"}`}>
+                  <Flip left={isOdd} right={isEven}>
+                    <p className={`+ mt-96 text-5xl font-bold text-white`}>{item.title}</p>
+                  </Flip>
+                  <Roll left={isOdd} right={isEven}>
+                    {item.list.map((item) => {
+                      return (
+                        <div key={item}>
+                          <p className="mt-2 w-2/3 font-bold text-white">{item}</p>
+                        </div>
+                      )
+                    })}
+                  </Roll>
+                </div>
+              </div>
+            </VisibilitySensor>
+          )
+        })}
+      </div>
     </div>
   )
 }

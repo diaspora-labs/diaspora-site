@@ -6,24 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
-.parallax {
-  min-height: 500%;
-  position: fixed;
-  top: 0;
-  opacity: 0.1;
-}
-
-.roadmap-background {
-  position: relative;
-  width: 100vw;
-  min-height: 100vh;
-  height: 100%;
-}
-
 .roadmap-animation {
   min-width: 100vw;
-  min-height: 640vh;
-  max-height: 640vh;
+  min-height: 630vh;
+  max-height: 630vh;
   overflow: hidden;
   position: absolute;
   top: 0px;
@@ -32,93 +18,16 @@ html {
   z-index: -1;
 }
 
-.roadmap-pagnation {
-  position: fixed;
-  top: 44%;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
-}
-
-.roadmap-pagnation-dot-active {
-  background: #fec821 0% 0% no-repeat padding-box;
-  border-radius: 100%;
-  padding: 8px;
-  margin: 6px 0px;
-}
-
-.roadmap-pagnation-dot-unactive {
-  background: #fec821 0% 0% no-repeat padding-box;
-  border-radius: 100%;
-  padding: 3px;
-  margin: 6px 0px;
-}
-
-.roadmap-page-title {
-  text-align: center;
-  font: normal normal bold 45px/54px Korolev;
-  letter-spacing: 0.36px;
-  color: #ffffff;
-  /* margin-top: 90px; */
-  padding-top: 100px;
-}
-
-.roadmap-section-title {
-  font: normal normal bold 60px/64px Korolev;
-  letter-spacing: 1.2px;
-  text-align: left;
-  letter-spacing: 0.36px;
-  color: #ffffff;
-  margin-top: 85vh;
-  padding-top: 20px;
-}
-
-.roadmap-section-title-smaller {
-  text-align: center;
-  font: normal normal medium 18px/22px Korolev;
-  letter-spacing: 0.36px;
-  color: #ffffff;
-  margin-top: -60px;
-  padding-top: 20px;
-}
-
-.roadmap-sub-text {
-  margin-left: 25%;
-  max-width: 50vw;
-  marign-bottom: 10px;
-  text-align: center;
-  font: normal normal medium 18px/22px Korolev;
-  letter-spacing: 0.36px;
-  color: #ffffff;
-}
-
-.roadmap-section-text {
-  margin-top: 86vh;
-  marign-bottom: 10px;
-  text-align: center;
-  font: normal normal medium 18px/22px Korolev;
-  letter-spacing: 0.36px;
-  color: #ffffff;
-}
-
-.roadmap-section-list-text {
-  margin: 14px 0px;
-  text-align: left;
-  font: normal normal bold 20px/19px Korolev;
-  letter-spacing: 0.36px;
-  color: #ffffff;
-}
-
-.right-section {
-  margin-right: 10%;
-  margin-left: 55%;
-  width: 35%;
-}
-
-.left-section {
-  width: 30%;
-  margin-left: 10%;
-  margin-right: 60%;
+@media (max-width: 800px) {
+  .roadmap-animation {
+    min-width: 400%;
+    min-height: 140%;
+    max-height: 140%;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    padding-top: 280px;
+    background-color: #7134fe;
+    z-index: -1;
+  }
 }
