@@ -71,9 +71,9 @@ const Team = (props: any) => {
             }),
               props.setShowModal(true)
           }}
-          className="flex flex-col items-center lg:flex-row"
+          className="mb-10 flex flex-col rounded-full border-[#2D2A26] border items-center lg:flex-row rounded-[2.5rem] "
         >
-          <div className="mb-5 mt-5 lg:ml-7">
+          <div className="mb-5 mt- lg:ml-7 pt-7">
             <div
               style={{ backgroundImage: `url(${image})` }}
               className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
