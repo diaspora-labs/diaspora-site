@@ -6,19 +6,31 @@ import { OnCyber, StreetArt, Profile } from "../components/Icons"
 
 const Team = (props: any) => {
   // const [showModal, props.setShowModal] = React.useState(false);
-  const [showPerson, setPerson] = React.useState({image: ""});
+  const [showPerson, setPerson] = React.useState({
+    name: "",
+    bio: "",
+    image: "",
+    title: "",
+    linkedIn: "",
+    twitter: "",
+    instagram: "",
+    dribbble: "",
+    cyber: "",
+    foundation: "",
+    streetArt: "",
+  })
   const Person = ({
-    name,
-    bio,
-    image,
-    title,
-    linkedIn,
-    twitter,
-    instagram,
-    dribbble,
-    cyber,
-    foundation,
-    streetArt,
+    name = "",
+    bio = "",
+    image = "",
+    title = "",
+    linkedIn = "",
+    twitter = "",
+    instagram = "",
+    dribbble = "",
+    cyber = "",
+    foundation = "",
+    streetArt = "",
   }: {
     name: string
     bio: string
@@ -34,16 +46,33 @@ const Team = (props: any) => {
   }) => {
     // console.log('showPerson ', showPerson)
     return (
-      <div >
+      <div>
         <div className="relative">
           <div className="absolute top-10 right-7">
-            <Profile  />
+            <Profile />
           </div>
         </div>
 
-
-        <div onClick={() => { setPerson({...showPerson, name: name, bio: bio,image: image,title: title,linkedIn: linkedIn,twitter: twitter,instagram: instagram,dribbble: dribbble,cyber: cyber,foundation: foundation,streetArt: streetArt,}), props.setShowModal(true)} }  className="flex flex-col items-center lg:flex-row">
-
+        <div
+          onClick={() => {
+            setPerson({
+              ...showPerson,
+              name: name,
+              bio: bio,
+              image: image,
+              title: title,
+              linkedIn: linkedIn,
+              twitter: twitter,
+              instagram: instagram,
+              dribbble: dribbble,
+              cyber: cyber,
+              foundation: foundation,
+              streetArt: streetArt,
+            }),
+              props.setShowModal(true)
+          }}
+          className="flex flex-col items-center lg:flex-row"
+        >
           <div className="mb-5 mt-5 lg:ml-7">
             <div
               style={{ backgroundImage: `url(${image})` }}
@@ -106,12 +135,10 @@ const Team = (props: any) => {
                 )}
               </div>*/}
             </div>
-            <div className="text-md mb-4 text-gray-400 text-center">{title}</div>
+            <div className="text-md mb-4 text-center text-gray-400">{title}</div>
           </div>
-
         </div>
       </div>
-        
     )
   }
 
@@ -266,111 +293,122 @@ const Team = (props: any) => {
   ]
   return (
     <Layout>
-      <div className="lg:mt-40 mt-20">
-        <p className={`text-center tracking-wide text-3xl font-bold text-gray-400 lg:mb-20 mb-10`} >
-          The Team
-        </p>
+      <div className="mt-20 lg:mt-40">
+        <p className={`mb-10 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-20`}>The Team</p>
 
-        <div className="backdrop-blur-sm mx-auto max-w-6xl grid sm:auto-cols-auto lg:grid-cols-2 ">
+        <div className="mx-auto grid max-w-6xl backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person, i) => (
-              <Person key={i} {...person} /> 
+            <Person key={i} {...person} />
           ))}
         </div>
 
-        {props.showModal &&
-          (<div  id="defaultModal" aria-hidden="true" className={`backdrop-blur-sm absolute top-[100px] md:top-[150px]  inset-x-0 mt-50 flex flex-col items-center overflow-y-auto overflow-x-hidden z-50 w-full md:inset-x-0 h-modal md:h-full`}>
-            <div className="relative p-4 w-full max-w-[866px] h-full md:h-auto content-center ...">
-                
-                <div className="relative bg-[#9b9b9b] rounded-[2.5rem] shadow dark:bg-gray-700">
+        {props.showModal && (
+          <div
+            id="defaultModal"
+            aria-hidden="true"
+            className={`mt-50 h-modal absolute inset-x-0  top-[100px] z-50 flex w-full flex-col items-center overflow-y-auto overflow-x-hidden backdrop-blur-sm md:inset-x-0 md:top-[150px] md:h-full`}
+          >
+            <div className="... relative h-full w-full max-w-[866px] content-center p-4 md:h-auto">
+              <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow dark:bg-gray-700">
+                <div className="relative">
+                  <div className="absolute top-10 right-7">
+                    <button
+                      onClick={() => {
+                        props.setShowModal(false)
+                      }}
+                      type="button"
+                      className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-black hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                      data-modal-toggle="defaultModal"
+                    >
+                      <svg
+                        className="h-10 w-10"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
 
-                  <div className="relative">
-                    <div className="absolute top-10 right-7">
-                      <button onClick={() => {props.setShowModal(false) }} type="button" className="text-black bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
-                        <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>  
-                      </button>
-                    </div>
+                <div className="flex flex-col items-center lg:flex-row">
+                  <div className="mb-5 mt-9 mr-7 ml-7 lg:mb-5 lg:mt-5 lg:mr-5 lg:ml-7">
+                    <div
+                      style={{ backgroundImage: `url(${showPerson.image})` }}
+                      className={`h-[132px] w-[132px] overflow-hidden rounded-full bg-cover bg-top`}
+                    ></div>
                   </div>
 
-                  <div className="flex flex-col items-center lg:flex-row">
+                  <div className="px-10 pb-10 text-center lg:px-5 lg:py-20 lg:pr-20 lg:text-left">
+                    <div className="text-2xl text-black">{showPerson.name}</div>
+                    <div className="text-md mb-5 text-black lg:mb-4">{showPerson.title}</div>
+                    <div className="text-sm text-black lg:mr-20">{showPerson.bio}</div>
 
-                    <div className="lg:mb-5 lg:mt-5 lg:mr-5 lg:ml-7 mb-5 mt-9 mr-7 ml-7">
-                      <div
-                        style={{ backgroundImage: `url(${showPerson.image})` }}
-                        className={`h-[132px] w-[132px] overflow-hidden rounded-full bg-cover bg-top`}
-                      ></div>
-                    </div>
-
-                    <div className="lg:px-5 lg:text-left lg:py-20 lg:pr-20 text-center px-10 pb-10">
-                      
-                      <div className="text-2xl text-black">{showPerson.name}</div>
-                      <div className="text-md lg:mb-4 mb-5 text-black">{showPerson.title}</div>
-                      <div className="lg:mr-20 text-sm text-black">{showPerson.bio}</div>
-
-                      <div className="mt-7 flex lg:items-center lg:justify-start justify-center">
-                        
-                        <div className="mt-[-3px] flex">
-                          {showPerson.linkedIn && (
-                            <div className="lg:mr-2 mr-5">
-                              <a target="_blank" rel="noreferrer" href={showPerson.linkedIn}>
-                                <social.linkedIn.icon width="24" height="24" background="#000" />
-                              </a>
-                            </div>
-                          )}
-                          {showPerson.twitter && (
-                            <div className="lg:mr-2 mr-5">
-                              <a target="_blank" rel="noreferrer" href={showPerson.twitter}>
-                                <social.twitter.icon width="24" height="24" background="#000" />
-                              </a>
-                            </div>
-                          )}
-                          {showPerson.instagram && (
-                            <div className="lg:mr-2 mr-5">
-                              <a target="_blank" rel="noreferrer" href={showPerson.instagram}>
-                                <social.instagram.icon width="24" height="24" background="#000" />
-                              </a>
-                            </div>
-                          )}
-                          {showPerson.dribbble && (
-                            <div className="lg:mr-2 mr-5">
-                              <a target="_blank" rel="noreferrer" href={showPerson.dribbble}>
-                                <social.dribbble.icon width="24" height="24" background="#000" />
-                              </a>
-                            </div>
-                          )}
-                          {showPerson.cyber && (
-                            <div className="lg:mr-2 mr-5">
-                              <a target="_blank" rel="noreferrer" href={showPerson.cyber} className="mt-1 block">
-                                <social.cyber.icon width="24" background="#000" />
-                              </a>
-                            </div>
-                          )}
-                          {showPerson.foundation && (
-                            <div className="lg:mr-2 mr-5">
-                              <a target="_blank" rel="noreferrer" href={showPerson.foundation} className="mt-1 block">
-                                <social.foundation.icon width="24" background="#000" />
-                              </a>
-                            </div>
-                          )}
-                          {showPerson.streetArt && (
-                            <div className="lg:mr-2 mr-5">
-                              <a target="_blank" rel="noreferrer" href={showPerson.streetArt} className="mt-1 block">
-                                <social.streetArt.icon width="24" background="#000" />
-                              </a>
-                            </div>
-                          )}
-                        </div>
+                    <div className="mt-7 flex justify-center lg:items-center lg:justify-start">
+                      <div className="mt-[-3px] flex">
+                        {showPerson.linkedIn && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={showPerson.linkedIn}>
+                              <social.linkedIn.icon width="24" height="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {showPerson.twitter && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={showPerson.twitter}>
+                              <social.twitter.icon width="24" height="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {showPerson.instagram && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={showPerson.instagram}>
+                              <social.instagram.icon width="24" height="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {showPerson.dribbble && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={showPerson.dribbble}>
+                              <social.dribbble.icon width="24" height="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {showPerson.cyber && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={showPerson.cyber} className="mt-1 block">
+                              <social.cyber.icon width="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {showPerson.foundation && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={showPerson.foundation} className="mt-1 block">
+                              <social.foundation.icon width="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {showPerson.streetArt && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={showPerson.streetArt} className="mt-1 block">
+                              <social.streetArt.icon width="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
                       </div>
                     </div>
-
                   </div>
-
                 </div>
+              </div>
             </div>
-          </div>) 
-        }
+          </div>
+        )}
       </div>
-
-
     </Layout>
   )
 }

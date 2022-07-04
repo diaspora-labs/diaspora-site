@@ -9,7 +9,7 @@ import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Layout } from "../components/Layout"
 import { NavHeader } from "../components/NavHeader"
-import Team from './team'
+import Team from "./team"
 import sal from "sal.js"
 
 const GoldMaskLogo = dynamic(() => import("../components/DiasporaLogo/GoldMaskLogo"), {
@@ -23,24 +23,24 @@ const Home: NextPage = () => {
   //     threshold: 0.1,
   //   })
   // })
-  const [showModal, setShowModal] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false)
   return (
     <Layout showLogo>
-      <div className={"md:fixed md:mt-10 inset-0 md:z-0"}>
+      <div className={"inset-0 md:fixed md:z-0 md:mt-10"}>
         {/* @ts-ignore */}
         {/*<Suspense fallback={null} r3f>
           <GoldMaskLogo />
         </Suspense>*/}
       </div>
 
-      <section className={(showModal ? 'md:hidden' : "pointer-events-auto z-10 flex h-full min-h-screen flex-col")}>
+      <section className={showModal ? "md:hidden" : "pointer-events-auto z-10 flex h-full min-h-screen flex-col"}>
         <div className={"flex grow flex-col p-10"}>
           <NavHeader />
 
-          <div className="md:grid md:h-full md:grow md:grid-cols-4 sm:text-center">
+          <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
               <div
-                className="md:text-5xl text-4xl font-light leading-tight text-neutral-600 text-center"
+                className="text-center text-4xl font-light leading-tight text-neutral-600 md:text-5xl"
                 data-sal="slide-up"
                 data-sal-delay="300"
               >
@@ -51,12 +51,12 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div
-              className="col-span-2 md:mx-20 md:flex h-full md:flex-col items-end justify-center"
+              className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col"
               data-sal="slide-up"
               data-sal-delay="500"
             >
               <div className="flex flex-col items-center justify-center space-y-6">
-                <div className="sm:hidden mt-[80px] text-center text-4xl font-light">
+                <div className="mt-[80px] text-center text-4xl font-light sm:hidden">
                   Great things
                   <br />
                   are coming
@@ -77,30 +77,29 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      </section> 
+      </section>
 
       <section className="pointer-events-auto z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800">
         <div className="flex grow flex-col p-10">
-          <div className={(showModal ? 'md:hidden' : 'mx-auto')}>
-            <img src="/images/logos/diaspora-team-logo.png" 
-              alt="screenshot" 
-              width="652" 
-              height="172" />
+          <div className={showModal ? "md:hidden" : "mx-auto"}>
+            <img src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" />
           </div>
 
-          <div className={(showModal ? 'md:hidden' : 'container mx-auto mt-10 max-w-3xl')}>
-            <p className={`text-center tracking-wide text-lg font-normal text-gray-400 `}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          <div className={showModal ? "md:hidden" : "container mx-auto mt-10 max-w-3xl"}>
+            <p className={`text-center text-lg font-normal tracking-wide text-gray-400 `}>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
             </p>
-          </div> 
+          </div>
 
-          {showModal && <NavHeader /> }
+          {showModal && <NavHeader />}
 
           <Team showModal={showModal} setShowModal={setShowModal} />
         </div>
-
       </section>
-      
+
       <HomeFooter />
     </Layout>
   )
