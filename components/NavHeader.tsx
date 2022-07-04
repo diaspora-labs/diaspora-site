@@ -10,7 +10,7 @@ export const NavHeader = () => {
   return (
     <nav className="w-full">
       <div className="flex w-full items-center justify-between">
-        <div className="flex items-center py-4 px-2">
+        <div className="flex items-center py-4 px-4">
           <Link href="/">
             <a>
               <DiasporaLogoSmall width="120" />

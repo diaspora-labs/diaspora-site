@@ -1,7 +1,6 @@
 import React from "react"
 
 import { Layout } from "../components/Layout"
-import { Nav } from "../components/Nav"
 import { OnCyber, StreetArt, Profile } from "../components/Icons"
 import { useSpringCarousel } from "react-spring-carousel"
 

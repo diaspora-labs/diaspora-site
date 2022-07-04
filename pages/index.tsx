@@ -35,7 +35,7 @@ const Home: NextPage = () => {
 
       <section className={showModal ? "md:hidden" : "pointer-events-auto z-10 flex h-full min-h-screen flex-col"}>
         <div className={"flex grow flex-col p-10"}>
-          <NavHeader />
+          
 
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
@@ -81,11 +81,8 @@ const Home: NextPage = () => {
 
       <section className="pointer-events-auto z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800">
         <div className="flex grow flex-col p-10">
-          <div className={showModal ? "md:hidden" : "mx-auto"}>
-            <img src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" />
-          </div>
 
-          <div className={showModal ? "md:hidden" : "container mx-auto mt-10 max-w-3xl"}>
+          <div className={"container mx-auto mt-10 max-w-3xl"}>
             <p className={`text-center text-lg font-normal tracking-wide text-gray-400 `}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
               et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
@@ -93,8 +90,6 @@ const Home: NextPage = () => {
               amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
             </p>
           </div>
-
-          {showModal && <NavHeader />}
 
           <Team showModal={showModal} setShowModal={setShowModal} />
         </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import cls from "classnames"
+import { NavHeader } from "./NavHeader"
 
 export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) => {
   return (
@@ -9,7 +10,8 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
         text-white`,
         classes
       )}
-    >
+    > 
+      <NavHeader />
       {children}
     </div>
   )
