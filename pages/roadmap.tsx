@@ -135,23 +135,47 @@ const Roadmap = () => {
       <div className="roadmap-animation" />
 
       <div className="flex w-screen flex-col items-center">
-        <p className="max-w-2xl px-[60px] p-8 pt-24 text-center text-3xl font-bold tracking-wide text-white">{pageTitle}</p>
-        <p className={"w-full font-light text-center text-white md:w-6/12 text-center text-white px-10 text-base"}>{pageSubTitle}</p>
+        <p className="max-w-2xl p-8 px-[60px] pt-24 text-center text-3xl font-bold tracking-wide text-white">
+          {pageTitle}
+        </p>
+        <p className={"w-full px-10 text-center text-center text-base font-light text-white text-white md:w-6/12"}>
+          {pageSubTitle}
+        </p>
       </div>
 
       <div className="flex w-screen flex-col items-center">
         {sections.map((item, index) => {
           const isEven = index % 2 === 0
           const isOdd = !isEven
+
+          let marginTop
+          if (index === 0) {
+            marginTop = "mt-[180px]"
+          }
+          if (index === 1) {
+            marginTop = "mt-[20px]"
+          }
+          if (index === 2) {
+            marginTop = "mt-[190px]"
+          }
+          if (index === 3) {
+            marginTop = "mt-[140px]"
+          }
+          if (index === 4) {
+            marginTop = "mt-[130px]"
+          }
+
           return (
             <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
               <div
                 ref={addToRefs}
                 className={isMobile ? "mt-56" : isEven ? " md:mt-56 md:ml-96 " : "mt-[180px] md:mt-56 md:mr-96 "}
               >
-                <div className={isMobile ? "" : isEven ? "md:ml-24 mt-[200px]" : "md:mr-24"}>
+                <div className={isMobile ? "" : isEven ? `${marginTop} md:ml-24` : `${marginTop} md:mr-24`}>
                   <Flip left={isOdd} right={isEven}>
-                    <p className={"max-w-2xl md:p-8 px-20 pt-24 text-center text-3xl font-bold tracking-wide text-white"}>
+                    <p
+                      className={"max-w-2xl px-20 pt-24 text-center text-3xl font-bold tracking-wide text-white md:p-8"}
+                    >
                       {item.title}
                     </p>
                   </Flip>
@@ -159,7 +183,7 @@ const Roadmap = () => {
                     {item.list.map((item) => {
                       return (
                         <div key={item}>
-                          <p className={"px-5 mt-2 w-full text-center text-white text-base font-light"}>{item}</p>
+                          <p className={"mt-2 w-full px-5 text-center text-base font-light text-white"}>{item}</p>
                         </div>
                       )
                     })}
