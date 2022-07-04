@@ -95,7 +95,7 @@ const Roadmap = () => {
 
   // ui components
   return (
-    <div className={isMobile ? "fixed w-screen overflow-scroll bg-purple-med" : "relative w-screen bg-purple-med"}>
+    <div className={isMobile ? "relative w-screen overflow-scroll bg-purple-med" : "relative w-screen bg-purple-med"}>
       <div className="fixed top-0 w-1/6 opacity-10" ref={parallax.ref}>
         <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
       </div>
