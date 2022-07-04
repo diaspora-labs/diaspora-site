@@ -143,7 +143,7 @@ const Roadmap = () => {
               >
                 <div className={isMobile ? "" : isEven ? "md:ml-24" : "md:mr-24"}>
                   <Flip left={isOdd} right={isEven}>
-                    <p className={"max-w-2xl p-8 pt-24 text-center text-3xl font-bold tracking-wide text-white"}>
+                    <p className={"max-w-2xl md:p-8 pt-24 text-center text-3xl font-bold tracking-wide text-white"}>
                       {item.title}
                     </p>
                   </Flip>
