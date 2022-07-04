@@ -18,7 +18,7 @@
 
 @media (max-width: 800px) {
   .roadmap-animation {
-    min-width: 170vw;
+    /*min-width: 170vw;*/
     min-height: 170vh;
     overflow: hidden;
     position: absolute;
