@@ -127,7 +127,7 @@ const Roadmap = () => {
       <div className="roadmap-animation" />
 
       <div className="flex w-screen flex-col items-center">
-        <p className="max-w-2xl p-8 pt-24 text-center text-5xl font-bold tracking-wide text-white">{pageTitle}</p>
+        <p className="max-w-2xl px-[60px] p-8 pt-24 text-center text-3xl font-bold tracking-wide text-white">{pageTitle}</p>
         <p className={"w-full text-center text-white md:w-6/12 text-center text-white px-8 text-base"}>{pageSubTitle}</p>
       </div>
 
