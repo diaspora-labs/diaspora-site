@@ -410,7 +410,6 @@ const Team = (props: any) => {
   })
 
   return (
-    <Layout>
       <div className="mt-20 lg:mt-40">
         <div style={{ width: "80vw", overflowX: "scroll", overflowY: "hidden", height: "100vh" }}>
           {carouselFragment}
@@ -529,7 +528,6 @@ const Team = (props: any) => {
           </div>
         )} */}
       </div>
-    </Layout>
   )
 }
 
