@@ -3,6 +3,7 @@ import React from "react"
 import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
 import { OnCyber, StreetArt, Profile } from "../components/Icons"
+import { useSpring, animated } from 'react-spring'
 
 const Team = (props: any) => {
   // const [showModal, props.setShowModal] = React.useState(false);
