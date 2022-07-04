@@ -147,9 +147,9 @@ const Roadmap = () => {
             <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
               <div
                 ref={addToRefs}
-                className={isMobile ? "mt-56" : isEven ? "mt-56 md:ml-96 " : "mt-56 md:mr-96 "}
+                className={isMobile ? "mt-56" : isEven ? " md:mt-56 md:ml-96 " : "mt-[180px] md:mt-56 md:mr-96 "}
               >
-                <div className={isMobile ? "" : isEven ? "md:ml-24" : "md:mr-24"}>
+                <div className={isMobile ? "" : isEven ? "md:ml-24 mt-[200px]" : "md:mr-24"}>
                   <Flip left={isOdd} right={isEven}>
                     <p className={"max-w-2xl md:p-8 px-20 pt-24 text-center text-3xl font-bold tracking-wide text-white"}>
                       {item.title}
