@@ -112,8 +112,8 @@ const Roadmap = () => {
               key={index}
               className={`${
                 activeIndex === index
-                  ? "z-10 mb-3 h-2 w-2 rounded-full bg-yellow-300"
-                  : "z-10 mb-3 h-1 w-1 rounded-full bg-yellow-300"
+                  ? "md:z-10 md:mb-3 md:h-2 md:w-2 md:rounded-full md:bg-yellow-300"
+                  : "md:z-10 md:mb-3 md:h-1 md:w-1 md:rounded-full md:bg-yellow-300"
               }`}
               onClick={() => {
                 setActiveIndex(index)
