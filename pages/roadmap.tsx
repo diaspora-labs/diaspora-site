@@ -150,22 +150,21 @@ const Roadmap = () => {
 
           let marginTop
           if (index === 0) {
-            marginTop = "mt-[180px]"
+            marginTop = "mt-52"
           }
           if (index === 1) {
-            marginTop = "mt-[20px]"
+            marginTop = "mt-12"
           }
           if (index === 2) {
-            marginTop = "mt-[190px]"
+            marginTop = "mt-72"
           }
           if (index === 3) {
-            marginTop = "mt-[140px]"
+            marginTop = "mt-40"
           }
           if (index === 4) {
-            marginTop = "mt-[130px]"
+            marginTop = "mt-40"
           }
 
-          
           return (
             <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
               <div
