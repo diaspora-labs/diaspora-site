@@ -21,7 +21,7 @@ const Roadmap = () => {
 
   // laod animation
   useEffect(() => {
-    var animDuration = isMobile ? 2800 : 4100
+    var animDuration = isMobile ? 1000 : 4100
     const anim = lottie.loadAnimation({
       container: document.querySelector(".roadmap-animation") as HTMLElement,
       animationData: isMobile ? mobileAnimation : animation,
