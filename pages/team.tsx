@@ -412,7 +412,9 @@ const Team = (props: any) => {
   return (
     <Layout>
       <div className="mt-20 lg:mt-40">
-        <div>{carouselFragment}</div>
+        <div style={{ width: "80vw", overflowX: "scroll", overflowY: "hidden", height: "100vh" }}>
+          {carouselFragment}
+        </div>
         <p className={`mb-10 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-20`}>The Team</p>
         <div className="mx-auto grid max-w-6xl backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person, i) => (
