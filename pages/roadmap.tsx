@@ -95,7 +95,13 @@ const Roadmap = () => {
 
   // ui components
   return (
-    <div className={isMobile ? "relative w-screen overflow-scroll bg-purple-med" : "relative w-screen bg-purple-med"}>
+    <div
+      className={
+        isMobile
+          ? "relative w-screen overflow-x-hidden overflow-y-scroll bg-purple-med"
+          : "relative w-screen overflow-y-hidden bg-purple-med"
+      }
+    >
       <div className="fixed top-0 w-1/6 opacity-10" ref={parallax.ref}>
         <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
       </div>
@@ -123,7 +129,7 @@ const Roadmap = () => {
 
       <div className="flex w-screen flex-col items-center">
         <p className="max-w-2xl p-8 pt-24 text-center text-5xl font-bold tracking-wide text-white">{pageTitle}</p>
-        <p className={isMobile ? "w-screen text-center text-white" : "w-6/12 text-center text-white"}>{pageSubTitle}</p>
+        <p className={isMobile ? "w-full text-center text-white" : "w-6/12 text-center text-white"}>{pageSubTitle}</p>
       </div>
 
       <div className="flex w-screen flex-col items-center">
