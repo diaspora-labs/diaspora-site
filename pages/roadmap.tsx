@@ -21,7 +21,7 @@ const Roadmap = () => {
 
   // laod animation
   useEffect(() => {
-    var animDuration = 3800
+    var animDuration = 4100
     const anim = lottie.loadAnimation({
       container: document.querySelector(".roadmap-animation") as HTMLElement,
       animationData: isMobile ? mobileAnimation : animation,
@@ -95,7 +95,7 @@ const Roadmap = () => {
 
   // ui components
   return (
-    <div className="h-[350rem] w-full bg-purple-med">
+    <div className="relative overflow-scroll w-full bg-purple-med">
       <div className="fixed top-0 w-1/6 opacity-10" ref={parallax.ref}>
         <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
       </div>
