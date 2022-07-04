@@ -406,8 +406,16 @@ const Team = (props: any) => {
   })
 
   return (
-    <div className="mt-20 lg:mt-40">
-      <div style={{ width: "80vw", overflowX: "scroll", overflowY: "hidden", height: props.showModal ? "100vh" : 0 }}>
+    <div className="relative mt-20 lg:mt-40">
+      <div
+        style={{
+          position: "absolute",
+          width: "80vw",
+          overflowX: "scroll",
+          overflowY: "hidden",
+          height: props.showModal ? "100vh" : 0,
+        }}
+      >
         {carouselFragment}
       </div>
 
