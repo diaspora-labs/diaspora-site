@@ -165,6 +165,7 @@ const Roadmap = () => {
             marginTop = "mt-[130px]"
           }
 
+          
           return (
             <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
               <div
