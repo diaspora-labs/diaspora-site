@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .roadmap-animation {
-  right: -59px;
-  min-width: 134vw;
+  right: -85px;
+  min-width: 150vw;
   min-height: 490vh;
   max-height: 490vh;
   overflow: hidden;
