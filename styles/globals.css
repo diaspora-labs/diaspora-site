@@ -4,8 +4,11 @@
 
 .roadmap-animation {
   min-width: 100vw;
-  min-height: 630vh;
-  max-height: 630vh;
+  /* min-height: 630vh;
+  max-height: 630vh; */
+
+  min-height: 490vh;
+  max-height: 490vh;
   overflow: hidden;
   position: absolute;
   float: left;
