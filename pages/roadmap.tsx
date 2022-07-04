@@ -95,7 +95,7 @@ const Roadmap = () => {
 
   // ui components
   return (
-    <div className="relative overflow-scroll w-full bg-purple-med">
+    <div className="relative w-full overflow-scroll bg-purple-med">
       <div className="fixed top-0 w-1/6 opacity-10" ref={parallax.ref}>
         <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
       </div>
@@ -123,7 +123,7 @@ const Roadmap = () => {
 
       <div className="flex w-screen flex-col items-center">
         <p className="max-w-2xl p-8 pt-24 text-center text-5xl font-bold tracking-wide text-white">{pageTitle}</p>
-        <p className="w-6/12 text-center text-white">{pageSubTitle}</p>
+        <p className={isMobile ? "w-10/12 text-center text-white" : "w-6/12 text-center text-white"}>{pageSubTitle}</p>
       </div>
 
       <div className="flex w-screen flex-col items-center">
@@ -132,8 +132,11 @@ const Roadmap = () => {
           const isOdd = !isEven
           return (
             <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
-              <div ref={addToRefs} className={isEven ? "mt-56 ml-96 w-1/3" : "mt-56 mr-96 w-1/3"}>
-                <div className={`${isEven ? "ml-24" : "mr-24"}`}>
+              <div
+                ref={addToRefs}
+                className={isMobile ? "mt-56 ml-96 w-full" : isEven ? "mt-56 ml-96 w-1/3" : "mt-56 mr-96 w-1/3"}
+              >
+                <div className={`${isMobile ? "" : isEven ? "ml-24" : "mr-24"}`}>
                   <Flip left={isOdd} right={isEven}>
                     <p className={`mt-96 text-5xl font-bold text-white`}>{item.title}</p>
                   </Flip>
