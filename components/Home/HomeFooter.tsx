@@ -2,7 +2,7 @@ import React from "react"
 
 export const HomeFooter = () => {
   return (
-    <footer class="p-4 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+    <footer className="p-4 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
 
       <div className="md:flex flex-wrap w-full flex-row justify-center md:justify-between border-t-[1px] border-neutral-800 py-10 md:px-10">
         

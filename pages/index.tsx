@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       </div>
 
       <section className={(showModal ? 'md:hidden' : "pointer-events-auto z-10 flex h-full min-h-screen flex-col")}>
-        <div className={["flex grow flex-col p-10"]}>
+        <div className={"flex grow flex-col p-10"}>
           <NavHeader />
 
           <div className="md:grid md:h-full md:grow md:grid-cols-4 sm:text-center">

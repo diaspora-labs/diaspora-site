@@ -4,9 +4,9 @@ import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
 import { OnCyber, StreetArt, Profile } from "../components/Icons"
 
-const Team = (props) => {
+const Team = (props: any) => {
   // const [showModal, props.setShowModal] = React.useState(false);
-  const [showPerson, setPerson] = React.useState({});
+  const [showPerson, setPerson] = React.useState({image: ""});
   const Person = ({
     name,
     bio,
@@ -42,7 +42,7 @@ const Team = (props) => {
         </div>
 
 
-        <div onClick={() => { setPerson({...showPerson,name: name, bio: bio,image: image,title: title,linkedIn: linkedIn,twitter: twitter,instagram: instagram,dribbble: dribbble,cyber: cyber,foundation: foundation,streetArt: streetArt,}), props.setShowModal(true)} }  className="flex flex-col items-center lg:flex-row">
+        <div onClick={() => { setPerson({...showPerson, name: name, bio: bio,image: image,title: title,linkedIn: linkedIn,twitter: twitter,instagram: instagram,dribbble: dribbble,cyber: cyber,foundation: foundation,streetArt: streetArt,}), props.setShowModal(true)} }  className="flex flex-col items-center lg:flex-row">
 
           <div className="mb-5 mt-5 lg:ml-7">
             <div
