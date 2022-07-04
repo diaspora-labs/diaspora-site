@@ -92,7 +92,6 @@ const Roadmap = () => {
   const parallax = useParallax<HTMLDivElement>({
     speed: -10,
   })
-
   // ui components
   return (
     <div
@@ -140,9 +139,9 @@ const Roadmap = () => {
             <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
               <div
                 ref={addToRefs}
-                className={isMobile ? "mt-56" : isEven ? "mt-56 ml-96 " : "mt-56 mr-96 "}
+                className={isMobile ? "mt-56" : isEven ? "md:mt-56 md:ml-96 " : "md:mt-56 md:mr-96 "}
               >
-                <div className={`${isMobile ? "" : isEven ? "ml-24" : "mr-24"}`}>
+                <div className={isMobile ? "" : isEven ? "md:ml-24" : "md:mr-24"}>
                   <Flip left={isOdd} right={isEven}>
                     <p className={"max-w-2xl p-8 pt-24 text-center text-5xl font-bold tracking-wide text-white"}>{item.title}</p>
                   </Flip>
