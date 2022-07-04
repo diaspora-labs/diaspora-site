@@ -140,17 +140,17 @@ const Roadmap = () => {
             <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
               <div
                 ref={addToRefs}
-                className={isMobile ? "mt-56 ml-96 w-full" : isEven ? "mt-56 ml-96 w-1/3" : "mt-56 mr-96 w-1/3"}
+                className={isMobile ? "mt-56" : isEven ? "mt-56 ml-96 " : "mt-56 mr-96 "}
               >
                 <div className={`${isMobile ? "" : isEven ? "ml-24" : "mr-24"}`}>
                   <Flip left={isOdd} right={isEven}>
-                    <p className={`mt-96 text-5xl font-bold text-white`}>{item.title}</p>
+                    <p className={"max-w-2xl p-8 pt-24 text-center text-5xl font-bold tracking-wide text-white"}>{item.title}</p>
                   </Flip>
                   <Roll left={isOdd} right={isEven}>
                     {item.list.map((item) => {
                       return (
                         <div key={item}>
-                          <p className="mt-2 w-2/3 font-bold text-white">{item}</p>
+                          <p className={"mt-2 w-2/3 font-bold text-white"}>{item}</p>
                         </div>
                       )
                     })}
