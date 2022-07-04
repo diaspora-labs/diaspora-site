@@ -5,7 +5,7 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
   return (
     <div
       className={cls(
-        `bg-container flex min-h-screen flex-col bg-black 
+        `fixed bg-container min-h-screen flex-col bg-black 
         text-white`,
         classes
       )}
