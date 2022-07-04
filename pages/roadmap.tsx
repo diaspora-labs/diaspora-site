@@ -143,7 +143,7 @@ const Roadmap = () => {
               >
                 <div className={isMobile ? "" : isEven ? "md:ml-24" : "md:mr-24"}>
                   <Flip left={isOdd} right={isEven}>
-                    <p className={"max-w-2xl p-8 pt-24 text-center text-5xl font-bold tracking-wide text-white"}>
+                    <p className={"max-w-2xl p-8 pt-24 text-center text-3xl font-bold tracking-wide text-white"}>
                       {item.title}
                     </p>
                   </Flip>
@@ -151,7 +151,7 @@ const Roadmap = () => {
                     {item.list.map((item) => {
                       return (
                         <div key={item}>
-                          <p className={"mt-2 w-full text-center font-bold text-white"}>{item}</p>
+                          <p className={"mt-2 w-full text-center  text-white text-base font-light"}>{item}</p>
                         </div>
                       )
                     })}
