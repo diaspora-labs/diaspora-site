@@ -73,6 +73,14 @@ const Roadmap = () => {
         "Develop Masterclasses",
       ],
     },
+    {
+      title: "Building the Pathways",
+      list: [
+        "Building Partnerships (in the 4 pillars)",
+        "Develop Event Schedule and Framework (Physical and Digital)",
+        "Develop Masterclasses",
+      ],
+    },
   ]
 
   // create References
@@ -139,7 +147,7 @@ const Roadmap = () => {
             <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
               <div
                 ref={addToRefs}
-                className={isMobile ? "mt-56" : isEven ? "md:mt-56 md:ml-96 " : "md:mt-56 md:mr-96 "}
+                className={isMobile ? "mt-56" : isEven ? "mt-56 md:ml-96 " : "mt-56 md:mr-96 "}
               >
                 <div className={isMobile ? "" : isEven ? "md:ml-24" : "md:mr-24"}>
                   <Flip left={isOdd} right={isEven}>
