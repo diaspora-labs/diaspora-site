@@ -1,4 +1,7 @@
 import React from "react"
+import { Discord } from "../Icons/Discord"
+import { Instagram } from "../Icons/Instagram"
+import { Twitter } from "../Icons/Twitter"
 
 export const HomeFooter = () => {
   return (
@@ -24,6 +27,14 @@ export const HomeFooter = () => {
               <a href="/terms">Terms and conditions</a>
             </div>
           </div>
+        </div>
+
+        <div className="mx-4 md:flex mb-10">
+          <span className="flex flex-row  space-x-12 justify-center">
+            <Discord color="rgba(255,255,255,0.5)" />
+            <Instagram color="rgba(255,255,255,0.5)" />
+            <Twitter color="rgba(255,255,255,0.5)" />
+          </span>
         </div>
 
         <div className="md:flex ">
