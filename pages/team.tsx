@@ -5,7 +5,7 @@ import { OnCyber, StreetArt, Profile } from "../components/Icons"
 
 const Team = (props: any) => {
   // const [showModal, props.setShowModal] = React.useState(false);
-  const { people } = props
+  const { people, setSelectedIndex } = props
   const [showPerson, setPerson] = React.useState({
     name: "",
     bio: "",
@@ -147,8 +147,10 @@ const Team = (props: any) => {
     <div className="relative mt-20 lg:mt-40">
       <p className={`mb-10 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-20`}>The Team</p>
       <div className="mx-auto grid max-w-6xl backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 ">
-        {people.map((person, i) => (
-          <Person key={i} {...person} />
+        {people.map((person: any, i: number) => (
+          <div onClick={() => setSelectedIndex(i)} key={i}>
+            <Person {...person} />
+          </div>
         ))}
       </div>
 

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from "react"
+import React, { Suspense, useEffect, useState } from "react"
 import { NextPage } from "next"
 import dynamic from "next/dynamic"
 import { useSpringCarousel } from "react-spring-carousel"
@@ -191,120 +191,135 @@ const Home: NextPage = () => {
     },
   ]
 
-  const [showModal, setShowModal] = React.useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-  const { carouselFragment } = useSpringCarousel({
-    items: people.map((i: any, index: number) => ({
-      id: index,
-      renderItem: (
-        <div
-          key={index}
-          id="defaultModal"
-          aria-hidden="true"
-          className={`mt-50 h-modal absolute inset-x-0 top-[100px] z-50 flex w-full flex-col items-center overflow-y-auto overflow-x-hidden backdrop-blur-sm md:inset-x-0 md:top-[150px] md:h-full`}
-        >
-          <div className="... relative h-full w-full max-w-[866px] content-center p-4 md:h-auto">
-            <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow dark:bg-gray-700">
-              <div className="relative">
-                <div className="absolute top-10 right-7">
-                  <button
-                    onClick={() => {
-                      setShowModal(false)
-                    }}
-                    type="button"
-                    className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-black hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
-                    data-modal-toggle="defaultModal"
-                  >
-                    <svg
-                      className="h-10 w-10"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
+  const { carouselFragment, slideToPrevItem, slideToNextItem, useListenToCustomEvent, slideToItem } = useSpringCarousel(
+    {
+      items: people.map((i: any, index: number) => ({
+        slideType: "fixed",
+        itemsPerSlide: 1,
+        loop: true,
+        initialActiveItem: 0,
+        id: index,
+        renderItem: (
+          <div key={index} id="defaultModal" aria-hidden="true" className={``}>
+            <div className="... relative h-full content-center p-4 md:h-auto">
+              <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow dark:bg-gray-700">
+                <div className="relative">
+                  <div className="absolute top-10 right-7">
+                    <button
+                      onClick={() => {
+                        setShowModal(false)
+                      }}
+                      type="button"
+                      className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-black hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                      data-modal-toggle="defaultModal"
                     >
-                      <path
-                        fillRule="evenodd"
-                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex flex-col items-center lg:flex-row">
-                <div className="mb-5 mt-9 mr-7 ml-7 lg:mb-5 lg:mt-5 lg:mr-5 lg:ml-7">
-                  <div
-                    style={{ backgroundImage: `url(${i.image})` }}
-                    className={`h-[132px] w-[132px] overflow-hidden rounded-full bg-cover bg-top`}
-                  ></div>
+                      <svg
+                        className="h-10 w-10"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
 
-                <div className="px-10 pb-10 text-center lg:px-5 lg:py-20 lg:pr-20 lg:text-left">
-                  <div className="text-2xl text-black">{i.name}</div>
-                  <div className="text-md mb-5 text-black lg:mb-4">{i.title}</div>
-                  <div className="text-sm text-black lg:mr-20">{i.bio}</div>
+                <div className="flex flex-col items-center lg:flex-row">
+                  <div className="mb-5 mt-9 mr-7 ml-7 lg:mb-5 lg:mt-5 lg:mr-5 lg:ml-7">
+                    <div
+                      style={{ backgroundImage: `url(${i.image})` }}
+                      className={`h-[132px] w-[132px] overflow-hidden rounded-full bg-cover bg-top`}
+                    ></div>
+                  </div>
 
-                  <div className="mt-7 flex justify-center lg:items-center lg:justify-start">
-                    <div className="mt-[-3px] flex">
-                      {i.linkedIn && (
-                        <div className="mr-5 lg:mr-2">
-                          <a target="_blank" rel="noreferrer" href={showPerson.linkedIn}>
-                            <social.linkedIn.icon width="24" height="24" background="#000" />
-                          </a>
-                        </div>
-                      )}
-                      {i.twitter && (
-                        <div className="mr-5 lg:mr-2">
-                          <a target="_blank" rel="noreferrer" href={i.twitter}>
-                            <social.twitter.icon width="24" height="24" background="#000" />
-                          </a>
-                        </div>
-                      )}
-                      {i.instagram && (
-                        <div className="mr-5 lg:mr-2">
-                          <a target="_blank" rel="noreferrer" href={i.instagram}>
-                            <social.instagram.icon width="24" height="24" background="#000" />
-                          </a>
-                        </div>
-                      )}
-                      {i.dribbble && (
-                        <div className="mr-5 lg:mr-2">
-                          <a target="_blank" rel="noreferrer" href={i.dribbble}>
-                            <social.dribbble.icon width="24" height="24" background="#000" />
-                          </a>
-                        </div>
-                      )}
-                      {i.cyber && (
-                        <div className="mr-5 lg:mr-2">
-                          <a target="_blank" rel="noreferrer" href={i.cyber} className="mt-1 block">
-                            <social.cyber.icon width="24" background="#000" />
-                          </a>
-                        </div>
-                      )}
-                      {i.foundation && (
-                        <div className="mr-5 lg:mr-2">
-                          <a target="_blank" rel="noreferrer" href={i.foundation} className="mt-1 block">
-                            <social.foundation.icon width="24" background="#000" />
-                          </a>
-                        </div>
-                      )}
-                      {i.streetArt && (
-                        <div className="mr-5 lg:mr-2">
-                          <a target="_blank" rel="noreferrer" href={i.streetArt} className="mt-1 block">
-                            <social.streetArt.icon width="24" background="#000" />
-                          </a>
-                        </div>
-                      )}
+                  <div className="px-10 pb-10 text-center lg:px-5 lg:py-20 lg:pr-20 lg:text-left">
+                    <div className="text-2xl text-black">{i.name}</div>
+                    <div className="text-md mb-5 text-black lg:mb-4">{i.title}</div>
+                    <div className="text-sm text-black lg:mr-20">{i.bio}</div>
+
+                    <div className="mt-7 flex justify-center lg:items-center lg:justify-start">
+                      <div className="mt-[-3px] flex">
+                        {i.linkedIn && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={showPerson.linkedIn}>
+                              <social.linkedIn.icon width="24" height="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {i.twitter && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={i.twitter}>
+                              <social.twitter.icon width="24" height="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {i.instagram && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={i.instagram}>
+                              <social.instagram.icon width="24" height="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {i.dribbble && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={i.dribbble}>
+                              <social.dribbble.icon width="24" height="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {i.cyber && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={i.cyber} className="mt-1 block">
+                              <social.cyber.icon width="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {i.foundation && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={i.foundation} className="mt-1 block">
+                              <social.foundation.icon width="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                        {i.streetArt && (
+                          <div className="mr-5 lg:mr-2">
+                            <a target="_blank" rel="noreferrer" href={i.streetArt} className="mt-1 block">
+                              <social.streetArt.icon width="24" background="#000" />
+                            </a>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      ),
-    })),
+        ),
+      })),
+    }
+  )
+
+  useListenToCustomEvent((event) => {
+    if (event.eventName === "onSlideChange") {
+      setCurrentIndex(event.currentItem.index)
+    }
   })
+
+  useEffect(() => {
+    if (selectedIndex !== currentIndex) {
+      slideToItem(selectedIndex)
+    }
+  }, [selectedIndex])
 
   return (
     <Layout showLogo>
@@ -385,7 +400,7 @@ const Home: NextPage = () => {
             </p>
           </div>
 
-          <Team showModal={showModal} setShowModal={setShowModal} people={people} />
+          <Team showModal={showModal} setShowModal={setShowModal} people={people} setSelectedIndex={setSelectedIndex} />
         </div>
       </section>
 
