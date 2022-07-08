@@ -333,23 +333,25 @@ const Home: NextPage = () => {
         {carouselFragment}
       </div>
 
-      <div className="align-center flex flex-row justify-center">
-        {people.map((item, index) => {
-          return (
-            <p
-              onClick={() => setSelectedIndex(index)}
-              key={index}
-              style={{
-                backgroundColor: selectedIndex === index ? "#fff" : "#444",
-                width: "6px",
-                height: "6px",
-                margin: "0px 6px",
-                borderRadius: "100%",
-              }}
-            />
-          )
-        })}
-      </div>
+      {showModal && (
+        <div className="align-center flex flex-row justify-center">
+          {people.map((item, index) => {
+            return (
+              <p
+                onClick={() => setSelectedIndex(index)}
+                key={index}
+                style={{
+                  backgroundColor: selectedIndex === index ? "#fff" : "#444",
+                  width: "6px",
+                  height: "6px",
+                  margin: "0px 6px",
+                  borderRadius: "100%",
+                }}
+              />
+            )
+          })}
+        </div>
+      )}
 
       <section className={showModal ? "hidden" : "pointer-events-auto z-10 flex h-full min-h-screen flex-col"}>
         <div className={"flex grow flex-col p-10"}>
@@ -372,12 +374,12 @@ const Home: NextPage = () => {
               data-sal-delay="500"
             >
               <div className="flex flex-col items-center justify-center space-y-6">
-                <div className="md:mt-[80px] text-center text-4xl font-light md:visible invisible">
+                <div className="invisible text-center text-4xl font-light md:visible md:mt-[80px]">
                   Great things
                   <br />
                   are coming
                 </div>
-                
+
                 <div className="text-lg font-normal">Connect with us to stay updated</div>
                 <div className="pointer-events-auto flex space-x-10">
                   <Discord />
