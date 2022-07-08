@@ -195,7 +195,7 @@ const Home: NextPage = () => {
 
   const { carouselFragment } = useSpringCarousel({
     items: people.map((i: any, index: number) => ({
-      id: index,
+      id: i.id,
       renderItem: (
         <div
           key={index}
