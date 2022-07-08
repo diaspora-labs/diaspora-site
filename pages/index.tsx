@@ -326,7 +326,7 @@ const Home: NextPage = () => {
         {carouselFragment}
       </div>
 
-      <section className={showModal ? "md:hidden" : "pointer-events-auto z-10 flex h-full min-h-screen flex-col"}>
+      <section className={showModal ? "hidden" : "pointer-events-auto z-10 flex h-full min-h-screen flex-col"}>
         <div className={"flex grow flex-col p-10"}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
