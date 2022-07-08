@@ -7,10 +7,10 @@ export const HomeFooter = () => {
       <div className="md:flex flex-wrap w-full flex-row justify-center md:justify-between border-t-[1px] border-neutral-800 py-10 md:px-10">
         
         <div className="md:flex ">
-          <div className="rounded-full mb-5 shrink md:rounded-r-lg md:rounded-r-lg bg-neutral-800 py-2 px-4">
+          <div className="text-center rounded-2xl	 mb-5 shrink md:rounded-r-lg md:rounded-r-lg bg-neutral-800 py-2 px-4">
             <input placeholder="Email address" className=" bg-transparent text-center" />
           </div>
-          <div className="rounded-full mb-5 md:rounded-l-lg md:rounded-l-lg bg-purple-light py-2 px-4">
+          <div className="text-center rounded-2xl	 mb-5 md:rounded-l-lg md:rounded-l-lg bg-purple-light py-2 px-4">
             <button className="m-auto">Add me to the list</button>
           </div>
         </div>

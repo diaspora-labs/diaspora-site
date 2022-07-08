@@ -202,7 +202,7 @@ const Home: NextPage = () => {
         itemsPerSlide: 1,
         loop: true,
         initialActiveItem: 0,
-        id: index,
+        id: i.id,
         renderItem: (
           <div key={index} id="defaultModal" aria-hidden="true" className={``}>
             <div className="... relative h-full content-center p-4 md:h-auto">
