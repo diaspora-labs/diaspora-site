@@ -332,7 +332,7 @@ const Home: NextPage = () => {
 
       <div
         style={{
-          width: "80vw",
+          // width: "80vw",
           overflowX: "scroll",
           overflowY: "hidden",
           height: showModal ? "100vh" : 0,
