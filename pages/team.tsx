@@ -72,7 +72,7 @@ const Team = (props: any) => {
             }),
               props.setShowModal(true)
           }}
-          className="mb-10 flex flex-col items-center rounded-full rounded-[2.5rem] border border-[#2D2A26] lg:flex-row "
+          className="mb-10 flex flex-col items-center rounded-[40px] rounded-[2.5rem] border border-[#2D2A26] lg:flex-row "
         >
           <div className="mt- mb-5 pt-7 lg:ml-7">
             <div
