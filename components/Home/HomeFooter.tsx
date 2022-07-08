@@ -16,7 +16,7 @@ export const HomeFooter = () => {
         </div>
 
         <div className="md:flex  md:mt-0 mt-10">
-          <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-neutral-500">
+          <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-neutral-500 text-sm font-light">
             <div className=" ">
               <a href="/contact-us">Contact us</a>
             </div>
@@ -27,7 +27,7 @@ export const HomeFooter = () => {
         </div>
 
         <div className="md:flex ">
-          <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-neutral-500">
+          <div className="mb-5 text-xs flex flex-row items-center justify-center space-x-10 text-neutral-500 font-medium	">
             &copy; 2022 DIASPORA
           </div>
         </div>
