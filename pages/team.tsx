@@ -2,10 +2,11 @@ import React from "react"
 
 import { Layout } from "../components/Layout"
 import { OnCyber, StreetArt, Profile } from "../components/Icons"
+import { people } from "../data/people"
 
 const Team = (props: any) => {
   // const [showModal, props.setShowModal] = React.useState(false);
-  const { people, setSelectedIndex } = props
+  const { setSelectedIndex } = props
   const [showPerson, setPerson] = React.useState({
     name: "",
     bio: "",
