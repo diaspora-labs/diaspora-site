@@ -11,6 +11,12 @@ export const NavHeader = () => {
 
   useEffect(() => {
     setWidth(window.innerWidth)
+    function handleResize() {
+      setWidth(window.innerWidth)
+    }
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
   return (
     <nav className="w-full">
