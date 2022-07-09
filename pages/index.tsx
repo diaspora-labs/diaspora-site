@@ -195,7 +195,7 @@ const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
 
-  const { carouselFragment, slideToItem } = useSpringCarousel({
+  const { carouselFragment, slideToItem, useListenToCustomEvent } = useSpringCarousel({
     items: people.map((i: any, index: number) => ({
       loop: true,
       slideType: "fixed",
@@ -308,6 +308,12 @@ const Home: NextPage = () => {
     })),
   })
 
+  useListenToCustomEvent((event) => {
+    if (event.eventName === "onSlideChange") {
+      setSelectedIndex(event.currentItem.index)
+    }
+  })
+
   useEffect(() => {
     if (!!slideToItem) {
       slideToItem(selectedIndex)
@@ -325,8 +331,8 @@ const Home: NextPage = () => {
 
       <div
         style={{
-          overflowX:  showModal ? "hidden" : "scroll",
-          overflowY:  showModal ? "hidden" : "hidden",
+          overflowX: showModal ? "hidden" : "scroll",
+          overflowY: showModal ? "hidden" : "hidden",
           height: showModal ? "80vh" : 0,
         }}
       >
@@ -334,7 +340,7 @@ const Home: NextPage = () => {
       </div>
 
       {showModal && (
-        <div className="align-center flex flex-row justify-center mb-10">
+        <div className="align-center mb-10 flex flex-row justify-center">
           {people.map((item, index) => {
             return (
               <p
@@ -353,7 +359,7 @@ const Home: NextPage = () => {
         </div>
       )}
 
-      <section className={showModal ? "hidden" : "pointer-events-auto z-10 flex h-full md:min-h-screen flex-col"}>
+      <section className={showModal ? "hidden" : "pointer-events-auto z-10 flex h-full flex-col md:min-h-screen"}>
         <div className={"flex grow flex-col p-10"}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
@@ -373,15 +379,15 @@ const Home: NextPage = () => {
               data-sal="slide-up"
               data-sal-delay="500"
             >
-              <div className="invisible md:visible flex flex-col items-center justify-center space-y-6">
-                <div className="invisible md:visible hidden  md:block text-center text-4xl font-light md:mt-[80px]">
+              <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
+                <div className="invisible hidden text-center  text-4xl font-light md:visible md:mt-[80px] md:block">
                   Great things
                   <br />
                   are coming
                 </div>
 
                 <div className="visible text-lg font-normal">Connect with us to stay updated</div>
-                <div className="visible pointer-events-auto flex space-x-10">
+                <div className="pointer-events-auto visible flex space-x-10">
                   <Discord />
                   <Instagram />
                   <Twitter />
