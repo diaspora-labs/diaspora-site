@@ -374,7 +374,7 @@ const Home: NextPage = () => {
               data-sal-delay="500"
             >
               <div className="invisible md:visible flex flex-col items-center justify-center space-y-6">
-                <div className="invisible md:visible text-center text-4xl font-light md:mt-[80px]">
+                <div className="invisible md:visible hidden  md:block text-center text-4xl font-light md:mt-[80px]">
                   Great things
                   <br />
                   are coming
