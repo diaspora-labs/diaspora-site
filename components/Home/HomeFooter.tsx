@@ -11,7 +11,7 @@ export const HomeFooter = () => {
         
         <div className="md:flex ">
           <div className="text-center rounded-2xl mb-5 shrink md:rounded-r-none bg-neutral-800 py-2 px-4">
-            <input placeholder="Email address" className=" bg-transparent text-center" />
+            <input placeholder="Email address" className=" bg-transparent text-center md:text-left" />
           </div>
           <div className="text-center rounded-2xl	 mb-5 md:rounded-l-none bg-purple-light py-2 px-4">
             <button className="m-auto">Add me to the list</button>
