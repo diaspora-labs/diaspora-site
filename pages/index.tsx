@@ -325,9 +325,9 @@ const Home: NextPage = () => {
 
       <div
         style={{
-          overflowX: "scroll",
-          overflowY: "hidden",
-          height: showModal ? "100vh" : 0,
+          overflowX:  showModal ? "hidden" : "scroll",
+          overflowY:  showModal ? "hidden" : "hidden",
+          height: showModal ? "80vh" : 0,
         }}
       >
         {carouselFragment}
