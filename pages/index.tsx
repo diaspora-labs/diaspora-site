@@ -334,6 +334,7 @@ const Home: NextPage = () => {
           overflowX: showModal ? "hidden" : "scroll",
           overflowY: showModal ? "hidden" : "hidden",
           height: showModal ? "80vh" : 0,
+          // width: showModal ? "60%" : 0
         }}
       >
         {carouselFragment}
