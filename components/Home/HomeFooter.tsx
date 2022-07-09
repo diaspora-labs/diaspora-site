@@ -17,7 +17,7 @@ export const HomeFooter = () => {
         </div>
 
         <div className="mt-10 items-center space-x-10 md:mt-0 md:flex">
-          <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-sm font-light text-neutral-500">
+          <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-sm font-light text-neutral-500 md:mb-0">
             <div className=" ">
               <a href="/contact-us">Contact us</a>
             </div>
@@ -25,7 +25,7 @@ export const HomeFooter = () => {
               <a href="/terms">Terms and conditions</a>
             </div>
           </div>
-          <div className="mb-5 md:flex">
+          <div className="mb-5 md:mb-0 md:flex">
             <span className="flex flex-row justify-center space-x-12">
               <Discord color="rgba(255,255,255,0.5)" />
               <Instagram color="rgba(255,255,255,0.5)" />
@@ -35,7 +35,7 @@ export const HomeFooter = () => {
         </div>
       </div>
 
-      <div className="mb-5 flex w-full flex-row justify-center space-x-10 text-xs font-medium text-neutral-500 md:flex md:w-full md:justify-start	">
+      <div className="flex w-full flex-row justify-center text-xs font-medium text-neutral-500 md:flex md:w-full md:justify-start">
         &copy; 2022 DIASPORA
       </div>
     </footer>
