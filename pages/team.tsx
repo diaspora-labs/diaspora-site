@@ -46,7 +46,7 @@ const Team = (props: any) => {
   }) => {
     // console.log('showPerson ', showPerson)
     return (
-      <div>
+      <div className="md:w-11/12">
         <div className="relative">
           <div className="absolute top-10 right-7">
             <Profile />
