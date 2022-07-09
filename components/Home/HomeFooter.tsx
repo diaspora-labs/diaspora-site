@@ -5,21 +5,19 @@ import { Twitter } from "../Icons/Twitter"
 
 export const HomeFooter = () => {
   return (
-    <footer className="p-4 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
-
-      <div className="md:flex flex-wrap w-full flex-row justify-center md:justify-between border-t-[1px] border-neutral-800 py-10 md:px-10">
-        
-        <div className="md:flex ">
-          <div className="text-center rounded-2xl mb-5 shrink md:rounded-r-none bg-neutral-800 py-2 px-4">
+    <footer className="flex-col rounded-lg p-4 py-10 shadow dark:bg-gray-800 md:flex md:items-center md:justify-between md:p-6 md:px-10">
+      <div className="w-full flex-row flex-wrap justify-between border-t-[1px] border-neutral-800 md:flex md:justify-between">
+        <div className="md:flex">
+          <div className="mb-5 shrink rounded-2xl bg-neutral-800 py-2 px-4 text-center md:rounded-r-none">
             <input placeholder="Email address" className=" bg-transparent text-center md:text-left" />
           </div>
-          <div className="text-center rounded-2xl	 mb-5 md:rounded-l-none bg-purple-light py-2 px-4">
+          <div className="mb-5 rounded-2xl	 bg-purple-light py-2 px-4 text-center md:rounded-l-none">
             <button className="m-auto">Add me to the list</button>
           </div>
         </div>
 
-        <div className="md:flex  md:mt-0 mt-10">
-          <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-neutral-500 text-sm font-light">
+        <div className="mt-10 items-center space-x-10 md:mt-0 md:flex">
+          <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-sm font-light text-neutral-500">
             <div className=" ">
               <a href="/contact-us">Contact us</a>
             </div>
@@ -27,25 +25,19 @@ export const HomeFooter = () => {
               <a href="/terms">Terms and conditions</a>
             </div>
           </div>
-        </div>
-
-        <div className="mx-4 md:flex mb-10">
-          <span className="flex flex-row  space-x-12 justify-center">
-            <Discord color="rgba(255,255,255,0.5)" />
-            <Instagram color="rgba(255,255,255,0.5)" />
-            <Twitter color="rgba(255,255,255,0.5)" />
-          </span>
-        </div>
-
-        <div className="md:flex ">
-          <div className="mb-5 text-xs flex flex-row items-center justify-center space-x-10 text-neutral-500 font-medium	">
-            &copy; 2022 DIASPORA
+          <div className="mb-5 md:flex">
+            <span className="flex flex-row justify-center space-x-12">
+              <Discord color="rgba(255,255,255,0.5)" />
+              <Instagram color="rgba(255,255,255,0.5)" />
+              <Twitter color="rgba(255,255,255,0.5)" />
+            </span>
           </div>
         </div>
-      
       </div>
 
-      
+      <div className="mb-5 flex w-full flex-row justify-center space-x-10 text-xs font-medium text-neutral-500 md:flex md:w-full md:justify-start	">
+        &copy; 2022 DIASPORA
+      </div>
     </footer>
   )
 }
