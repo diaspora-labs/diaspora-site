@@ -20,7 +20,7 @@ export const NavHeader = () => {
 
         <div className="grow"></div>
 
-        <div className="mx-4 flex items-center">
+        <div className="md:mx-4 flex flex-col space-x-1 items-center">
           <Nav />
           <span className="ml-10 flex flex-row items-center space-x-12">
             <Discord color="rgba(255,255,255,0.5)" />
