@@ -204,7 +204,7 @@ const Home: NextPage = () => {
       id: i.id,
       renderItem: (
         <div key={index} id="defaultModal" aria-hidden="true" className={``}>
-          <div className="... relative h-full content-center p-4 md:h-auto">
+          <div className="... relative h-full content-center p-4 md:h-auto md:top-[15vh] md:px-[30vh] ">
             <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow dark:bg-gray-700">
               <div className="relative">
                 <div className="absolute top-10 right-7">
@@ -334,6 +334,8 @@ const Home: NextPage = () => {
           overflowX: showModal ? "hidden" : "scroll",
           overflowY: showModal ? "hidden" : "hidden",
           height: showModal ? "80vh" : 0,
+          placeContent: "center",
+          justifyContent: "center",
           // width: showModal ? "60%" : 0
         }}
       >
