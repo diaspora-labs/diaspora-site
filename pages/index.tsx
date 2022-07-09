@@ -353,7 +353,7 @@ const Home: NextPage = () => {
         </div>
       )}
 
-      <section className={showModal ? "hidden" : "pointer-events-auto z-10 flex h-full min-h-screen flex-col"}>
+      <section className={showModal ? "hidden" : "pointer-events-auto z-10 flex h-full md:min-h-screen flex-col"}>
         <div className={"flex grow flex-col p-10"}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="col-span-2 flex h-full flex-col items-start justify-center">
@@ -373,15 +373,15 @@ const Home: NextPage = () => {
               data-sal="slide-up"
               data-sal-delay="500"
             >
-              <div className="flex flex-col items-center justify-center space-y-6">
-                <div className="invisible text-center text-4xl font-light md:visible md:mt-[80px]">
+              <div className="invisible md:visible flex flex-col items-center justify-center space-y-6">
+                <div className="invisible md:visible text-center text-4xl font-light md:mt-[80px]">
                   Great things
                   <br />
                   are coming
                 </div>
 
-                <div className="text-lg font-normal">Connect with us to stay updated</div>
-                <div className="pointer-events-auto flex space-x-10">
+                <div className="visible text-lg font-normal">Connect with us to stay updated</div>
+                <div className="visible pointer-events-auto flex space-x-10">
                   <Discord />
                   <Instagram />
                   <Twitter />
