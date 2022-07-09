@@ -334,7 +334,7 @@ const Home: NextPage = () => {
       </div>
 
       {showModal && (
-        <div className="align-center flex flex-row justify-center">
+        <div className="align-center flex flex-row justify-center mb-10">
           {people.map((item, index) => {
             return (
               <p
