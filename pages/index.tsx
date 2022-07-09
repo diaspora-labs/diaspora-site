@@ -334,6 +334,7 @@ const Home: NextPage = () => {
           overflowX: showModal ? "hidden" : "scroll",
           overflowY: showModal ? "hidden" : "hidden",
           height: showModal ? "80vh" : 0,
+          // width: showModal ? "60%" : 0
         }}
       >
         {carouselFragment}
@@ -404,7 +405,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="pointer-events-auto z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800">
+      <section className={showModal ? "md:hidden" : "pointer-events-auto z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800"}>
         <div className="flex grow flex-col p-10">
           <div className={showModal ? "md:hidden" : "mx-auto"}>
             <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" />
