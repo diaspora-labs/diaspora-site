@@ -195,6 +195,7 @@ const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
 
+  
   const { carouselFragment, slideToItem, useListenToCustomEvent } = useSpringCarousel({
     items: people.map((i: any, index: number) => ({
       loop: true,
