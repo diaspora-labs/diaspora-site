@@ -6,7 +6,7 @@ module.exports = {
         sans: ["Korolev", "Roboto", "sans-serif"],
       },
       backgroundImage: {
-        "home-bg": 'url("/images/Dutty-Boukman.jpg")',
+        "home-bg": 'url("/images/team-images/Dutty-Boukman.jpg")',
       },
       colors: {
         purple: {

@@ -30,6 +30,8 @@
     "react-reveal": "^1.2.2",
     "react-scroll-parallax": "^3.2.0",
     "react-visibility-sensor": "^5.1.1",
+    "react-spring": "^9.4.5",
+    "react-spring-carousel": "^2.0.19",
     "sal.js": "^0.8.5",
     "three": "^0.140.2"
   },
