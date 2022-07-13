@@ -16,8 +16,6 @@ export default function GoldMaskLogo() {
     <Spline
       scene="https://prod.spline.design/QZQ39MAcUPi3F1Dl/scene.splinecode"
       onLoad={onLoad}
-      autoRender={true}
-      width={"100%"}
       className="absolute inset-0"
     />
   )

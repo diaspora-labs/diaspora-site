@@ -73,7 +73,7 @@ const Team = (props: any) => {
             }),
               props.setShowModal(true)
           }}
-          className="mb-10 flex flex-col items-center rounded-[40px] rounded-[2.5rem] border border-[#2D2A26] lg:flex-row "
+          className="mb-10 flex flex-col items-center rounded-[40px] rounded-[2.5rem] border border-[#2D2A26] hover:border-purple-light lg:flex-row"
         >
           <div className="mt- mb-5 pt-7 lg:ml-7">
             <div
@@ -85,57 +85,6 @@ const Team = (props: any) => {
           <div className="px-5 text-left">
             <div className="flex items-center">
               <div className="mb-1 text-xl">{name}</div>
-              {/*<div className="ml-3 mt-[-3px] flex">
-                {linkedIn && (
-                  <div className="mr-2">
-                    <a target="_blank" rel="noreferrer" href={linkedIn}>
-                      <social.linkedIn.icon width="24" height="24" background="#fff" />
-                    </a>
-                  </div>
-                )}
-                {twitter && (
-                  <div className="mr-2">
-                    <a target="_blank" rel="noreferrer" href={twitter}>
-                      <social.twitter.icon width="24" height="24" background="#fff" />
-                    </a>
-                  </div>
-                )}
-                {instagram && (
-                  <div className="mr-2">
-                    <a target="_blank" rel="noreferrer" href={instagram}>
-                      <social.instagram.icon width="24" height="24" background="#fff" />
-                    </a>
-                  </div>
-                )}
-                {dribbble && (
-                  <div className="mr-2">
-                    <a target="_blank" rel="noreferrer" href={dribbble}>
-                      <social.dribbble.icon width="24" height="24" background="#fff" />
-                    </a>
-                  </div>
-                )}
-                {cyber && (
-                  <div className="mr-2">
-                    <a target="_blank" rel="noreferrer" href={cyber} className="mt-1 block">
-                      <social.cyber.icon width="24" background="#fff" />
-                    </a>
-                  </div>
-                )}
-                {foundation && (
-                  <div className="mr-2">
-                    <a target="_blank" rel="noreferrer" href={foundation} className="mt-1 block">
-                      <social.foundation.icon width="24" background="#fff" />
-                    </a>
-                  </div>
-                )}
-                {streetArt && (
-                  <div className="mr-2">
-                    <a target="_blank" rel="noreferrer" href={streetArt} className="mt-1 block">
-                      <social.streetArt.icon width="24" background="#fff" />
-                    </a>
-                  </div>
-                )}
-              </div>*/}
             </div>
             <div className="text-md mb-4 text-center text-gray-400">{title}</div>
           </div>

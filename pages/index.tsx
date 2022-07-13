@@ -121,7 +121,6 @@ const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(0)
 
-  
   const { carouselFragment, slideToItem, useListenToCustomEvent } = useSpringCarousel({
     items: people.map((i: any, index: number) => ({
       loop: true,
@@ -292,7 +291,7 @@ const Home: NextPage = () => {
       <section className={showModal ? "hidden" : "pointer-events-auto z-10 flex h-full flex-col md:min-h-screen"}>
         <div className={"flex grow flex-col p-10"}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
-            <div className="col-span-2 flex h-full flex-col items-start justify-center">
+            <div className="flex h-full flex-col justify-center text-center sm:items-center md:col-span-2 ">
               <div
                 className="text-center text-4xl font-light leading-tight text-neutral-600 md:text-5xl"
                 data-sal="slide-up"
