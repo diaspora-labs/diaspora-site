@@ -11,10 +11,6 @@ import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
 import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 
 const Roadmap = () => {
-  // initialize active index
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  // create page sections
   const sections = [
     {
       icon: CrowdFundingIcon,
@@ -51,23 +47,8 @@ const Roadmap = () => {
     },
   ]
 
-  // create References
-  const initial: Array<any> = []
-  const refArray = useRef(initial)
-  const addToRefs = (el: any) => {
-    if (el && !refArray.current.includes(el)) {
-      refArray.current.push(el)
-    }
-  }
-
-  // section titles
   const pageTitle = `A "Nonlinear" Journey Through Lineage and Future`
   const pageSubTitle = `Transparency is key for the Diaspora DAO. It is important that we share our journey as we build the community. Decentralization is not only a part of the foundation of the organization, but also the pathway through lineage. Diaspora’s journey to building a DAO, as well as every members own journey within it, is a non linear path. We will continue to iterate and learn from the past to create pathways for the future.`
-
-  // background parallax element
-  // const parallax = useParallax<HTMLDivElement>({
-  //   speed: -10,
-  // })
 
   return (
     <Layout>
