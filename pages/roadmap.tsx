@@ -5,51 +5,11 @@ import { useParallax } from "react-scroll-parallax"
 import VisibilitySensor from "react-visibility-sensor"
 import { Roll, Flip } from "react-reveal"
 import { isMobile } from "react-device-detect"
-
-import animation from "../roadmap-animation/data.json"
-import mobileAnimation from "../roadmap-animation/data_mobile.json"
 import BackgroundSVG from "../public/images/bg-pattern.svg"
 
 const Roadmap = () => {
   // initialize active index
   const [activeIndex, setActiveIndex] = useState(0)
-
-  // update pagination on scroll
-  function onChange(isVisible: any, index: number) {
-    setActiveIndex(index)
-  }
-
-  // laod animation
-  useEffect(() => {
-    var animDuration = isMobile ? 1000 : 4100
-    const anim = lottie.loadAnimation({
-      container: document.querySelector(".roadmap-animation") as HTMLElement,
-      animationData: isMobile ? mobileAnimation : animation,
-      renderer: "svg",
-      loop: false,
-      autoplay: false,
-    })
-
-    function animatebodymovin(duration: number) {
-      const scrollPosition = window.scrollY
-      const maxFrames = anim.totalFrames
-      const frame = (maxFrames / 100) * (scrollPosition / (duration / 100))
-      if (frame <= maxFrames) {
-        anim.goToAndStop(frame, true)
-      }
-    }
-
-    const onScroll = () => {
-      animatebodymovin(animDuration)
-    }
-
-    document.addEventListener("scroll", onScroll)
-
-    return () => {
-      anim.destroy()
-      document.removeEventListener("scroll", onScroll)
-    }
-  }, [])
 
   // create page sections
   const sections = [
@@ -134,13 +94,11 @@ const Roadmap = () => {
 
       <div className="roadmap-animation" />
 
-      <div className="flex w-screen flex-col items-center">
-        <p className="max-w-2xl p-8 px-[60px] pt-24 text-center text-3xl font-bold tracking-wide text-white">
-          {pageTitle}
-        </p>
-        <p className={"w-full px-10 text-center text-center text-base font-light text-white text-white md:w-6/12"}>
-          {pageSubTitle}
-        </p>
+      <div className="mx-auto max-w-lg">
+        <div className="flex flex-col">
+          <p className="py-8 pt-24 text-3xl font-bold tracking-wide text-white">{pageTitle}</p>
+          <p className="text-lg font-light text-white">{pageSubTitle}</p>
+        </div>
       </div>
 
       <div className="flex w-screen flex-col items-center">
@@ -166,7 +124,7 @@ const Roadmap = () => {
           }
 
           return (
-            <VisibilitySensor onChange={(isVisible) => onChange(isVisible, index)} key={index}>
+            <VisibilitySensor key={index}>
               <div
                 ref={addToRefs}
                 className={isMobile ? "mt-56" : isEven ? " md:mt-56 md:ml-96 " : "mt-[180px] md:mt-56 md:mr-96 "}
