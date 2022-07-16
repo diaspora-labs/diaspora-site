@@ -1,11 +1,14 @@
 import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import lottie from "lottie-web"
-import { useParallax } from "react-scroll-parallax"
-import VisibilitySensor from "react-visibility-sensor"
-import { Roll, Flip } from "react-reveal"
 import { isMobile } from "react-device-detect"
-import BackgroundSVG from "../public/images/bg-pattern.svg"
+import MaskImage from "../public/images/roadmap/mask.png"
+import { Layout } from "../components/Layout"
+import { CrowdFundingIcon } from "../components/Roadmap/CrowdFundingIcon"
+import { MintAncestorIcon } from "../components/Roadmap/MintAncestorIcon"
+import { StructureIcon } from "../components/Roadmap/StructureIcon"
+import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
+import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 
 const Roadmap = () => {
   // initialize active index
@@ -14,18 +17,22 @@ const Roadmap = () => {
   // create page sections
   const sections = [
     {
+      icon: CrowdFundingIcon,
       title: "The Journey",
       list: ["Define Mission/Vision", "Build Roadmap", "Build Whitepaper", "Brand Identity"],
     },
     {
+      icon: MintAncestorIcon,
       title: "Mint an Ancestor",
       list: ["Launch NFT Collection", "Build Gallery", "Marketing / Social"],
     },
     {
+      icon: StructureIcon,
       title: "Lay the Cultural Foundation",
       list: ["Develop DAO", "Develop Structure and Governance", "Logistics (LLC, DeFi, etc.)"],
     },
     {
+      icon: PathwaysIcon,
       title: "Building the Pathways",
       list: [
         "Building Partnerships (in the 4 pillars)",
@@ -34,6 +41,7 @@ const Roadmap = () => {
       ],
     },
     {
+      icon: InstitutionIcon,
       title: "Building the Pathways",
       list: [
         "Building Partnerships (in the 4 pillars)",
@@ -57,102 +65,55 @@ const Roadmap = () => {
   const pageSubTitle = `Transparency is key for the Diaspora DAO. It is important that we share our journey as we build the community. Decentralization is not only a part of the foundation of the organization, but also the pathway through lineage. Diaspora’s journey to building a DAO, as well as every members own journey within it, is a non linear path. We will continue to iterate and learn from the past to create pathways for the future.`
 
   // background parallax element
-  const parallax = useParallax<HTMLDivElement>({
-    speed: -10,
-  })
-  // ui components
+  // const parallax = useParallax<HTMLDivElement>({
+  //   speed: -10,
+  // })
+
   return (
-    <div
-      className={
-        isMobile
-          ? "relative w-screen overflow-x-hidden overflow-y-scroll bg-purple-med"
-          : "relative w-screen overflow-y-hidden bg-purple-med"
-      }
-    >
-      <div className="fixed top-0 w-1/6 opacity-10" ref={parallax.ref}>
-        <Image src={BackgroundSVG} alt="diaspora" layout="fixed" />
-      </div>
-
-      <div className="fixed top-2/4 right-20 flex-col items-center">
-        {sections.map((item: any, index: number) => {
-          return (
-            <div
-              key={index}
-              className={`${
-                activeIndex === index
-                  ? "md:z-10 md:mb-3 md:h-2 md:w-2 md:rounded-full md:bg-yellow-300"
-                  : "md:z-10 md:mb-3 md:h-1 md:w-1 md:rounded-full md:bg-yellow-300"
-              }`}
-              onClick={() => {
-                setActiveIndex(index)
-                !!refArray.current && refArray.current[index].scrollIntoView({ block: "end", inline: "nearest" })
-              }}
-            />
-          )
-        })}
-      </div>
-
-      <div className="roadmap-animation" />
+    <Layout>
+      <div className="fixed inset-0 w-full bg-roadmap-bg bg-cover"></div>
 
       <div className="mx-auto max-w-lg">
-        <div className="flex flex-col">
-          <p className="py-8 pt-24 text-3xl font-bold tracking-wide text-white">{pageTitle}</p>
-          <p className="text-lg font-light text-white">{pageSubTitle}</p>
+        <div className="flex flex-row ">
+          <div className="z-10 mt-[65vh] flex flex-col lg:mt-5">
+            <p className="py-8 pt-24 text-3xl font-bold tracking-wide text-white md:text-4xl">{pageTitle}</p>
+            <p className="text-lg font-light text-white">{pageSubTitle}</p>
+          </div>
+          <div className="absolute right-0 z-0 w-full md:fixed md:h-[860px] md:w-[860px]">
+            <Image src={MaskImage} />
+          </div>
         </div>
       </div>
 
-      <div className="flex w-screen flex-col items-center">
+      <div className="mb-30 mx-auto max-w-lg">
         {sections.map((item, index) => {
-          const isEven = index % 2 === 0
-          const isOdd = !isEven
-
-          let marginTop
-          if (index === 0) {
-            marginTop = "mt-52"
-          }
-          if (index === 1) {
-            marginTop = "mt-12"
-          }
-          if (index === 2) {
-            marginTop = "mt-72"
-          }
-          if (index === 3) {
-            marginTop = "mt-40"
-          }
-          if (index === 4) {
-            marginTop = "mt-40"
-          }
+          const Icon = item.icon
 
           return (
-            <VisibilitySensor key={index}>
-              <div
-                ref={addToRefs}
-                className={isMobile ? "mt-56" : isEven ? " md:mt-56 md:ml-96 " : "mt-[180px] md:mt-56 md:mr-96 "}
-              >
-                <div className={isMobile ? "" : isEven ? `${marginTop} md:ml-24` : `${marginTop} md:mr-24`}>
-                  <Flip left={isOdd} right={isEven}>
-                    <p
-                      className={"max-w-2xl px-20 pt-24 text-center text-3xl font-bold tracking-wide text-white md:p-8"}
-                    >
-                      {item.title}
-                    </p>
-                  </Flip>
-                  <Roll left={isOdd} right={isEven}>
+            <div key={index} className="my-20">
+              <div className="mb-5 w-[200px]">
+                <Icon />
+              </div>
+              <div className="mb-5">
+                <div>
+                  <p className={"my-5 max-w-2xl text-3xl font-bold tracking-wide text-white"}>{item.title}</p>
+
+                  <ul className="ml-5">
                     {item.list.map((item) => {
                       return (
-                        <div key={item}>
-                          <p className={"mt-2 w-full px-5 text-center text-base font-light text-white"}>{item}</p>
-                        </div>
+                        <li key={item} className={"mt-2 mr-2 w-full list-disc text-xl font-light text-white"}>
+                          {item}
+                        </li>
                       )
                     })}
-                  </Roll>
+                  </ul>
                 </div>
               </div>
-            </VisibilitySensor>
+            </div>
           )
         })}
       </div>
-    </div>
+    </Layout>
   )
 }
 

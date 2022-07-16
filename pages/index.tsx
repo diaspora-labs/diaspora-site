@@ -24,33 +24,26 @@ const Home: NextPage = () => {
 
   return (
     <Layout showLogo>
-      <div className={"inset-0 scroll-smooth md:fixed md:z-0 md:mt-10"}>
-        {/* @ts-ignore */}
-        {/*<Suspense fallback={null} r3f>
-          <GoldMaskLogo />
-        </Suspense>*/}
-      </div>
-
-      <section className={showModal ? "hidden" : "pointer-events-auto z-10 flex h-full flex-col md:min-h-screen"}>
-        <div className={"flex grow flex-col p-10"}>
+      <section
+        className={showModal ? "hidden" : "pointer-events-auto relative z-10 flex h-full flex-col md:min-h-screen"}
+      >
+        <div className={"inset-0 scroll-smooth md:absolute md:z-0 md:mt-10"}>
+          {/* @ts-ignore */}
+          <Suspense fallback={null} r3f>
+            <GoldMaskLogo />
+          </Suspense>
+        </div>
+        <div className={"z-10 flex grow flex-col p-10"}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="flex h-full flex-col justify-center text-center sm:items-center md:col-span-2 ">
-              <div
-                className="text-center text-4xl font-light leading-tight text-neutral-600 md:text-5xl"
-                data-sal="slide-up"
-                data-sal-delay="300"
-              >
+              <div className="text-center text-4xl font-light leading-tight text-neutral-600 md:text-5xl">
                 Building a bridge
                 <br />
                 for the culture
                 <br />& mint an ancestor
               </div>
             </div>
-            <div
-              className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col"
-              data-sal="slide-up"
-              data-sal-delay="500"
-            >
+            <div className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
               <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
                 <div className="invisible hidden text-center  text-4xl font-light md:visible md:mt-[80px] md:block">
                   Great things

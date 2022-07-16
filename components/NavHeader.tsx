@@ -23,9 +23,7 @@ export const NavHeader = () => {
       <div className="flex w-full items-center justify-between">
         <div className="flex items-center py-4 px-4">
           <Link href="/">
-            <a>
-              <DiasporaLogoSmall width="120" />
-            </a>
+            <DiasporaLogoSmall width="120" />
           </Link>
         </div>
 

@@ -1,3 +1,5 @@
+const { url } = require("inspector")
+
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -7,6 +9,7 @@ module.exports = {
       },
       backgroundImage: {
         "home-bg": 'url("/images/team-images/Dutty-Boukman.jpg")',
+        "roadmap-bg": 'url("/images/background-image.png")',
       },
       colors: {
         purple: {

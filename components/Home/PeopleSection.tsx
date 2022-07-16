@@ -30,7 +30,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       id: i.id,
       renderItem: (
         <div key={index} id="defaultModal" aria-hidden="true" className={``}>
-          <div className="... relative h-full content-center p-4 md:top-[15vh] md:h-auto md:px-[30vh] ">
+          <div className="... relative h-full content-center p-4 md:h-auto md:px-[30vh] ">
             <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow dark:bg-gray-700">
               <div className="relative">
                 <div className="absolute top-10 right-7">
@@ -181,7 +181,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
         </div>
       )}
 
-      <div className="relative mt-20 lg:mt-40">
+      <div className="relative mt-4">
         <p className={`mb-10 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-20`}>The Team</p>
         <div className="mx-auto grid max-w-6xl backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 ">
           {people.map((person: any, i: number) => (
