@@ -8,7 +8,7 @@ module.exports = {
         sans: ["Korolev", "Roboto", "sans-serif"],
       },
       backgroundImage: {
-        "home-bg": 'url("/images/team-images/Dutty-Boukman.jpg")',
+        "home-bg": 'url("/images/home-bg.png")',
         "roadmap-bg": 'url("/images/background-image.png")',
       },
       colors: {

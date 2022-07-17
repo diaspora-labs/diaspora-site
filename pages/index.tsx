@@ -27,15 +27,19 @@ const Home: NextPage = () => {
       <section
         className={showModal ? "hidden" : "pointer-events-auto relative z-10 flex h-full flex-col md:min-h-screen"}
       >
-        <div className={"inset-0 scroll-smooth md:absolute md:z-0 md:mt-10"}>
+        <div
+          className={
+            "bg-100 inset-0 scroll-smooth bg-home-bg bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-10"
+          }
+        >
           {/* @ts-ignore */}
-          <Suspense fallback={null} r3f>
+          {/* <Suspense fallback={null} r3f>
             <GoldMaskLogo />
-          </Suspense>
+          </Suspense> */}
         </div>
         <div className={"z-10 flex grow flex-col p-10"}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
-            <div className="flex h-full flex-col justify-center text-center sm:items-center md:col-span-2 ">
+            <div className="flex h-full flex-col justify-center text-center sm:items-center md:col-span-2 md:pr-10">
               <div className="text-center text-4xl font-light leading-tight text-neutral-600 md:text-5xl">
                 Building a bridge
                 <br />
@@ -71,9 +75,7 @@ const Home: NextPage = () => {
 
       <section
         className={
-          showModal
-            ? "md:hidden"
-            : "pointer-events-auto z-10 flex h-full min-h-screen flex-col border-t-[1px] border-neutral-800"
+          showModal ? "md:hidden" : "pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"
         }
       >
         <div className="flex grow flex-col p-10">
