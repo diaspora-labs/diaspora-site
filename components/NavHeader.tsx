@@ -19,7 +19,7 @@ export const NavHeader = () => {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
   return (
-    <nav className="w-full">
+    <nav className="relative z-50 w-full">
       <div className="flex w-full items-center justify-between">
         <div className="flex items-center py-4 px-4">
           <Link href="/">

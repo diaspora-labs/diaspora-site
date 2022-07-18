@@ -10,7 +10,7 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
         text-white`,
         classes
       )}
-    > 
+    >
       <NavHeader />
       {children}
     </div>

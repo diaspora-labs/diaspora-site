@@ -52,7 +52,7 @@ const Roadmap = () => {
 
   return (
     <Layout>
-      <div className="fixed inset-0 w-full bg-roadmap-bg bg-cover"></div>
+      <div className="fixed inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
 
       <div className="mx-auto max-w-lg">
         <div className="flex flex-row ">
