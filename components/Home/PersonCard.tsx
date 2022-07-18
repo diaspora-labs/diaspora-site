@@ -37,7 +37,7 @@ export const PersonCard = (props: Props) => {
         <div className="mt- mb-5 pt-7 lg:ml-7">
           <div
             style={{ backgroundImage: `url(${image})` }}
-            className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top group-hover:border-purple-light`}
+            className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
           ></div>
         </div>
 

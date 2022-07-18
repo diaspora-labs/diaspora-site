@@ -7,7 +7,7 @@ export const Nav = () => {
   const router = useRouter()
 
   const routes: { [route: string]: string } = {
-    "/": "about",
+    "/": "home",
     // "/gallery": "gallery",
     "/roadmap": "roadmap",
     "/whitepaper": "whitepaper",
