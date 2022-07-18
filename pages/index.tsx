@@ -2,20 +2,18 @@ import React, { Suspense, useEffect, useState } from "react"
 import { NextPage } from "next"
 import dynamic from "next/dynamic"
 
-// import GoldMaskLogo from "../components/DiasporaLogo/GoldMaskLogo"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { Discord } from "../components/Icons/Discord"
 import { Envelop } from "../components/Icons/Envelop"
 import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Layout } from "../components/Layout"
-import { NavHeader } from "../components/NavHeader"
 
 import Image from "next/image"
 
 import { PeopleSection } from "../components/Home/PeopleSection"
 
-const GoldMaskLogo = dynamic(() => import("../components/DiasporaLogo/GoldMaskLogo"), {
+const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
   ssr: false,
 })
 
