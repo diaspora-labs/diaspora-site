@@ -5,8 +5,8 @@ import { Twitter } from "../Icons/Twitter"
 
 export const HomeFooter = () => {
   return (
-    <footer className="flex-col rounded-lg p-4 py-10 shadow dark:bg-gray-800 md:flex md:items-center md:justify-between md:p-6 md:px-10">
-      <div className="w-full flex-row flex-wrap justify-between border-t-[1px] border-neutral-800 md:flex md:justify-between">
+    <footer className="flex-col border-t-[1px] border-neutral-800  p-4 py-10 md:flex md:items-center md:justify-between md:p-6 md:px-10">
+      <div className="w-full flex-row flex-wrap justify-between md:flex md:justify-between">
         <div className="md:flex">
           <div className="mb-5 shrink rounded-2xl bg-neutral-800 py-2 px-4 text-center md:rounded-r-none">
             <input placeholder="Email address" className=" bg-transparent text-center md:text-left" />
