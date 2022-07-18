@@ -37,8 +37,8 @@ const Home: NextPage = () => {
         </div>
         <div className={"z-10 flex grow flex-col p-10"}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
-            <div className="flex h-full flex-col justify-center text-center sm:items-center md:col-span-2 md:pr-10">
-              <div className="text-center text-4xl font-light leading-tight text-neutral-600 md:text-5xl">
+            <div className="flex h-full flex-row items-start justify-center sm:items-center md:col-span-2">
+              <div className="text-center text-4xl font-light leading-tight text-neutral-600 shadow-black drop-shadow-md md:text-5xl">
                 Building a bridge
                 <br />
                 for the culture
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
                 </div>
 
                 <div className="visible text-lg font-normal">Connect with us to stay updated</div>
-                <div className="pointer-events-auto visible flex space-x-10">
+                <div className="pointer-events-auto visible flex space-x-8">
                   <Discord />
                   <Instagram />
                   <Twitter />

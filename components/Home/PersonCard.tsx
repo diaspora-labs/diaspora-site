@@ -16,51 +16,34 @@ type PersonData = {
 
 interface Props {
   person: PersonData
-  setPerson: (data: any) => void
   onClick: () => void
 }
 
 export const PersonCard = (props: Props) => {
   const { person, onClick } = props
 
-  const {
-    name = "",
-    bio = "",
-    image = "",
-    title = "",
-    linkedIn = "",
-    twitter = "",
-    instagram = "",
-    dribbble = "",
-    cyber = "",
-    foundation = "",
-    streetArt = "",
-  } = person
-  // console.log('showPerson ', showPerson)
+  const { name = "", image = "", title = "" } = person
+
   return (
-    <div className="md:w-11/12">
-      <div className="relative">
+    <div className="md:w-full">
+      <div
+        onClick={onClick}
+        className="group relative mb-10 flex flex-col items-center rounded-[2.5rem] border border-[#2D2A26] transition ease-in-out hover:border-purple-light lg:flex-row"
+      >
         <div className="absolute top-10 right-7">
           <Profile />
         </div>
-      </div>
 
-      <div
-        onClick={onClick}
-        className="mb-10 flex flex-col items-center rounded-[40px] rounded-[2.5rem] border border-[#2D2A26] hover:border-purple-light lg:flex-row"
-      >
         <div className="mt- mb-5 pt-7 lg:ml-7">
           <div
             style={{ backgroundImage: `url(${image})` }}
-            className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top`}
+            className={`relative h-[100px] w-[100px] overflow-hidden rounded-full border-2 border-neutral-800 bg-cover bg-top group-hover:border-purple-light`}
           ></div>
         </div>
 
-        <div className="px-5 text-left">
-          <div className="flex items-center">
-            <div className="mb-1 text-xl">{name}</div>
-          </div>
-          <div className="text-md mb-4 text-center text-gray-400">{title}</div>
+        <div className="px-5 text-center lg:text-left">
+          <div className="mb-1 text-xl">{name}</div>
+          <div className="text-md mb-4  text-gray-400 ">{title}</div>
         </div>
       </div>
     </div>

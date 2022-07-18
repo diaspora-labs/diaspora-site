@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {
         "home-bg": 'url("/images/home-bg.png")',
         "roadmap-bg": 'url("/images/background-image.png")',
+        "roadmap-mask": 'url("/images/roadmap/mask.png")',
       },
       colors: {
         purple: {

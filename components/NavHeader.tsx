@@ -7,17 +7,6 @@ import { Instagram } from "./Icons/Instagram"
 import { Twitter } from "./Icons/Twitter"
 
 export const NavHeader = () => {
-  const [width, setWidth] = useState(0)
-
-  useEffect(() => {
-    setWidth(window.innerWidth)
-    function handleResize() {
-      setWidth(window.innerWidth)
-    }
-
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
   return (
     <nav className="fixed z-50 w-full bg-black/30 backdrop-blur-md">
       <div className="flex w-full items-center justify-between">
@@ -32,19 +21,14 @@ export const NavHeader = () => {
         <div className="grow"></div>
 
         <div className="mx-4 flex items-center">
-          {width > 800 && <Nav />}
-          <span className="ml-10 flex flex-row items-center space-x-12">
+          <Nav />
+          <span className="ml-10 flex flex-row items-center space-x-8">
             <Discord color="rgba(255,255,255,0.5)" />
             <Instagram color="rgba(255,255,255,0.5)" />
             <Twitter color="rgba(255,255,255,0.5)" />
           </span>
         </div>
       </div>
-      {width <= 800 && (
-        <div className="flex justify-center">
-          <Nav />
-        </div>
-      )}
     </nav>
   )
 }
