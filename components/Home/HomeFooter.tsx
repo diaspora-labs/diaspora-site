@@ -39,7 +39,7 @@ export const HomeFooter: React.FC<HomeFooterProps> = ({ fixed }) => {
             </div>
           </div>
           <div className="mb-5 hidden md:mb-0 md:flex">
-            <span className="flex flex-row justify-center space-x-12">
+            <span className="flex flex-row justify-center space-x-8">
               <Discord color="rgba(255,255,255,0.5)" />
               <Instagram color="rgba(255,255,255,0.5)" />
               <Twitter color="rgba(255,255,255,0.5)" />

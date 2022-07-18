@@ -7,12 +7,12 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
     <div
       className={cls(
         `bg-container max-w-screen min-h-screen flex-col overflow-hidden bg-black 
-        text-white`,
+       text-white`,
         classes
       )}
     >
       <NavHeader />
-      {children}
+      <div className="mt-10">{children}</div>
     </div>
   )
 }
