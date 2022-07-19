@@ -7,7 +7,7 @@ import { OrthographicCamera } from "@react-three/drei"
 import type { Object3D } from "three"
 
 export default function GoldMaskLogo({ ...props }) {
-  const scene = useLoader(SplineLoader, "https://prod.spline.design/9I5EiVB3Oko8EpdM/scene.splinecode")
+  const scene = useLoader(SplineLoader, "https://prod.spline.design/QZQ39MAcUPi3F1Dl/scene.splinecode")
   const { nodes, materials } = useGraph(scene as unknown as Object3D)
 
   console.log(nodes, materials)

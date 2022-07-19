@@ -3,6 +3,7 @@ import { Discord } from "../Icons/Discord"
 import { Instagram } from "../Icons/Instagram"
 import { Twitter } from "../Icons/Twitter"
 import cls from "classnames"
+import { EmailInput } from "../EmailInput/EmailInput"
 
 interface HomeFooterProps {
   fixed?: boolean
@@ -17,17 +18,7 @@ export const HomeFooter: React.FC<HomeFooterProps> = ({ fixed }) => {
       )}
     >
       <div className="flex w-full flex-col flex-wrap justify-between lg:flex-row lg:items-center">
-        <div className="flex">
-          <div className="relative mb-5 w-[350px] shrink rounded-2xl rounded-r-none bg-neutral-800 py-2 px-4 text-center">
-            <input
-              placeholder="Email address"
-              className="absolute inset-0 bg-transparent pl-5 outline-none md:text-left"
-            />
-          </div>
-          <div className="mb-5 rounded-2xl	 rounded-l-none bg-purple-light py-2 px-4 text-center transition ease-in-out hover:bg-opacity-80">
-            <button className="m-auto">Add me to the list</button>
-          </div>
-        </div>
+        <EmailInput />
 
         <div className="mt-10 items-center space-x-8 md:mt-0 md:flex">
           <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-sm font-light text-neutral-500 md:mb-0">
