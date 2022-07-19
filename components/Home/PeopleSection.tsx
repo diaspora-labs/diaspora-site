@@ -3,6 +3,7 @@ import { useSpringCarousel } from "react-spring-carousel"
 import { people } from "../../data/people"
 import { social } from "../Social"
 import { PersonCard } from "./PersonCard"
+import cls from "classnames"
 
 export const PeopleSection = ({ showModal, setShowModal }: any) => {
   const [showPerson, setPerson] = React.useState({
@@ -168,13 +169,10 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
               <p
                 onClick={() => setSelectedIndex(index)}
                 key={index}
-                style={{
-                  backgroundColor: selectedIndex === index ? "#fff" : "#444",
-                  width: "6px",
-                  height: "6px",
-                  margin: "0px 6px",
-                  borderRadius: "100%",
-                }}
+                className={cls(
+                  "mx-[6px] h-[6px] w-[6px] rounded-full",
+                  selectedIndex === index ? "bg-white" : "bg-gray-500"
+                )}
               />
             )
           })}
@@ -182,13 +180,12 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       )}
 
       <div className="relative mt-4">
-        <p className={`mb-10 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-20`}>The Team</p>
-        <div className="mx-auto grid max-w-6xl px-20 backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2">
+        <p className={`mt-20 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-10`}>The Team</p>
+        <div className="lg:space mx-auto grid max-w-6xl px-20 backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 lg:gap-4">
           {people.map((person: any, i: number) => (
             <div onClick={() => setSelectedIndex(i)} key={i}>
               <PersonCard
                 person={person}
-                setPerson={setPerson}
                 onClick={() => {
                   window.scrollTo(0, 0)
                   setPerson(person), setShowModal(true)

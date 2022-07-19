@@ -2,21 +2,25 @@ import React from "react"
 import { Discord } from "../Icons/Discord"
 import { Instagram } from "../Icons/Instagram"
 import { Twitter } from "../Icons/Twitter"
+import cls from "classnames"
+import { EmailInput } from "../EmailInput/EmailInput"
 
-export const HomeFooter = () => {
+interface HomeFooterProps {
+  fixed?: boolean
+}
+
+export const HomeFooter: React.FC<HomeFooterProps> = ({ fixed }) => {
   return (
-    <footer className="flex-col rounded-lg p-4 py-10 shadow dark:bg-gray-800 md:flex md:items-center md:justify-between md:p-6 md:px-10">
-      <div className="w-full flex-row flex-wrap justify-between border-t-[1px] border-neutral-800 md:flex md:justify-between">
-        <div className="md:flex">
-          <div className="mb-5 shrink rounded-2xl bg-neutral-800 py-2 px-4 text-center md:rounded-r-none">
-            <input placeholder="Email address" className=" bg-transparent text-center md:text-left" />
-          </div>
-          <div className="mb-5 rounded-2xl	 bg-purple-light py-2 px-4 text-center md:rounded-l-none">
-            <button className="m-auto">Add me to the list</button>
-          </div>
-        </div>
+    <footer
+      className={cls(
+        "flex-col border-t-[1px] border-neutral-800  p-4 py-10 md:flex md:items-center md:justify-between md:p-6 md:px-10",
+        { "fixed bottom-0 left-0 right-0 bg-black/60 backdrop-blur-md": fixed }
+      )}
+    >
+      <div className="flex w-full flex-col flex-wrap justify-between lg:flex-row lg:items-center">
+        <EmailInput />
 
-        <div className="mt-10 items-center space-x-10 md:mt-0 md:flex">
+        <div className="mt-10 items-center space-x-8 md:mt-0 md:flex">
           <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-sm font-light text-neutral-500 md:mb-0">
             <div className=" ">
               <a href="/contact-us">Contact us</a>
@@ -25,8 +29,8 @@ export const HomeFooter = () => {
               <a href="/terms">Terms and conditions</a>
             </div>
           </div>
-          <div className="mb-5 md:mb-0 md:flex">
-            <span className="flex flex-row justify-center space-x-12">
+          <div className="mb-5 hidden md:mb-0 md:flex">
+            <span className="flex flex-row justify-center space-x-8">
               <Discord color="rgba(255,255,255,0.5)" />
               <Instagram color="rgba(255,255,255,0.5)" />
               <Twitter color="rgba(255,255,255,0.5)" />
