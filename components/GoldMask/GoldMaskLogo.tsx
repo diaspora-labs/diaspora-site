@@ -9,7 +9,9 @@ export default function GoldMaskLogo() {
 
   function onLoad() {
     setSpline(spline)
+    console.log("inside onLoad")
     spline?.emitEvent("mouseHover", "d8bfa08b-1e2c-4511-8f4c-f75e709396c1")
+    window.dispatchEvent(new Event("resize"))
   }
 
   return (
