@@ -1,6 +1,8 @@
 import React, { Suspense, useEffect, useState } from "react"
 import { NextPage } from "next"
 import dynamic from "next/dynamic"
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls } from "@react-three/drei"
 
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { Discord } from "../components/Icons/Discord"
@@ -29,8 +31,11 @@ const Home: NextPage = () => {
           }
         >
           {/* @ts-ignore */}
-          <Suspense fallback={null} r3f>
-            <GoldMaskLogo />
+          <Suspense fallback={null}>
+            <Canvas shadows flat linear>
+              <GoldMaskLogo />
+              <OrbitControls />
+            </Canvas>
           </Suspense>
         </div>
         <div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>
