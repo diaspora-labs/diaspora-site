@@ -34,6 +34,7 @@
     "react-spring-carousel": "^2.0.19",
     "react-visibility-sensor": "^5.1.1",
     "sal.js": "^0.8.5",
+    "spotify-web-api-node": "^5.0.2",
     "three": "^0.140.2"
   },
   "devDependencies": {

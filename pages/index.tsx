@@ -15,13 +15,16 @@ import Image from "next/image"
 
 import { PeopleSection } from "../components/Home/PeopleSection"
 
+import spotifyApi  from "./api/spotify"
+
+
 const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
   ssr: false,
 })
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
-
+  // console.log('spotifyApi home ', spotifyApi)
   return (
     <Layout showLogo>
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
