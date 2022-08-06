@@ -5,24 +5,23 @@ var SpotifyWebApi = require("spotify-web-api-node")
 var spotifyApi = new SpotifyWebApi({
   clientId: process.env.SPOTIFY_CLIENT_ID,
   clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-  redirectUri: process.env.SPOTIFY_CALLBACK_URL,
 })
 
 // Retrieve an access token and a refresh token
-spotifyApi.clientCredentialsGrant().then(
-  function(data) {
-    console.log('The access token expires in ' + data.body['expires_in']);
-    console.log('The access token is ' + data.body['access_token']);
-    // Save the access token so that it's used in future calls
-    spotifyApi.setAccessToken(data.body['access_token']);
-  },
-  function(err) {
-    console.log('Something went wrong when retrieving an access token', err);
-  }
-)
+// spotifyApi.clientCredentialsGrant().then(
+//   function(data: { body: { [x: string]: any; }; }) {
+//     console.log('The access token expires in ' + data.body['expires_in']);
+//     console.log('The access token is ' + data.body['access_token']);
+//     // Save the access token so that it's used in future calls
+//     spotifyApi.setAccessToken(data.body['access_token']);
+//   },
+//   function(err: any) {
+//     console.log('Something went wrong when retrieving an access token', err);
+//   }
+// )
 
-const authorizationCode = "<insert authorization code with user-read-private and user-read-email scopes>"
-
+// const authorizationCode = "BQCNSM6ePimINVb6Xh38iWhXVtRJwZvm8RIHujUp4s2EQBTDBRy_-pfPjEA1brxUWT4Eg6vAOD43ZiojZrnkBS08lVJd3rFTEU-5QP60cClPj_seUXQ"
+spotifyApi.setAccessToken(authorizationCode);
 // When our access token will expire
 let tokenExpirationEpoch
 
@@ -50,7 +49,7 @@ let tokenExpirationEpoch
 //     }
 //   );
 
-// spotifyApi.authorizationCodeGrant(code).then(
+// spotifyApi.authorizationCodeGrant(authorizationCode).then(
 //   function(data) {
 //     console.log('The token expires in ' + data.body['expires_in']);
 //     console.log('The access token is ' + data.body['access_token']);
@@ -106,12 +105,21 @@ console.log("spotifyApi ", spotifyApi)
 //     console.log('Something went wrong!', err);
 //   });
 
-//   spotifyApi.getPlaylist('5ieJqeLJjjI8iJWaxeBLuK')
-//   .then(function(data: { body: any; }) {
-//     console.log('Some information about this playlist', data.body);
-//   }, function(err: any) {
-//     console.log('Something went wrong!', err);
-//   });
+  spotifyApi.getPlaylist('3byvJcO0IZvAcaezEOnXxI')
+  .then(function(data: { body: any; }) {
+    console.log('Some information about this playlist', data.body);
+  }, function(err: any) {
+    console.log('Something went wrong!', err);
+  });
+
+  spotifyApi.reorderTracksInPlaylist('3byvJcO0IZvAcaezEOnXxI', 0, 10, options)
+  .then(function(data) {
+    console.log('Tracks reordered in playlist!');
+  }, function(err) {
+    console.log('Something went wrong!', err);
+  });
+
+
 // https://open.spotify.com/playlist/3byvJcO0IZvAcaezEOnXxI?si=259d8ba7a8964b01&nd=1
 // Get a user's playlists
 // spotifyApi.getUserPlaylists('Diaspora')
