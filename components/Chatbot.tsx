@@ -13,7 +13,9 @@ const Chatbot = () => {
     })
     s.src = "https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"
     var x = document.getElementsByTagName("script")[0]
-    x.parentNode.insertBefore(s, x)
+    if (x.parentNode && typeof x.parentNode === "object") {
+      x.parentNode.insertBefore(s, x)
+    }
   }
 
   return (
