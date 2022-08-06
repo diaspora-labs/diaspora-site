@@ -24,7 +24,7 @@ const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo")
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
-  // console.log('spotifyApi home ', spotifyApi)
+  console.log('spotifyApi home ', spotifyApi)
   return (
     <Layout showLogo>
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
