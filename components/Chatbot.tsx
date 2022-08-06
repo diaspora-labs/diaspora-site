@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import Script from "next/script"
+declare var Landbot: any
 
 const Chatbot = () => {
   function initLandbot() {
@@ -7,7 +8,7 @@ const Chatbot = () => {
     s.type = "text/javascript"
     s.async = true
     s.addEventListener("load", function () {
-      let myLandbot = new Landbot.Popup({
+      new Landbot.Popup({
         configUrl: "https://chats.landbot.io/v3/H-1228722-I7RHH311Y3TAH6H3/index.json",
       })
     })
