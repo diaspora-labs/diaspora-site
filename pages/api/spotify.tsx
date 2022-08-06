@@ -7,7 +7,14 @@ var spotifyApi = new SpotifyWebApi({
   clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
 })
 
+
 // Retrieve an access token and a refresh token
+
+
+spotifyApi.setAccessToken(authorizationCode);
+// When our access token will expire
+let tokenExpirationEpoch
+
 // spotifyApi.clientCredentialsGrant().then(
 //   function(data: { body: { [x: string]: any; }; }) {
 //     console.log('The access token expires in ' + data.body['expires_in']);
@@ -19,11 +26,6 @@ var spotifyApi = new SpotifyWebApi({
 //     console.log('Something went wrong when retrieving an access token', err);
 //   }
 // )
-
-// const authorizationCode = "BQCNSM6ePimINVb6Xh38iWhXVtRJwZvm8RIHujUp4s2EQBTDBRy_-pfPjEA1brxUWT4Eg6vAOD43ZiojZrnkBS08lVJd3rFTEU-5QP60cClPj_seUXQ"
-spotifyApi.setAccessToken(authorizationCode);
-// When our access token will expire
-let tokenExpirationEpoch
 
 // First retrieve an access token
 // spotifyApi.authorizationCodeGrant(authorizationCode).then(
@@ -112,12 +114,14 @@ console.log("spotifyApi ", spotifyApi)
     console.log('Something went wrong!', err);
   });
 
-  spotifyApi.reorderTracksInPlaylist('3byvJcO0IZvAcaezEOnXxI', 0, 10, options)
-  .then(function(data) {
-    console.log('Tracks reordered in playlist!');
-  }, function(err) {
-    console.log('Something went wrong!', err);
-  });
+  console.log('spotifyAPI ', spotifyApi)
+
+  // spotifyApi.reorderTracksInPlaylist('3byvJcO0IZvAcaezEOnXxI', 0, 10, options)
+  // .then(function(data) {
+  //   console.log('Tracks reordered in playlist!');
+  // }, function(err) {
+  //   console.log('Something went wrong!', err);
+  // });
 
 
 // https://open.spotify.com/playlist/3byvJcO0IZvAcaezEOnXxI?si=259d8ba7a8964b01&nd=1
