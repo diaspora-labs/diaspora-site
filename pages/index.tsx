@@ -35,10 +35,10 @@ const Home: NextPage = () => {
         >
           {/* @ts-ignore */}
           <Suspense fallback={null}>
-            <Canvas shadows flat linear>
+            {/* <Canvas shadows flat linear>
               <GoldMaskLogo />
               <OrbitControls />
-            </Canvas>
+            </Canvas> */}
           </Suspense>
         </div>
         <div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>

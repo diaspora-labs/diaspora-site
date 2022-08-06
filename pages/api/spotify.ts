@@ -6,9 +6,7 @@ var spotifyApi = new SpotifyWebApi({
 //   clientId: process.env.SPOTIFY_CLIENT_ID,
 //   clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
 //   redirectUri: process.env.SPOTIFY_CALLBACK_URL
-    clientId: "279aa3aa3a7141199a50c86a848a6f8d",
-    clientSecret: "55d47195b13648579360b3c109e3b9eb",
-    redirectUri: "http://localhost:3000/callback/"      
+    
 });
 
 const authorizationCode =
@@ -43,14 +41,14 @@ let tokenExpirationEpoch;
 
 console.log('spotifyApi ', spotifyApi)
 
-spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE').then(
-    function(data) {
-      console.log('Artist albums', data.body);
-    },
-    function(err) {
-      console.error(err);
-    }
-  );
+// spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE').then(
+//     function(data) {
+//       console.log('Artist albums', data.body);
+//     },
+//     function(err) {
+//       console.error(err);
+//     }
+//   );
 
 // spotifyApi.searchPlaylists('workout')
 //   .then(function(data: { body: any; }) {
