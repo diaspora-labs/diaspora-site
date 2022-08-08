@@ -4,6 +4,8 @@ import dynamic from "next/dynamic"
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 
+import Chatbot from "../components/Chatbot"
+
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { Discord } from "../components/Icons/Discord"
 import { Envelop } from "../components/Icons/Envelop"
@@ -24,6 +26,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout showLogo>
+      <Chatbot />
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
         <div
           className={
@@ -32,10 +35,10 @@ const Home: NextPage = () => {
         >
           {/* @ts-ignore */}
           <Suspense fallback={null}>
-            <Canvas shadows flat linear>
+            {/* <Canvas shadows flat linear>
               <GoldMaskLogo />
               <OrbitControls />
-            </Canvas>
+            </Canvas> */}
           </Suspense>
         </div>
         <div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>
