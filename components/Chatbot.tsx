@@ -22,7 +22,6 @@ const Chatbot = () => {
   return (
     <>
       <Script
-        id="chatbot"
         src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"
         strategy="lazyOnload"
         onLoad={() => initLandbot()}
