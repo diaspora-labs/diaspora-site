@@ -23,9 +23,7 @@ export const NavHeader = () => {
         <div className="mx-4 flex items-center">
           <Nav />
           <span className="ml-10 flex flex-row items-center space-x-8">
-            <a >
-              <Discord color="rgba(255,255,255,0.5)" />
-            </a>
+            {/* <Discord color="rgba(255,255,255,0.5)" /> */}
             <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank">
               <Instagram color="rgba(255,255,255,0.5)" />
             </a>
