@@ -15,6 +15,7 @@ import Image from "next/image"
 
 import { PeopleSection } from "../components/Home/PeopleSection"
 import { SpotifyPlayer } from "../components/SpotifyPlayer"
+import { MusicPlayer } from "../components/MusicPlayer"
 
 const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
   ssr: false,
@@ -58,7 +59,8 @@ const Home: NextPage = () => {
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
               ></iframe> */}
-              <SpotifyPlayer />
+              {/* <SpotifyPlayer /> */}
+              <MusicPlayer />
             </div>
             <div className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
               <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
