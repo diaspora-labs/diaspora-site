@@ -40,7 +40,7 @@ const Home: NextPage = () => {
         {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
         <div className={"z-10 flex grow flex-col p-10 "}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
-            <div className="flex h-full flex-row items-start justify-center sm:items-center md:col-span-2">
+            <div className="flex h-full flex-col items-start justify-center sm:items-center md:col-span-2">
               <div className="text-center text-4xl font-light leading-tight text-neutral-600 shadow-black drop-shadow-md md:text-5xl">
                 Building a bridge
                 <br />
@@ -49,6 +49,7 @@ const Home: NextPage = () => {
               </div>
 
               <iframe
+                className="rounded"
                 src="https://open.spotify.com/embed/playlist/3byvJcO0IZvAcaezEOnXxI?utm_source=generator&theme=0"
                 width="100%"
                 height="80"
