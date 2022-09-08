@@ -15,7 +15,6 @@ import Image from "next/image"
 
 import { PeopleSection } from "../components/Home/PeopleSection"
 
-
 const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
   ssr: false,
 })
@@ -47,7 +46,6 @@ const Home: NextPage = () => {
                 for the culture
                 <br />& mint an ancestor
               </div>
-              <div className={"z-10"}><iframe src="https://open.spotify.com/embed/playlist/3byvJcO0IZvAcaezEOnXxI?utm_source=generator&theme=0" width="50%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
             </div>
             <div className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
               <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
@@ -74,6 +72,15 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <iframe
+        src="https://open.spotify.com/embed/playlist/3byvJcO0IZvAcaezEOnXxI?utm_source=generator&theme=0"
+        width="100%"
+        height="80"
+        frameBorder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
 
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
         <div className="flex grow flex-col p-10">
