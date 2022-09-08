@@ -37,7 +37,8 @@ const Home: NextPage = () => {
             </Canvas> */}
           </Suspense>
         </div>
-        <div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>
+        {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
+        <div className={"z-10 flex grow flex-col p-10 "}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="flex h-full flex-row items-start justify-center sm:items-center md:col-span-2">
               <div className="text-center text-4xl font-light leading-tight text-neutral-600 shadow-black drop-shadow-md md:text-5xl">
