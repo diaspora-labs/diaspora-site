@@ -31,10 +31,10 @@ const Home: NextPage = () => {
         >
           {/* @ts-ignore */}
           <Suspense fallback={null}>
-            <Canvas shadows flat linear>
+            {/* <Canvas shadows flat linear>
               <GoldMaskLogo />
               <OrbitControls />
-            </Canvas>
+            </Canvas> */}
           </Suspense>
         </div>
         {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
               <iframe
                 className="rounded"
                 src="https://open.spotify.com/embed/playlist/3byvJcO0IZvAcaezEOnXxI?utm_source=generator&theme=0"
-                width="100%"
+                width="50%"
                 height="80"
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -69,8 +69,12 @@ const Home: NextPage = () => {
                 <div className="visible text-lg font-normal">Connect with us to stay updated</div>
                 <div className="pointer-events-auto visible flex space-x-8">
                   <Discord />
-                  <Instagram />
-                  <Twitter />
+                  <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+                    <Instagram />
+                  </a>
+                  <a href="https://twitter.com/OurDiaspora" target="_blank">
+                    <Twitter />
+                  </a>
                   <Envelop />
                 </div>
                 <div className="hidden p-2">
