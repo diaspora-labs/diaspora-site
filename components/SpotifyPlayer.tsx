@@ -30,17 +30,6 @@ export const SpotifyPlayer = () => {
         volume: 0.5,
       })
 
-      player
-        .connect()
-        .then((success) => {
-          if (success) {
-            console.log("The Web Playback SDK successfully connected to Spotify!")
-          }
-        })
-        .catch((error) => {
-          console.error(error)
-        })
-
       // player.addListener("initialization_error", ({ message }) => {
       //   console.error(message)
       // })
@@ -53,7 +42,16 @@ export const SpotifyPlayer = () => {
       //   console.error(message)
       // })
 
-      
+      player
+        .connect()
+        .then((success) => {
+          if (success) {
+            console.log("The Web Playback SDK successfully connected to Spotify!")
+          }
+        })
+        .catch((error) => {
+          console.error(error)
+        })
       //   const spotify_uri = "spotify:playlist:3byvJcO0IZvAcaezEOnXxI"
 
       player.addListener("ready", ({ device_id }) => {
