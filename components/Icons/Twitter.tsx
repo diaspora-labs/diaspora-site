@@ -2,7 +2,7 @@ import React from "react"
 
 export function Twitter(props: { color?: string }) {
   const color = props.color ?? "#7233ff"
-
+  // https://twitter.com/OurDiaspora
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="16.597" height="13.488" viewBox="0 0 16.597 13.488">
       <defs>

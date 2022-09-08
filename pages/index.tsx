@@ -16,6 +16,7 @@ import { Layout } from "../components/Layout"
 import Image from "next/image"
 
 import { PeopleSection } from "../components/Home/PeopleSection"
+import { MusicPlayer } from "../components/MusicPlayer"
 
 const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
   ssr: false,
@@ -23,7 +24,6 @@ const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo")
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
-
   return (
     <Layout showLogo>
       <Chatbot />
@@ -41,15 +41,18 @@ const Home: NextPage = () => {
             </Canvas> */}
           </Suspense>
         </div>
-        <div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>
+        {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
+        <div className={"z-10 flex grow flex-col p-10 "}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
-            <div className="flex h-full flex-row items-start justify-center sm:items-center md:col-span-2">
+            <div className="flex h-full flex-col items-start justify-center sm:items-center md:col-span-2">
               <div className="text-center text-4xl font-light leading-tight text-neutral-600 shadow-black drop-shadow-md md:text-5xl">
                 Building a bridge
                 <br />
                 for the culture
                 <br />& mint an ancestor
               </div>
+
+              <MusicPlayer />
             </div>
             <div className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
               <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
@@ -61,9 +64,17 @@ const Home: NextPage = () => {
 
                 <div className="visible text-lg font-normal">Connect with us to stay updated</div>
                 <div className="pointer-events-auto visible flex space-x-8">
-                  <Discord />
-                  <Instagram />
-                  <Twitter />
+                  {/* <Discord /> */}
+                  <a
+                    href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Instagram />
+                  </a>
+                  <a href="https://twitter.com/OurDiaspora" target="_blank" rel="noreferrer">
+                    <Twitter />
+                  </a>
                   <Envelop />
                 </div>
                 <div className="hidden p-2">
