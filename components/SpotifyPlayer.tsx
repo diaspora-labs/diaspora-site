@@ -30,18 +30,6 @@ export const SpotifyPlayer = () => {
         volume: 0.5,
       })
 
-      player.addListener("initialization_error", ({ message }) => {
-        console.error(message)
-      })
-
-      player.addListener("authentication_error", ({ message }) => {
-        console.error(message)
-      })
-
-      player.addListener("account_error", ({ message }) => {
-        console.error(message)
-      })
-
       player
         .connect()
         .then((success) => {
@@ -52,6 +40,20 @@ export const SpotifyPlayer = () => {
         .catch((error) => {
           console.error(error)
         })
+
+      // player.addListener("initialization_error", ({ message }) => {
+      //   console.error(message)
+      // })
+
+      // player.addListener("authentication_error", ({ message }) => {
+      //   console.error(message)
+      // })
+
+      // player.addListener("account_error", ({ message }) => {
+      //   console.error(message)
+      // })
+
+      
       //   const spotify_uri = "spotify:playlist:3byvJcO0IZvAcaezEOnXxI"
 
       player.addListener("ready", ({ device_id }) => {
@@ -66,6 +68,7 @@ export const SpotifyPlayer = () => {
   })
 
   useEffect(() => {
+    const token = AccessToken
     if (deviceId) {
       const play = ({
         spotify_uri,
@@ -73,13 +76,13 @@ export const SpotifyPlayer = () => {
           _options: { getOAuthToken },
         },
       }) => {
-        getOAuthToken((access_token) => {
+        getOAuthToken((token) => {
           fetch(`https://api.spotify.com/v1/me/player/play?device_id=${deviceId}`, {
             method: "PUT",
             body: JSON.stringify({ uris: [spotify_uri] }),
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${access_token}`,
+              Authorization: `Bearer ${token}`,
             },
           })
         })
