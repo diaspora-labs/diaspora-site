@@ -31,13 +31,13 @@ const Home: NextPage = () => {
         >
           {/* @ts-ignore */}
           <Suspense fallback={null}>
-            {/* <Canvas shadows flat linear>
+            <Canvas shadows flat linear>
               <GoldMaskLogo />
               <OrbitControls />
-            </Canvas> */}
+            </Canvas>
           </Suspense>
         </div>
-        <div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>
+        <div className={"z-10 flex grow flex-col p-10 "}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="flex h-full flex-row items-start justify-center sm:items-center md:col-span-2">
               <div className="text-center text-4xl font-light leading-tight text-neutral-600 shadow-black drop-shadow-md md:text-5xl">
@@ -46,6 +46,15 @@ const Home: NextPage = () => {
                 for the culture
                 <br />& mint an ancestor
               </div>
+
+              <iframe
+                src="https://open.spotify.com/embed/playlist/3byvJcO0IZvAcaezEOnXxI?utm_source=generator&theme=0"
+                width="100%"
+                height="80"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
             </div>
             <div className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
               <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
@@ -72,15 +81,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-
-      <iframe
-        src="https://open.spotify.com/embed/playlist/3byvJcO0IZvAcaezEOnXxI?utm_source=generator&theme=0"
-        width="100%"
-        height="80"
-        frameBorder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"
-      ></iframe>
 
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
         <div className="flex grow flex-col p-10">
