@@ -14,7 +14,6 @@ import { Layout } from "../components/Layout"
 import Image from "next/image"
 
 import { PeopleSection } from "../components/Home/PeopleSection"
-import { SpotifyPlayer } from "../components/SpotifyPlayer"
 import { MusicPlayer } from "../components/MusicPlayer"
 
 const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
@@ -50,16 +49,6 @@ const Home: NextPage = () => {
                 <br />& mint an ancestor
               </div>
 
-              {/* <iframe
-                className="rounded md:w-auto"
-                src="https://open.spotify.com/embed/playlist/3byvJcO0IZvAcaezEOnXxI?utm_source=generator&theme=0"
-                // width="50%"
-                height="80"
-                frameBorder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-              ></iframe> */}
-              {/* <SpotifyPlayer /> */}
               <MusicPlayer />
             </div>
             <div className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
@@ -73,10 +62,14 @@ const Home: NextPage = () => {
                 <div className="visible text-lg font-normal">Connect with us to stay updated</div>
                 <div className="pointer-events-auto visible flex space-x-8">
                   {/* <Discord /> */}
-                  <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+                  <a
+                    href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <Instagram />
                   </a>
-                  <a href="https://twitter.com/OurDiaspora" target="_blank">
+                  <a href="https://twitter.com/OurDiaspora" target="_blank" rel="noreferrer">
                     <Twitter />
                   </a>
                   <Envelop />

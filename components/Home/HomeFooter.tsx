@@ -32,14 +32,12 @@ export const HomeFooter: React.FC<HomeFooterProps> = ({ fixed }) => {
           <div className="mb-5 hidden md:mb-0 md:flex">
             <span className="flex flex-row justify-center space-x-8">
               {/* <Discord color="rgba(255,255,255,0.5)" /> */}
-              <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+              <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
                 <Instagram color="rgba(255,255,255,0.5)" />
               </a>
-              <a href="https://twitter.com/OurDiaspora" target="_blank">
+              <a href="https://twitter.com/OurDiaspora" target="_blank" rel="noreferrer">
                 <Twitter color="rgba(255,255,255,0.5)" />
               </a>
-              
-              
             </span>
           </div>
         </div>
