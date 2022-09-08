@@ -49,9 +49,9 @@ const Home: NextPage = () => {
               </div>
 
               <iframe
-                className="rounded"
+                className="rounded md:w-auto"
                 src="https://open.spotify.com/embed/playlist/3byvJcO0IZvAcaezEOnXxI?utm_source=generator&theme=0"
-                width="50%"
+                // width="50%"
                 height="80"
                 frameBorder="0"
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
