@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 const AccessToken =
-  "BQAzNwHtVVF-2JS5_ByOdAMzp8wfvfBT2rVbWujDtHXJHipAeWmRnUKoFd6cnNZKCfrMC7BIJkcqEQ_FDjjHfO5vgGEvekaexJxgMxzpTEnRqP5DT2gn2Q3LY5bfsP8ALPtkRZW40VVbeiNHfEnNeRh3YdjxYvroKKqnNTbP00bSlNyJDuCMTPiFe93aR5SLXEY"
+  "BQA9k8hNppvgMTOJZvOUJGgXk9_lrBRTmSIuUKckXXDTBSukl9_oVbt451hCs8ZeTMuqwDNvnOx6x4ypynioSMjezlBynrNhFapEAs9NbF--ct3_0yk"
 
 export const SpotifyPlayer = () => {
   const [player, setPlayer] = useState<any>(null)
