@@ -3,7 +3,7 @@ import ReactPlayer from "react-player"
 
 export const MusicPlayer = () => {
   const [play, setPlay] = useState(true)
-  const playlist = ["https://www.youtube.com/watch?v=XzzqJb6Dsbs", "https://www.youtube.com/watch?v=OjHX7jf-znA"]
+  const playlist = "https://www.youtube.com/playlist?list=PLZVVq-xf_m0kjiDeDSm2sW2dML4-LlrU7"
 
   return (
     <div>
