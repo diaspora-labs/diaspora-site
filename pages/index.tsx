@@ -17,6 +17,7 @@ import Image from "next/image"
 
 import { PeopleSection } from "../components/Home/PeopleSection"
 import { MusicPlayer } from "../components/MusicPlayer"
+import { playlist } from "../data/playlist"
 
 const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
   ssr: false,
@@ -27,6 +28,8 @@ const Home: NextPage = () => {
   return (
     <Layout showLogo>
       <Chatbot />
+      <MusicPlayer playlist={playlist} fixed />
+
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
         <div
           className={
@@ -51,8 +54,6 @@ const Home: NextPage = () => {
                 for the culture
                 <br />& mint an ancestor
               </div>
-
-              <MusicPlayer />
             </div>
             <div className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
               <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
