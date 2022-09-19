@@ -51,7 +51,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
         </div>
 
         {showList && (
-          <div className="absolute bottom-[60px] flex w-full flex-col space-y-2 rounded-lg border border-neutral-800 bg-black">
+          <div className="absolute bottom-[60px] flex w-full flex-col rounded-lg border border-neutral-800 bg-black">
             {playlist.map((track, index) => (
               <div
                 key={index}
@@ -71,7 +71,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
                 </div>
                 {index === currentTrackIndex && (
                   <div className="m-3 ml-auto">
-                    <PlayAnimation animate />
+                    <PlayAnimation animate={play} />
                   </div>
                 )}
               </div>
