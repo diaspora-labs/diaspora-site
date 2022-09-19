@@ -5,24 +5,12 @@ import { PlayButton, PlayState } from "./PlayButton/PlayButton"
 import cls from "classnames"
 import { PlayAnimation } from "./PlayButton/PlayAnimation"
 
-const playlist = [
-  {
-    title: "Freefall",
-    artist: "KAYTRANADA",
-    url: "https://www.youtube.com/watch?v=XzzqJb6Dsbs",
-  },
-  {
-    title: "The Light",
-    artist: "Common",
-    url: "https://www.youtube.com/watch?v=OjHX7jf-znA",
-  },
-]
-
 interface MusicPlayerProps {
   fixed?: boolean
+  playlist: { title: string; artist: string; url: string }[]
 }
 
-export const MusicPlayer = (props) => {
+export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => {
   const [play, setPlay] = useState(false)
   const [hasWindow, setHasWindow] = useState(false)
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0)
@@ -37,7 +25,7 @@ export const MusicPlayer = (props) => {
   const currentTrack = playlist[currentTrackIndex]
 
   return (
-    <div className={cls("max-w-[400px]", props.fixed ? "fixed bottom-[20px] left-[20px] z-50" : "")}>
+    <div className={cls("max-w-[400px]", fixed ? "fixed bottom-[20px] left-[20px] z-50" : "")}>
       <div className="relative">
         <div className="flex h-[50px] min-w-[320px] flex-row items-stretch rounded-lg border border-neutral-800 bg-black">
           {hasWindow && <ReactPlayer url={currentTrack.url} playing={play} height={0} width={1} />}
