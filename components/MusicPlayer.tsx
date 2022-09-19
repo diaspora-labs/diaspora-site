@@ -55,7 +55,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
             {playlist.map((track, index) => (
               <div
                 key={index}
-                className={cls("flex flex-row items-center  border-b-neutral-600 p-3 text-left", {
+                className={cls("flex flex-row items-center border-b border-b-neutral-900 p-3 text-left", {
                   "bg-neutral-900": index === currentTrackIndex,
                 })}
                 onClick={() => {
