@@ -1,16 +1,18 @@
 import React from "react"
 import cls from "classnames"
+import { NavHeader } from "./NavHeader"
 
 export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) => {
   return (
     <div
       className={cls(
-        `bg-container flex min-h-screen flex-col bg-black 
-        text-white`,
+        `bg-container max-w-screen min-h-screen flex-col overflow-hidden bg-black 
+       text-white`,
         classes
       )}
     >
-      {children}
+      <NavHeader />
+      <div className="mt-10">{children}</div>
     </div>
   )
 }
