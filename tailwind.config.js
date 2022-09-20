@@ -18,6 +18,7 @@ module.exports = {
           dark: "#451087",
           med: "#7134fe",
         },
+        orange: "#F05E17"
       },
     },
   },

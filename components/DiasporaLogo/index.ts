@@ -1,1 +1,0 @@
-export { DiasporaLogo } from "./DiasporaLogo"

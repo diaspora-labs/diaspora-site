@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { DiasporaLogoSmall } from "../components/DiasporaLogoSmall"
+import { DiasporaLogoSmall } from "../components/DiasporaLogoSmall";
+import { DiasporaLogo } from "./DiasporaLogo";
 import Link from "next/link"
 import { Nav } from "./Nav"
 import { Discord } from "./Icons/Discord"
@@ -13,7 +14,7 @@ export const NavHeader = () => {
         <div className="flex items-center py-4 px-4">
           <Link href="/">
             <a>
-              <DiasporaLogoSmall width="120" />
+              <DiasporaLogo width="120" />
             </a>
           </Link>
         </div>
@@ -21,7 +22,10 @@ export const NavHeader = () => {
         <div className="grow"></div>
 
         <div className="mx-4 flex items-center">
-          <Nav />
+          <div className="hidden md:visible md:flex">
+            <Nav />
+          </div>
+          
           <span className="ml-10 flex flex-row items-center space-x-8">
             {/* <Discord color="rgba(255,255,255,0.5)" /> */}
             <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
@@ -32,6 +36,10 @@ export const NavHeader = () => {
             </a>
           </span>
         </div>
+      </div>
+
+      <div className="justify-center md:hidden">
+        <Nav />
       </div>
     </nav>
   )
