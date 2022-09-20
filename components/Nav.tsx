@@ -13,14 +13,14 @@ export const Nav = () => {
     "/whitepaper": "whitepaper",
   }
 
-  const baseClasses = "transition ease-in-out hover:text-indigo-600 uppercase"
+  const baseClasses = "transition ease-in-out hover:text-[#F05E17] uppercase"
 
   return (
     <div className="flex items-center space-x-1">
       {Object.keys(routes).map((route, i) => (
         <div className="p-4" key={`route-${i}`}>
           <Link href={route}>
-            <a className={cls(baseClasses, router.pathname == route ? "koro text-indigo-600" : "")}>{routes[route]}</a>
+            <a className={cls(baseClasses, router.pathname == route ? "koro text-[#F05E17]" : "")}>{routes[route]}</a>
           </Link>
         </div>
       ))}
