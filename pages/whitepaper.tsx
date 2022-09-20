@@ -98,7 +98,6 @@ const Whitepaper = () => {
         </div>
       </div>
       <div className="fixed bottom-10 right-10">
-        <Nav />
       </div>
     </Layout>
   )
