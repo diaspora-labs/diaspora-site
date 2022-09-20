@@ -22,7 +22,7 @@ export const NavHeader = () => {
         <div className="grow"></div>
 
         <div className="mx-4 flex items-center">
-          <div className="hidden md:visible">
+          <div className="hidden md:visible md:flex">
             <Nav />
           </div>
           
