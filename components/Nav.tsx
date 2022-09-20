@@ -16,7 +16,7 @@ export const Nav = () => {
   const baseClasses = "transition ease-in-out hover:text-[#F05E17] uppercase"
 
   return (
-    <div className="flex items-center space-x-1">
+    <div className="flex items-center space-x-1 justify-center">
       {Object.keys(routes).map((route, i) => (
         <div className="p-4" key={`route-${i}`}>
           <Link href={route}>

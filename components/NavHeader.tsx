@@ -22,7 +22,10 @@ export const NavHeader = () => {
         <div className="grow"></div>
 
         <div className="mx-4 flex items-center">
-          <Nav />
+          <div className="invisible md:visible">
+            <Nav />
+          </div>
+          
           <span className="ml-10 flex flex-row items-center space-x-8">
             {/* <Discord color="rgba(255,255,255,0.5)" /> */}
             <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
@@ -33,6 +36,10 @@ export const NavHeader = () => {
             </a>
           </span>
         </div>
+      </div>
+
+      <div className="justify-center md:hidden">
+        <Nav />
       </div>
     </nav>
   )
