@@ -33,7 +33,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
           <PlayButton onClick={() => setPlay(!play)} state={play ? PlayState.Play : PlayState.Stop} />
 
           <div
-            className="flex grow items-center border-l border-neutral-800 px-3"
+            className="cursor-pointer flex grow items-center border-l border-neutral-800 px-3"
             onClick={() => {
               toggleList(!showList)
             }}
