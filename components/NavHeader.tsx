@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { DiasporaLogoSmall } from "../components/DiasporaLogoSmall"
+import { DiasporaLogoSmall } from "../components/DiasporaLogoSmall";
+import { DiasporaLogo } from "./DiasporaLogo";
 import Link from "next/link"
 import { Nav } from "./Nav"
 import { Discord } from "./Icons/Discord"
@@ -13,7 +14,7 @@ export const NavHeader = () => {
         <div className="flex items-center py-4 px-4">
           <Link href="/">
             <a>
-              <DiasporaLogoSmall width="120" />
+              <DiasporaLogo width="120" />
             </a>
           </Link>
         </div>
