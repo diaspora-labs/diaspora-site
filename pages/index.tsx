@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react"
+import React, { Suspense, useEffect, useState, useRef } from "react"
 import { NextPage } from "next"
 import dynamic from "next/dynamic"
 import { Canvas } from "@react-three/fiber"
@@ -11,6 +11,8 @@ import { Discord } from "../components/Icons/Discord"
 import { Envelop } from "../components/Icons/Envelop"
 import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
+import { ScrollDownIcon } from "../components/Icons/ScrollDownIcon"
+
 import { Layout } from "../components/Layout"
 
 import Image from "next/image"
@@ -25,6 +27,14 @@ const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo")
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
+  const secondPage = useRef(null)
+  const scrollToSecondPage = () => {
+    secondPage.current.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "end",
+    })
+  }
   return (
     <Layout showLogo>
       <Chatbot />
@@ -44,6 +54,7 @@ const Home: NextPage = () => {
             </Canvas> */}
           </Suspense>
         </div>
+
         {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
         <div className={"z-10 flex grow flex-col p-10 "}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
@@ -89,7 +100,11 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
+      <span onClick={scrollToSecondPage}>
+        <ScrollDownIcon />
+      </span>
+
+      <section ref={secondPage} className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
         <div className="flex grow flex-col p-10">
           <div className="mx-auto">
             <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" />
@@ -105,6 +120,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+
+      {/* <span style={{ position: "relative", top: '10vh' }} ref={secondPage}></span> */}
 
       <PeopleSection showModal={showModal} setShowModal={setShowModal} />
 
