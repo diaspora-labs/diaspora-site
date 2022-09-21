@@ -31,8 +31,8 @@ const Home: NextPage = () => {
   const scrollToSecondPage = () => {
     secondPage.current.scrollIntoView({
       behavior: "smooth",
-      block: "end",
-      inline: "end",
+      block: "start",
+      inline: "start",
     })
   }
   return (
@@ -100,11 +100,11 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <span onClick={scrollToSecondPage}>
+      <span ref={secondPage} className="align-center flex justify-center pb-10" onClick={scrollToSecondPage}>
         <ScrollDownIcon />
       </span>
 
-      <section ref={secondPage} className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
+      <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
         <div className="flex grow flex-col p-10">
           <div className="mx-auto">
             <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" />
@@ -120,9 +120,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-
-      {/* <span style={{ position: "relative", top: '10vh' }} ref={secondPage}></span> */}
-
       <PeopleSection showModal={showModal} setShowModal={setShowModal} />
 
       <HomeFooter />
