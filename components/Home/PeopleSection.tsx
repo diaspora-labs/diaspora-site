@@ -187,7 +187,6 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
               <PersonCard
                 person={person}
                 onClick={() => {
-                  window.scrollTo(0, 0)
                   setPerson(person), setShowModal(true)
                 }}
               />
