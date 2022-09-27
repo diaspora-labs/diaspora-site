@@ -1,8 +1,5 @@
-import React, { Suspense, useEffect, useState } from "react"
+import React, { useState } from "react"
 import { NextPage } from "next"
-import dynamic from "next/dynamic"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
 
 import Chatbot from "../components/Chatbot"
 
@@ -20,10 +17,6 @@ import { MusicPlayer } from "../components/MusicPlayer"
 import { playlist } from "../data/playlist"
 import { GoldMaskThree } from "../components/GoldMask/GoldMaskThree"
 
-const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
-  ssr: false,
-})
-
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
   return (
@@ -37,13 +30,6 @@ const Home: NextPage = () => {
             "bg-100 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-10"
           }
         >
-          {/* @ts-ignore */}
-          {/* <Suspense fallback={null}>
-            <Canvas shadows flat linear>
-              <GoldMaskLogo />
-              <OrbitControls />
-            </Canvas>
-          </Suspense> */}
           <GoldMaskThree />
         </div>
         {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}

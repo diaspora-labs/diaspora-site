@@ -1,6 +1,7 @@
 import * as THREE from "three"
 import { useEffect } from "react"
 import { GLTFLoader } from "three-stdlib"
+import { Easing, Tween, update } from "@tweenjs/tween.js"
 
 export const GoldMaskThree = () => {
   useEffect(() => setupScene(), [])
@@ -27,7 +28,7 @@ function setupScene() {
   const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
   camera.position.x = 0
   camera.position.y = 0
-  camera.position.z = 2
+  camera.position.z = 100
   scene.add(camera)
 
   // spline scene
@@ -42,6 +43,8 @@ function setupScene() {
       obj = gltf.scene
       scene.add(obj)
       obj.scale.set(1.2, 1.2, 1.2)
+
+      setTimeout(animateOnLoad, 100)
     }
   )
   // renderer
@@ -87,6 +90,20 @@ function setupScene() {
 
   window.addEventListener("scroll", updateOnScroll)
 
+  function animateOnLoad() {
+    const coords = { z: camera.position.z }
+
+    new Tween(coords)
+      .to({ z: 2 })
+      .easing(Easing.Quadratic.InOut)
+      .duration(1000)
+      .onUpdate(() => {
+        console.log("position z", coords.z)
+        camera.position.set(camera.position.x, camera.position.y, coords.z)
+      })
+      .start()
+  }
+
   function animate() {
     targetX = mouseX * 0.001
     targetY = mouseY * 0.001
@@ -96,6 +113,7 @@ function setupScene() {
     if (obj) obj.rotation.x += 0.05 * (targetY - obj.rotation.x)
 
     renderer.render(scene, camera)
+    update()
   }
 }
 
