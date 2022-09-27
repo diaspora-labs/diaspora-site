@@ -18,6 +18,7 @@ import Image from "next/image"
 import { PeopleSection } from "../components/Home/PeopleSection"
 import { MusicPlayer } from "../components/MusicPlayer"
 import { playlist } from "../data/playlist"
+import { GoldMaskThree } from "../components/GoldMask/GoldMaskThree"
 
 const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
   ssr: false,
@@ -37,12 +38,13 @@ const Home: NextPage = () => {
           }
         >
           {/* @ts-ignore */}
-          <Suspense fallback={null}>
-            {/* <Canvas shadows flat linear>
+          {/* <Suspense fallback={null}>
+            <Canvas shadows flat linear>
               <GoldMaskLogo />
               <OrbitControls />
-            </Canvas> */}
-          </Suspense>
+            </Canvas>
+          </Suspense> */}
+          <GoldMaskThree />
         </div>
         {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
         <div className={"z-10 flex grow flex-col p-10 "}>
