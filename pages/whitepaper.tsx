@@ -18,7 +18,7 @@ const Whitepaper = () => {
       let el = wrapperEl.current as any
       let width = el?.getBoundingClientRect()?.width || 1000
 
-      console.log(el, width)
+      // console.log(el, width)
       setPdfWidth(width)
     }
   }
@@ -98,7 +98,6 @@ const Whitepaper = () => {
         </div>
       </div>
       <div className="fixed bottom-10 right-10">
-        <Nav />
       </div>
     </Layout>
   )
