@@ -8,6 +8,7 @@ import { StructureIcon } from "../components/Roadmap/StructureIcon"
 import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
 import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 import { HomeFooter } from "../components/Home/HomeFooter"
+import { JourneyIcon } from "../components/JourneyIcon"
 
 const Roadmap = () => {
   return (
@@ -65,7 +66,7 @@ const sections = [
     list: [],
   },
   {
-    icon: CrowdFundingIcon,
+    icon: JourneyIcon,
     title: "The Journey",
     list: ["Define Mission/Vision", "Build Roadmap", "Build Whitepaper", "Brand Identity"],
   },
