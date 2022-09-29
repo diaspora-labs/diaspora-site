@@ -171,9 +171,9 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
   }
 
   return (
-    <>
+    <div className="relative">
+      <span ref={scrollRef} style={{ position: "absolute", top: -100 }}></span>
       <div
-        ref={scrollRef}
         style={{
           position: "relative",
           overflowX: showModal ? "hidden" : "scroll",
@@ -237,6 +237,6 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
