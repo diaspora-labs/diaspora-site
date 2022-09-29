@@ -51,7 +51,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
         </div>
 
         {showList && (
-          <div className="absolute bottom-[60px] flex w-full flex-col rounded-lg border border-neutral-800 bg-black">
+          <div className="absolute bottom-[60px] flex max-h-[500px] w-full flex-col overflow-y-scroll rounded-lg border border-neutral-800 bg-black">
             {playlist.map((track, index) => (
               <div
                 key={index}

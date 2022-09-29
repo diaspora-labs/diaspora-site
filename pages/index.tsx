@@ -1,8 +1,5 @@
-import React, { Suspense, useEffect, useState } from "react"
+import React, { useState, useRef } from "react"
 import { NextPage } from "next"
-import dynamic from "next/dynamic"
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
 
 import Chatbot from "../components/Chatbot"
 
@@ -11,6 +8,8 @@ import { Discord } from "../components/Icons/Discord"
 import { Envelop } from "../components/Icons/Envelop"
 import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
+import { ScrollDownIcon } from "../components/Icons/ScrollDownIcon"
+
 import { Layout } from "../components/Layout"
 
 import Image from "next/image"
@@ -18,13 +17,18 @@ import Image from "next/image"
 import { PeopleSection } from "../components/Home/PeopleSection"
 import { MusicPlayer } from "../components/MusicPlayer"
 import { playlist } from "../data/playlist"
-
-const GoldMaskLogo = dynamic(() => import("../components/GoldMask/GoldMaskLogo"), {
-  ssr: false,
-})
+import { GoldMaskThree } from "../components/GoldMask/GoldMaskThree"
 
 const Home: NextPage = () => {
   const [showModal, setShowModal] = useState(false)
+  const secondPage = useRef(null)
+  const scrollToSecondPage = () => {
+    secondPage.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start",
+    })
+  }
   return (
     <Layout showLogo>
       <Chatbot />
@@ -36,14 +40,9 @@ const Home: NextPage = () => {
             "bg-100 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-10"
           }
         >
-          {/* @ts-ignore */}
-          <Suspense fallback={null}>
-            {/* <Canvas shadows flat linear>
-              <GoldMaskLogo />
-              <OrbitControls />
-            </Canvas> */}
-          </Suspense>
+          <GoldMaskThree />
         </div>
+
         {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
         <div className={"z-10 flex grow flex-col p-10 "}>
           <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
@@ -89,6 +88,10 @@ const Home: NextPage = () => {
         </div>
       </section>
 
+      <span ref={secondPage} className="align-center flex justify-center pb-10" onClick={scrollToSecondPage}>
+        <ScrollDownIcon />
+      </span>
+
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
         <div className="flex grow flex-col p-10">
           <div className="mx-auto">
@@ -105,7 +108,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-
       <PeopleSection showModal={showModal} setShowModal={setShowModal} />
 
       <HomeFooter />
