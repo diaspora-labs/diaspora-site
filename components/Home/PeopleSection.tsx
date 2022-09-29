@@ -161,7 +161,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       <div
         className={css}
         onClick={() => {
-          if (selectedIndex + direction >= 0 && selectedIndex + direction <= people.length)
+          if (selectedIndex + direction >= 0 && selectedIndex + direction < people.length)
             slideToItem(selectedIndex + direction)
         }}
       >
