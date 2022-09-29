@@ -14,8 +14,8 @@ const Roadmap = () => {
     <Layout>
       <div className="fixed inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
 
-      <div className="container mx-auto flex flex-col pb-60 lg:flex-row-reverse lg:align-top">
-        <div className="left-0 flex w-full flex-row content-center items-center lg:fixed lg:w-1/2 lg:items-start">
+      <div className="container mx-auto flex flex-col pb-60  lg:align-top">
+        <div className="right-0 flex w-full flex-row content-center items-center lg:fixed lg:w-1/2 lg:items-start">
           <Image src={MaskImage} />
         </div>
         <div className="mb-30 max-w-lg px-10">
