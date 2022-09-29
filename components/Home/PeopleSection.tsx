@@ -179,7 +179,6 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           placeContent: "center",
           justifyContent: "center",
           alignItems: "center",
-          // width: showModal ? "60%" : 0
         }}
       >
         <div
