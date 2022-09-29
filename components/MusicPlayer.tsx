@@ -27,13 +27,13 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
   return (
     <div className={cls("max-w-[400px]", fixed ? "fixed bottom-[20px] left-[20px] z-50" : "")}>
       <div className="relative">
-        <div className="flex h-[50px] min-w-[320px] flex-row items-stretch rounded-lg border border-neutral-800 bg-black">
+        <div className="flex h-[50px] min-w-[290px] flex-row items-stretch rounded-lg border border-neutral-800 bg-black">
           {hasWindow && <ReactPlayer url={currentTrack.url} playing={play} height={0} width={1} />}
 
           <PlayButton onClick={() => setPlay(!play)} state={play ? PlayState.Play : PlayState.Stop} />
 
           <div
-            className="cursor-pointer flex grow items-center border-l border-neutral-800 px-3"
+            className="cursor-pointer flex md:grow items-center border-l border-neutral-800 px-3"
             onClick={() => {
               toggleList(!showList)
             }}
