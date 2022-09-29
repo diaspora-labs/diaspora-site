@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { useSpringCarousel } from "react-spring-carousel"
 import { people } from "../../data/people"
 import { social } from "../Social"
@@ -22,6 +22,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
     streetArt: "",
   })
 
+  const scrollRef = useRef(null)
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const { carouselFragment, slideToItem, useListenToCustomEvent } = useSpringCarousel({
@@ -172,6 +173,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
   return (
     <>
       <div
+        ref={scrollRef}
         style={{
           position: "relative",
           overflowX: showModal ? "hidden" : "scroll",
@@ -227,6 +229,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
               <PersonCard
                 person={person}
                 onClick={() => {
+                  scrollRef.current.scrollIntoView({ block: "start" })
                   setPerson(person), setShowModal(true)
                 }}
               />
