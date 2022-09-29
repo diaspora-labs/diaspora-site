@@ -98,7 +98,7 @@ function setupScene() {
       .easing(Easing.Quadratic.InOut)
       .duration(1000)
       .onUpdate(() => {
-        console.log("position z", coords.z)
+        // console.log("position z", coords.z)
         camera.position.set(camera.position.x, camera.position.y, coords.z)
       })
       .start()
