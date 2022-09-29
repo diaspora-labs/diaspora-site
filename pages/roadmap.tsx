@@ -61,6 +61,11 @@ const Roadmap = () => {
 const sections = [
   {
     icon: CrowdFundingIcon,
+    title: "Launch Crowdfund",
+    list: [],
+  },
+  {
+    icon: CrowdFundingIcon,
     title: "The Journey",
     list: ["Define Mission/Vision", "Build Roadmap", "Build Whitepaper", "Brand Identity"],
   },
@@ -85,12 +90,8 @@ const sections = [
   },
   {
     icon: InstitutionIcon,
-    title: "Building the Pathways",
-    list: [
-      "Building Partnerships (in the 4 pillars)",
-      "Develop Event Schedule and Framework (Physical and Digital)",
-      "Develop Masterclasses",
-    ],
+    title: "Institutionalize the Revolution",
+    list: ["Buy Land in Metaverse", "Launch the Diaspora Token"],
   },
 ]
 
