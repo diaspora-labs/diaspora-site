@@ -155,9 +155,10 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
    * @returns
    */
   const updateSlide = (direction: number) => {
+    const css = direction > 0 ? "cursor-pointer -rotate-90" : "cursor-pointer  rotate-90"
     return (
       <div
-        className="cursor-pointer"
+        className={css}
         onClick={() => {
           if (selectedIndex + direction >= 0 && selectedIndex + direction <= people.length)
             slideToItem(selectedIndex + direction)
@@ -190,7 +191,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
             alignItems: "center",
             justifyContent: "space-between",
             zIndex: 2,
-            top: "30%",
+            top: "34%",
           }}
         >
           {updateSlide(-1)}
