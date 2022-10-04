@@ -8,7 +8,7 @@ export const GoldMaskThree = () => {
 
   return (
     <>
-      <canvas className="webgl absolute inset-0"></canvas>
+      <canvas className="webgl absolute inset-0 top-40 md:top-0"></canvas>
     </>
   )
 }
@@ -98,7 +98,6 @@ function setupScene() {
       .easing(Easing.Quadratic.InOut)
       .duration(1000)
       .onUpdate(() => {
-        console.log("position z", coords.z)
         camera.position.set(camera.position.x, camera.position.y, coords.z)
       })
       .start()
