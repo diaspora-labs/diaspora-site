@@ -27,13 +27,13 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
   return (
     <div className={cls("max-w-[400px]", fixed ? "fixed bottom-[20px] left-[20px] z-50" : "")}>
       <div className="relative">
-        <div className="flex h-[50px] min-w-[320px] flex-row items-stretch rounded-lg border border-neutral-800 bg-black">
+        <div className="flex h-[50px] md:min-w-[320px] w-[295px] flex-row items-stretch rounded-lg border border-neutral-800 bg-black">
           {hasWindow && <ReactPlayer url={currentTrack.url} playing={play} height={0} width={1} />}
 
           <PlayButton onClick={() => setPlay(!play)} state={play ? PlayState.Play : PlayState.Stop} />
 
           <div
-            className="flex grow items-center border-l border-neutral-800 px-3"
+            className="cursor-pointer flex md:grow items-center border-l border-neutral-800 px-3"
             onClick={() => {
               toggleList(!showList)
             }}
@@ -43,9 +43,9 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
             <span className="text-neutral-500">{currentTrack.artist}</span>
           </div>
 
-          <div className="flex items-center border-l border-neutral-800 px-3 text-sm text-neutral-600">
+          <div className="flex items-center border-l border-neutral-800 md:px-3 px-2 text-sm text-neutral-600">
             <span>{currentTrackIndex + 1}</span>
-            <span className="px-2">of</span>
+            <span className="md:px-2 px-1">of</span>
             <span>{`${playlist.length}`}</span>
           </div>
         </div>

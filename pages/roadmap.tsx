@@ -8,14 +8,15 @@ import { StructureIcon } from "../components/Roadmap/StructureIcon"
 import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
 import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 import { HomeFooter } from "../components/Home/HomeFooter"
+import { JourneyIcon } from "../components/JourneyIcon"
 
 const Roadmap = () => {
   return (
     <Layout>
       <div className="fixed inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
 
-      <div className="container mx-auto flex flex-col pb-60 lg:flex-row-reverse lg:align-top">
-        <div className="left-0 flex w-full flex-row content-center items-center lg:fixed lg:w-1/2 lg:items-start">
+      <div className="container mx-auto flex flex-col pb-60  lg:align-top">
+        <div className="right-0 bottom-4 flex w-full flex-row content-center items-center lg:fixed lg:w-1/2 lg:items-start">
           <Image src={MaskImage} />
         </div>
         <div className="mb-30 max-w-lg px-10">
@@ -61,6 +62,11 @@ const Roadmap = () => {
 const sections = [
   {
     icon: CrowdFundingIcon,
+    title: "Launch Crowdfund",
+    list: [],
+  },
+  {
+    icon: JourneyIcon,
     title: "The Journey",
     list: ["Define Mission/Vision", "Build Roadmap", "Build Whitepaper", "Brand Identity"],
   },
@@ -85,12 +91,8 @@ const sections = [
   },
   {
     icon: InstitutionIcon,
-    title: "Building the Pathways",
-    list: [
-      "Building Partnerships (in the 4 pillars)",
-      "Develop Event Schedule and Framework (Physical and Digital)",
-      "Develop Masterclasses",
-    ],
+    title: "Institutionalize the Revolution",
+    list: ["Buy Land in Metaverse", "Launch the Diaspora Token"],
   },
 ]
 

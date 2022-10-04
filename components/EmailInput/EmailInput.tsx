@@ -18,7 +18,7 @@ export const EmailInput = () => {
             className="absolute inset-0 bg-transparent pl-5 outline-none md:text-left"
           />
         </div>
-        <div className="mb-5 w-1/3	rounded-2xl rounded-l-none bg-purple-light py-2 px-4 text-center transition ease-in-out hover:bg-opacity-80">
+        <div className="mb-5 w-1/2 rounded-2xl rounded-l-none bg-purple-light py-2 px-4 text-center transition ease-in-out hover:bg-opacity-80">
           <button type="submit" className="m-auto">
             {buttonText}
           </button>

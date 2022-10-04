@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { useSpringCarousel } from "react-spring-carousel"
 import { people } from "../../data/people"
 import { social } from "../Social"
 import { PersonCard } from "./PersonCard"
+import { ScrollDownIcon } from "../Icons/ScrollDownIcon"
+
 import cls from "classnames"
 
 export const PeopleSection = ({ showModal, setShowModal }: any) => {
@@ -20,6 +22,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
     streetArt: "",
   })
 
+  const scrollRef = useRef(null)
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const { carouselFragment, slideToItem, useListenToCustomEvent } = useSpringCarousel({
@@ -147,18 +150,55 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
     }
   }, [selectedIndex, slideToItem])
 
+  /**
+   * Used to go to the next and previous slide when the carousel is displayed
+   * @param direction
+   * @returns
+   */
+  const updateSlide = (direction: number) => {
+    const css = direction > 0 ? "cursor-pointer -rotate-90" : "cursor-pointer  rotate-90"
+    return (
+      <div
+        className={css}
+        onClick={() => {
+          if (selectedIndex + direction >= 0 && selectedIndex + direction < people.length)
+            slideToItem(selectedIndex + direction)
+        }}
+      >
+        <ScrollDownIcon />
+      </div>
+    )
+  }
+
   return (
-    <>
+    <div className="relative">
+      <span ref={scrollRef} style={{ position: "absolute", top: -100 }}></span>
       <div
         style={{
+          position: "relative",
           overflowX: showModal ? "hidden" : "scroll",
           overflowY: showModal ? "hidden" : "hidden",
           height: showModal ? "80vh" : 0,
           placeContent: "center",
           justifyContent: "center",
-          // width: showModal ? "60%" : 0
+          alignItems: "center",
         }}
       >
+        <div
+          style={{
+            display: "flex",
+            position: "absolute",
+            width: "100%",
+            padding: "0px 10%",
+            alignItems: "center",
+            justifyContent: "space-between",
+            zIndex: 2,
+            top: "34%",
+          }}
+        >
+          {updateSlide(-1)}
+          {updateSlide(1)}
+        </div>
         {carouselFragment}
       </div>
 
@@ -180,6 +220,8 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       )}
 
       <div className="relative mt-4">
+        {/* <ScrollDownIcon /> */}
+
         <p className={`mt-20 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-10`}>The Team</p>
         <div className="lg:space mx-auto grid max-w-6xl px-20 backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 lg:gap-4">
           {people.map((person: any, i: number) => (
@@ -187,7 +229,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
               <PersonCard
                 person={person}
                 onClick={() => {
-                  window.scrollTo(0, 0)
+                  scrollRef.current.scrollIntoView({ block: "start" })
                   setPerson(person), setShowModal(true)
                 }}
               />
@@ -195,6 +237,6 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
