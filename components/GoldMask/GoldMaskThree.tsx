@@ -52,7 +52,9 @@ function setupScene() {
 
   setupLights(scene)
 
-  window.addEventListener("resize", onWindowResize)
+  if (sizes.width > 600) {
+    window.addEventListener("resize", onWindowResize)
+  }
 
   function onWindowResize() {
     // Update sizes
@@ -85,7 +87,16 @@ function setupScene() {
   }
 
   const updateOnScroll = (event) => {
-    if (obj) obj.position.z = window.scrollY * -0.002
+    targetY = (windowY - window.scrollY) * 0.0002
+
+    if (obj) {
+      if (sizes.width > 600) {
+        obj.position.z = window.scrollY * -0.002
+      } else {
+        console.log(targetY, "rotationY", obj.rotation.y)
+        obj.rotation.x += 0.5 * targetY
+      }
+    }
   }
 
   window.addEventListener("scroll", updateOnScroll)

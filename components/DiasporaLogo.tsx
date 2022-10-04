@@ -4,7 +4,12 @@ export const DiasporaLogo: React.FC<{ width?: string; height?: string }> = (prop
   const { width, height } = props
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="118.404" height="25.534" viewBox="0 0 118.404 25.534">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width ?? "118.404"}
+      height={height ?? "25.534"}
+      viewBox="0 0 118.404 25.534"
+    >
       <path
         d="M13.026,38.689a.463.463,0,1,0,.462.462.463.463,0,0,0-.462-.462"
         transform="translate(-5.6 -17.245)"

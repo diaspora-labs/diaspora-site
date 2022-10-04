@@ -28,7 +28,7 @@ export const PersonCard = (props: Props) => {
     <div className="md:w-full">
       <div
         onClick={onClick}
-        className="group relative mb-10 flex flex-col items-center rounded-[2.5rem] border border-[#2D2A26] transition ease-in-out hover:border-purple-light lg:flex-row"
+        className="cursor-pointer group relative mb-10 flex flex-col items-center rounded-[2.5rem] border border-[#2D2A26] transition ease-in-out hover:border-purple-light lg:flex-row"
       >
         <div className="absolute top-10 right-7">
           <Profile />

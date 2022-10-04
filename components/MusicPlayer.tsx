@@ -33,7 +33,10 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
           <PlayButton onClick={() => setPlay(!play)} state={play ? PlayState.Play : PlayState.Stop} />
 
           <div
-            className={cls("grow items-center border-l border-neutral-800 px-3 md:flex", play ? "flex" : "hidden")}
+            className={cls(
+              "cursor-pointer items-center border-l border-neutral-800 px-3 md:flex md:grow",
+              play ? "flex" : "hidden"
+            )}
             onClick={() => {
               toggleList(!showList)
             }}
@@ -45,7 +48,7 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({ playlist, fixed }) => 
 
           <div className="hidden items-center border-l border-neutral-800 px-3 text-sm text-neutral-600 md:flex">
             <span>{currentTrackIndex + 1}</span>
-            <span className="px-2">of</span>
+            <span className="px-1 md:px-2">of</span>
             <span>{`${playlist.length}`}</span>
           </div>
         </div>

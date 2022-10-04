@@ -17,7 +17,7 @@ interface PlayButtonProps {
 export const PlayButton: React.FC<PlayButtonProps> = ({ state, onClick }) => {
   return (
     <div className="flex items-center p-3" onClick={onClick}>
-      <div className="block">{state === PlayState.Play ? <Stop /> : <Play />}</div>
+      <div className="block cursor-pointer">{state === PlayState.Play ? <Stop /> : <Play />}</div>
     </div>
   )
 }
