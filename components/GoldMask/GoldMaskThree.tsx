@@ -8,7 +8,7 @@ export const GoldMaskThree = () => {
 
   return (
     <>
-      <canvas className="webgl absolute inset-0"></canvas>
+      <canvas className="webgl absolute inset-0 top-40 md:top-0"></canvas>
     </>
   )
 }
@@ -52,7 +52,9 @@ function setupScene() {
 
   setupLights(scene)
 
-  window.addEventListener("resize", onWindowResize)
+  if (sizes.width > 600) {
+    window.addEventListener("resize", onWindowResize)
+  }
 
   function onWindowResize() {
     // Update sizes
@@ -84,8 +86,16 @@ function setupScene() {
     mouseY = event.clientY - windowY
   }
 
-  const updateOnScroll = (event) => {
-    if (obj) obj.position.z = window.scrollY * -0.002
+  const updateOnScroll = () => {
+    targetY = (windowY - window.scrollY) * 0.0002
+
+    if (obj) {
+      if (sizes.width > 600) {
+        obj.position.z = window.scrollY * -0.002
+      } else {
+        obj.rotation.x += 0.5 * targetY
+      }
+    }
   }
 
   window.addEventListener("scroll", updateOnScroll)
@@ -98,7 +108,6 @@ function setupScene() {
       .easing(Easing.Quadratic.InOut)
       .duration(1000)
       .onUpdate(() => {
-        // console.log("position z", coords.z)
         camera.position.set(camera.position.x, camera.position.y, coords.z)
       })
       .start()

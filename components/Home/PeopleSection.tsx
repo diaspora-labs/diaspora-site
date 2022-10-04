@@ -222,7 +222,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       <div className="relative mt-4">
         {/* <ScrollDownIcon /> */}
 
-        <p className={`mt-20 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-10`}>The Team</p>
+        <p className={`mb-4 mt-20 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-10`}>The Team</p>
         <div className="lg:space mx-auto grid max-w-6xl px-20 backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 lg:gap-4">
           {people.map((person: any, i: number) => (
             <div onClick={() => setSelectedIndex(i)} key={i}>

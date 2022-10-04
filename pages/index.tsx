@@ -54,7 +54,7 @@ const Home: NextPage = () => {
                 <br />& mint an ancestor
               </div>
             </div>
-            <div className="col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
+            <div className="z-10 col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
               <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
                 <div className="invisible hidden text-center  text-4xl font-light md:visible md:mt-[80px] md:block">
                   Great things
@@ -93,13 +93,13 @@ const Home: NextPage = () => {
       </span>
 
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
-        <div className="flex grow flex-col p-10">
+        <div className="mt-80 flex grow flex-col p-10">
           <div className="mx-auto">
             <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" />
           </div>
 
           <div className={"container mx-auto mt-10 max-w-3xl"}>
-            <p className={`text-center text-lg font-normal tracking-wide text-gray-400 `}>
+            <p className="text-center text-lg font-normal tracking-wide text-gray-400">
               Diaspora is a community centric DAO powered by the Solana blockchain. The company’s mission is to empower
               economic opportunity, education, and equality. Projects under Diaspora will be funded initially by the
               launch of a unique NFT collection that showcases historic people, moments, and iconography of the
