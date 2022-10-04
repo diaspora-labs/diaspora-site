@@ -86,14 +86,13 @@ function setupScene() {
     mouseY = event.clientY - windowY
   }
 
-  const updateOnScroll = (event) => {
+  const updateOnScroll = () => {
     targetY = (windowY - window.scrollY) * 0.0002
 
     if (obj) {
       if (sizes.width > 600) {
         obj.position.z = window.scrollY * -0.002
       } else {
-        console.log(targetY, "rotationY", obj.rotation.y)
         obj.rotation.x += 0.5 * targetY
       }
     }
