@@ -9,10 +9,15 @@ import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
 import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { JourneyIcon } from "../components/JourneyIcon"
+import { MusicPlayer } from "../components/MusicPlayer"
+import { playlist } from "../data/playlist"
+import Chatbot from "../components/Chatbot"
 
 const Roadmap = () => {
   return (
     <Layout>
+      <Chatbot />
+      <MusicPlayer playlist={playlist} fixed />
       <div className="fixed inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
 
       <div className="container mx-auto flex flex-col pb-60  lg:align-top">
