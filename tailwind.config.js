@@ -19,7 +19,10 @@ module.exports = {
           med: "#7134fe",
           nav: "#854EFF"
         },
-        orange: "#F05E17"
+        orange: "#F05E17",
+        green: {
+          hover: "#00AA8E",
+        }
       },
     },
   },
