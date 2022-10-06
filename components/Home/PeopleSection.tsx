@@ -4,7 +4,7 @@ import { people } from "../../data/people"
 import { social } from "../Social"
 import { PersonCard } from "./PersonCard"
 import { ScrollDownIcon } from "../Icons/ScrollDownIcon"
-import { Closeinactive } from "../Buttons/Closeinactive"
+import { Closeinactive } from "../Icons/Closeinactive"
 import cls from "classnames"
 
 export const PeopleSection = ({ showModal, setShowModal }: any) => {
