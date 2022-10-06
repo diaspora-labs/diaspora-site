@@ -1,6 +1,7 @@
 import React from "react"
 
-  export function Closeinactive(props: { color?: string }) {
+export function Closeinactive(props: { color?: string }) {
+  const color = props.color ?? "#000"
   return (
     <svg
       width="26.379"
