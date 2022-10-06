@@ -54,7 +54,7 @@ const Roadmap = () => {
         </div>
       </div>
 
-      <HomeFooter fixed />
+      <HomeFooter  />
     </Layout>
   )
 }
