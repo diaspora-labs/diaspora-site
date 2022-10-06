@@ -33,7 +33,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       initialActiveItem: 0,
       id: i.id,
       renderItem: (
-        <div key={index} id="defaultModal" aria-hidden="true" className={``}>
+        <div key={index} id="defaultModal" aria-hidden="true">
           <div className="... relative h-full content-center p-4 md:h-auto md:px-[30vh] ">
             <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow dark:bg-gray-700">
               <div className="relative">
@@ -43,7 +43,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
                       setShowModal(false)
                     }}
                     type="button"
-                    className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-black hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="ml-auto inline-flex items-center rounded-lg p-1.5 text-sm"
                     data-modal-toggle="defaultModal"
                   >
                     <Closeinactive />
