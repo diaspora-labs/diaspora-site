@@ -17,6 +17,7 @@ module.exports = {
           light: "#7233ff",
           dark: "#451087",
           med: "#7134fe",
+          nav: "#854EFF"
         },
         orange: "#F05E17"
       },
