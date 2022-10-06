@@ -4,7 +4,7 @@ import { people } from "../../data/people"
 import { social } from "../Social"
 import { PersonCard } from "./PersonCard"
 import { ScrollDownIcon } from "../Icons/ScrollDownIcon"
-
+import { Closeinactive } from "../Buttons/Closeinactive"
 import cls from "classnames"
 
 export const PeopleSection = ({ showModal, setShowModal }: any) => {
@@ -46,7 +46,8 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
                     className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-black hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
                     data-modal-toggle="defaultModal"
                   >
-                    <svg
+                    <Closeinactive />
+                    {/* <svg
                       className="h-10 w-10"
                       fill="currentColor"
                       viewBox="0 0 20 20"
@@ -57,7 +58,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
                         d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                         clipRule="evenodd"
                       ></path>
-                    </svg>
+                    </svg> */}
                   </button>
                 </div>
               </div>
