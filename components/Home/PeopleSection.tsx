@@ -75,7 +75,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
                   <div className="text-md mb-5 text-black lg:mb-4">{i.title}</div>
                   <div className="text-sm text-black lg:mr-20">{i.bio}</div>
 
-                  <div className="mt-7 flex justify-center lg:items-center lg:justify-start">
+                  <div className="mt-5 flex justify-center lg:items-center lg:justify-start">
                     <div className="mt-[-3px] flex">
                       {i.linkedIn && (
                         <div className="mr-5 lg:mr-2">
