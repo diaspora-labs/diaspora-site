@@ -43,7 +43,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
                       setShowModal(false)
                     }}
                     type="button"
-                    className="ml-auto inline-flex items-center rounded-lg p-1.5 text-sm"
+                    className="cursor-pointer group transition ease-in-out ml-auto inline-flex items-center rounded-lg p-1.5 text-sm"
                     data-modal-toggle="defaultModal"
                   >
                     <Closeinactive />
