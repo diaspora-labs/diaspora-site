@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react"
 import { NextPage } from "next"
 
-import Chatbot from "../components/Chatbot"
-
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { Discord } from "../components/Icons/Discord"
 import { Envelop } from "../components/Icons/Envelop"
@@ -15,8 +13,6 @@ import { Layout } from "../components/Layout"
 import Image from "next/image"
 
 import { PeopleSection } from "../components/Home/PeopleSection"
-import { MusicPlayer } from "../components/MusicPlayer"
-import { playlist } from "../data/playlist"
 import { GoldMaskThree } from "../components/GoldMask/GoldMaskThree"
 
 const Home: NextPage = () => {
@@ -31,8 +27,6 @@ const Home: NextPage = () => {
   }
   return (
     <Layout showLogo>
-      <Chatbot />
-      <MusicPlayer playlist={playlist} fixed />
 
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
         <div

@@ -3,9 +3,6 @@ import { useEffect } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
-import { MusicPlayer } from "../components/MusicPlayer"
-import { playlist } from "../data/playlist"
-import Chatbot from "../components/Chatbot"
 import workerSrc from "../pdf-worker"
 
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc
@@ -52,8 +49,6 @@ const Whitepaper = () => {
 
   return (
     <Layout>
-      <Chatbot />
-      <MusicPlayer playlist={playlist} fixed />
       <div className="container mx-auto">
         <div className="flex flex-shrink flex-col">
           <Document className="my-5 mx-auto" file="/DiasporaWhitePaper.pdf" onLoadSuccess={onDocumentLoadSuccess}>
