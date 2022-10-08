@@ -20,5 +20,5 @@ export const Visual = () => {
     }
   }, [])
 
-  return <div id="roadmap-animation" className="w-6/12" />
+  return <div id="roadmap-animation" className="w-1/2" />
 }
