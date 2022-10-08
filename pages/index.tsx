@@ -29,13 +29,7 @@ const Home: NextPage = () => {
   return (
     <Layout showLogo>
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
-        <div
-          className={
-            "bg-100 sm:bottom-40 sm:mb-40 sm:pb-40 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-100"
-          }
-        >
-          <GoldMaskThree />
-        </div>
+        
 
         {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
         <div className={"z-10 flex grow flex-col p-10 "}>
@@ -79,6 +73,13 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div
+          className={
+            "bg-100 sm:bottom-40 sm:mb-40 sm:pb-40 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-100"
+          }
+        >
+          <GoldMaskThree />
         </div>
       </section>
 
