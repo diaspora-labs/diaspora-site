@@ -36,5 +36,5 @@ export const Visual = () => {
     }
   }, [])
 
-  return <div id="roadmap-animation" className="mx-auto w-1/2" />
+  return <div id="roadmap-animation" className="mx-auto md:w-1/2" />
 }
