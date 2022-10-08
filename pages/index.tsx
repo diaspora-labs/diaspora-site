@@ -75,7 +75,7 @@ const Home: NextPage = () => {
         </div>
         <div
           className={
-            "bg-100 md:mt-100 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat sm:bottom-40 sm:mb-40 sm:pb-40 md:absolute md:z-0"
+            "bg-100 md:mt-100 inset-0 mb-20 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0"
           }
         >
           <GoldMaskThree />
