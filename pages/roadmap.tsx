@@ -69,7 +69,7 @@ const sections = [
   {
     icon: JourneyIcon,
     title: "The Journey",
-    list: ["Croudfund & Mint Pass"],
+    list: ["Crowdfund & Mint Pass"],
     completed: true,
   },
   {

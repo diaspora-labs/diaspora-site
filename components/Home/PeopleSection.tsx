@@ -35,8 +35,8 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       id: i.id,
       renderItem: (
         <div key={index} id="defaultModal" aria-hidden="true">
-          <div className="... relative h-full content-center p-4 md:h-auto md:px-[30vh] ">
-            <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow ">
+          <div className="relative h-full content-center p-4 md:h-auto md:px-[30vh] ">
+            <div className="relative rounded-[2.5rem] bg-white/60 shadow backdrop-blur-md">
               <div className="relative">
                 <div className="absolute top-10 right-7">
                   <button
@@ -177,7 +177,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
     <div className="relative">
       <span ref={scrollRef} style={{ position: "absolute", top: -100 }} />
       <div
-        className="backdrop-blur-sm"
+        className=" backdrop-blur-md"
         style={{
           position: "fixed",
           top: 0,
@@ -190,36 +190,36 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           justifyContent: "center",
           alignItems: "center",
           zIndex: 99,
-          backgroundColor: "#000000cc",
+          // backgroundColor: "#000000cc",
         }}
       >
-        <div className="invisible absolute z-10 mt-[10%] flex w-full items-center	justify-between px-[10%] md:visible">
-          {updateSlide(-1)}
-          {updateSlide(1)}
-        </div>
-
-        {showModal && (
-          <div className="align-center invisible fixed top-96 z-10 flex w-full flex-row justify-center pt-8 md:visible">
-            {people.map((item, index) => {
-              return (
-                <p
-                  onClick={() => setSelectedIndex(index)}
-                  key={index}
-                  className={cls(
-                    "mx-[6px] h-[6px] w-[6px] cursor-pointer rounded-full",
-                    selectedIndex === index ? "bg-white" : "bg-gray-500"
-                  )}
-                />
-              )
-            })}
+        <div className="relative">
+          <div className="invisible absolute z-10 mt-[10%] flex w-full items-center	justify-between px-[10%] md:visible">
+            {updateSlide(-1)}
+            {updateSlide(1)}
           </div>
-        )}
-        {carouselFragment}
+
+          {showModal && (
+            <div className="align-center invisible absolute -bottom-2 z-10 flex w-full flex-row justify-center pt-8 md:visible">
+              {people.map((item, index) => {
+                return (
+                  <p
+                    onClick={() => setSelectedIndex(index)}
+                    key={index}
+                    className={cls(
+                      "mx-[6px] h-[6px] w-[6px] cursor-pointer rounded-full",
+                      selectedIndex === index ? "bg-white" : "bg-gray-500"
+                    )}
+                  />
+                )
+              })}
+            </div>
+          )}
+          {carouselFragment}
+        </div>
       </div>
 
       <div className="relative mt-4">
-        {/* <ScrollDownIcon /> */}
-
         <p className={`mb-4 mt-20 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-10`}>The Team</p>
         <div className="lg:space mx-auto grid max-w-6xl px-20 backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 lg:gap-4">
           {people.map((person: any, i: number) => (

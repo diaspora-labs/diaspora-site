@@ -1,7 +1,4 @@
 import React from "react"
-import { Discord } from "../Icons/Discord"
-import { Instagram } from "../Icons/Instagram"
-import { Twitter } from "../Icons/Twitter"
 import cls from "classnames"
 import { EmailInput } from "../EmailInput/EmailInput"
 import { FormspreeProvider } from "@formspree/react"
