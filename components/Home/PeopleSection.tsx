@@ -159,6 +159,14 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
     )
   }
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "scroll"
+    }
+  }, [showModal])
+
   return (
     <div className="relative">
       <span ref={scrollRef} style={{ position: "absolute", top: -100 }} />
