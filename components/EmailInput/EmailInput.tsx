@@ -1,11 +1,15 @@
 import React from "react"
+import { useForm, ValidationError } from "@formspree/react"
 
 export const EmailInput = () => {
+  const [state, handleSubmit] = useForm("xaylqzjw")
+
   const [buttonText, setButtonText] = React.useState("Add me to the list")
   return (
     <form
       action="https://submit-form.com/W5R57IE0"
-      onSubmit={() => {
+      onSubmit={(e) => {
+        e.preventDefault()
         setButtonText("Thanks for subscribing!")
       }}
     >
