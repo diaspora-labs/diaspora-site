@@ -7,7 +7,7 @@ import animation from "../data/DiasporaVisual.json"
 export const Visual = () => {
   // load animation
   useEffect(() => {
-    var animDuration = 1500
+    var animDuration = 600
     const anim = lottie.loadAnimation({
       container: document.querySelector("#roadmap-animation") as HTMLElement,
       animationData: animation,
@@ -17,7 +17,7 @@ export const Visual = () => {
     })
 
     function animatebodymovin(duration: number) {
-      const scrollPosition = window.scrollY
+      const scrollPosition = window.scrollY - 250
       const maxFrames = anim.totalFrames
       const frame = (maxFrames / 140) * (scrollPosition / (duration / 100))
       if (frame <= maxFrames) {
@@ -36,5 +36,5 @@ export const Visual = () => {
     }
   }, [])
 
-  return <div id="roadmap-animation" className="mx-auto w-1/2"/>
+  return <div id="roadmap-animation" className="mx-auto w-1/2" />
 }
