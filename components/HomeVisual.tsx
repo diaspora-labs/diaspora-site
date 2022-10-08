@@ -12,28 +12,28 @@ export const Visual = () => {
       container: document.querySelector(".roadmap-animation") as HTMLElement,
       animationData: animation,
       renderer: "svg",
-      loop: false,
-      autoplay: false,
+      loop: true,
+      autoplay: true,
     })
 
-    function animatebodymovin(duration: number) {
-      const scrollPosition = window.scrollY
-      const maxFrames = anim.totalFrames
-      const frame = (maxFrames / 100) * (scrollPosition / (duration / 100))
-      if (frame <= maxFrames) {
-        anim.goToAndStop(frame, true)
-      }
-    }
+    // function animatebodymovin(duration: number) {
+    //   const scrollPosition = window.scrollY
+    //   const maxFrames = anim.totalFrames
+    //   const frame = (maxFrames / 100) * (scrollPosition / (duration / 100))
+    //   if (frame <= maxFrames) {
+    //     anim.goToAndStop(frame, true)
+    //   }
+    // }
 
-    const onScroll = () => {
-      animatebodymovin(animDuration)
-    }
+    // const onScroll = () => {
+    //   animatebodymovin(animDuration)
+    // }
 
-    document.addEventListener("scroll", onScroll)
+    // document.addEventListener("scroll", onScroll)
 
     return () => {
       anim.destroy()
-      document.removeEventListener("scroll", onScroll)
+    //   document.removeEventListener("scroll", onScroll)
     }
   }, [])
 
