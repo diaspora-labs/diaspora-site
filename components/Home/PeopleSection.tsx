@@ -35,8 +35,8 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       id: i.id,
       renderItem: (
         <div key={index} id="defaultModal" aria-hidden="true">
-          <div className="... relative h-full content-center p-4 md:h-auto md:px-[30vh] ">
-            <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow ">
+          <div className="relative h-full content-center p-4 md:h-auto md:px-[30vh] ">
+            <div className="relative rounded-[2.5rem] bg-white/60 shadow backdrop-blur-md">
               <div className="relative">
                 <div className="absolute top-10 right-7">
                   <button
@@ -177,7 +177,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
     <div className="relative">
       <span ref={scrollRef} style={{ position: "absolute", top: -100 }} />
       <div
-        className="backdrop-blur-sm"
+        className=" backdrop-blur-md"
         style={{
           position: "fixed",
           top: 0,
@@ -190,7 +190,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           justifyContent: "center",
           alignItems: "center",
           zIndex: 99,
-          backgroundColor: "#000000cc",
+          // backgroundColor: "#000000cc",
         }}
       >
         <div className="relative">
