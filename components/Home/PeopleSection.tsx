@@ -36,7 +36,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       renderItem: (
         <div key={index} id="defaultModal" aria-hidden="true">
           <div className="... relative h-full content-center p-4 md:h-auto md:px-[30vh] ">
-            <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow dark:bg-gray-700">
+            <div className="relative rounded-[2.5rem] bg-[#9b9b9b] shadow ">
               <div className="relative">
                 <div className="absolute top-10 right-7">
                   <button
