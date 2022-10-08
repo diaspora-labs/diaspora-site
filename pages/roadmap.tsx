@@ -9,10 +9,7 @@ import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
 import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { JourneyIcon } from "../components/JourneyIcon"
-import lottie from "lottie-web"
-
-// animation data
-import animation from "../data/DiasporaVisual.json"
+import cls from "classnames"
 
 const Roadmap = () => {
   return (
@@ -58,7 +55,7 @@ const Roadmap = () => {
         </div>
       </div>
 
-      <HomeFooter  />
+      <HomeFooter />
     </Layout>
   )
 }
@@ -68,35 +65,37 @@ const sections = [
     icon: CrowdFundingIcon,
     title: "Launch Crowdfund",
     list: [],
+    completed: false,
   },
   {
     icon: JourneyIcon,
     title: "The Journey",
     list: ["Define Mission/Vision", "Build Roadmap", "Build Whitepaper", "Brand Identity"],
+    completed: true,
   },
   {
     icon: MintAncestorIcon,
     title: "Mint an Ancestor",
-    list: ["Launch NFT Collection", "Build Gallery", "Marketing / Social"],
+    list: ["Launch NFT Collection", "Build Gallery", "Mobile"],
+    completed: false,
   },
   {
     icon: StructureIcon,
     title: "Lay the Cultural Foundation",
-    list: ["Develop DAO", "Develop Structure and Governance", "Logistics (LLC, DeFi, etc.)"],
+    list: ["Develop DAO", "Develop Structure and Governance"],
+    completed: false,
   },
   {
     icon: PathwaysIcon,
     title: "Building the Pathways",
-    list: [
-      "Building Partnerships (in the 4 pillars)",
-      "Develop Event Schedule and Framework (Physical and Digital)",
-      "Develop Masterclasses",
-    ],
+    list: ["Building Partnerships", "Develop Events (Physical and Digital)", "Develop Masterclasses"],
+    completed: false,
   },
   {
     icon: InstitutionIcon,
-    title: "Institutionalize the Revolution",
+    title: "Decentralized Powernomics",
     list: ["Buy Land in Metaverse", "Launch the Diaspora Token"],
+    completed: false,
   },
 ]
 

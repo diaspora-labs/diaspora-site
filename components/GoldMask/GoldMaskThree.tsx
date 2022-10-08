@@ -23,7 +23,7 @@ function setupScene() {
 
   const sizes = {
     width: window.innerWidth,
-    height: isMobile ? window.innerWidth : window.innerHeight,
+    height: isMobile ? window.innerWidth : window.innerHeight - 100,
   }
 
   // camera
@@ -44,7 +44,7 @@ function setupScene() {
     function (gltf) {
       obj = gltf.scene
       scene.add(obj)
-      const scale = isMobile ? 1.6 : 1.2
+      const scale = isMobile ? 1.6 : 1.4
       obj.scale.set(scale, scale, scale)
 
       setTimeout(animateOnLoad, 100)
