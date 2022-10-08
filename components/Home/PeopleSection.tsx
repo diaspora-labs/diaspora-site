@@ -177,7 +177,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           top: 0,
           overflowX: showModal ? "hidden" : "scroll",
           overflowY: showModal ? "hidden" : "hidden",
-          height: showModal ? "100vh" : 0,
+          height: showModal ? "80vh" : 0,
           width: showModal ? "100vw" : 0,
           marginTop: "10%",
           placeContent: "center",
