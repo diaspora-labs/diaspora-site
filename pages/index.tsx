@@ -88,7 +88,7 @@ const Home: NextPage = () => {
       </span>
 
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
-        <div className="my-auto flex grow flex-col p-10">
+        <div className="my-auto mt-10 flex grow flex-col p-10">
           <div className="mx-auto">
             <Visual /> 
             {/* <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" /> */}
