@@ -11,8 +11,6 @@ import { ScrollDownIcon } from "../components/Icons/ScrollDownIcon"
 import { Layout } from "../components/Layout"
 import { Visual } from "../components/HomeVisual"
 
-import Image from "next/image"
-
 import { PeopleSection } from "../components/Home/PeopleSection"
 import { GoldMaskThree } from "../components/GoldMask/GoldMaskThree"
 
@@ -93,9 +91,8 @@ const Home: NextPage = () => {
 
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
         <div className="my-auto mt-10 flex grow flex-col p-10">
-          <div className="mx-auto">
+          <div className="mx-auto w-full">
             <Visual />
-            {/* <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" /> */}
           </div>
 
           <div className={"container mx-auto mt-10 max-w-3xl"}>

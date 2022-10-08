@@ -193,33 +193,33 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           backgroundColor: "#000000cc",
         }}
       >
-        <div className="invisible absolute z-10 mt-[10%] flex w-full items-center	justify-between px-[10%] md:visible">
-          {updateSlide(-1)}
-          {updateSlide(1)}
-        </div>
-
-        {showModal && (
-          <div className="align-center invisible fixed top-96 z-10 flex w-full flex-row justify-center pt-8 md:visible">
-            {people.map((item, index) => {
-              return (
-                <p
-                  onClick={() => setSelectedIndex(index)}
-                  key={index}
-                  className={cls(
-                    "mx-[6px] h-[6px] w-[6px] cursor-pointer rounded-full",
-                    selectedIndex === index ? "bg-white" : "bg-gray-500"
-                  )}
-                />
-              )
-            })}
+        <div className="relative">
+          <div className="invisible absolute z-10 mt-[10%] flex w-full items-center	justify-between px-[10%] md:visible">
+            {updateSlide(-1)}
+            {updateSlide(1)}
           </div>
-        )}
-        {carouselFragment}
+
+          {showModal && (
+            <div className="align-center invisible absolute -bottom-2 z-10 flex w-full flex-row justify-center pt-8 md:visible">
+              {people.map((item, index) => {
+                return (
+                  <p
+                    onClick={() => setSelectedIndex(index)}
+                    key={index}
+                    className={cls(
+                      "mx-[6px] h-[6px] w-[6px] cursor-pointer rounded-full",
+                      selectedIndex === index ? "bg-white" : "bg-gray-500"
+                    )}
+                  />
+                )
+              })}
+            </div>
+          )}
+          {carouselFragment}
+        </div>
       </div>
 
       <div className="relative mt-4">
-        {/* <ScrollDownIcon /> */}
-
         <p className={`mb-4 mt-20 text-center text-3xl font-bold tracking-wide text-gray-400 lg:mb-10`}>The Team</p>
         <div className="lg:space mx-auto grid max-w-6xl px-20 backdrop-blur-sm sm:auto-cols-auto lg:grid-cols-2 lg:gap-4">
           {people.map((person: any, i: number) => (
