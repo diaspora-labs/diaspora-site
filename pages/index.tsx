@@ -29,14 +29,6 @@ const Home: NextPage = () => {
   return (
     <Layout showLogo>
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
-        <div
-          className={
-            "bg-100 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-10"
-          }
-        >
-          <GoldMaskThree />
-        </div>
-
         <div className="z-10 flex grow flex-col p-10 ">
           <div className="text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="mt-20 flex h-full flex-col items-center justify-center md:col-span-2 md:mt-0 md:mr-40">
@@ -81,14 +73,25 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <div
+          className={
+            "bg-100 md:mt-100 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat sm:bottom-40 sm:mb-40 sm:pb-40 md:absolute md:z-0"
+          }
+        >
+          <GoldMaskThree />
+        </div>
       </section>
 
-      <span ref={secondPage} className="align-center flex justify-center pb-10" onClick={scrollToSecondPage}>
+      <span
+        ref={secondPage}
+        className="align-center flex cursor-pointer justify-center pb-10"
+        onClick={scrollToSecondPage}
+      >
         <ScrollDownIcon />
       </span>
 
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
-        <div className="mt-80 flex grow flex-col p-10">
+        <div className="my-auto mt-10 flex grow flex-col p-10">
           <div className="mx-auto">
             <Visual />
             {/* <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" /> */}

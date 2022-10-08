@@ -8,7 +8,7 @@ export const GoldMaskThree = () => {
 
   return (
     <>
-      <canvas className="webgl absolute inset-0 top-40 md:top-0"></canvas>
+      <canvas className="webgl md:absolute inset-0 top-40 md:top-0"></canvas>
     </>
   )
 }
