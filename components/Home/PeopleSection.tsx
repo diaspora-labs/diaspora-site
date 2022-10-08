@@ -24,6 +24,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
 
   const scrollRef = useRef(null)
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [windowWidth, setWidowWidth] = useState(0)
 
   const { carouselFragment, slideToItem, useListenToCustomEvent } = useSpringCarousel({
     items: people.map((i: any, index: number) => ({
@@ -43,7 +44,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
                       setShowModal(false)
                     }}
                     type="button"
-                    className="cursor-pointer group transition ease-in-out ml-auto inline-flex items-center rounded-lg p-1.5 text-sm"
+                    className="group ml-auto inline-flex cursor-pointer items-center rounded-lg p-1.5 text-sm transition ease-in-out"
                     data-modal-toggle="defaultModal"
                   >
                     <Closeinactive />
@@ -150,8 +151,9 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       <div
         className={css}
         onClick={() => {
-          if (selectedIndex + direction >= 0 && selectedIndex + direction < people.length)
+          if (selectedIndex + direction >= 0 && selectedIndex + direction < people.length) {
             slideToItem(selectedIndex + direction)
+          }
         }}
       >
         <ScrollDownIcon />
@@ -159,54 +161,61 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
     )
   }
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "scroll"
+    }
+  }, [showModal])
+
+  useEffect(() => {
+    setWidowWidth(window.innerWidth)
+  }, [])
+
   return (
     <div className="relative">
-      <span ref={scrollRef} style={{ position: "absolute", top: -100 }}></span>
+      <span ref={scrollRef} style={{ position: "absolute", top: -100 }} />
       <div
+        className="backdrop-blur-sm"
         style={{
-          position: "relative",
+          position: "fixed",
+          top: 0,
           overflowX: showModal ? "hidden" : "scroll",
           overflowY: showModal ? "hidden" : "hidden",
-          height: showModal ? "80vh" : 0,
+          height: showModal ? "100vh" : 0,
+          width: showModal ? "100vw" : 0,
+          marginTop: "10%",
           placeContent: "center",
           justifyContent: "center",
           alignItems: "center",
+          zIndex: 99,
+          backgroundColor: "#000000cc",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            position: "absolute",
-            width: "100%",
-            padding: "0px 10%",
-            alignItems: "center",
-            justifyContent: "space-between",
-            zIndex: 2,
-            top: "34%",
-          }}
-        >
+        <div className="invisible absolute z-10 mt-[10%] flex w-full items-center	justify-between px-[10%] md:visible">
           {updateSlide(-1)}
           {updateSlide(1)}
         </div>
+
+        {showModal && (
+          <div className="align-center invisible fixed top-96 z-10 flex w-full flex-row justify-center pt-8 md:visible">
+            {people.map((item, index) => {
+              return (
+                <p
+                  onClick={() => setSelectedIndex(index)}
+                  key={index}
+                  className={cls(
+                    "mx-[6px] h-[6px] w-[6px] cursor-pointer rounded-full",
+                    selectedIndex === index ? "bg-white" : "bg-gray-500"
+                  )}
+                />
+              )
+            })}
+          </div>
+        )}
         {carouselFragment}
       </div>
-
-      {showModal && (
-        <div className="align-center mb-10 flex flex-row justify-center">
-          {people.map((item, index) => {
-            return (
-              <p
-                onClick={() => setSelectedIndex(index)}
-                key={index}
-                className={cls(
-                  "mx-[6px] h-[6px] w-[6px] rounded-full",
-                  selectedIndex === index ? "bg-white" : "bg-gray-500"
-                )}
-              />
-            )
-          })}
-        </div>
-      )}
 
       <div className="relative mt-4">
         {/* <ScrollDownIcon /> */}

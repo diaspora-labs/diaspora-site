@@ -8,7 +8,7 @@ export const GoldMaskThree = () => {
 
   return (
     <>
-      <canvas className="webgl absolute inset-0 top-40 md:top-0"></canvas>
+      <canvas className="webgl inset-0 top-40 md:absolute md:top-0"></canvas>
     </>
   )
 }
@@ -19,9 +19,11 @@ function setupScene() {
   // scene
   const scene = new THREE.Scene()
 
+  const isMobile = window.innerWidth < 768
+
   const sizes = {
     width: window.innerWidth,
-    height: window.innerHeight,
+    height: isMobile ? window.innerWidth : window.innerHeight,
   }
 
   // camera
@@ -42,7 +44,8 @@ function setupScene() {
     function (gltf) {
       obj = gltf.scene
       scene.add(obj)
-      obj.scale.set(1.2, 1.2, 1.2)
+      const scale = isMobile ? 1.6 : 1.2
+      obj.scale.set(scale, scale, scale)
 
       setTimeout(animateOnLoad, 100)
     }

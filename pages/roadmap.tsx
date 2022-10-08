@@ -9,6 +9,10 @@ import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
 import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { JourneyIcon } from "../components/JourneyIcon"
+import lottie from "lottie-web"
+
+// animation data
+import animation from "../data/DiasporaVisual.json"
 
 const Roadmap = () => {
   return (

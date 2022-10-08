@@ -9,6 +9,7 @@ import { Twitter } from "../components/Icons/Twitter"
 import { ScrollDownIcon } from "../components/Icons/ScrollDownIcon"
 
 import { Layout } from "../components/Layout"
+import { Visual } from "../components/HomeVisual"
 
 import Image from "next/image"
 
@@ -27,28 +28,18 @@ const Home: NextPage = () => {
   }
   return (
     <Layout showLogo>
-
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
-        <div
-          className={
-            "bg-100 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-10"
-          }
-        >
-          <GoldMaskThree />
-        </div>
-
-        {/* needs to be put back with mask {<div className={"pointer-events-none z-10 flex grow flex-col p-10 "}>} */}
-        <div className={"z-10 flex grow flex-col p-10 "}>
-          <div className="sm:text-center md:grid md:h-full md:grow md:grid-cols-4">
-            <div className="flex h-full flex-col items-start justify-center sm:items-center md:col-span-2">
-              <div className="text-center text-4xl font-light leading-tight text-neutral-600 shadow-black drop-shadow-md md:text-5xl">
+        <div className="z-10 flex grow flex-col p-10 ">
+          <div className="text-center md:grid md:h-full md:grow md:grid-cols-4">
+            <div className="mt-20 flex h-full flex-col items-center justify-center md:col-span-2 md:mt-0 md:mr-40">
+              <div className="text-center text-4xl font-light leading-tight text-neutral-600 shadow-black drop-shadow-md md:text-left md:text-5xl">
                 Building a bridge
                 <br />
                 for the culture
                 <br />& mint an ancestor
               </div>
             </div>
-            <div className="z-10 col-span-2 h-full items-end justify-center md:mx-20 md:flex md:flex-col">
+            <div className="z-10 col-span-2 h-full items-end justify-center md:mr-20 md:ml-40 md:flex md:flex-col">
               <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
                 <div className="invisible hidden text-center  text-4xl font-light md:visible md:mt-[80px] md:block">
                   Great things
@@ -82,16 +73,28 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <div
+          className={
+            "bg-100 md:mt-100 inset-0 mb-20 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0"
+          }
+        >
+          <GoldMaskThree />
+        </div>
       </section>
 
-      <span ref={secondPage} className="align-center flex justify-center pb-10" onClick={scrollToSecondPage}>
+      <span
+        ref={secondPage}
+        className="align-center flex cursor-pointer justify-center pb-10"
+        onClick={scrollToSecondPage}
+      >
         <ScrollDownIcon />
       </span>
 
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
-        <div className="mt-80 flex grow flex-col p-10">
+        <div className="my-auto mt-10 flex grow flex-col p-10">
           <div className="mx-auto">
-            <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" />
+            <Visual />
+            {/* <Image src="/images/logos/diaspora-team-logo.png" alt="screenshot" width="652" height="172" /> */}
           </div>
 
           <div className={"container mx-auto mt-10 max-w-3xl"}>
