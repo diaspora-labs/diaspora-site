@@ -75,7 +75,9 @@ const Home: NextPage = () => {
                   <a href="https://twitter.com/OurDiaspora" target="_blank" rel="noreferrer">
                     <Twitter />
                   </a>
-                  <Envelop />
+                  <a href="mailto:info@ourdiaspora.xyz" target="_blank" rel="noreferrer">
+                    <Envelop />
+                  </a>
                 </div>
                 <div className="hidden p-2">
                   <button className="rounded-xl bg-[#F05E17] px-4 py-2 font-bold uppercase text-black">
