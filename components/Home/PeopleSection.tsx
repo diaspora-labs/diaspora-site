@@ -193,26 +193,17 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           backgroundColor: "#000000cc",
         }}
       >
-        {windowWidth >= 400 && (
-          <div
-            style={{
-              display: "flex",
-              position: "absolute",
-              width: "100%",
-              padding: "0px 10%",
-              alignItems: "center",
-              justifyContent: "space-between",
-              zIndex: 2,
-              // top: "24%",
-              marginTop: "10%",
-            }}
+        
+          <div 
+            className="flex absolute w-full px-[10%] items-center	justify-between z-2 mt-[10%]"
+           
           >
             {updateSlide(-1)}
             {updateSlide(1)}
           </div>
-        )}
+        
 
-        {showModal && windowWidth >= 400 && (
+        {showModal && (
           <div className="align-center fixed top-96 z-10 flex w-full flex-row justify-center pt-8">
             {people.map((item, index) => {
               return (
