@@ -1,27 +1,29 @@
 import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import cls from "classnames"
 
 export const Nav = () => {
   const router = useRouter()
 
+  const routes: { [route: string]: string } = {
+    "/": "home",
+    // "/gallery": "gallery",
+    "/roadmap": "roadmap",
+    "/whitepaper": "whitepaper",
+  }
+
+  const baseClasses = "transition ease-in-out hover:text-purple-nav uppercase"
+
   return (
-    <div className="flex w-full flex-row rounded-md  px-3 text-right md:flex-col">
-      <div className=" bg-black p-4">
-        <Link href="/">
-          <a className={router.pathname == "/" ? "text-indigo-600" : ""}>Home</a>
-        </Link>
-      </div>
-      <div className=" bg-black p-4">
-        <Link href="/team">
-          <a className={router.pathname == "/team" ? "text-indigo-600" : ""}>Team</a>
-        </Link>
-      </div>
-      <div className="bg-black p-4">
-        <Link href="/whitepaper">
-          <a className={router.pathname == "/whitepaper" ? "text-indigo-600" : ""}>White Paper</a>
-        </Link>
-      </div>
+    <div className="flex items-center space-x-1 justify-center">
+      {Object.keys(routes).map((route, i) => (
+        <div className="p-4" key={`route-${i}`}>
+          <Link href={route}>
+            <a className={cls(baseClasses, router.pathname == route ? "koro text-purple-nav" : "")}>{routes[route]}</a>
+          </Link>
+        </div>
+      ))}
     </div>
   )
 }
