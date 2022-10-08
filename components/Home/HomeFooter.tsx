@@ -13,7 +13,7 @@ export const HomeFooter: React.FC<HomeFooterProps> = ({ fixed }) => {
   return (
     <footer
       className={cls(
-        "flex-col border-t-[1px]  border-neutral-800 p-4 py-10 md:flex md:items-center md:justify-between md:p-6 md:px-10",
+        "flex-col border-t-[1px]  border-neutral-800 p-4 py-10 md:flex md:items-center md:justify-between md:p-6 md:px-10 md:pb-20",
         { "fixed bottom-0 left-0 right-0 bg-black/60 backdrop-blur-md": fixed }
       )}
     >
