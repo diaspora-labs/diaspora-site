@@ -8,7 +8,7 @@ export const Visual = () => {
   // load animation
   useEffect(() => {
     const anim = lottie.loadAnimation({
-      container: document.querySelector(".roadmap-animation") as HTMLElement,
+      container: document.querySelector("#roadmap-animation") as HTMLElement,
       animationData: animation,
       renderer: "svg",
       loop: true,
@@ -20,5 +20,5 @@ export const Visual = () => {
     }
   }, [])
 
-  return <div className="roadmap-animation" />
+  return <div id="roadmap-animation" className="w-6/12" />
 }
