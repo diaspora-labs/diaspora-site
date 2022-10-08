@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/roboto": "^4.5.3",
+    "@formspree/react": "^2.4.0",
     "@react-three/drei": "^9.8.1",
     "@react-three/fiber": "^8.0.16",
     "@sendgrid/client": "^7.7.0",
@@ -40,6 +41,7 @@
     "three": "^0.140.2"
   },
   "devDependencies": {
+    "@formspree/cli": "^0.9.6",
     "@types/node": "17.0.22",
     "@types/react": "17.0.41",
     "@types/react-lottie": "^1.2.6",
