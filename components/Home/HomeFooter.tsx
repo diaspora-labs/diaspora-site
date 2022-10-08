@@ -24,30 +24,10 @@ export const HomeFooter: React.FC<HomeFooterProps> = ({ fixed }) => {
         </FormspreeProvider>
 
         <div className="mt-10 items-center space-x-8 md:mt-0 md:flex">
-          <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-sm font-light text-neutral-500 md:mb-0">
-            <div className=" ">
-              <a href="/contact-us">Contact us</a>
-            </div>
-            <div className=" ">
-              <a href="/terms">Terms and conditions</a>
-            </div>
-          </div>
-          <div className="mb-5 hidden md:mb-0 md:flex">
-            <span className="flex flex-row justify-center space-x-8">
-              {/* <Discord color="rgba(255,255,255,0.5)" /> */}
-              <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
-                <Instagram color="rgba(255,255,255,0.5)" />
-              </a>
-              <a href="https://twitter.com/OurDiaspora" target="_blank" rel="noreferrer">
-                <Twitter color="rgba(255,255,255,0.5)" />
-              </a>
-            </span>
+          <div className="flex flex-row justify-center text-xs font-medium text-neutral-500 md:flex md:w-full md:justify-start">
+            &copy; 2022 DIASPORA
           </div>
         </div>
-      </div>
-
-      <div className="flex w-full flex-row justify-center text-xs font-medium text-neutral-500 md:flex md:w-full md:justify-start">
-        &copy; 2022 DIASPORA
       </div>
     </footer>
   )

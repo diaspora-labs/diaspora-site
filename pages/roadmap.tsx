@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import React from "react"
 import Image from "next/image"
 import MaskImage from "../public/images/roadmap/mask.png"
 import { Layout } from "../components/Layout"
@@ -9,10 +9,6 @@ import { PathwaysIcon } from "../components/Roadmap/PathwaysIcon"
 import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { JourneyIcon } from "../components/JourneyIcon"
-import lottie from "lottie-web"
-
-// animation data
-import animation from "../data/DiasporaVisual.json"
 
 const Roadmap = () => {
   return (
@@ -58,7 +54,7 @@ const Roadmap = () => {
         </div>
       </div>
 
-      <HomeFooter  />
+      <HomeFooter />
     </Layout>
   )
 }
@@ -68,35 +64,37 @@ const sections = [
     icon: CrowdFundingIcon,
     title: "Launch Crowdfund",
     list: [],
+    completed: false,
   },
   {
     icon: JourneyIcon,
     title: "The Journey",
-    list: ["Define Mission/Vision", "Build Roadmap", "Build Whitepaper", "Brand Identity"],
+    list: ["Croudfund & Mint Pass"],
+    completed: true,
   },
   {
     icon: MintAncestorIcon,
     title: "Mint an Ancestor",
-    list: ["Launch NFT Collection", "Build Gallery", "Marketing / Social"],
+    list: ["Launch NFT Collection", "Holder Incentives"],
+    completed: false,
   },
   {
     icon: StructureIcon,
     title: "Lay the Cultural Foundation",
-    list: ["Develop DAO", "Develop Structure and Governance", "Logistics (LLC, DeFi, etc.)"],
+    list: ["Partnerships", "Artifact Airdrop", "ARHead Space Launch"],
+    completed: false,
   },
   {
     icon: PathwaysIcon,
     title: "Building the Pathways",
-    list: [
-      "Building Partnerships (in the 4 pillars)",
-      "Develop Event Schedule and Framework (Physical and Digital)",
-      "Develop Masterclasses",
-    ],
+    list: ["Upskilling in the palm of your hand"],
+    completed: false,
   },
   {
     icon: InstitutionIcon,
-    title: "Institutionalize the Revolution",
-    list: ["Buy Land in Metaverse", "Launch the Diaspora Token"],
+    title: "Decentralized Powernomics",
+    list: ["DAO", "Exploring Real Estate acquisition to diversify the assets in the Treasury. "],
+    completed: false,
   },
 ]
 

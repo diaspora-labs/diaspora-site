@@ -32,11 +32,12 @@ const Home: NextPage = () => {
         <div className="z-10 flex grow flex-col p-10 ">
           <div className="text-center md:grid md:h-full md:grow md:grid-cols-4">
             <div className="mt-20 flex h-full flex-col items-center justify-center md:col-span-2 md:mt-0 md:mr-40">
-              <div className="text-center text-4xl font-light leading-tight text-neutral-600 shadow-black drop-shadow-md md:text-left md:text-5xl">
+              <div className="text-center text-4xl font-light leading-tight text-neutral-500 shadow-black drop-shadow-md md:text-left md:text-5xl">
                 Building a bridge
                 <br />
                 for the culture
-                <br />& mint an ancestor
+                <br />
+                <div className="mt-5 text-3xl font-normal text-neutral-400">#TakeTheJourney</div>
               </div>
             </div>
             <div className="z-10 col-span-2 h-full items-end justify-center md:mr-20 md:ml-40 md:flex md:flex-col">
@@ -99,10 +100,13 @@ const Home: NextPage = () => {
 
           <div className={"container mx-auto mt-10 max-w-3xl"}>
             <p className="text-center text-lg font-normal tracking-wide text-gray-400">
-              Diaspora is a community centric DAO powered by the Solana blockchain. The company’s mission is to empower
+              4,444 Ancestors to guide you on your Journey into Web3. Connecting the Diaspora on the Solana Blockchain
+              with History, Lineage, Up-skilling & Digital Art. With a goal to inspire ‘Decentralized Powernomics’
+              across the culture, summon your Sol & Mint an Ancestor. Your key-to-access, collectible & guide.
+              {/* Diaspora is a community centric DAO powered by the Solana blockchain. The company’s mission is to empower
               economic opportunity, education, and equality. Projects under Diaspora will be funded initially by the
               launch of a unique NFT collection that showcases historic people, moments, and iconography of the
-              diaspora. It will serve as a digital historical treasure, reimagined through a futuristic lens.
+              diaspora. It will serve as a digital historical treasure, reimagined through a futuristic lens. */}
             </p>
           </div>
         </div>
