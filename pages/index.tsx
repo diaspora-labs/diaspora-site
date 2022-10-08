@@ -9,7 +9,7 @@ import { Twitter } from "../components/Icons/Twitter"
 import { ScrollDownIcon } from "../components/Icons/ScrollDownIcon"
 
 import { Layout } from "../components/Layout"
-import { Visual } from "../components/HomeVisual"
+// import { Visual } from "../components/HomeVisual"
 
 import Image from "next/image"
 
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
         <ScrollDownIcon />
       </span>
 
-      <Visual />
+      {/* <Visual />  */}
 
       <section className={"pointer-events-auto z-10 flex h-full flex-col border-t-[1px] border-neutral-800"}>
         <div className="mt-80 flex grow flex-col p-10">

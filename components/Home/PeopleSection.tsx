@@ -43,7 +43,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
                       setShowModal(false)
                     }}
                     type="button"
-                    className="cursor-pointer group transition ease-in-out ml-auto inline-flex items-center rounded-lg p-1.5 text-sm"
+                    className="group ml-auto inline-flex cursor-pointer items-center rounded-lg p-1.5 text-sm transition ease-in-out"
                     data-modal-toggle="defaultModal"
                   >
                     <Closeinactive />
@@ -164,13 +164,18 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       <span ref={scrollRef} style={{ position: "absolute", top: -100 }}></span>
       <div
         style={{
-          position: "relative",
+          position: "fixed",
+          top: 0,
           overflowX: showModal ? "hidden" : "scroll",
           overflowY: showModal ? "hidden" : "hidden",
-          height: showModal ? "80vh" : 0,
+          height: showModal ? "100vh" : 0,
+          width: showModal ? "100vw" : 0,
+          marginTop: "10%",
           placeContent: "center",
           justifyContent: "center",
           alignItems: "center",
+          zIndex: 99,
+          backgroundColor: "#000000",
         }}
       >
         <div
@@ -182,7 +187,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
             alignItems: "center",
             justifyContent: "space-between",
             zIndex: 2,
-            top: "34%",
+            top: "28%",
           }}
         >
           {updateSlide(-1)}
