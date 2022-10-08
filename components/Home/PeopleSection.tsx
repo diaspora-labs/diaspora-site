@@ -193,17 +193,13 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           backgroundColor: "#000000cc",
         }}
       >
-        
-          <div 
-            className="invisible md:visible flex absolute w-full px-[10%] items-center	justify-between z-10 mt-[10%]"
-          >
-            {updateSlide(-1)}
-            {updateSlide(1)}
-          </div>
-        
+        <div className="invisible absolute z-10 mt-[10%] flex w-full items-center	justify-between px-[10%] md:visible">
+          {updateSlide(-1)}
+          {updateSlide(1)}
+        </div>
 
         {showModal && (
-          <div className="invisible md:visible align-center fixed top-96 z-10 flex w-full flex-row justify-center pt-8">
+          <div className="align-center invisible fixed top-96 z-10 flex w-full flex-row justify-center pt-8 md:visible">
             {people.map((item, index) => {
               return (
                 <p
