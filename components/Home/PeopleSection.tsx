@@ -150,8 +150,9 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       <div
         className={css}
         onClick={() => {
-          if (selectedIndex + direction >= 0 && selectedIndex + direction < people.length)
+          if (selectedIndex + direction >= 0 && selectedIndex + direction < people.length) {
             slideToItem(selectedIndex + direction)
+          }
         }}
       >
         <ScrollDownIcon />
@@ -202,25 +203,25 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           {updateSlide(-1)}
           {updateSlide(1)}
         </div>
+
+        {showModal && (
+          <div className="align-center fixed top-96 z-10 flex w-full flex-row justify-center pt-8">
+            {people.map((item, index) => {
+              return (
+                <p
+                  onClick={() => setSelectedIndex(index)}
+                  key={index}
+                  className={cls(
+                    "mx-[6px] h-[6px] w-[6px] cursor-pointer rounded-full",
+                    selectedIndex === index ? "bg-white" : "bg-gray-500"
+                  )}
+                />
+              )
+            })}
+          </div>
+        )}
         {carouselFragment}
       </div>
-
-      {showModal && (
-        <div className="align-center mb-10 flex flex-row justify-center">
-          {people.map((item, index) => {
-            return (
-              <p
-                onClick={() => setSelectedIndex(index)}
-                key={index}
-                className={cls(
-                  "mx-[6px] h-[6px] w-[6px] rounded-full",
-                  selectedIndex === index ? "bg-white" : "bg-gray-500"
-                )}
-              />
-            )
-          })}
-        </div>
-      )}
 
       <div className="relative mt-4">
         {/* <ScrollDownIcon /> */}
