@@ -196,8 +196,9 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
             padding: "0px 10%",
             alignItems: "center",
             justifyContent: "space-between",
+            marginTop: "10%",
             zIndex: 2,
-            top: "20%",
+            // top: "28%",
           }}
         >
           {updateSlide(-1)}
