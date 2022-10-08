@@ -1,8 +1,21 @@
 {
   "forms": {
     "contactForm": {
-      "name": "Contact Form",
-      "actions": [{ "type": "email", "to": "{your-email-address}" }]
+      "name": "Contact Form (Footer)",
+      "fields": {
+        "email": { "type": "email", "required": true }
+      },
+      "actions": [
+        { "type": "email", "to": "info@ourdiaspora.xyz" },
+        {
+          "app": "airtable",
+          "type": "sendToTable",
+          "apiKey": "$AIRTABLE_API_KEY",
+          "baseName": "Diaspora",
+          "tableName": "Contact Form",
+          "syncSubmissions": true
+        }
+      ]
     }
   }
 }

@@ -4,6 +4,7 @@ import { Instagram } from "../Icons/Instagram"
 import { Twitter } from "../Icons/Twitter"
 import cls from "classnames"
 import { EmailInput } from "../EmailInput/EmailInput"
+import { FormspreeProvider } from "@formspree/react"
 
 interface HomeFooterProps {
   fixed?: boolean
@@ -18,7 +19,9 @@ export const HomeFooter: React.FC<HomeFooterProps> = ({ fixed }) => {
       )}
     >
       <div className="flex w-full flex-col flex-wrap justify-between lg:flex-row lg:items-center">
-        <EmailInput />
+        <FormspreeProvider project={process.env.FORMSPREE_PROJECT_ID}>
+          <EmailInput />
+        </FormspreeProvider>
 
         <div className="mt-10 items-center space-x-8 md:mt-0 md:flex">
           <div className="mb-5 flex flex-row items-center justify-center space-x-10 text-sm font-light text-neutral-500 md:mb-0">
