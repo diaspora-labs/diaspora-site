@@ -195,8 +195,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
       >
         
           <div 
-            className="flex absolute w-full px-[10%] items-center	justify-between z-2 mt-[10%]"
-           
+            className="md:visible flex absolute w-full px-[10%] items-center	justify-between z-2 mt-[10%]"
           >
             {updateSlide(-1)}
             {updateSlide(1)}
