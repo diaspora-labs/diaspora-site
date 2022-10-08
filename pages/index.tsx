@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
         <div
           className={
-            "bg-100 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-10"
+            "bg-100 sm:bottom-40 sm:mb-40 sm:pb-40 inset-0 scroll-smooth bg-[length:1000px] bg-center bg-no-repeat md:absolute md:z-0 md:mt-100"
           }
         >
           <GoldMaskThree />
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <span ref={secondPage} className="align-center flex justify-center pb-10" onClick={scrollToSecondPage}>
+      <span ref={secondPage} className="align-center flex justify-center pb-10 cursor-pointer" onClick={scrollToSecondPage}>
         <ScrollDownIcon />
       </span>
 
