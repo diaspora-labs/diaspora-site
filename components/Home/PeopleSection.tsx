@@ -161,8 +161,9 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
 
   return (
     <div className="relative">
-      <span ref={scrollRef} style={{ position: "absolute", top: -100 }}></span>
+      <span ref={scrollRef} style={{ position: "absolute", top: -100 }} />
       <div
+        className="backdrop-blur-sm"
         style={{
           position: "fixed",
           top: 0,
@@ -175,7 +176,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           justifyContent: "center",
           alignItems: "center",
           zIndex: 99,
-          backgroundColor: "#000000",
+          backgroundColor: "#000000cc",
         }}
       >
         <div
