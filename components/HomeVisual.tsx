@@ -17,7 +17,7 @@ export const Visual = () => {
     })
 
     function animatebodymovin(duration: number) {
-      const scrollPosition = window.scrollY - 270
+      const scrollPosition = window.scrollY - 250
       const maxFrames = anim.totalFrames
       const frame = (maxFrames / 140) * (scrollPosition / (duration / 100))
       if (frame <= maxFrames) {
