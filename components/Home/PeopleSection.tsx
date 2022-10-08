@@ -24,6 +24,7 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
 
   const scrollRef = useRef(null)
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [windowWidth, setWidowWidth] = useState(0)
 
   const { carouselFragment, slideToItem, useListenToCustomEvent } = useSpringCarousel({
     items: people.map((i: any, index: number) => ({
@@ -168,6 +169,10 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
     }
   }, [showModal])
 
+  useEffect(() => {
+    setWidowWidth(window.innerWidth)
+  }, [])
+
   return (
     <div className="relative">
       <span ref={scrollRef} style={{ position: "absolute", top: -100 }} />
@@ -188,23 +193,25 @@ export const PeopleSection = ({ showModal, setShowModal }: any) => {
           backgroundColor: "#000000cc",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            position: "absolute",
-            width: "100%",
-            padding: "0px 10%",
-            alignItems: "center",
-            justifyContent: "space-between",
-            zIndex: 2,
-            top: "28%",
-          }}
-        >
-          {updateSlide(-1)}
-          {updateSlide(1)}
-        </div>
+        {windowWidth >= 400 && (
+          <div
+            style={{
+              display: "flex",
+              position: "absolute",
+              width: "100%",
+              padding: "0px 10%",
+              alignItems: "center",
+              justifyContent: "space-between",
+              zIndex: 2,
+              top: "25%",
+            }}
+          >
+            {updateSlide(-1)}
+            {updateSlide(1)}
+          </div>
+        )}
 
-        {showModal && (
+        {showModal && windowWidth >= 400 && (
           <div className="align-center fixed top-96 z-10 flex w-full flex-row justify-center pt-8">
             {people.map((item, index) => {
               return (
