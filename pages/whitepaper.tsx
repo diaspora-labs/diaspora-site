@@ -3,8 +3,8 @@ import { useEffect } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import { Layout } from "../components/Layout"
 import { Nav } from "../components/Nav"
-
 import workerSrc from "../pdf-worker"
+
 pdfjs.GlobalWorkerOptions.workerSrc = workerSrc
 
 const Whitepaper = () => {
