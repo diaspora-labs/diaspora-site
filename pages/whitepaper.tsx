@@ -82,7 +82,10 @@ const Whitepaper = () => {
           <button
             className="mr-10 rounded-full border-[1px] border-purple-light  bg-purple-light bg-transparent py-2 px-4 uppercase text-white"
             onClick={() => {
-              window.open("https://yummy-poppy-5e9.notion.site/Diaspora-0bd7c92acfa2487798b1962179c6878f", "_blank")
+              window.open(
+                "https://diasporawhitepaperabstract.notion.site/Diaspora-White-Paper-0bd7c92acfa2487798b1962179c6878f",
+                "_blank"
+              )
             }}
           >
             View Whitepaper
@@ -97,8 +100,7 @@ const Whitepaper = () => {
           </button>
         </div>
       </div>
-      <div className="fixed bottom-10 right-10">
-      </div>
+      <div className="fixed bottom-10 right-10"></div>
     </Layout>
   )
 }
