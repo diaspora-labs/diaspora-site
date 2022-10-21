@@ -9,6 +9,9 @@
     "lint": "next lint",
     "prettier": "prettier --write 'pages/**/*.{js,ts,tsx,md,graphql}' '*.{js,ts,tsx,md,graphql}' --ignore-path ./.prettierignore"
   },
+  "engines": {
+    "node": ">=14"
+  },
   "dependencies": {
     "@fontsource/roboto": "^4.5.3",
     "@formspree/react": "^2.4.0",
