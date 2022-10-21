@@ -9,20 +9,20 @@ import { Discord } from "../components/Icons/Discord"
 
 const ntfs = [
   {
-    url: "/images/masks/nft-1.jpg",
-    name: "Cote D'Ivoire",
+    url: "/images/masks/mask-1.png",
+    name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
   },
   {
-    url: "/images/masks/nft-2.jpg",
-    name: "DAN",
+    url: "/images/masks/mask-2.png",
+    name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
   },
   {
-    url: "/images/masks/nft-3.jpg",
-    name: "Red Mbambi",
+    url: "/images/masks/mask-3.png",
+    name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
   },
@@ -33,9 +33,10 @@ const Mint = () => {
 
   return (
     <Layout>
-      <div className="absolute inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
+      <div className="absolute inset-0 z-0 w-full bg-roadmap-bg bg-contain"></div>
+      <div className="fixed inset-0 z-10 w-full bg-black opacity-40"></div>
 
-      <div className="mb-30 mx-auto mt-40 lg:max-w-4xl ">
+      <div className="mb-30 relative z-20 mx-auto mt-40 lg:max-w-4xl">
         <div className="my-10 flex flex-col">
           <div className="mx-5 lg:mx-auto lg:w-full lg:max-w-3xl">
             <p className="mb-2 text-sm text-neutral-700 lg:pt-24">October 09, 2022</p>
@@ -44,10 +45,10 @@ const Mint = () => {
               <br />
               <span className="mt-1 font-light  lg:text-3xl">NFT pre-mint for Diaspora DAO.</span>
             </p>
-            <p className="my-4 text-lg font-light text-neutral-400 lg:mr-20">
-              Experience unique rare NFTs that will give a sneak peek to the Diaspora DAO NFT collection. Masks have
-              deep cultural history across the world, which includes access to the metaphysical. The “Masks” collection
-              will unlock many benefits to users that purchase the NFT.
+            <p className="my-4 text-lg font-light leading-relaxed text-neutral-400 lg:mr-20">
+              Experience unique rare NFT’s that give a sneak peak into the Diaspora NFT collection. Masks have deep
+              cultural history across the world with some believed to have metaphysical properties. The “Masks”
+              collection will unlock many benefits to holders that purchase the NFT.
             </p>
           </div>
 
@@ -86,7 +87,7 @@ const Mint = () => {
           <div className="mx-5 mt-10 max-w-3xl lg:mx-auto">
             <h3 className="mb-10 text-2xl">Why Diaspora DAO</h3>
 
-            <div className="mt-2 font-light text-neutral-400">
+            <div className="mt-2 text-lg font-light leading-relaxed text-neutral-400">
               <p className="mb-5">
                 Diaspora is reimagining what lineage and self discovery looks like in a decentralized world.  We will be
                 connecting thousands of years of history globally to a community that will both look at the past as well
@@ -145,7 +146,8 @@ const Mask = ({ url, name, cost, description }) => {
         <div className="text-lg font-bold text-white">{name}</div>
         <div className="text-md my-2 font-light text-neutral-400">{description}</div>
         <div className="text-bold my-3 flex flex-row items-center justify-center">
-          <Image src="/images/logos/solana-sol-logo.png" width="20" height="20" /> <span className="ml-2">{cost}</span>
+          <Image src="/images/logos/solana-sol-logo.png" width="20" height="20" />{" "}
+          <span className="ml-2 mt-1">{cost}</span>
         </div>
         <div className="mt-1">
           <button className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white">Mint Membership</button>
