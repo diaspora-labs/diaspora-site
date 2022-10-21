@@ -9,6 +9,7 @@ export const Nav = () => {
   const routes: { [route: string]: string } = {
     "/": "home",
     // "/gallery": "gallery",
+    "/mint": "crowdfunding",
     "/roadmap": "roadmap",
     "/whitepaper": "whitepaper",
   }
@@ -16,7 +17,7 @@ export const Nav = () => {
   const baseClasses = "transition ease-in-out hover:text-purple-nav uppercase"
 
   return (
-    <div className="flex items-center space-x-1 justify-center">
+    <div className="flex items-center justify-center space-x-1">
       {Object.keys(routes).map((route, i) => (
         <div className="p-4" key={`route-${i}`}>
           <Link href={route}>
