@@ -31,7 +31,7 @@ const Mint = () => {
 
   const Mask = ({ url, name, cost, description }) => {
     return (
-      <div className="mx-2 w-[250px] flex-col">
+      <div className="mx-5 w-[250px] flex-col">
         <div className="mb-2">
           <Image width="250" height="250" src={url} />
         </div>
@@ -53,10 +53,10 @@ const Mint = () => {
 
   return (
     <Layout>
-      {/* <div className="fixed inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div> */}
+      <div className="absolute inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
 
       <div className="mb-30 mx-auto mt-40 max-w-4xl">
-        <div className="flex flex-col lg:mt-5">
+        <div className="my-10 flex flex-col">
           <div className="mx-auto max-w-3xl">
             <p className="py-8 text-3xl tracking-wide text-white md:text-4xl lg:pt-24">
               Introducing "Masks" NFT pre-mint
@@ -70,7 +70,7 @@ const Mint = () => {
             </p>
           </div>
 
-          <div className="mt-10 flex flex-row flex-wrap">
+          <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {ntfs.map((item) => {
               return <Mask key={item.url} {...item} />
             })}
