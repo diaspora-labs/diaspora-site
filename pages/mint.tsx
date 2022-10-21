@@ -42,7 +42,7 @@ const Mint = () => {
             <p className="pb-8 text-2xl tracking-wide text-white lg:text-4xl">
               Introducing &ldquo;Masks&rdquo;
               <br />
-              NFT pre-mint for Diaspora DAO.
+              <span className="mt-1 font-light  lg:text-3xl">NFT pre-mint for Diaspora DAO.</span>
             </p>
             <p className="my-4 text-lg font-light text-neutral-400 lg:mr-20">
               Experience unique rare NFTs that will give a sneak peek to the Diaspora DAO NFT collection. Masks have
