@@ -20,8 +20,6 @@ export const Nav = ({ show = true, mobile }: { show?: boolean; mobile?: boolean 
   const baseClasses = "transition ease-in-out hover:text-purple-nav uppercase"
   const iconColor = `rgba(255, 255, 255, ${mobile ? "1" : "0.5"})`
 
-  const navHeight = 24 * Object.keys(routes).length + 50
-
   return (
     <div
       className={cls(
