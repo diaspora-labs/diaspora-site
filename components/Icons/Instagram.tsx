@@ -1,9 +1,11 @@
 import React from "react"
 
-export function Instagram(props: { color?: string }) {
+export function Instagram(props: { color?: string; size?: number }) {
   const color = props.color ?? "#7233ff"
+  const size = props.size ?? 13.488
+
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="13.488" height="13.488" viewBox="0 0 13.488 13.488">
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 13.488 13.488">
       <defs>
         <clipPath id="clip-path">
           <path fill={color} d="M0 0H13.488V13.488H0z" data-name="Rectangle 3"></path>
