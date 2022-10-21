@@ -39,7 +39,7 @@ const Mint = () => {
         <div className="my-10 flex flex-col">
           <div className="mx-5 lg:mx-auto lg:w-full lg:max-w-3xl">
             <p className="py-8 text-2xl tracking-wide text-white lg:pt-24 lg:text-4xl">
-              Introducing "Masks" NFT pre-mint for Diaspora DAO.
+              Introducing &ldquo;Masks&rdquo; NFT pre-mint for Diaspora DAO.
             </p>
             <p className="my-4 text-lg font-light text-neutral-400 lg:mr-20">
               Experience unique rare NFTs that will give a sneak peek to the Diaspora DAO NFT collection. Masks have
@@ -70,11 +70,11 @@ const Mint = () => {
                 </div>
                 <div className="absolute -left-[-46%] top-0 text-center text-neutral-500">
                   <div>80k</div>
-                  <div className="text-xs">We're here</div>
+                  <div className="text-xs">We&apos;re here</div>
                 </div>
                 <div className="absolute -left-[-93%] top-0 text-center text-neutral-500">
                   <div>200k</div>
-                  <div className="w-[100px] text-xs">Where we're going</div>
+                  <div className="w-[100px] text-xs">Where we&apos;re going</div>
                 </div>
               </div>
             </div>
