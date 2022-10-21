@@ -38,8 +38,11 @@ const Mint = () => {
       <div className="mb-30 mx-auto mt-40 lg:max-w-4xl ">
         <div className="my-10 flex flex-col">
           <div className="mx-5 lg:mx-auto lg:w-full lg:max-w-3xl">
-            <p className="py-8 text-2xl tracking-wide text-white lg:pt-24 lg:text-4xl">
-              Introducing &ldquo;Masks&rdquo; NFT pre-mint for Diaspora DAO.
+            <p className="mb-2 text-sm text-neutral-700 lg:pt-24">October 09, 2022</p>
+            <p className="pb-8 text-2xl tracking-wide text-white lg:text-4xl">
+              Introducing &ldquo;Masks&rdquo;
+              <br />
+              NFT pre-mint for Diaspora DAO.
             </p>
             <p className="my-4 text-lg font-light text-neutral-400 lg:mr-20">
               Experience unique rare NFTs that will give a sneak peek to the Diaspora DAO NFT collection. Masks have
