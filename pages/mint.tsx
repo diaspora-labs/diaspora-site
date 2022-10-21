@@ -59,11 +59,24 @@ const Mint = () => {
               Mint a mask. Join our 245 collections. <span className="text-orange">#TakeTheJourney</span>
             </p>
 
-            <div className="mx-10 rounded-lg border border-neutral-700 p-10">
+            <div className="mx-10 rounded-lg border border-neutral-700 p-20">
               <div className="h-[5px] w-full rounded bg-purple-light">
                 <div className="h-[5px] w-[50%] rounded bg-orange"></div>
               </div>
-              <div className="mt-5 flex flex-row justify-between"></div>
+              <div className="relative mt-5 w-full">
+                <div className="absolute -left-[50%] top-0 w-full text-center text-neutral-500">
+                  <div>0</div>
+                  <div className="text-xs">We started here</div>
+                </div>
+                <div className="absolute -left-[-46%] top-0 text-center text-neutral-500">
+                  <div>80k</div>
+                  <div className="text-xs">We're here</div>
+                </div>
+                <div className="absolute -left-[-93%] top-0 text-center text-neutral-500">
+                  <div>200k</div>
+                  <div className="w-[100px] text-xs">Where we're going</div>
+                </div>
+              </div>
             </div>
           </div>
 
