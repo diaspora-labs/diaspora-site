@@ -81,7 +81,7 @@ const sections = [
   {
     icon: StructureIcon,
     title: "Lay the Cultural Foundation",
-    list: ["Partnerships", "Artifact Airdrop", "ARHead Space Launch"],
+    list: ["Partnerships", "Artifact Airdrop", "Metaverse Space Launch"],
     completed: false,
   },
   {
