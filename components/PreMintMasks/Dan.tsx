@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { GLTFLoader } from "three-stdlib"
 import { Easing, Tween, update } from "@tweenjs/tween.js"
 
-export const GoldMaskThree = () => {
+export const Dan = () => {
   useEffect(() => setupScene(), [])
 
   return (
@@ -39,7 +39,7 @@ function setupScene() {
   let obj
   loader.load(
     // resource URL
-    "/mask.glb",
+    "/mask1.glb",
     // called when the resource is loaded
     function (gltf) {
       obj = gltf.scene
