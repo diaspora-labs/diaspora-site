@@ -131,24 +131,42 @@ function setupScene() {
 
 function setupLights(scene) {
   // Lights
-  const light = new THREE.AmbientLight(0xffffff, 1) // soft white light
-  scene.add(light)
+const light = new THREE.AmbientLight(0xffffff, 1); // soft white light
+scene.add(light);
 
-  var light2a = new THREE.DirectionalLight(0xffffff, 2.5)
-  light2a.position.set(2, 0, 2)
-  scene.add(light2a)
-
-  var light2 = new THREE.DirectionalLight(0xffffff, 2.5)
-  light2.position.set(-2, 0, 2)
-  scene.add(light2)
-
-  var light3 = new THREE.DirectionalLight(0xffffff, 2.5)
-  light3.position.set(0, 0, -1)
-  scene.add(light3)
-
-  var light4 = new THREE.DirectionalLight(0xffffff, 1)
-  light4.position.set(0, 0, 2)
-  scene.add(light4)
+var light2a = new THREE.DirectionalLight(0xffffff, 3);
+light2a.position.set(0, 0, 2);
+scene.add(light2a);
+var light2 = new THREE.DirectionalLight(0xffffff, 5.5);
+light2.position.set(-0.95, 0.95, 0.95);
+scene.add(light2);
+var light3 = new THREE.DirectionalLight(0xffffff, 5.5);
+light3.position.set(-1, -1, 1);
+scene.add(light3);
+var light4 = new THREE.DirectionalLight(0xffffff, 5.5);
+light4.position.set(1, -1, 1);
+scene.add(light4);
+var light4s = new THREE.DirectionalLight(0xffffff, 5.5);
+light4s.position.set(0, 0, 3);
+scene.add(light4s);
+var light2a = new THREE.DirectionalLight(0xffffff, 2.5);
+light2a.position.set(2, 0, 2);
+scene.add(light2a);
+var light2 = new THREE.DirectionalLight(0xffffff, 2.5);
+light2.position.set(-2, 0, 2);
+scene.add(light2);
+var light3 = new THREE.DirectionalLight(0xffffff, 2.5);
+light3.position.set(0, 0, -1);
+scene.add(light3);
+var light4 = new THREE.DirectionalLight(0xffffff, 1);
+light4.position.set(0, 0, 2);
+scene.add(light4);
+var light4s = new THREE.DirectionalLight(0xffffff, 1.5);
+light4s.position.set(0, 0, 3);
+scene.add(light4s);
+var light4sa = new THREE.DirectionalLight(0xffffff, 1.5);
+light4sa.position.set(1, 1, 1);
+scene.add(light4sa);
 }
 
 function createRenderer({ canvas, sizes, animate }) {
