@@ -22,12 +22,12 @@ function setupScene() {
   const isMobile = window.innerWidth < 768
 
   const sizes = {
-    width: window.innerWidth,
-    height: isMobile ? window.innerWidth : window.innerHeight - 100,
+    width: 250,
+    height: 250,
   }
 
   // camera
-  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+  const camera = new THREE.PerspectiveCamera(75, 250 / 250, 0.1, 100)
   camera.position.x = 0
   camera.position.y = 0
   camera.position.z = 100
@@ -55,7 +55,7 @@ function setupScene() {
 
   setupLights(scene)
 
-  if (sizes.width > 600) {
+  if (250 > 600) {
     window.addEventListener("resize", onWindowResize)
   }
 
@@ -65,11 +65,11 @@ function setupScene() {
     sizes.height = window.innerHeight
 
     // Update camera
-    camera.aspect = sizes.width / sizes.height
+    camera.aspect = 250 / 250
     camera.updateProjectionMatrix()
 
     // Update renderer
-    renderer.setSize(sizes.width, sizes.height)
+    renderer.setSize(250, 250)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
   }
 
@@ -93,7 +93,7 @@ function setupScene() {
     targetY = (windowY - window.scrollY) * 0.0002
 
     if (obj) {
-      if (sizes.width > 600) {
+      if (250 > 600) {
         obj.position.z = window.scrollY * -0.002
       } else {
         obj.rotation.x += 0.5 * targetY
@@ -154,7 +154,7 @@ function setupLights(scene) {
 function createRenderer({ canvas, sizes, animate }) {
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true })
   renderer.setAnimationLoop(animate)
-  renderer.setSize(sizes.width, sizes.height)
+  renderer.setSize(250, 250)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
   // scene settings

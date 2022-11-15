@@ -143,7 +143,9 @@ const Mask = ({ url, name, cost, description }) => {
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       <div className="mb-2">
-        <Image width="250" height="250" src={url} />
+        {/* <Image width="250" height="250" src={url} />
+         */}
+         <Dan />
       </div>
 
       <div className="text-center">
