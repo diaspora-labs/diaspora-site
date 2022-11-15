@@ -44,7 +44,7 @@ function setupScene() {
     function (gltf) {
       obj = gltf.scene
       scene.add(obj)
-      const scale = isMobile ? 1.6 : 1.4
+      const scale = isMobile ? 0.12 : 0.12
       obj.scale.set(scale, scale, scale)
 
       setTimeout(animateOnLoad, 100)

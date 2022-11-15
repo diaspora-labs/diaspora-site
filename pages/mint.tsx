@@ -8,8 +8,8 @@ import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 
 import { Dan } from "../components/PreMintMasks/Dan"
-import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
-import { Cote } from "../components/PreMintMasks/Cote"
+// import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
+// import { Cote } from "../components/PreMintMasks/Cote"
 
 const ntfs = [
   {
