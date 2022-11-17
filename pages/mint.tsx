@@ -7,25 +7,29 @@ import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 
-import { Dan } from "../components/PreMintMasks/Dan"
-import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
-import { Cote } from "../components/PreMintMasks/Cote"
+// import { Dan } from "../components/PreMintMasks/Dan"
+// import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
+// import { Cote } from "../components/PreMintMasks/Cote"
+import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 
 const ntfs = [
   {
-    // url: <Dan />,
+    id: 1,
+    url: "/mask1.glb",
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
   },
   {
-    url: <RedMbambi />,
+    id: 2,
+    url: "/mask2.glb",
     name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
   },
   {
-    // url: <Cote />,
+    id: 3,
+    url: "/mask3.glb",
     name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
@@ -58,7 +62,7 @@ const Mint = () => {
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {ntfs.map((item) => {
-              return <Mask key={item.url} {...item} />
+              return <Mask key={item.id} {...item} />
             })}
           </div>
 
@@ -139,13 +143,16 @@ const Mint = () => {
   )
 }
 
-const Mask = ({ url, name, cost, description }) => {
+const Mask = ({ id, url, name, cost, description }) => {
+  console.log('url ', url)
+  console.log('name ', name)
+  console.log('id ', id)
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       <div className="mb-2">
         {/* <Image width="250" height="250" src={url} />
          */}
-         {url}
+         <PreMintMasks name={name} url={url}/>
       </div>
 
       <div className="text-center">
