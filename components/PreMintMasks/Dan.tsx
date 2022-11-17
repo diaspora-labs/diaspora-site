@@ -8,7 +8,7 @@ export const Dan = () => {
 
   return (
     <>
-      <canvas className="webgl inset-0 top-40 md:absolute md:top-0"></canvas>
+      <canvas className="webgl"></canvas>
     </>
   )
 }

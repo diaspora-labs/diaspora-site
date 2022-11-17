@@ -13,7 +13,7 @@ import { Cote } from "../components/PreMintMasks/Cote"
 
 const ntfs = [
   {
-    // url: <Dan />,
+    url: <Dan />,
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
