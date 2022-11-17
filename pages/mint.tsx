@@ -144,15 +144,13 @@ const Mint = () => {
 }
 
 const Mask = ({ id, url, name, cost, description }) => {
-  console.log('url ', url)
-  console.log('name ', name)
-  console.log('id ', id)
+
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       <div className="mb-2">
         {/* <Image width="250" height="250" src={url} />
          */}
-         <PreMintMasks name={name} url={url}/>
+         <PreMintMasks id={id} url={url}/>
       </div>
 
       <div className="text-center">
