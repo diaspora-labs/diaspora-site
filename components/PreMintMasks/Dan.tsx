@@ -39,7 +39,7 @@ function setupScene() {
   let obj
   loader.load(
     // resource URL
-    "/mask1.glb",
+    "/mask3.glb",
     // called when the resource is loaded
     function (gltf) {
       obj = gltf.scene
@@ -149,18 +149,18 @@ function setupLights(scene) {
   var light4s = new THREE.DirectionalLight(0xffffff, 5.5);
   light4s.position.set(0, 0, 3);
   scene.add(light4s);
-  var light2a2 = new THREE.DirectionalLight(0xffffff, 2.5);
-  light2a2.position.set(2, 0, 2);
-  scene.add(light2a2);
-  var light222 = new THREE.DirectionalLight(0xffffff, 2.5);
-  light222.position.set(-2, 0, 2);
-  scene.add(light222);
-  var light32 = new THREE.DirectionalLight(0xffffff, 2.5);
-  light32.position.set(0, 0, -1);
-  scene.add(light32);
-  var light42 = new THREE.DirectionalLight(0xffffff, 1);
-  light42.position.set(0, 0, 2);
-  scene.add(light42);
+  var light2a = new THREE.DirectionalLight(0xffffff, 2.5);
+  light2a.position.set(2, 0, 2);
+  scene.add(light2a);
+  var light2 = new THREE.DirectionalLight(0xffffff, 2.5);
+  light2.position.set(-2, 0, 2);
+  scene.add(light2);
+  var light3 = new THREE.DirectionalLight(0xffffff, 2.5);
+  light3.position.set(0, 0, -1);
+  scene.add(light3);
+  var light4 = new THREE.DirectionalLight(0xffffff, 1);
+  light4.position.set(0, 0, 2);
+  scene.add(light4);
   var light4s = new THREE.DirectionalLight(0xffffff, 1.5);
   light4s.position.set(0, 0, 3);
   scene.add(light4s);
