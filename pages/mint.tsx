@@ -8,24 +8,24 @@ import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 
 import { Dan } from "../components/PreMintMasks/Dan"
-// import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
-// import { Cote } from "../components/PreMintMasks/Cote"
+import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
+import { Cote } from "../components/PreMintMasks/Cote"
 
 const ntfs = [
   {
-    url: "/images/masks/mask-1.png",
+    // url: <Dan />,
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
   },
   {
-    url: "/images/masks/mask-2.png",
+    // url: <RedMbambi />,
     name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
   },
   {
-    url: "/images/masks/mask-3.png",
+    url: <Cote />,
     name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
@@ -145,7 +145,7 @@ const Mask = ({ url, name, cost, description }) => {
       <div className="mb-2">
         {/* <Image width="250" height="250" src={url} />
          */}
-         <Dan />
+         {url}
       </div>
 
       <div className="text-center">
