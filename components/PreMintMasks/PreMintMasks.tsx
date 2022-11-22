@@ -15,8 +15,9 @@ export const PreMintMasks = (mask) => {
 
 function setupScene(mask) {
   const canvas = document.querySelector("canvas.webgl")
-  mask = mask.url
+  const url = mask.url
   console.log("mask ", mask)
+  console.log("url ", url)
   // scene
   const scene2 = new THREE.Scene()
 
@@ -40,7 +41,7 @@ function setupScene(mask) {
   let obj
   loader.load(
     // resource URL
-    mask,
+    url,
     // called when the resource is loaded
     function (gltf) {
       obj = gltf.scene

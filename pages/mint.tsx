@@ -7,29 +7,29 @@ import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 
-// import { Dan } from "../components/PreMintMasks/Dan"
-// import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
-// import { Cote } from "../components/PreMintMasks/Cote"
+import { Dan } from "../components/PreMintMasks/Dan"
+import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
+import { Cote } from "../components/PreMintMasks/Cote"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 
 const ntfs = [
   {
     id: 1,
-    url: "/mask1.glb",
+    url: <Dan />,
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
   },
   {
     id: 2,
-    url: "/mask2.glb",
+    url: <RedMbambi />,
     name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
   },
   {
     id: 3,
-    url: "/mask3.glb",
+    url: <Cote />,
     name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
@@ -150,7 +150,8 @@ const Mask = ({ id, url, name, cost, description }) => {
       <div className="mb-2">
         {/* <Image width="250" height="250" src={url} />
          */}
-         <PreMintMasks id={id} url={url}/>
+         {/* <PreMintMasks id={id} url={url}/> */}
+         {url}
       </div>
 
       <div className="text-center">
