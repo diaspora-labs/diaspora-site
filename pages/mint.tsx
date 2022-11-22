@@ -6,10 +6,6 @@ import Image from "next/image"
 import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
-
-import { Dan } from "../components/PreMintMasks/Dan"
-import { RedMbambi } from "../components/PreMintMasks/RedMbambi"
-import { Cote } from "../components/PreMintMasks/Cote"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 
 const ntfs = [
