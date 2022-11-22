@@ -14,7 +14,8 @@ export const PreMintMasks = (mask) => {
 }
 
 function setupScene(mask) {
-  const canvas = document.querySelector("canvas.webgl")
+  // const canvas = document.querySelector("canvas.webgl")
+  const canvas = document.querySelector(`canvas.${mask.url}`)
   const url = mask.url
   console.log("mask ", mask)
   console.log("url ", url)
