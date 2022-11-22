@@ -5,7 +5,6 @@ import { Easing, Tween, update } from "@tweenjs/tween.js"
 
 export const PreMintMasks = (mask) => {
   useEffect(() => setupScene(mask), [mask])
-  console.log
   return (
     <>
       <canvas className={"webgl" + mask.id}></canvas>
@@ -17,8 +16,6 @@ function setupScene(mask) {
   // const canvas = document.querySelector("canvas.webgl")
   const canvas = document.querySelector(`canvas.webgl${mask.id}`)
   const url = mask.url
-  console.log("mask ", mask)
-  console.log("url ", url)
   // scene
   const scene2 = new THREE.Scene()
 
