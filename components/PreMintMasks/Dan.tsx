@@ -8,13 +8,13 @@ export const Dan = () => {
 
   return (
     <>
-      <canvas className="webgl"></canvas>
+      <canvas className="webgl3"></canvas>
     </>
   )
 }
 
 function setupScene() {
-  const canvas = document.querySelector("canvas.webgl")
+  const canvas = document.querySelector("canvas.webgl3")
 
   // scene
   const scene = new THREE.Scene()

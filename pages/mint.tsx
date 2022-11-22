@@ -15,21 +15,21 @@ import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 const ntfs = [
   {
     id: 1,
-    url: <Dan />,
+    url: "/mask1.glb",
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
   },
   {
     id: 2,
-    url: <RedMbambi />,
+    url: "/mask2.glb",
     name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
   },
   {
     id: 3,
-    url: <Cote />,
+    url: "/mask3.glb",
     name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
@@ -150,8 +150,7 @@ const Mask = ({ id, url, name, cost, description }) => {
       <div className="mb-2">
         {/* <Image width="250" height="250" src={url} />
          */}
-         {/* <PreMintMasks id={id} url={url}/> */}
-         {url}
+         <PreMintMasks id={id} url={url}/>
       </div>
 
       <div className="text-center">

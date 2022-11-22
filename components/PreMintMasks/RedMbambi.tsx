@@ -8,7 +8,7 @@ export const RedMbambi = () => {
 
   return (
     <>
-      <canvas className="webgl "></canvas>
+      <canvas className="webgl"></canvas>
     </>
   )
 }

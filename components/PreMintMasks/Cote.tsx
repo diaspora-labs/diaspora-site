@@ -8,13 +8,13 @@ export const Cote = () => {
 
   return (
     <>
-      <canvas className="webgl "></canvas>
+      <canvas className="webgl1"></canvas>
     </>
   )
 }
 
 function setupScene() {
-  const canvas = document.querySelector("canvas.webgl")
+  const canvas = document.querySelector("canvas.webgl1")
 
   // scene
   const scene2 = new THREE.Scene()

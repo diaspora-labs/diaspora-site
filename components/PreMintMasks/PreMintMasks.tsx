@@ -8,7 +8,7 @@ export const PreMintMasks = (mask) => {
 
   return (
     <>
-      <canvas id={mask.id} mask={mask.url} className="webgl"></canvas>
+      <canvas className="webgl"></canvas>
     </>
   )
 }
