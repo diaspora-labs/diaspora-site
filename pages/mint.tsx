@@ -6,22 +6,26 @@ import Image from "next/image"
 import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
+import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 
 const ntfs = [
   {
-    url: "/images/masks/mask-1.png",
+    id: 1,
+    url: "/mask1.glb",
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
   },
   {
-    url: "/images/masks/mask-2.png",
+    id: 2,
+    url: "/mask2.glb",
     name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
   },
   {
-    url: "/images/masks/mask-3.png",
+    id: 3,
+    url: "/mask3.glb",
     name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
@@ -54,7 +58,7 @@ const Mint = () => {
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {ntfs.map((item) => {
-              return <Mask key={item.url} {...item} />
+              return <Mask key={item.id} {...item} />
             })}
           </div>
 
@@ -135,11 +139,14 @@ const Mint = () => {
   )
 }
 
-const Mask = ({ url, name, cost, description }) => {
+const Mask = ({ id, url, name, cost, description }) => {
+
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
-      <div className="mb-2">
-        <Image width="250" height="250" src={url} />
+      <div className="mb-2 md:ml-6 ml-24">
+        {/* <Image width="250" height="250" src={url} />
+         */}
+         <PreMintMasks id={id} url={url}/>
       </div>
 
       <div className="text-center">
