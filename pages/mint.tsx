@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react'
 import { useWallet } from "@solana/wallet-adapter-react"
 // import { useProgram, useClaimNFT } from "@thirdweb-dev/react/solana"
 import { HomeFooter } from "../components/Home/HomeFooter"
@@ -37,6 +38,18 @@ const ntfs = [
 
 const Mint = () => {
   const wallet = useWallet()
+  const [mobile, setMobile] = useState(undefined)
+  useEffect(() => {
+    const updateMobile = () => {
+      setMobile(window.innerWidth < 576 ? true : false)
+    }
+
+    updateMobile()
+    window.addEventListener('resize', updateMobile)
+    return () => {
+      window.removeEventListener('resize', updateMobile)
+    }
+  }, [])
 
   return (
     <Layout>
@@ -61,7 +74,7 @@ const Mint = () => {
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {ntfs.map((item) => {
-              return <Mask key={item.id} {...item} />
+              return <Mask key={item.id} windowSize={mobile} {...item} />
             })}
           </div>
 
@@ -142,14 +155,18 @@ const Mint = () => {
   )
 }
 
-const Mask = ({ id, url, name, cost, description, image }) => {
+const Mask = ({ id, url, name, cost, description, image, windowSize }) => {
+  
 
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
-      <div className="mb-2 md:ml-6 ml-24 scroll-smooth">
-        {/* <Image width="250" height="250" src={image} /> */}
+      <div className="mb-2 md:ml-6 sm:mr-6 scroll-smooth">
         
-         <PreMintMasks id={id} url={url}/>
+        { windowSize ?
+          <Image  width="250" height="250" src={image} />
+          :
+          <PreMintMasks id={id} url={url}/>
+        }
       </div>
 
       <div className="text-center">
