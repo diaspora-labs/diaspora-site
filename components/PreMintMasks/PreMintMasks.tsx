@@ -47,7 +47,7 @@ function setupScene(mask) {
       const scale = isMobile ? 0.12 : 0.12
       obj.scale.set(scale, scale, scale)
 
-      setTimeout(animateOnLoad, 100)
+      setTimeout(animateOnLoad, 200)
     }
   )
   // renderer
@@ -109,7 +109,7 @@ function setupScene(mask) {
     new Tween(coords)
       .to({ z: 2 })
       .easing(Easing.Quadratic.InOut)
-      .duration(1000)
+      .duration(2000)
       .onUpdate(() => {
         camera.position.set(camera.position.x, camera.position.y, coords.z)
       })
@@ -134,39 +134,21 @@ function setupLights(scene2) {
   const light = new THREE.AmbientLight(0xffffff, 1) // soft white light
   scene2.add(light)
 
-  var light2a = new THREE.DirectionalLight(0xffffff, 3)
-  light2a.position.set(0, 0, 2)
+  var light2a = new THREE.DirectionalLight(0xffffff, 2.5)
+  light2a.position.set(2, 0, 2)
   scene2.add(light2a)
-  var light2 = new THREE.DirectionalLight(0xffffff, 5.5)
-  light2.position.set(-0.95, 0.95, 0.95)
+
+  var light2 = new THREE.DirectionalLight(0xffffff, 2.5)
+  light2.position.set(-2, 0, 2)
   scene2.add(light2)
-  var light3 = new THREE.DirectionalLight(0xffffff, 5.5)
-  light3.position.set(-1, -1, 1)
+
+  var light3 = new THREE.DirectionalLight(0xffffff, 2.5)
+  light3.position.set(0, 0, -1)
   scene2.add(light3)
-  var light4 = new THREE.DirectionalLight(0xffffff, 5.5)
-  light4.position.set(1, -1, 1)
+
+  var light4 = new THREE.DirectionalLight(0xffffff, 1)
+  light4.position.set(0, 0, 2)
   scene2.add(light4)
-  var light4s = new THREE.DirectionalLight(0xffffff, 5.5)
-  light4s.position.set(0, 0, 3)
-  scene2.add(light4s)
-  var light2a2 = new THREE.DirectionalLight(0xffffff, 2.5)
-  light2a2.position.set(2, 0, 2)
-  scene2.add(light2a2)
-  var light222 = new THREE.DirectionalLight(0xffffff, 2.5)
-  light222.position.set(-2, 0, 2)
-  scene2.add(light222)
-  var light32 = new THREE.DirectionalLight(0xffffff, 2.5)
-  light32.position.set(0, 0, -1)
-  scene2.add(light32)
-  var light42 = new THREE.DirectionalLight(0xffffff, 1)
-  light42.position.set(0, 0, 2)
-  scene2.add(light42)
-  var light4s = new THREE.DirectionalLight(0xffffff, 1.5)
-  light4s.position.set(0, 0, 3)
-  scene2.add(light4s)
-  var light4sa = new THREE.DirectionalLight(0xffffff, 1.5)
-  light4sa.position.set(1, 1, 1)
-  scene2.add(light4sa)
 }
 
 function createRenderer({ canvas, sizes, animate }) {
