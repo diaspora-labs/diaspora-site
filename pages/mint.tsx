@@ -8,7 +8,8 @@ import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
-import { useMintNFT, ChainId, ChainIdThirdwebNftMedia, useContract, useNFTs, ThirdwebProvider } from "@thirdweb-dev/react";
+// import  {mintAdditionalSupplyTo}  from "@thirdweb-dev/sdk/solana";
+import { mintAdditionalSupplyTo } from '@thirdweb-dev/sdk'
 
 // const activeChainId = ChainId.Mainnet;
 // const address = useAddress();
@@ -61,6 +62,12 @@ const Mint = () => {
       window.removeEventListener('resize', updateMobile)
     }
   }, [])
+
+  const mintMembership = (address) => {
+    const userWalletAddress = ""
+
+    mintAdditionalSupplyTo(userWalletAddress, address, 1)
+  }
 
   return (
     <Layout>
@@ -188,7 +195,7 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, address }) 
           <span className="ml-2 mt-1">{cost}</span>
         </div>
         <div className="mt-1">
-          <button className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white">Mint Membership</button>
+          <button onClick={mintMembership(address)} className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white">Mint Membership</button>
         </div>
       </div>
     </div>
