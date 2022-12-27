@@ -9,7 +9,7 @@ import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 // import  {mintAdditionalSupplyTo}  from "@thirdweb-dev/sdk/solana";
-import { NFTCollection, mintAdditionalSupplyTo } from '@thirdweb-dev/sdk/solana'
+import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
 
 // const activeChainId = ChainId.Mainnet;
 // const address = useAddress();
@@ -43,10 +43,23 @@ const ntfs = [
     address: ""
   },
 ]
-const mintMembership = (address) => {
+const mintMembership = async (address) => {
+  const sdk = ThirdwebSDK.fromNetwork("devnet");
   const userWalletAddress = ""
 
-  mintAdditionalSupplyTo(userWalletAddress, address, 1)
+  // Here, we pass in the address of our deployed program
+  const program = await sdk.getNFTCollection(address);
+
+  // And now we can read data off our program, like getting all the NFTs from our collection
+  const nfts = await program.getAll();
+
+  // Or we can write data/send transactions to our program, like minting a new NFT
+  const mintAddress = await program.mint({
+    name: "New NFT",
+  });
+  const nft = await program.get(mintAddress);
+
+  // mintAdditionalSupplyTo(userWalletAddress, address, 1)
 }
 
 const Mint = () => {
