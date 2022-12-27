@@ -9,7 +9,7 @@ import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 // import  {mintAdditionalSupplyTo}  from "@thirdweb-dev/sdk/solana";
-import { mintAdditionalSupplyTo } from '@thirdweb-dev/sdk'
+import { NFTCollection, mintAdditionalSupplyTo } from '@thirdweb-dev/sdk/solana'
 
 // const activeChainId = ChainId.Mainnet;
 // const address = useAddress();
