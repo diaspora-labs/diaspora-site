@@ -8,7 +8,7 @@ import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
-import { useMintNFT, useContract, ChainId, ChainIdThirdwebNftMedia, useContract, useNFTs, ThirdwebProvider } from "@thirdweb-dev/react";
+import { useMintNFT, ChainId, ChainIdThirdwebNftMedia, useContract, useNFTs, ThirdwebProvider } from "@thirdweb-dev/react";
 
 // const activeChainId = ChainId.Mainnet;
 // const address = useAddress();
@@ -41,11 +41,11 @@ const ntfs = [
 ]
 
 const Mint = () => {
-  const { contract } = useContract("<CONTRACT_ADDRESS>");
+  // const { contract } = useContract("<CONTRACT_ADDRESS>");
   const wallet = useWallet()
   const [mobile, setMobile] = useState(undefined)
-  const { data: nfts, isLoading: isReadingNfts } = useNFTs(contract);
-  const { mutate: mintNFT, isLoading: isMintingNFT } = useMintNFT(contract);
+  // const { data: nfts, isLoading: isReadingNfts } = useNFTs(contract);
+  // const { mutate: mintNFT, isLoading: isMintingNFT } = useMintNFT(contract);
 
   useEffect(() => {
     const updateMobile = () => {
