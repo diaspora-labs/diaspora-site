@@ -1,11 +1,13 @@
 import { useWallet } from "@solana/wallet-adapter-react"
-// import { useProgram, useClaimNFT } from "@thirdweb-dev/react/solana"
+import { useProgram, useNFTs, useClaimNFT } from "@thirdweb-dev/react/solana"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { Layout } from "../components/Layout"
 import Image from "next/image"
 import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
+import { NFTCollection } from "@thirdweb-dev/sdk"
+import { Wallet } from "../components/Wallet"
 
 const ntfs = [
   {
@@ -30,6 +32,17 @@ const ntfs = [
 
 const Mint = () => {
   const wallet = useWallet()
+  // const { program } = useProgram<"nft-collection">("56sNXpMyFp1vh3tVvCp92Qd7Lg7LmbKQ8sS6e27fLDLK")
+  // const { data: metadata, isLoading } = useNFTs(program)
+
+  // async function mintNFT(address: string) {
+  //   // The address of the already minted NFT
+  //   const nftAddress = "..."
+  //   // The amount of additional NFTs to mint
+  //   const amount = 1
+  //   // Mint an additional NFT of the original NFT
+  //   const mint = await program.mintAdditionalSupply(nftAddress)
+  // }
 
   return (
     <Layout>
@@ -52,6 +65,10 @@ const Mint = () => {
             </p>
           </div>
 
+          <div>
+            <Wallet />
+          </div>
+
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {ntfs.map((item) => {
               return <Mask key={item.url} {...item} />
@@ -63,14 +80,14 @@ const Mint = () => {
               Mint a mask. Join our 245 collections. <span className="text-orange">#TakeTheJourney</span>
             </p>
 
-            <div className="mx-10 rounded-lg border border-neutral-700 p-20">
+            <div className="mx-10 rounded-lg border border-neutral-700 px-10 py-20 md:px-20">
               <div className="h-[5px] w-full rounded bg-purple-light">
                 <div className="h-[5px] w-[50%] rounded bg-orange"></div>
               </div>
               <div className="relative mt-5 w-full">
                 <div className="absolute -left-[50%] top-0 w-full text-center text-neutral-500">
                   <div>0</div>
-                  <div className="text-xs">We started here</div>
+                  <div className="hidden text-xs md:block">We started here</div>
                 </div>
                 <div className="absolute -left-[-46%] top-0 text-center text-neutral-500">
                   <div>80k</div>
@@ -78,7 +95,7 @@ const Mint = () => {
                 </div>
                 <div className="absolute -left-[-93%] top-0 text-center text-neutral-500">
                   <div>200k</div>
-                  <div className="w-[100px] text-xs">Where we&apos;re going</div>
+                  <div className="hidden w-[100px] text-xs md:block">Where we&apos;re going</div>
                 </div>
               </div>
             </div>

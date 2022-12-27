@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { DiasporaLogo } from "./DiasporaLogo"
 import Link from "next/link"
 import { Nav } from "./Nav"
@@ -49,7 +49,6 @@ export const NavHeader = () => {
         </div>
       </div>
 
-      {/* <div className={`${navbar ? "block" : "hidden"} md:hidden`}> */}
       <div className={`block md:hidden`}>
         <Nav mobile show={navbar} />
       </div>
