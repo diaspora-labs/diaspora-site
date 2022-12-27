@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 import { useWallet } from "@solana/wallet-adapter-react"
 // import { useProgram, useClaimNFT } from "@thirdweb-dev/react/solana"
 import { HomeFooter } from "../components/Home/HomeFooter"
@@ -22,7 +22,7 @@ const ntfs = [
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
-    address: ""
+    address: "",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const ntfs = [
     name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
-    address: ""
+    address: "",
   },
   {
     id: 3,
@@ -40,11 +40,11 @@ const ntfs = [
     name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
-    address: ""
+    address: "",
   },
 ]
 const mintMembership = async (address) => {
-  const sdk = ThirdwebSDK.fromNetwork("devnet");
+  const sdk = ThirdwebSDK.fromNetwork("devnet")
   const userWalletAddress = ""
 
   // Here, we pass in the address of our deployed program
@@ -75,13 +75,11 @@ const Mint = () => {
     }
 
     updateMobile()
-    window.addEventListener('resize', updateMobile)
+    window.addEventListener("resize", updateMobile)
     return () => {
-      window.removeEventListener('resize', updateMobile)
+      window.removeEventListener("resize", updateMobile)
     }
   }, [])
-
-  
 
   return (
     <Layout>
@@ -188,12 +186,10 @@ const Mint = () => {
 }
 
 const Mask = ({ id, url, name, cost, description, image, windowSize, address }) => {
-  
-
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
-      <div className="mb-2 md:ml-6 sm:mr-6 scroll-smooth">
-      <PreMintMasks id={id} url={url}/>
+      <div className="mb-2 scroll-smooth sm:mr-6 md:ml-6">
+        <PreMintMasks id={id} url={url} />
         {/* { windowSize ?
           <Image  width="250" height="250" src={image} />
           :
@@ -209,7 +205,12 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, address }) 
           <span className="ml-2 mt-1">{cost}</span>
         </div>
         <div className="mt-1">
-          <button onClick={mintMembership(address)} className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white">Mint Membership</button>
+          <button
+            onClick={() => mintMembership(address)}
+            className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white"
+          >
+            Mint Membership
+          </button>
         </div>
       </div>
     </div>
