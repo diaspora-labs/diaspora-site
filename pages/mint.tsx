@@ -43,6 +43,11 @@ const ntfs = [
     address: ""
   },
 ]
+const mintMembership = (address) => {
+  const userWalletAddress = ""
+
+  mintAdditionalSupplyTo(userWalletAddress, address, 1)
+}
 
 const Mint = () => {
   // const { contract } = useContract("<CONTRACT_ADDRESS>");
@@ -63,11 +68,7 @@ const Mint = () => {
     }
   }, [])
 
-  const mintMembership = (address) => {
-    const userWalletAddress = ""
-
-    mintAdditionalSupplyTo(userWalletAddress, address, 1)
-  }
+  
 
   return (
     <Layout>
