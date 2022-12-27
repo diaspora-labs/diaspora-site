@@ -48,16 +48,16 @@ const mintMembership = async (address) => {
   const userWalletAddress = ""
 
   // Here, we pass in the address of our deployed program
-  const program = await sdk.getNFTCollection(address);
+  // const program = await sdk.getNFTCollection(address);
 
-  // And now we can read data off our program, like getting all the NFTs from our collection
-  const nfts = await program.getAll();
+  // // And now we can read data off our program, like getting all the NFTs from our collection
+  // const nfts = await program.getAll();
 
-  // Or we can write data/send transactions to our program, like minting a new NFT
-  const mintAddress = await program.mint({
-    name: "New NFT",
-  });
-  const nft = await program.get(mintAddress);
+  // // Or we can write data/send transactions to our program, like minting a new NFT
+  // const mintAddress = await program.mint({
+  //   name: "New NFT",
+  // });
+  // const nft = await program.get(mintAddress);
 
   // mintAdditionalSupplyTo(userWalletAddress, address, 1)
 }
