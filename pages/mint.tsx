@@ -21,6 +21,7 @@ const ntfs = [
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
+    address: ""
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ const ntfs = [
     name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
+    address: ""
   },
   {
     id: 3,
@@ -37,6 +39,7 @@ const ntfs = [
     name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
+    address: ""
   },
 ]
 
@@ -163,7 +166,7 @@ const Mint = () => {
   )
 }
 
-const Mask = ({ id, url, name, cost, description, image, windowSize }) => {
+const Mask = ({ id, url, name, cost, description, image, windowSize, address }) => {
   
 
   return (
