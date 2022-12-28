@@ -44,7 +44,7 @@ function setupScene(mask) {
     function (gltf) {
       obj = gltf.scene
       scene2.add(obj)
-      const scale = isMobile ? 0.12 : 0.12
+      const scale = isMobile ? 1 : 1
       obj.scale.set(scale, scale, scale)
 
       setTimeout(animateOnLoad, 200)
