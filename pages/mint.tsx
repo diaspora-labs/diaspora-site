@@ -10,9 +10,6 @@ import { Discord } from "../components/Icons/Discord"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 // import  {mintAdditionalSupplyTo}  from "@thirdweb-dev/sdk/solana";
 import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
-
-// const activeChainId = ChainId.Mainnet;
-// const address = useAddress();
 import { NFTCollection } from "@thirdweb-dev/sdk"
 import dynamic from "next/dynamic"
 
@@ -51,27 +48,24 @@ const ntfs = [
 ]
 const Mint = () => {
   // const { contract } = useContract("<CONTRACT_ADDRESS>");
-  const wallet = useWallet()
   const { program } = useProgram<"nft-collection">("8Wbv9yLw1GSG4d5x5Drr4xwUTiUTvz9NsBVtUzRZNxev")
+  const wallet = useWallet()
 
   const mintMembership = async (nftAddress) => {
     // Here, we pass in the address of our deployed program
     // const program = await sdk.getNFTCollection(address);
-
     // // And now we can read data off our program, like getting all the NFTs from our collection
     const nfts = await program.getAll()
-
     console.log(nfts)
 
     // The amount of additional NFTs to mint
     const amount = 1
     // Mint an additional NFT of the original NFT
-    const mint = await program.mintAdditionalSupply(nftAddress)
-
+    const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
     console.log("minted nft", mint)
   }
 
-  console.log("wallet", wallet)
+  console.log("program", program)
 
   return (
     <Layout>
@@ -95,7 +89,6 @@ const Mint = () => {
           </div>
 
           <div>
-            {/* @ts-ignore */}
             <Wallet />
           </div>
 
