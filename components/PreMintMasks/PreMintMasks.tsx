@@ -7,7 +7,7 @@ export const PreMintMasks = (mask) => {
   useEffect(() => setupScene(mask), [mask])
   return (
     <>
-      <canvas className={"webgl" + mask.id}></canvas>
+      <canvas className={"mx-auto transparent justify-center item-center webgl" + mask.id}></canvas>
     </>
   )
 }
@@ -44,7 +44,7 @@ function setupScene(mask) {
     function (gltf) {
       obj = gltf.scene
       scene2.add(obj)
-      const scale = isMobile ? 0.12 : 0.12
+      const scale = isMobile ? 1 : 1
       obj.scale.set(scale, scale, scale)
 
       setTimeout(animateOnLoad, 200)
@@ -109,7 +109,7 @@ function setupScene(mask) {
     new Tween(coords)
       .to({ z: 2 })
       .easing(Easing.Quadratic.InOut)
-      .duration(2000)
+      .duration(1000)
       .onUpdate(() => {
         camera.position.set(camera.position.x, camera.position.y, coords.z)
       })
