@@ -22,7 +22,7 @@ const ntfs = [
     name: "DAN",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.2,
-    address: "",
+    address: "FiSKfm8pGboM3uYzApG6qW9cGAVTzmePhdK5XEP27NDS",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const ntfs = [
     name: "Red Mbambi",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.5,
-    address: "",
+    address: "7VeQFDT29scQKBzzEWc6od9kqxauYMC532nV4CW35181",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const ntfs = [
     name: "Cote D'Ivoire",
     description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
     cost: 0.7,
-    address: "",
+    address: "7xtd7C6Z7JoEYaaPszSGi8xprkTAqeDBQMJV9aQVpeDg",
   },
 ]
 const mintMembership = async (address) => {
