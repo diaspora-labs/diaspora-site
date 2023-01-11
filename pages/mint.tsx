@@ -32,17 +32,17 @@ const ntfs = [
 
 const Mint = () => {
   const wallet = useWallet()
-  // const { program } = useProgram<"nft-collection">("56sNXpMyFp1vh3tVvCp92Qd7Lg7LmbKQ8sS6e27fLDLK")
-  // const { data: metadata, isLoading } = useNFTs(program)
+  const { program } = useProgram<"nft-collection">("8Wbv9yLw1GSG4d5x5Drr4xwUTiUTvz9NsBVtUzRZNxev")
+  const { data: metadata, isLoading } = useNFTs(program)
 
-  // async function mintNFT(address: string) {
-  //   // The address of the already minted NFT
-  //   const nftAddress = "..."
-  //   // The amount of additional NFTs to mint
-  //   const amount = 1
-  //   // Mint an additional NFT of the original NFT
-  //   const mint = await program.mintAdditionalSupply(nftAddress)
-  // }
+  async function mintNFT(address: string) {
+    // The address of the already minted NFT
+    const nftAddress = ""
+    // The amount of additional NFTs to mint
+    const amount = 1
+    // Mint an additional NFT of the original NFT
+    const mint = await program.mintAdditionalSupply(nftAddress)
+  }
 
   return (
     <Layout>
