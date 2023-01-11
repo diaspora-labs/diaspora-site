@@ -95,7 +95,7 @@ const Mint = () => {
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {ntfs.map((item) => {
-              return <Mask key={item.id} windowSize={mobile} {...item} />
+              return <Mask key={item.id} {...item} />
             })}
           </div>
 
