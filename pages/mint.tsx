@@ -14,7 +14,11 @@ import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
 // const activeChainId = ChainId.Mainnet;
 // const address = useAddress();
 import { NFTCollection } from "@thirdweb-dev/sdk"
-import { Wallet } from "../components/Wallet"
+import dynamic from "next/dynamic"
+
+const Wallet = dynamic(() => import("../components/Wallet"), {
+  ssr: false,
+})
 
 const ntfs = [
   {
@@ -45,28 +49,29 @@ const ntfs = [
     address: "7xtd7C6Z7JoEYaaPszSGi8xprkTAqeDBQMJV9aQVpeDg",
   },
 ]
-const mintMembership = async (address) => {
-  const sdk = ThirdwebSDK.fromNetwork("devnet")
-  const userWalletAddress = ""
-
-  // Here, we pass in the address of our deployed program
-  // const program = await sdk.getNFTCollection(address);
-
-  // // And now we can read data off our program, like getting all the NFTs from our collection
-  // const nfts = await program.getAll();
-
-  // // Or we can write data/send transactions to our program, like minting a new NFT
-  // const mintAddress = await program.mint({
-  //   name: "New NFT",
-  // });
-  // const nft = await program.get(mintAddress);
-
-  // mintAdditionalSupplyTo(userWalletAddress, address, 1)
-}
-
 const Mint = () => {
   // const { contract } = useContract("<CONTRACT_ADDRESS>");
   const wallet = useWallet()
+  const { program } = useProgram<"nft-collection">("8Wbv9yLw1GSG4d5x5Drr4xwUTiUTvz9NsBVtUzRZNxev")
+
+  const mintMembership = async (nftAddress) => {
+    // Here, we pass in the address of our deployed program
+    // const program = await sdk.getNFTCollection(address);
+
+    // // And now we can read data off our program, like getting all the NFTs from our collection
+    const nfts = await program.getAll()
+
+    console.log(nfts)
+
+    // The amount of additional NFTs to mint
+    const amount = 1
+    // Mint an additional NFT of the original NFT
+    const mint = await program.mintAdditionalSupply(nftAddress)
+
+    console.log("minted nft", mint)
+  }
+
+  console.log("wallet", wallet)
 
   return (
     <Layout>
@@ -90,12 +95,13 @@ const Mint = () => {
           </div>
 
           <div>
+            {/* @ts-ignore */}
             <Wallet />
           </div>
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {ntfs.map((item) => {
-              return <Mask key={item.id} {...item} />
+              return <Mask key={item.id} {...item} onMint={mintMembership} />
             })}
           </div>
 
@@ -176,7 +182,7 @@ const Mint = () => {
   )
 }
 
-const Mask = ({ id, url, name, cost, description, image, windowSize, address }) => {
+const Mask = ({ id, url, name, cost, description, image, address, onMint }) => {
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       <div className="mb-2 scroll-smooth sm:mr-6 md:ml-6">
@@ -196,10 +202,7 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, address }) 
           <span className="ml-2 mt-1">{cost}</span>
         </div>
         <div className="mt-1">
-          <button
-            onClick={() => mintMembership(address)}
-            className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white"
-          >
+          <button onClick={() => onMint(address)} className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white">
             Mint Membership
           </button>
         </div>
