@@ -176,14 +176,14 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
       </div>
 
       <div className="text-center">
-        <div className="text-lg font-bold text-white">{name}</div>
+        <div className="text-2xl font-bold text-white">{name}</div>
         
         <div className="text-bold my-3 flex flex-row items-center justify-center">
           <Image src="/images/logos/solana-sol-logo.png" width="20" height="20" />{" "}
-          <span className="ml-2 mt-1">{cost}</span>
+          <span className="ml-2 mt-1 text-lg">{cost}</span>
         </div>
         <div className="mt-1">
-          <button className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white">Mint Membership</button>
+          <button className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">Mint Membership</button>
         </div>
 
         <div className="w-64 left-88 mt-10 text-left">
