@@ -188,7 +188,10 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
           <button className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">Mint Membership</button>
         </div>
 
-        <div className="mt-5 text-md my-2 font-light gray-med md:invisible" onClick={() => setHideText(!hideText)}>Member benefits</div>
+        <div className="mt-5 text-md my-2 font-light gray-med md:invisible items-center" onClick={() => setHideText(!hideText)}>
+          <div className='inline-block pr-2'>Memeber benefits</div>
+          <Image className='inline-block' src={hideText ? "/images/arrow-up.png":"/images/arrow-down.png"} width="12" height="12" />
+        </div>
 
         { (hideText || !windowSize) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
           <div className='mb-8'> 
