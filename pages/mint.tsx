@@ -166,7 +166,7 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
 
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
-      <div className="mb-2 md:ml-6 sm:mr-6 scroll-smooth">
+      <div className="mb-2  sm:mr-6 scroll-smooth">
         <PreMintMasks id={id} url={url}/>
         {/* { windowSize ?
           <Image  width="250" height="250" src={image} />
