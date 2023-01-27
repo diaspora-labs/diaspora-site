@@ -165,7 +165,7 @@ const Mint = () => {
 
 const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText }) => {
   
-
+console.log('windowSize ', windowSize)
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       <div className="mb-2  sm:mr-6 scroll-smooth">
@@ -191,7 +191,7 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
 
         <div className="mt-5 text-md my-2 font-light gray-med md:invisible" onClick={() => setHideText(!hideText)}>Member benefits</div>
 
-        { hideText && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
+        { (hideText || !windowSize) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
           <div className='mb-8'> 
             {title.map((maskTitle) => {
               return (
