@@ -34,8 +34,7 @@ export const people = [
     title: "Technology Advisor",
     bio: "Award-winning technologist, with nearly 20 years of experience in the tech industry. Worked in various roles such as art director, developer, animator, and trusted adviser for client and operational teams. For various companies such as Unity, R/GA, and Nickelodeon. With a focus on emerging technologies, Johnny spent over 6 years creating AR solutions for Shazam's brand partners and labels leading up to their 2018 acquisition by Apple.",
     image: "/images/team-images/profie-image-2.jpg",
-    linkedIn: "https://www.linkedin.com/in/farrah-jean/",
-    instagram: "https://instagram.com/farrahevita?igshid=YmMyMTA2M2Y=",
+    linkedIn: "https://www.linkedin.com/in/johnnyjacques",
   },
   {
     id: "5",
