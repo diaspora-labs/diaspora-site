@@ -31,8 +31,8 @@ export const people = [
   {
     id: "4",
     name: "Farrah Jean",
-    title: "Social Media",
-    bio: "Farrah is a social media connoisseur and software engineer. She has a passion for helping others in achieving their vision and finding innovative ways to connect clients to brands. She has worked with the likes of Sony Music/ RED Music, Cornerstone Agency, Future Boston Alliance as well as Hill Holliday predominantly within the digital marketing departments.",
+    title: "Technology Advisor",
+    bio: "Award-winning technologist, with nearly 20 years of experience in the tech industry. Worked in various roles such as art director, developer, animator, and trusted adviser for client and operational teams. For various companies such as Unity, R/GA, and Nickelodeon. With a focus on emerging technologies, Johnny spent over 6 years creating AR solutions for Shazam's brand partners and labels leading up to their 2018 acquisition by Apple.",
     image: "/images/team-images/farrah-jean.jpg",
     linkedIn: "https://www.linkedin.com/in/farrah-jean/",
     instagram: "https://instagram.com/farrahevita?igshid=YmMyMTA2M2Y=",
