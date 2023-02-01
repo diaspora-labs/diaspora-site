@@ -22,12 +22,12 @@ function setupScene(mask) {
   const isMobile = window.innerWidth < 768
 
   const sizes = {
-    width: 200,
-    height: 220,
+    width: 247,
+    height: 438,
   }
 
   // camera
-  const camera = new THREE.PerspectiveCamera(75, 200 / 200, 0.1, 100)
+  const camera = new THREE.PerspectiveCamera(75, 247 / 438, 0.1, 100)
   camera.position.x = 0
   camera.position.y = 0
   camera.position.z = 2
@@ -154,7 +154,7 @@ function setupLights(scene2) {
 function createRenderer({ canvas, sizes, animate }) {
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true })
   renderer.setAnimationLoop(animate)
-  renderer.setSize(200, 200)
+  renderer.setSize(247, 438)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
   // scene2 settings

@@ -15,7 +15,9 @@ const ntfs = [
     image: "/images/masks/mask-1.png",
     url: "/mask1.glb",
     name: "DAN",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
+    title: ["Highly exclusive.", "Limited to just 333 passes."],
+    details: ["Discord access", "Augmented Reality filter", "Comes with merchandise", "Founders AMA", "Guaranteed allowlist"],
+    description: "Excellent choice for those who want to be at the forefront of the Diaspora Collection and have access to some of the best perks.",
     cost: 0.2,
   },
   {
@@ -23,7 +25,9 @@ const ntfs = [
     image: "/images/masks/mask-2.png",
     url: "/mask2.glb",
     name: "Red Mbambi",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
+    title: ["More Accessible.", "1000 available for minting."],
+    details: ["Discord access", "Augmented Reality filter", "Comes with merchandise",],
+    description: "Great option for those who want to be part of the action but may not be ready to commit to the exclusivity of the Red Mbambi Mask.",
     cost: 0.5,
   },
   {
@@ -31,7 +35,9 @@ const ntfs = [
     image: "/images/masks/mask-3.png",
     url: "/mask3.glb",
     name: "Cote D'Ivoire",
-    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
+    title: ["Unlimited number of users."],
+    details: ["Discord access", "Augmented Reality filter"],
+    description: "Great choice for those who are just starting out with the Diaspora Collection and want to dip their toes in the water.",
     cost: 0.7,
   },
 ]
@@ -39,6 +45,8 @@ const ntfs = [
 const Mint = () => {
   const wallet = useWallet()
   const [mobile, setMobile] = useState(undefined)
+  const [hideText, setHideText] = useState(false)
+
   useEffect(() => {
     const updateMobile = () => {
       setMobile(window.innerWidth < 576 ? true : false)
@@ -73,8 +81,8 @@ const Mint = () => {
           </div>
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
-            {ntfs.map((item) => {
-              return <Mask key={item.id} windowSize={mobile} {...item} />
+            {ntfs.map((item) => {              
+              return <Mask key={item.id} setHideText={setHideText} windowSize={mobile} hideText={hideText} {...item} />
             })}
           </div>
 
@@ -155,13 +163,12 @@ const Mint = () => {
   )
 }
 
-const Mask = ({ id, url, name, cost, description, image, windowSize }) => {
+const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText }) => {
   
-
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
-      <div className="mb-2 md:ml-6 sm:mr-6 scroll-smooth">
-      <PreMintMasks id={id} url={url}/>
+      <div className="mb-2  sm:mr-6 scroll-smooth">
+        <PreMintMasks id={id} url={url}/>
         {/* { windowSize ?
           <Image  width="250" height="250" src={image} />
           :
@@ -170,15 +177,46 @@ const Mask = ({ id, url, name, cost, description, image, windowSize }) => {
       </div>
 
       <div className="text-center">
-        <div className="text-lg font-bold text-white">{name}</div>
-        <div className="text-md my-2 font-light text-neutral-400">{description}</div>
+        <div className="text-2xl font-bold text-white">{name}</div>
+        
         <div className="text-bold my-3 flex flex-row items-center justify-center">
-          <Image src="/images/logos/solana-sol-logo.png" width="20" height="20" />{" "}
-          <span className="ml-2 mt-1">{cost}</span>
+          <span className="mr-2 mt-1">{cost}</span>{" "}
+          <Image src="/images/logos/solana-sol-logo.png" width="20" height="20" />
+          
         </div>
         <div className="mt-1">
-          <button className="mt-2 rounded-lg bg-purple-med px-4 py-2 text-white">Mint Membership</button>
+          <button className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">Mint Membership</button>
         </div>
+
+        <div className="mt-5 text-md my-2 font-light gray-med md:invisible items-center" onClick={() => setHideText(!hideText)}>
+          <div className='inline-block pr-2'>Memeber benefits</div>
+          <Image className='inline-block' src={hideText ? "/images/arrow-up.png":"/images/arrow-down.png"} width="12" height="12" />
+        </div>
+
+        { (hideText || !windowSize) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
+          <div className='mb-8'> 
+            {title.map((maskTitle) => {
+              return (
+                <div key={maskTitle} className={"text-md font-light gray-med"}>
+                  {maskTitle}
+                </div>
+              )
+            })}
+          </div>
+
+          <div>
+            {details.map((detail) => {
+              return (
+                <li key={detail} className={"text-md font-light gray-med"}>
+                  {detail}
+                </li>
+              )
+            })}
+          </div>
+
+          <div className="mt-5 text-md my-2 font-light gray-med md:pr-0 pr-16">{description}</div>
+        </div>}
+
       </div>
     </div>
   )
