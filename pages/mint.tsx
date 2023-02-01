@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 import { useWallet } from "@solana/wallet-adapter-react"
-// import { useProgram, useClaimNFT } from "@thirdweb-dev/react/solana"
+import { useProgram, useNFTs, useClaimNFT } from "@thirdweb-dev/react/solana"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { Layout } from "../components/Layout"
 import Image from "next/image"
@@ -8,6 +8,14 @@ import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
+// import  {mintAdditionalSupplyTo}  from "@thirdweb-dev/sdk/solana";
+import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
+import { NFTCollection } from "@thirdweb-dev/sdk"
+import dynamic from "next/dynamic"
+
+const Wallet = dynamic(() => import("../components/Wallet"), {
+  ssr: false,
+})
 
 const ntfs = [
   {
@@ -19,6 +27,7 @@ const ntfs = [
     details: ["Discord access", "Augmented Reality filter", "Comes with merchandise", "Founders AMA", "Guaranteed allowlist"],
     description: "Excellent choice for those who want to be at the forefront of the Diaspora Collection and have access to some of the best perks.",
     cost: 0.2,
+    address: "FiSKfm8pGboM3uYzApG6qW9cGAVTzmePhdK5XEP27NDS",
   },
   {
     id: 2,
@@ -29,6 +38,7 @@ const ntfs = [
     details: ["Discord access", "Augmented Reality filter", "Comes with merchandise",],
     description: "Great option for those who want to be part of the action but may not be ready to commit to the exclusivity of the Red Mbambi Mask.",
     cost: 0.5,
+    address: "7VeQFDT29scQKBzzEWc6od9kqxauYMC532nV4CW35181",
   },
   {
     id: 3,
@@ -39,25 +49,32 @@ const ntfs = [
     details: ["Discord access", "Augmented Reality filter"],
     description: "Great choice for those who are just starting out with the Diaspora Collection and want to dip their toes in the water.",
     cost: 0.7,
+    address: "7xtd7C6Z7JoEYaaPszSGi8xprkTAqeDBQMJV9aQVpeDg",
   },
 ]
-
 const Mint = () => {
+  // const { contract } = useContract("<CONTRACT_ADDRESS>");
+  const { program } = useProgram<"nft-collection">("8Wbv9yLw1GSG4d5x5Drr4xwUTiUTvz9NsBVtUzRZNxev")
   const wallet = useWallet()
   const [mobile, setMobile] = useState(undefined)
   const [hideText, setHideText] = useState(false)
 
-  useEffect(() => {
-    const updateMobile = () => {
-      setMobile(window.innerWidth < 576 ? true : false)
-    }
 
-    updateMobile()
-    window.addEventListener('resize', updateMobile)
-    return () => {
-      window.removeEventListener('resize', updateMobile)
-    }
-  }, [])
+  const mintMembership = async (nftAddress) => {
+    // Here, we pass in the address of our deployed program
+    // const program = await sdk.getNFTCollection(address);
+    // // And now we can read data off our program, like getting all the NFTs from our collection
+    const nfts = await program.getAll()
+    console.log(nfts)
+
+    // The amount of additional NFTs to mint
+    const amount = 1
+    // Mint an additional NFT of the original NFT
+    const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
+    console.log("minted nft", mint)
+  }
+
+  console.log("program", program)
 
   return (
     <Layout>
@@ -80,9 +97,13 @@ const Mint = () => {
             </p>
           </div>
 
+          <div>
+            <Wallet />
+          </div>
+
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
-            {ntfs.map((item) => {              
-              return <Mask key={item.id} setHideText={setHideText} windowSize={mobile} hideText={hideText} {...item} />
+            {ntfs.map((item) => {
+              return <Mask key={item.id} {...item} onMint={mintMembership} />
             })}
           </div>
 
@@ -91,14 +112,14 @@ const Mint = () => {
               Mint a mask. Join our 245 collections. <span className="text-orange">#TakeTheJourney</span>
             </p>
 
-            <div className="mx-10 rounded-lg border border-neutral-700 p-20">
+            <div className="mx-10 rounded-lg border border-neutral-700 px-10 py-20 md:px-20">
               <div className="h-[5px] w-full rounded bg-purple-light">
                 <div className="h-[5px] w-[50%] rounded bg-orange"></div>
               </div>
               <div className="relative mt-5 w-full">
                 <div className="absolute -left-[50%] top-0 w-full text-center text-neutral-500">
                   <div>0</div>
-                  <div className="text-xs">We started here</div>
+                  <div className="hidden text-xs md:block">We started here</div>
                 </div>
                 <div className="absolute -left-[-46%] top-0 text-center text-neutral-500">
                   <div>80k</div>
@@ -106,7 +127,7 @@ const Mint = () => {
                 </div>
                 <div className="absolute -left-[-93%] top-0 text-center text-neutral-500">
                   <div>200k</div>
-                  <div className="w-[100px] text-xs">Where we&apos;re going</div>
+                  <div className="hidden w-[100px] text-xs md:block">Where we&apos;re going</div>
                 </div>
               </div>
             </div>
@@ -163,12 +184,14 @@ const Mint = () => {
   )
 }
 
-const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText }) => {
+const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText, address, onMint }) => {
   
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
+      {/* sm:mr-6 md:ml-6 */}
       <div className="mb-2  sm:mr-6 scroll-smooth">
         <PreMintMasks id={id} url={url}/>
+
         {/* { windowSize ?
           <Image  width="250" height="250" src={image} />
           :
@@ -185,7 +208,10 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
           
         </div>
         <div className="mt-1">
-          <button className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">Mint Membership</button>
+
+          <button onClick={() => onMint(address)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
+            Mint Membership
+          </button>
         </div>
 
         <div className="mt-5 text-md my-2 font-light gray-med md:invisible items-center" onClick={() => setHideText(!hideText)}>
