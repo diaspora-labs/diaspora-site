@@ -65,16 +65,16 @@ const Mint = () => {
     // const program = await sdk.getNFTCollection(address);
     // // And now we can read data off our program, like getting all the NFTs from our collection
     const nfts = await program.getAll()
-    console.log(nfts)
+    // console.log(nfts)
 
     // The amount of additional NFTs to mint
     const amount = 1
     // Mint an additional NFT of the original NFT
     const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
-    console.log("minted nft", mint)
+    // console.log("minted nft", mint)
   }
 
-  console.log("program", program)
+  // console.log("program", program)
 
   return (
     <Layout>
