@@ -17,61 +17,47 @@ const Wallet = dynamic(() => import("../components/Wallet"), {
   ssr: false,
 })
 
-const ntfs = [
-  {
-    id: 1,
-    image: "/images/masks/mask-1.png",
-    url: "/mask1.glb",
-    name: "DAN",
-    title: ["Highly exclusive.", "Limited to just 333 passes."],
-    details: ["Discord access", "Augmented Reality filter", "Comes with merchandise", "Founders AMA", "Guaranteed allowlist"],
-    description: "Excellent choice for those who want to be at the forefront of the Diaspora Collection and have access to some of the best perks.",
-    cost: 0.2,
-    address: "FiSKfm8pGboM3uYzApG6qW9cGAVTzmePhdK5XEP27NDS",
-  },
-  {
-    id: 2,
-    image: "/images/masks/mask-2.png",
-    url: "/mask2.glb",
-    name: "Red Mbambi",
-    title: ["More Accessible.", "1000 available for minting."],
-    details: ["Discord access", "Augmented Reality filter", "Comes with merchandise",],
-    description: "Great option for those who want to be part of the action but may not be ready to commit to the exclusivity of the Red Mbambi Mask.",
-    cost: 0.5,
-    address: "7VeQFDT29scQKBzzEWc6od9kqxauYMC532nV4CW35181",
-  },
-  {
-    id: 3,
-    image: "/images/masks/mask-3.png",
-    url: "/mask3.glb",
-    name: "Cote D'Ivoire",
-    title: ["Unlimited number of users."],
-    details: ["Discord access", "Augmented Reality filter"],
-    description: "Great choice for those who are just starting out with the Diaspora Collection and want to dip their toes in the water.",
-    cost: 0.7,
-    address: "7xtd7C6Z7JoEYaaPszSGi8xprkTAqeDBQMJV9aQVpeDg",
-  },
-]
 const Mint = () => {
   // const { contract } = useContract("<CONTRACT_ADDRESS>");
   const { program } = useProgram<"nft-collection">("8Wbv9yLw1GSG4d5x5Drr4xwUTiUTvz9NsBVtUzRZNxev")
   const wallet = useWallet()
   const [mobile, setMobile] = useState(undefined)
   const [hideText, setHideText] = useState(false)
+  const [nfts, setNfts] = useState([])
+  // create a new state variable for a modal 
+  const [showModal, setShowModal] = useState(false)
+  const [nftAddress, setNftAddress] = useState(undefined)
+  
+
+  useEffect(() => {
+    fetch("/api/masks")
+      .then((res) => res.json())
+      .then((data) => {
+        setNfts(data)
+      })
+  }, [])
+
+  // program.totalSupply().then((totalSupply) => {
+  //   console.log("totalSupply", totalSupply)
+  // });
 
 
   const mintMembership = async (nftAddress) => {
     // Here, we pass in the address of our deployed program
     // const program = await sdk.getNFTCollection(address);
     // // And now we can read data off our program, like getting all the NFTs from our collection
-    const nfts = await program.getAll()
-    // console.log(nfts)
+    // const nfts = await program.getAll()
+    // // The amount of additional NFTs to mint
+    // const amount = 1
+    // // Mint an additional NFT of the original NFT
+    // const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
+    
+    // we'll add the boolean value of mint to the state
+    if ( true ) {
+      setShowModal(true)
+      setNftAddress(nftAddress)
+    }
 
-    // The amount of additional NFTs to mint
-    const amount = 1
-    // Mint an additional NFT of the original NFT
-    const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
-    // console.log("minted nft", mint)
   }
 
   // console.log("program", program)
@@ -102,7 +88,7 @@ const Mint = () => {
           </div>
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
-            {ntfs.map((item) => {
+            {nfts.map((item) => {
               return <Mask key={item.id} {...item} onMint={mintMembership} />
             })}
           </div>
@@ -219,7 +205,7 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
           <Image className='inline-block' src={hideText ? "/images/arrow-up.png":"/images/arrow-down.png"} width="12" height="12" />
         </div>
 
-        { (hideText || !windowSize) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
+        { (hideText) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
           <div className='mb-8'> 
             {title.map((maskTitle) => {
               return (
