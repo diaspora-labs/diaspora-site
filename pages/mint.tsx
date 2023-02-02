@@ -12,6 +12,7 @@ import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
 import { NFTCollection } from "@thirdweb-dev/sdk"
 import dynamic from "next/dynamic"
+import { Closeinactive } from "../components/Icons/Closeinactive"
 
 const Wallet = dynamic(() => import("../components/Wallet"), {
   ssr: false,
@@ -26,9 +27,17 @@ const Mint = () => {
   const [nfts, setNfts] = useState([])
   // create a new state variable for a modal 
   const [showModal, setShowModal] = useState(false)
-  const [nftAddress, setNftAddress] = useState(undefined)
+  const [minted, mintNFT] = useState({
+    nftAddress: "",
+    id: "",
+    url: "",
+    name: "",
+    cost: "",
+    title: "",
+    details: "",
+    description: "",
+  })
   
-
   useEffect(() => {
     fetch("/api/masks")
       .then((res) => res.json())
@@ -42,7 +51,7 @@ const Mint = () => {
   // });
 
 
-  const mintMembership = async (nftAddress) => {
+  const mintMembership = async (nftAddress, id, url, name, cost, title, details, description) => {
     // Here, we pass in the address of our deployed program
     // const program = await sdk.getNFTCollection(address);
     // // And now we can read data off our program, like getting all the NFTs from our collection
@@ -54,13 +63,21 @@ const Mint = () => {
     
     // we'll add the boolean value of mint to the state
     if ( true ) {
-      setShowModal(true)
-      setNftAddress(nftAddress)
+      mintNFT({
+        ...minted,
+        nftAddress,
+        id,
+        url,
+        name,
+        cost,
+        title,
+        details,
+        description
+      });
+      setShowModal(true);
     }
 
-  }
-
-  // console.log("program", program)
+  };
 
   return (
     <Layout>
@@ -92,6 +109,8 @@ const Mint = () => {
               return <Mask key={item.id} {...item} onMint={mintMembership} />
             })}
           </div>
+
+          { showModal && <Modal {...minted} setModal={setShowModal}/> }
 
           <div className="mt-20 mb-20 text-center">
             <p className="mb-10 text-lg text-white">
@@ -170,19 +189,69 @@ const Mint = () => {
   )
 }
 
+// create a modal component
+const Modal = ({ address, id, url, name, cost, title, details, description, setModal }) => {
+
+  return (
+    <div className="fixed z-10 inset-0 overflow-y-auto overflow-x-auto">
+      <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+          <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+        
+        {/* This element is to trick the browser into centering the modal contents. */}
+        <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                  
+        <div className="items-center inline-block align-bottom bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
+          <div className="flex items-center bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full">
+            <div className="mb-30 mr-7 ml-7 lg:mb-30 lg:mr-5 lg:ml-7">
+              <div
+                className={`h-[380px] w-[250px]`}
+              >
+                <PreMintMasks id={id} url={url}/>
+              </div>
+            </div>
+            <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4 ">
+              <div className="sm:flex sm:items-start">
+                <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <div className="text-3xl font-bold text-white mb-5 mt-3">{name}</div>
+                  <h3 className="text-md font-light gray-med" id="modal-headline">
+                    {title}
+                  </h3>
+                  <div className="mt-4">
+                    {details.map((detail) => {
+                      return (
+                        <li key={detail} className="text-md font-light gray-med">
+                          {detail}
+                        </li>
+                      )
+                    })}
+                  </div>
+
+                  <div className="mt-3 text-md my-2 font-light gray-med md:pr-0 pr-16">{description}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-black-50 px-4 py-3 sm:px-6 text-center">
+            <button onClick={() => setModal(false)} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+              Success!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+      
 const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText, address, onMint }) => {
   
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       {/* sm:mr-6 md:ml-6 */}
       <div className="mb-2  sm:mr-6 scroll-smooth">
-        <PreMintMasks id={id} url={url}/>
-
-        {/* { windowSize ?
-          <Image  width="250" height="250" src={image} />
-          :
-          <PreMintMasks id={id} url={url}/>
-        } */}
+        {/* <PreMintMasks id={id} url={url}/> */}
       </div>
 
       <div className="text-center">
@@ -195,17 +264,17 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
         </div>
         <div className="mt-1">
 
-          <button onClick={() => onMint(address)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
+          <button onClick={() => onMint(address, id, url, name, cost, title, details, description)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
             Mint Membership
           </button>
         </div>
 
         <div className="mt-5 text-md my-2 font-light gray-med md:invisible items-center" onClick={() => setHideText(!hideText)}>
           <div className='inline-block pr-2'>Memeber benefits</div>
-          <Image className='inline-block' src={hideText ? "/images/arrow-up.png":"/images/arrow-down.png"} width="12" height="12" />
+          <Image className='inline-block' src={!hideText ? "/images/arrow-up.png":"/images/arrow-down.png"} width="12" height="12" />
         </div>
 
-        { (hideText) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
+        { (!hideText) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
           <div className='mb-8'> 
             {title.map((maskTitle) => {
               return (
