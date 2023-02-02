@@ -91,7 +91,7 @@ const Mint = () => {
             <p className="pb-8 text-2xl tracking-wide text-white lg:text-4xl">
               Introducing &ldquo;Masks&rdquo;
               <br />
-              <span className="mt-1 font-light  lg:text-3xl">NFT pre-mint for Diaspora DAO.</span>
+              <span className="mt-1 font-light lg:text-3xl">NFT pre-mint for Diaspora DAO.</span>
             </p>
             <p className="my-4 text-lg font-light leading-relaxed text-neutral-400 lg:mr-20">
               Experience unique rare NFT’s that give a sneak peak into the Diaspora NFT collection. Masks have deep
@@ -203,20 +203,26 @@ const Modal = ({ address, id, url, name, cost, title, details, description, setM
         <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
                   
         <div className="items-center inline-block align-bottom bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
-          <div className="flex items-center bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full">
+          <div className="md:flex items-center bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full">
             <div className="mb-30 mr-7 ml-7 lg:mb-30 lg:mr-5 lg:ml-7">
               <div
-                className={`h-[380px] w-[250px]`}
+                className={`h-[350px] md:h-[380px] md:w-[250px]`}
               >
                 <PreMintMasks id={id} url={url}/>
               </div>
             </div>
-            <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4 ">
+            <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4 mt-16">
               <div className="sm:flex sm:items-start">
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                   <div className="text-3xl font-bold text-white mb-5 mt-3">{name}</div>
                   <h3 className="text-md font-light gray-med" id="modal-headline">
-                    {title}
+                    {title.map((maskTitle) => {
+                      return (
+                        <div key={maskTitle} className="text-md font-light gray-med">
+                          {maskTitle}
+                        </div>
+                      )
+                    })}
                   </h3>
                   <div className="mt-4">
                     {details.map((detail) => {
@@ -228,7 +234,7 @@ const Modal = ({ address, id, url, name, cost, title, details, description, setM
                     })}
                   </div>
 
-                  <div className="mt-3 text-md my-2 font-light gray-med md:pr-0 pr-16">{description}</div>
+                  <div className="mt-3 text-md my-2 font-light gray-med md:pr-16">{description}</div>
                 </div>
               </div>
             </div>
