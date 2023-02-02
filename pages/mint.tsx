@@ -106,7 +106,7 @@ const Mint = () => {
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {nfts.map((item) => {
-              return <Mask key={item.id} {...item} onMint={mintMembership} />
+              return <Mask key={item.id} {...item} onMint={mintMembership} hideText={hideText} setHideText={setHideText} />
             })}
           </div>
 
