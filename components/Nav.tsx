@@ -9,7 +9,7 @@ import { Twitter } from "./Icons/Twitter"
 const routes: { [route: string]: string } = {
   "/": "home",
   // "/gallery": "gallery",
-  "/mint": "mask pass",
+  // "/mint": "mask pass",
   "/roadmap": "roadmap",
   "/whitepaper": "whitepaper",
 }
