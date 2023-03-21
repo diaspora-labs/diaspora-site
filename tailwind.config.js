@@ -23,6 +23,9 @@ module.exports = {
         green: {
           hover: "#00AA8E",
         },
+        gray: {
+          med: "#98989A"
+        }
       },
       transitionProperty: {
         height: "height",
