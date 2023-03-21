@@ -108,9 +108,9 @@ const Mint = () => {
           </div>
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
-            {ntfs.map((item) => {
-              return <Mask key={item.id} {...item} onMint={mintMembership} />
-            })}
+            {ntfs.map((item) => (
+              <Mask key={item.id} {...item} onMint={mintMembership} />
+            ))}
           </div>
 
           <div className="mt-20 mb-20 text-center">

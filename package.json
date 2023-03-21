@@ -48,7 +48,8 @@
     "react-visibility-sensor": "^5.1.1",
     "sal.js": "^0.8.5",
     "spotify-web-api-node": "^5.0.2",
-    "three": "^0.140.2"
+    "three": "^0.140.2",
+    "video-react": "^0.16.0"
   },
   "devDependencies": {
     "@formspree/cli": "^0.9.6",
