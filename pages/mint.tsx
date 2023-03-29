@@ -52,17 +52,26 @@ const Mint = () => {
 
 
   const mintMembership = async (nftAddress, id, url, name, cost, title, details, description) => {
+
+    const sdk = ThirdwebSDK.fromNetwork("devnet");
+    // Signer can be a keypair or browser wallet adapter
+    // sdk.wallet.connect(signer);
     // Here, we pass in the address of our deployed program
-    // const program = await sdk.getNFTCollection(address);
-    // // And now we can read data off our program, like getting all the NFTs from our collection
-    // const nfts = await program.getAll()
-    // // The amount of additional NFTs to mint
-    // const amount = 1
-    // // Mint an additional NFT of the original NFT
-    // const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
     
+    const program = await sdk.getNFTCollection(nftAddress);
+    // // And now we can read data off our program, like getting all the NFTs from our collection
+    const nfts = await program.getAll()
+    // // The amount of additional NFTs to mint
+    const amount = 1
+    // // Mint an additional NFT of the original NFT
+    const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
+    console.log('mint ', mint)
+
+    const programNFTDrop = await sdk.getNFTDrop(nftAddress);
+    const tx = await programNFTDrop.lazyMint(metadata);
+
     // we'll add the boolean value of mint to the state
-    if ( true ) {
+    if ( mint ) {
       mintNFT({
         ...minted,
         nftAddress,
