@@ -12,69 +12,81 @@ import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
 import { NFTCollection } from "@thirdweb-dev/sdk"
 import dynamic from "next/dynamic"
+import { Closeinactive } from "../components/Icons/Closeinactive"
 
 const Wallet = dynamic(() => import("../components/Wallet"), {
   ssr: false,
 })
 
-const ntfs = [
-  {
-    id: 1,
-    image: "/images/masks/mask-1.png",
-    url: "/mask1.glb",
-    name: "DAN",
-    title: ["Highly exclusive.", "Limited to just 333 passes."],
-    details: ["Discord access", "Augmented Reality filter", "Comes with merchandise", "Founders AMA", "Guaranteed allowlist"],
-    description: "Excellent choice for those who want to be at the forefront of the Diaspora Collection and have access to some of the best perks.",
-    cost: 0.2,
-    address: "FiSKfm8pGboM3uYzApG6qW9cGAVTzmePhdK5XEP27NDS",
-  },
-  {
-    id: 2,
-    image: "/images/masks/mask-2.png",
-    url: "/mask2.glb",
-    name: "Red Mbambi",
-    title: ["More Accessible.", "1000 available for minting."],
-    details: ["Discord access", "Augmented Reality filter", "Comes with merchandise",],
-    description: "Great option for those who want to be part of the action but may not be ready to commit to the exclusivity of the Red Mbambi Mask.",
-    cost: 0.5,
-    address: "7VeQFDT29scQKBzzEWc6od9kqxauYMC532nV4CW35181",
-  },
-  {
-    id: 3,
-    image: "/images/masks/mask-3.png",
-    url: "/mask3.glb",
-    name: "Cote D'Ivoire",
-    title: ["Unlimited number of users."],
-    details: ["Discord access", "Augmented Reality filter"],
-    description: "Great choice for those who are just starting out with the Diaspora Collection and want to dip their toes in the water.",
-    cost: 0.7,
-    address: "7xtd7C6Z7JoEYaaPszSGi8xprkTAqeDBQMJV9aQVpeDg",
-  },
-]
 const Mint = () => {
   // const { contract } = useContract("<CONTRACT_ADDRESS>");
   const { program } = useProgram<"nft-collection">("8Wbv9yLw1GSG4d5x5Drr4xwUTiUTvz9NsBVtUzRZNxev")
   const wallet = useWallet()
   const [mobile, setMobile] = useState(undefined)
   const [hideText, setHideText] = useState(false)
+  const [nfts, setNfts] = useState([])
+  // create a new state variable for a modal 
+  const [showModal, setShowModal] = useState(false)
+  const [minted, mintNFT] = useState({
+    nftAddress: "",
+    id: "",
+    url: "",
+    name: "",
+    cost: "",
+    title: "",
+    details: "",
+    description: "",
+  })
+  
+  useEffect(() => {
+    fetch("/api/masks")
+      .then((res) => res.json())
+      .then((data) => {
+        setNfts(data)
+      })
+  }, [])
+
+  // program.totalSupply().then((totalSupply) => {
+  //   console.log("totalSupply", totalSupply)
+  // });
 
 
-  const mintMembership = async (nftAddress) => {
+  const mintMembership = async (nftAddress, id, url, name, cost, title, details, description) => {
+
+    const sdk = ThirdwebSDK.fromNetwork("devnet");
+    // Signer can be a keypair or browser wallet adapter
+    // sdk.wallet.connect(signer);
     // Here, we pass in the address of our deployed program
-    // const program = await sdk.getNFTCollection(address);
+    
+    const program = await sdk.getNFTCollection(nftAddress);
     // // And now we can read data off our program, like getting all the NFTs from our collection
     const nfts = await program.getAll()
-    // console.log(nfts)
-
-    // The amount of additional NFTs to mint
+    // // The amount of additional NFTs to mint
     const amount = 1
-    // Mint an additional NFT of the original NFT
+    // // Mint an additional NFT of the original NFT
     const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
-    // console.log("minted nft", mint)
-  }
+    console.log('mint ', mint)
 
-  // console.log("program", program)
+    const programNFTDrop = await sdk.getNFTDrop(nftAddress);
+    const tx = await programNFTDrop.lazyMint(metadata);
+
+    // we'll add the boolean value of mint to the state
+    if ( mint ) {
+      mintNFT({
+        ...minted,
+        nftAddress,
+        id,
+        url,
+        name,
+        cost,
+        title,
+        details,
+        description
+      });
+      setShowModal(true);
+    }
+
+  };
 
   return (
     <Layout>
@@ -88,7 +100,7 @@ const Mint = () => {
             <p className="pb-8 text-2xl tracking-wide text-white lg:text-4xl">
               Introducing &ldquo;Masks&rdquo;
               <br />
-              <span className="mt-1 font-light  lg:text-3xl">NFT pre-mint for Diaspora DAO.</span>
+              <span className="mt-1 font-light lg:text-3xl">NFT pre-mint for Diaspora DAO.</span>
             </p>
             <p className="my-4 text-lg font-light leading-relaxed text-neutral-400 lg:mr-20">
               Experience unique rare NFT’s that give a sneak peak into the Diaspora NFT collection. Masks have deep
@@ -102,10 +114,12 @@ const Mint = () => {
           </div>
 
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
-            {ntfs.map((item) => {
-              return <Mask key={item.id} {...item} onMint={mintMembership} />
+            {nfts.map((item) => {
+              return <Mask key={item.id} {...item} onMint={mintMembership} hideText={hideText} setHideText={setHideText} />
             })}
           </div>
+
+          { showModal && <Modal {...minted} setModal={setShowModal}/> }
 
           <div className="mt-20 mb-20 text-center">
             <p className="mb-10 text-lg text-white">
@@ -184,6 +198,68 @@ const Mint = () => {
   )
 }
 
+// create a modal component
+const Modal = ({ address, id, url, name, cost, title, details, description, setModal }) => {
+
+  return (
+    <div className="fixed z-10 inset-0 overflow-y-auto overflow-x-auto">
+      <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+          <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+        
+        {/* This element is to trick the browser into centering the modal contents. */}
+        <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                  
+        <div className="items-center inline-block align-bottom bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
+          <div className="md:flex items-center bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full">
+            <div className="mb-30 mr-7 ml-7 lg:mb-30 lg:mr-5 lg:ml-7">
+              <div
+                className={`h-[350px] md:h-[380px] md:w-[250px]`}
+              >
+                <PreMintMasks id={id} url={url}/>
+              </div>
+            </div>
+            <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4 mt-16">
+              <div className="sm:flex sm:items-start">
+                <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <div className="text-3xl font-bold text-white mb-5 mt-3">{name}</div>
+                  <h3 className="text-md font-light gray-med" id="modal-headline">
+                    {title.map((maskTitle) => {
+                      return (
+                        <div key={maskTitle} className="text-md font-light gray-med">
+                          {maskTitle}
+                        </div>
+                      )
+                    })}
+                  </h3>
+                  <div className="mt-4">
+                    {details.map((detail) => {
+                      return (
+                        <li key={detail} className="text-md font-light gray-med">
+                          {detail}
+                        </li>
+                      )
+                    })}
+                  </div>
+
+                  <div className="mt-3 text-md my-2 font-light gray-med md:pr-16">{description}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-black-50 px-4 py-3 sm:px-6 text-center">
+            <button onClick={() => setModal(false)} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+              Success!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+      
 const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText, address, onMint }) => {
   
   return (
@@ -191,12 +267,6 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
       {/* sm:mr-6 md:ml-6 */}
       <div className="mb-2  sm:mr-6 scroll-smooth">
         <PreMintMasks id={id} url={url}/>
-
-        {/* { windowSize ?
-          <Image  width="250" height="250" src={image} />
-          :
-          <PreMintMasks id={id} url={url}/>
-        } */}
       </div>
 
       <div className="text-center">
@@ -209,17 +279,17 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
         </div>
         <div className="mt-1">
 
-          <button onClick={() => onMint(address)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
+          <button onClick={() => onMint(address, id, url, name, cost, title, details, description)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
             Mint
           </button>
         </div>
 
         <div className="mt-5 text-md my-2 font-light gray-med md:invisible items-center" onClick={() => setHideText(!hideText)}>
           <div className='inline-block pr-2'>Memeber benefits</div>
-          <Image className='inline-block' src={hideText ? "/images/arrow-up.png":"/images/arrow-down.png"} width="12" height="12" />
+          <Image className='inline-block' src={!hideText ? "/images/arrow-up.png":"/images/arrow-down.png"} width="12" height="12" />
         </div>
 
-        { (hideText || !windowSize) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
+        { (!hideText) && <div className="md:w-64 sm:w-44 ml-20 md:ml-5 md:left-88 mt-10 text-left">
           <div className='mb-8'> 
             {title.map((maskTitle) => {
               return (
