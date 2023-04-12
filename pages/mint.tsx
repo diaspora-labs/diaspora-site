@@ -9,7 +9,7 @@ import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
 // import  {mintAdditionalSupplyTo}  from "@thirdweb-dev/sdk/solana";
-import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
+// import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
 import { NFTCollection } from "@thirdweb-dev/sdk"
 import dynamic from "next/dynamic"
 import { Closeinactive } from "../components/Icons/Closeinactive"
@@ -53,38 +53,38 @@ const Mint = () => {
 
   const mintMembership = async (nftAddress, id, url, name, cost, title, details, description) => {
 
-    const sdk = ThirdwebSDK.fromNetwork("devnet");
-    // Signer can be a keypair or browser wallet adapter
-    // sdk.wallet.connect(signer);
-    // Here, we pass in the address of our deployed program
+    // const sdk = ThirdwebSDK.fromNetwork("devnet");
+    // // Signer can be a keypair or browser wallet adapter
+    // // sdk.wallet.connect(signer);
+    // // Here, we pass in the address of our deployed program
     
-    const program = await sdk.getNFTCollection(nftAddress);
-    // // And now we can read data off our program, like getting all the NFTs from our collection
-    const nfts = await program.getAll()
-    // // The amount of additional NFTs to mint
-    const amount = 1
-    // // Mint an additional NFT of the original NFT
-    const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
-    // console.log('mint ', mint)
+    // const program = await sdk.getNFTCollection(nftAddress);
+    // // // And now we can read data off our program, like getting all the NFTs from our collection
+    // const nfts = await program.getAll()
+    // // // The amount of additional NFTs to mint
+    // const amount = 1
+    // // // Mint an additional NFT of the original NFT
+    // const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
+    // // console.log('mint ', mint)
 
-    const programNFTDrop = await sdk.getNFTDrop(nftAddress);
-    // const tx = await programNFTDrop.lazyMint(metadata);
+    // const programNFTDrop = await sdk.getNFTDrop(nftAddress);
+    // // const tx = await programNFTDrop.lazyMint(metadata);
 
-    // we'll add the boolean value of mint to the state
-    if ( mint ) {
-      mintNFT({
-        ...minted,
-        nftAddress,
-        id,
-        url,
-        name,
-        cost,
-        title,
-        details,
-        description
-      });
-      setShowModal(true);
-    }
+    // // we'll add the boolean value of mint to the state
+    // if ( mint ) {
+    //   mintNFT({
+    //     ...minted,
+    //     nftAddress,
+    //     id,
+    //     url,
+    //     name,
+    //     cost,
+    //     title,
+    //     details,
+    //     description
+    //   });
+    //   setShowModal(true);
+    // }
 
   };
 
@@ -199,7 +199,7 @@ const Mint = () => {
 }
 
 // create a modal component
-const Modal = ({ address, id, url, name, cost, title, details, description, setModal }) => {
+const Modal = ({ id, url, name, cost, title, details, description, setModal }) => {
 
   return (
     <div className="fixed z-10 inset-0 overflow-y-auto overflow-x-auto">
