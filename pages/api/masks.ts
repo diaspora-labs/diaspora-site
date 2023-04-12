@@ -19,7 +19,7 @@ export default function handler(req, res) {
           title: ["More Accessible.", "333 available for minting."],
           details: ["Discord access", "Augmented Reality filter", "Comes with merchandise",],
           description: "Great option for those who want to be part of the action but may not be ready to commit to the exclusivity of the Red Mbambi Mask.",
-          cost: 0.5,
+          cost: 0.6,
           address: "7VeQFDT29scQKBzzEWc6od9kqxauYMC532nV4CW35181",
         },
         {
