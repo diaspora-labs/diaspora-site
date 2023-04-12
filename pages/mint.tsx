@@ -210,7 +210,7 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
         <div className="mt-1">
 
           <button onClick={() => onMint(address)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
-            Mint Membership
+            Mint
           </button>
         </div>
 
