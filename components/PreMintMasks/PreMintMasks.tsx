@@ -129,27 +129,27 @@ function setupScene(mask) {
   }
 }
 
-function setupLights(scene2) {
-  // Lights
-  const light = new THREE.AmbientLight(0xffffff, 1) // soft white light
-  scene2.add(light)
+function setupLights(scene) {
+  const light = new THREE.AmbientLight(0xffffff, 1);
+  scene.add(light);
 
-  var light2a = new THREE.DirectionalLight(0xffffff, 2.5)
-  light2a.position.set(2, 0, 2)
-  scene2.add(light2a)
+  var light2a = new THREE.DirectionalLight(0xffffff, 2.5);
+  light2a.position.set(2, 0, 2);
+  scene.add(light2a);
 
-  var light2 = new THREE.DirectionalLight(0xffffff, 2.5)
-  light2.position.set(-2, 0, 2)
-  scene2.add(light2)
+  var light2 = new THREE.DirectionalLight(0xffffff, 2.5);
+  light2.position.set(-2, 0, 2);
+  scene.add(light2);
 
-  var light3 = new THREE.DirectionalLight(0xffffff, 2.5)
-  light3.position.set(0, 0, -1)
-  scene2.add(light3)
+  var light3 = new THREE.DirectionalLight(0xffffff, 2.5);
+  light3.position.set(0, 0, -1);
+  scene.add(light3);
 
-  var light4 = new THREE.DirectionalLight(0xffffff, 1)
-  light4.position.set(0, 0, 2)
-  scene2.add(light4)
+  var light4 = new THREE.DirectionalLight(0xffffff, 1);
+  light4.position.set(0, 0, 2);
+  scene.add(light4);
 }
+
 
 function createRenderer({ canvas, sizes, animate }) {
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true })
@@ -162,5 +162,6 @@ function createRenderer({ canvas, sizes, animate }) {
   renderer.shadowMap.type = THREE.PCFShadowMap
 
   renderer.setClearAlpha(1)
+  renderer.outputEncoding = THREE.sRGBEncoding
   return renderer
 }
