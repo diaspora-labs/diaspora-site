@@ -65,10 +65,10 @@ const Mint = () => {
     const amount = 1
     // // Mint an additional NFT of the original NFT
     const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
-    console.log('mint ', mint)
+    // console.log('mint ', mint)
 
     const programNFTDrop = await sdk.getNFTDrop(nftAddress);
-    const tx = await programNFTDrop.lazyMint(metadata);
+    // const tx = await programNFTDrop.lazyMint(metadata);
 
     // we'll add the boolean value of mint to the state
     if ( mint ) {
