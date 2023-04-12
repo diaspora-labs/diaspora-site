@@ -96,7 +96,7 @@ const Mint = () => {
       <div className="mb-30 relative z-20 mx-auto mt-40 lg:max-w-4xl">
         <div className="my-10 flex flex-col">
           <div className="mx-5 lg:mx-auto lg:w-full lg:max-w-3xl">
-            <p className="mb-2 text-sm text-neutral-700 lg:pt-24">October 09, 2022</p>
+            {/* <p className="mb-2 text-sm text-neutral-700 lg:pt-24">October 09, 2022</p> */}
             <p className="pb-8 text-2xl tracking-wide text-white lg:text-4xl">
               Introducing &ldquo;Masks&rdquo;
               <br />
