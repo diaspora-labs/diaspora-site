@@ -10,49 +10,63 @@ import { InstitutionIcon } from "../components/Roadmap/InstitutionIcon"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { JourneyIcon } from "../components/JourneyIcon"
 
+
 const Roadmap = () => {
   return (
     <Layout>
       <div className="fixed inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
 
-      <div className="container mx-auto flex flex-col pb-60  lg:align-top">
-        <div className="right-0 bottom-4 flex w-full flex-row content-center items-center lg:fixed lg:w-1/2 lg:items-start">
-          <Image src={MaskImage} />
-        </div>
-        <div className="mb-30 max-w-lg px-10">
-          <div className="flex flex-col lg:mt-5">
-            <p className="py-8 text-3xl font-bold tracking-wide text-white md:text-4xl lg:pt-24">{pageTitle}</p>
-            <p className="text-lg font-light text-white">{pageSubTitle}</p>
+      <div className="container mx-auto flex flex-col pb-60 lg:relative  lg:align-top ">
+        <div className=" lg:relative flex items-center justify-center">
+          <div className="max-w-lg px-9 flex flex-row content-center items-center">
+            <div className="flex flex-col lg:mt-5">
+              <p className="py-8 text-3xl font-bold tracking-wide text-white md:text-4xl lg:pt-24">{pageTitle}</p>
+              <p className="text-lg font-light text-white">{pageSubTitle}</p>
+            </div>
           </div>
-
-          {sections.map((item, index) => {
-            const Icon = item.icon
-
-            return (
-              <div key={index} className="my-20">
-                <div className="mb-5 w-[200px]">
-                  <Icon />
-                </div>
-                <div className="mb-5">
-                  <div>
-                    <p className={"my-5 max-w-2xl text-3xl font-bold tracking-wide text-white"}>{item.title}</p>
-
-                    <ul className="ml-5">
-                      {item.list.map((item) => {
-                        return (
-                          <li key={item} className={"mt-2 mr-2 w-full list-disc text-xl font-light text-white"}>
-                            {item}
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
+          <div className="pl-3" >
+            <Image src={MaskImage} />
+          </div>
         </div>
-      </div>
+
+
+        <div>
+
+              {sections.map((item, index) => {
+                const Icon = item.icon
+
+                return (
+                  <div key={index} className="my-20 grid justify-center items-center text-lg">
+                    <div className="flex">
+                      
+                      <h1 className="text-9xl font-bold tracking-wide">{index + 1}</h1>  
+                    </div>
+                    <div>
+                      <div className="mb-5 w-[200px]">
+                        <Icon />
+                      </div>
+                      {/* <div className="mb-5">
+                        <div>
+                          <p className={"my-5 max-w-2xl text-3xl font-bold tracking-wide text-white"}>{item.title}</p>
+
+                          <ul className="ml-5">
+                            {item.list.map((item) => {
+                              return (
+                                <li key={item} className={"mt-2 mr-2 w-full list-disc text-xl font-light text-white"}>
+                                  {item}
+                                </li>
+                              )
+                            })}
+                          </ul>
+                        </div>
+                      </div> */}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+        </div>
+
 
       <HomeFooter />
     </Layout>
