@@ -36,7 +36,7 @@ const Roadmap = () => {
                 const Icon = item.icon
 
                 return (
-                  <div className="">
+                  <div key={index} className="">
                     <div key={index} className=" flex my-20 justify-center items-center">
                       <div className="flex">
                         <h1 className="text-[350px] mr-[-100px] mt-[-200px] opacity-30 text-gray-600 font-bold tracking-wide ">{index + 1}</h1>
