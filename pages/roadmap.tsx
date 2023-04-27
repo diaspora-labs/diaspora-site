@@ -39,11 +39,13 @@ const Roadmap = () => {
                   <div className="">
                     <div key={index} className=" flex my-20 justify-center items-center ">
                       <div className="flex">
-                        <h1 className="text-[300px] mr-[-50px] mt-[-90px] opacity-30 text-gray-600 font-bold tracking-wide ">{index + 1}</h1>
+                        <h1 className="text-[350px] mr-[-100px] mt-[-120px] opacity-30 text-gray-600 font-bold tracking-wide ">{index + 1}</h1>
 
                       </div>
-                      <div >
-                          <div className="mb-10 w-[150px] h-[100px]">
+                      <div className=" w-56 h-56 bg-black blur-3xl ">
+                      </div>
+                      <div className="ml-[-30%] z-10">
+                          <div className="mb-10 w-[80%] h-[100px]">
                             <Icon />
                           </div>  
                           <div className="mb-5">
@@ -109,7 +111,7 @@ const sections = [
   {
     icon: InstitutionIcon,
     title: "Decentralized Powernomics",
-    list: ["DAO", "Exploring Real Estate acquisition to diversify the assets in the Treasury. "],
+    list: ["DAO", "Exploring Real Estate acquisition. "],
     completed: false,
   },
 ]
