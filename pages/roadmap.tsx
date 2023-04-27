@@ -17,7 +17,7 @@ const Roadmap = () => {
       <div className="absolute inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
 
       <div className="container mx-auto flex flex-col pb-60 lg:relative  lg:align-top ">
-        <div className=" lg:relative flex flex-col-reverse items-center justify-center md:flex-row ">
+        <div className="mb-[200px] lg:relative flex flex-col-reverse items-center justify-center md:flex-row ">
           <div className="max-w-lg px-9 flex flex-row content-center items-center">
             <div className="flex flex-col text-center md:text-left lg:mt-5">
               <p className="py-8 text-3xl font-bold tracking-wide text-gray-100 md:text-4xl lg:pt-24">{pageTitle}</p>
@@ -37,29 +37,29 @@ const Roadmap = () => {
 
                 return (
                   <div className="">
-                    <div key={index} className=" flex my-20 justify-center items-center ">
+                    <div key={index} className=" flex my-20 justify-center items-center">
                       <div className="flex">
-                        <h1 className="text-[350px] mr-[-100px] mt-[-120px] opacity-30 text-gray-600 font-bold tracking-wide ">{index + 1}</h1>
+                        <h1 className="text-[350px] mr-[-100px] mt-[-200px] opacity-30 text-gray-600 font-bold tracking-wide ">{index + 1}</h1>
 
                       </div>
                       <div className=" w-56 h-56 bg-black blur-3xl ">
                       </div>
-                      <div className="ml-[-30%] z-10">
+                      <div className=" md:ml-[-30%] md:relative absolute l-[50%] z-10">
                           <div className="mb-10 w-[90%] h-[100px]">
                             <Icon />
                           </div>  
-                          <div className="mb-5">
+                          <div className="mb-5 ">
                             <div>
-                              <p className={"my-5 max-w-2xl text-2xl font-bold tracking-wide text-gray-200"}>{item.title}</p>
+                              <p className={"my-5 max-w-2xl text-2xl font-bold tracking-wide text-gray-200 text-center md:text-left"}>{item.title}</p>
 
                               <ul className=" w-full">
-                                {item.list.map((item) => {
+                                {/* {item.list.map((item) => {
                                   return (
                                     <li key={item} className={"mt-2 w-full list-none text-l font-light text-gray-300"}>
                                       {item}
                                     </li>
                                   )
-                                })}
+                                })} */}
                               </ul>
                             </div>
                           </div>
