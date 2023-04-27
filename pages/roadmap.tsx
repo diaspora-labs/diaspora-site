@@ -19,7 +19,7 @@ const Roadmap = () => {
       <div className="container mx-auto flex flex-col pb-60 lg:relative  lg:align-top ">
         <div className=" lg:relative flex flex-col-reverse items-center justify-center md:flex-row ">
           <div className="max-w-lg px-9 flex flex-row content-center items-center">
-            <div className="flex flex-col lg:mt-5">
+            <div className="flex flex-col text-center md:text-left lg:mt-5">
               <p className="py-8 text-3xl font-bold tracking-wide text-white md:text-4xl lg:pt-24">{pageTitle}</p>
               <p className="text-lg font-light text-white">{pageSubTitle}</p>
             </div>
@@ -45,7 +45,7 @@ const Roadmap = () => {
                       <div className=" w-56 h-56 bg-black blur-3xl ">
                       </div>
                       <div className="ml-[-30%] z-10">
-                          <div className="mb-10 w-[80%] h-[100px]">
+                          <div className="mb-10 w-[90%] h-[100px]">
                             <Icon />
                           </div>  
                           <div className="mb-5">
