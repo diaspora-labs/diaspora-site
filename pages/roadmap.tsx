@@ -20,8 +20,8 @@ const Roadmap = () => {
         <div className=" lg:relative flex flex-col-reverse items-center justify-center md:flex-row ">
           <div className="max-w-lg px-9 flex flex-row content-center items-center">
             <div className="flex flex-col text-center md:text-left lg:mt-5">
-              <p className="py-8 text-3xl font-bold tracking-wide text-white md:text-4xl lg:pt-24">{pageTitle}</p>
-              <p className="text-lg font-light text-white">{pageSubTitle}</p>
+              <p className="py-8 text-3xl font-bold tracking-wide text-gray-100 md:text-4xl lg:pt-24">{pageTitle}</p>
+              <p className="text-lg font-light text-gray-200">{pageSubTitle}</p>
             </div>
           </div>
           <div className="pl-3" >
