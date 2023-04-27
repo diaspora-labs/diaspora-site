@@ -17,7 +17,7 @@ const Roadmap = () => {
       <div className="absolute inset-0 z-0 w-full bg-roadmap-bg bg-cover"></div>
 
       <div className="container mx-auto flex flex-col pb-60 lg:relative  lg:align-top ">
-        <div className=" lg:relative flex items-center justify-center md:row">
+        <div className=" lg:relative flex flex-col-reverse items-center justify-center md:flex-row ">
           <div className="max-w-lg px-9 flex flex-row content-center items-center">
             <div className="flex flex-col lg:mt-5">
               <p className="py-8 text-3xl font-bold tracking-wide text-white md:text-4xl lg:pt-24">{pageTitle}</p>
@@ -30,30 +30,30 @@ const Roadmap = () => {
         </div>
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-[50px] p-[40px]" >
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-[50px] p-[0px]" >
 
               {sections.map((item, index) => {
                 const Icon = item.icon
 
                 return (
-                  <div className="w-45 h-140">
+                  <div className="">
                     <div key={index} className=" flex my-20 justify-center items-center ">
                       <div className="flex">
                         <h1 className="text-[300px] mr-[-50px] mt-[-90px] opacity-30 text-gray-600 font-bold tracking-wide ">{index + 1}</h1>
 
                       </div>
-                      <div>
+                      <div >
                           <div className="mb-10 w-[150px] h-[100px]">
                             <Icon />
                           </div>  
                           <div className="mb-5">
                             <div>
-                              <p className={"my-5 max-w-2xl text-3xl font-bold tracking-wide text-gray-200"}>{item.title}</p>
+                              <p className={"my-5 max-w-2xl text-2xl font-bold tracking-wide text-gray-200"}>{item.title}</p>
 
-                              <ul className="ml-5 ">
+                              <ul className=" w-full">
                                 {item.list.map((item) => {
                                   return (
-                                    <li key={item} className={"mt-2 mr-2 w-full list-disc text-xl font-light text-gray-300"}>
+                                    <li key={item} className={"mt-2 w-full list-none text-l font-light text-gray-300"}>
                                       {item}
                                     </li>
                                   )
