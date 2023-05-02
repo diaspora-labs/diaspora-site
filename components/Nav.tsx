@@ -11,7 +11,7 @@ const routes: { [route: string]: string } = {
   // "/gallery": "gallery",
   "/mint": "mask pass",
   "/roadmap": "roadmap",
-  "/whitepaper": "whitepaper",
+  // "/whitepaper": "whitepaper",
 }
 
 export const Nav = ({ show = true, mobile }: { show?: boolean; mobile?: boolean }) => {
