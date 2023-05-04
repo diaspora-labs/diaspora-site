@@ -53,38 +53,52 @@ const Mint = () => {
 
   const mintMembership = async (nftAddress, id, url, name, cost, title, details, description) => {
 
-    const sdk = ThirdwebSDK.fromNetwork("devnet");
-    // Signer can be a keypair or browser wallet adapter
-    // sdk.wallet.connect(signer);
-    // Here, we pass in the address of our deployed program
+    // const sdk = ThirdwebSDK.fromNetwork("devnet");
+    // // Signer can be a keypair or browser wallet adapter
+    // // sdk.wallet.connect(signer);
+    // // Here, we pass in the address of our deployed program
     
-    const program = await sdk.getNFTCollection(nftAddress);
-    // // And now we can read data off our program, like getting all the NFTs from our collection
-    const nfts = await program.getAll()
-    // // The amount of additional NFTs to mint
-    const amount = 1
-    // // Mint an additional NFT of the original NFT
-    const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
-    // console.log('mint ', mint)
+    // const program = await sdk.getNFTCollection(nftAddress);
+    // // // And now we can read data off our program, like getting all the NFTs from our collection
+    // const nfts = await program.getAll()
+    // // // The amount of additional NFTs to mint
+    // const amount = 1
+    // // // Mint an additional NFT of the original NFT
+    // const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
+    // // console.log('mint ', mint)
 
-    const programNFTDrop = await sdk.getNFTDrop(nftAddress);
-    // const tx = await programNFTDrop.lazyMint(metadata);
+    // const programNFTDrop = await sdk.getNFTDrop(nftAddress);
+    // // const tx = await programNFTDrop.lazyMint(metadata);
 
-    // we'll add the boolean value of mint to the state
-    if ( mint ) {
-      mintNFT({
-        ...minted,
-        nftAddress,
-        id,
-        url,
-        name,
-        cost,
-        title,
-        details,
-        description
-      });
-      setShowModal(true);
-    }
+    // // we'll add the boolean value of mint to the state
+    // if ( mint ) {
+    //   mintNFT({
+    //     ...minted,
+    //     nftAddress,
+    //     id,
+    //     url,
+    //     name,
+    //     cost,
+    //     title,
+    //     details,
+    //     description
+    //   });
+    //   setShowModal(true);
+    // }
+
+    mintNFT({
+      ...minted,
+      nftAddress,
+      id,
+      url,
+      name,
+      cost,
+      title,
+      details,
+      description
+    });
+
+    setShowModal(true);
 
   };
 
@@ -204,7 +218,6 @@ const Mint = () => {
 
 // create a modal component
 const Modal = ({ id, url, name, cost, title, details, description, setModal }) => {
-
   return (
     <div className="fixed z-10 inset-0 overflow-y-auto overflow-x-auto">
       <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -265,7 +278,6 @@ const Modal = ({ id, url, name, cost, title, details, description, setModal }) =
 }
       
 const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText, address, onMint }) => {
-  
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       {/* sm:mr-6 md:ml-6 */}
@@ -282,9 +294,8 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
           
         </div>
         <div className="mt-1">
-                                                                                                                                          {/* bg-purple-med */}
-          <button disabled onClick={() => onMint(address, id, url, name, cost, title, details, description)} className="mt-2 rounded-lg bg-purple-dark px-4 w-44 py-2 text-white">
-            Mint
+          <button onClick={() => onMint(address, id, url, name, cost, title, details, description)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
+            Preview
           </button>
         </div>
 
