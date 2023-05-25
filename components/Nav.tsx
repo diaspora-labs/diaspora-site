@@ -45,7 +45,9 @@ export const Nav = ({ show = true, mobile }: { show?: boolean; mobile?: boolean 
           " w-full justify-center border-b-[1px] border-neutral-800 py-6": mobile,
         })}
       >
-        <Discord color={iconColor} />
+        <a href="https://discord.com/channels/1033040339763728505/1042523085057839135/1111076313017626705" target="_blank" rel="noreferrer">
+          <Discord color={iconColor} />
+        </a>
         <a href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D" target="_blank" rel="noreferrer">
           <Instagram color={iconColor} />
         </a>

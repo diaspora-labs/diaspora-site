@@ -177,9 +177,14 @@ const Mint = () => {
             <h3 className="mb-10 text-2xl">Stay Connected. Discord Soon.</h3>
             <div className="flex flex-row justify-center">
               <span className=" flex flex-row items-center space-x-20">
-                {/* <a className="block" href="">
+                <a 
+                  className="block" 
+                  href="https://discord.com/channels/1033040339763728505/1042523085057839135/1111076313017626705"
+                  target="_blank"
+                  rel="noreferrer"
+                  >
                   <Discord color="rgba(255,255,255,0.5)" size={35} />
-                </a> */}
+                </a>
                 <a
                   className="block"
                   href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D"
