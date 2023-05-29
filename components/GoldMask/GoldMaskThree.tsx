@@ -44,7 +44,7 @@ function setupScene() {
     function (gltf) {
       obj = gltf.scene
       scene.add(obj)
-      const scale = isMobile ? 1.6 : 1.4
+      const scale = isMobile ? 1 : 1
       obj.scale.set(scale, scale, scale)
 
       setTimeout(animateOnLoad, 100)
@@ -89,19 +89,19 @@ function setupScene() {
     mouseY = event.clientY - windowY
   }
 
-  const updateOnScroll = () => {
-    targetY = (windowY - window.scrollY) * 0.0002
+  // const updateOnScroll = () => {
+  //   targetY = (windowY - window.scrollY) * 0.0002
 
-    if (obj) {
-      if (sizes.width > 600) {
-        obj.position.z = window.scrollY * -0.002
-      } else {
-        obj.rotation.x += 0.5 * targetY
-      }
-    }
-  }
+  //   if (obj) {
+  //     if (sizes.width > 600) {
+  //       obj.position.z = window.scrollY * -0.002
+  //     } else {
+  //       obj.rotation.x += 0.5 * targetY
+  //     }
+  //   }
+  // }
 
-  window.addEventListener("scroll", updateOnScroll)
+  // window.addEventListener("scroll", updateOnScroll)
 
   function animateOnLoad() {
     const coords = { z: camera.position.z }
@@ -161,6 +161,6 @@ function createRenderer({ canvas, sizes, animate }) {
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFShadowMap
 
-  renderer.setClearAlpha(1)
+
   return renderer
 }
