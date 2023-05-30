@@ -48,7 +48,13 @@ const Home: NextPage = () => {
 
                 <div className="visible text-lg font-normal">Connect with us to stay updated</div>
                 <div className="pointer-events-auto visible flex space-x-8">
-                  {/* <Discord /> */}
+                
+                  <a href="https://discord.com/channels/1033040339763728505/1042523085057839135/1111076313017626705" 
+                    target="_blank" 
+                    rel="noreferrer"
+                  >
+                    <Discord />
+                  </a>
                   <a
                     href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D"
                     target="_blank"
