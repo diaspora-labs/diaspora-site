@@ -92,7 +92,7 @@ const Home: NextPage = () => {
                 <div className={"flex justify-center items-center gap-[45vw]"}>
                     <div className={"flex flex-col items-center justify-center"}>
                         <p className={"font-light text-s text-gray-500 leading-[135%]"}>Trait name</p>
-                        <p className={"font-light text-s text-gray-500 leading-[134%]"}>Lorem ipsum</p>
+                        <p className={"font-light text-s text-gray-500 leading-[135%]"}>Lorem ipsum</p>
                     </div>
                     <div className={"flex flex-col items-center justify-center"}>
                         <p className={"font-light text-s text-gray-500 leading-[135%]"}>Trait name</p>
