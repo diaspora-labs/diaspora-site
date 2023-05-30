@@ -1,0 +1,66 @@
+.changetext::before {
+    content: "for the culture";
+    animation: animated 5s linear infinite;
+}
+@keyframes animated {
+
+    0% {
+        content: "for the culture";
+    }
+  
+    20% {
+        content: "for the history";
+    }
+  
+    40% {
+        content: "for the future";
+    }
+  
+    60% {
+        content: "to innovate";
+    }
+  
+    80% {
+        content: "to empower";
+    }
+}
+.changeimage {
+    background-image: url("../public/images/Dessaline0035.png");
+    animation: animatedimage 15s linear infinite;
+    height: 90%;
+}
+
+.changeimage::before {
+    background-image: url("../public/images/Dessaline0035.png");
+    height: 90%;
+    animation: opacity 30s linear infinite;
+}
+@keyframes opacity {
+    
+        0% {
+            opacity: 0;
+        }
+    
+        50% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 0;
+        }
+}
+@keyframes animatedimage {
+
+    0% {
+        content: url("../public/images/Dessaline0035.png");
+    }
+  
+    50% {
+        content: url("../public/images/nef.png");
+    }
+  
+    100% {
+        content: url("../public/images/bass_2.png");
+    }
+
+}
