@@ -89,19 +89,19 @@ function setupScene() {
     mouseY = event.clientY - windowY
   }
 
-  const updateOnScroll = () => {
-    targetY = (windowY - window.scrollY) * 0.0002
+  // const updateOnScroll = () => {
+  //   targetY = (windowY - window.scrollY) * 0.0002
 
-    if (obj) {
-      if (sizes.width > 600) {
-        obj.position.z = window.scrollY * -0.002
-      } else {
-        obj.rotation.x += 0.5 * targetY
-      }
-    }
-  }
+  //   if (obj) {
+  //     if (sizes.width > 600) {
+  //       obj.position.z = window.scrollY * -0.002
+  //     } else {
+  //       obj.rotation.x += 0.5 * targetY
+  //     }
+  //   }
+  // }
 
-  window.addEventListener("scroll", updateOnScroll)
+  // window.addEventListener("scroll", updateOnScroll)
 
   function animateOnLoad() {
     const coords = { z: camera.position.z }
