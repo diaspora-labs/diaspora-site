@@ -22,13 +22,7 @@ module.exports = {
         orange: "#F05E17",
         green: {
           hover: "#00AA8E",
-        },        
-        gray: {
-          med: "#98989A"
-        }
-      },
-      transitionProperty: {
-        height: "height",
+        },
       },
       screens: {
         "max-2xl": { max: "1535px" },

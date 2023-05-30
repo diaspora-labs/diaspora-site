@@ -1,11 +1,10 @@
 import React from "react"
 
-export function Twitter(props: { color?: string; size?: number }) {
+export function Twitter(props: { color?: string }) {
   const color = props.color ?? "#7233ff"
-  const size = props.size ?? 13.488
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" height={size} viewBox="0 0 16.597 13.488">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16.597" height="13.488" viewBox="0 0 16.597 13.488">
       <g transform="translate(11.732 -1.721)">
         <g transform="translate(-11.732 1.721)">
           <path

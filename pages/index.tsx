@@ -39,53 +39,6 @@ const Home: NextPage = () => {
                 <div className={"flex justify-center items-center mt-14 gap-8 max-md:flex-col max-md:items-start max-md:gap-4 max-md:mt-10"}>
                     <a className={"font-light text-[18px] text-gray-200 bg-[#7233FF] rounded pt-3.5 pb-3.5 pl-4 pr-4 no-underline max-md:text-[14px] max-md:pt-3 max-md:pb-3"} href="#">MASKS PASSES</a>
                     <p className={"font-thin text-l tracking-[1.5px] text-gray-300 no-underline max-smm:text-sm"}>Learn more about DIASPORA DAO</p>
-      <section className={"relative z-10 flex h-full flex-col md:min-h-screen"}>
-        <div className="z-10 flex grow flex-col p-10 ">
-          <div className="text-center md:grid md:h-full md:grow md:grid-cols-4">
-            <div className="mt-20 flex h-full flex-col items-center justify-center md:col-span-2 md:mt-0 md:mr-40">
-              <div className="text-center text-4xl font-light leading-tight text-neutral-500 shadow-black drop-shadow-md md:text-left md:text-5xl">
-                Building a bridge
-                <br />
-                for the culture
-                <br />
-                <div className="mt-5 text-3xl font-normal text-neutral-400">#TakeTheJourney</div>
-              </div>
-            </div>
-            <div className="z-10 col-span-2 h-full items-end justify-center md:mr-20 md:ml-40 md:flex md:flex-col">
-              <div className="invisible flex flex-col items-center justify-center space-y-6 md:visible">
-                <div className="invisible hidden text-center  text-4xl font-light md:visible md:mt-[80px] md:block">
-                  Great things
-                  <br />
-                  are coming
-                </div>
-
-                <div className="visible text-lg font-normal">Connect with us to stay updated</div>
-                <div className="pointer-events-auto visible flex space-x-8">
-                
-                  <a href="https://discord.com/channels/1033040339763728505/1042523085057839135/1111076313017626705" 
-                    target="_blank" 
-                    rel="noreferrer"
-                  >
-                    <Discord />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/diasporaxyz/?igshid=YmMyMTA2M2Y%3D"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Instagram />
-                  </a>
-                  <a href="https://twitter.com/OurDiaspora" target="_blank" rel="noreferrer">
-                    <Twitter />
-                  </a>
-                  <a href="mailto:info@ourdiaspora.xyz" target="_blank" rel="noreferrer">
-                    <Envelop />
-                  </a>
-                </div>
-                <div className="hidden p-2">
-                  <button className="rounded-xl bg-[#F05E17] px-4 py-2 font-bold uppercase text-black">
-                    Connect Wallet
-                  </button>
                 </div>
             </div>
             <div className={"flex justify-center items-center"}>
