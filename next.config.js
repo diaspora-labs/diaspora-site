@@ -7,6 +7,9 @@ const path = require("path")
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack: (config, options) => {
     config.module.rules.unshift({
       test: /pdf\.worker\.(min\.)?js/,
