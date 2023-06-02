@@ -37,6 +37,7 @@ const Mint = () => {
     title: "",
     details: "",
     description : "",
+    modalDescription: "",
     scanner: "",
     filter: "",
   })
@@ -54,7 +55,7 @@ const Mint = () => {
   // });
 
 
-  const mintMembership = async (nftAddress, id, url, name, cost, title, details, description, scanner, filter) => {
+  const mintMembership = async (nftAddress, id, url, name, cost, title, details, description, scanner, filter, modalDescription) => {
 
     // const sdk = ThirdwebSDK.fromNetwork("devnet");
     // // Signer can be a keypair or browser wallet adapter
@@ -99,7 +100,8 @@ const Mint = () => {
       details,
       description,
       scanner,
-      filter
+      filter,
+      modalDescription
     });
 
     setShowModal(true);
@@ -226,9 +228,9 @@ const Mint = () => {
 }
 
 // create a modal component
-const Modal = ({ id, url, name, cost, title, details, description, scanner, filter, setModal }) => {
+const Modal = ({ id, url, name, cost, title, details, description, scanner, filter, setModal, modalDescription }) => {
   return (
-    <div className="fixed z-10 inset-0 overflow-y-auto overflow-x-auto">
+    <div className="fixed z-10 inset-0 overflow-x-auto overflow-y-auto">
       <div className="flex items-end justify-center min-h-screen md:mt-0 mt-20 pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
@@ -271,7 +273,7 @@ const Modal = ({ id, url, name, cost, title, details, description, scanner, filt
                     })}
                   </div>
 
-                  <div className="mt-3 text-md my-2 font-light gray-med md:pr-16">{description}</div>
+                  <div className="mt-3 text-md my-2 font-light gray-med md:pr-8 max-h-40 overflow-y-auto scrollbar-thumb-gray-500 scrollbar-track-gray-300">{modalDescription}</div>
                 </div>
               </div>
             </div>
@@ -289,12 +291,12 @@ const Modal = ({ id, url, name, cost, title, details, description, scanner, filt
   )
 }
       
-const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText, address, onMint, scanner, filter }) => {
+const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText, address, onMint, scanner, filter, modalDescription }) => {
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       {/* sm:mr-6 md:ml-6 */}
       <div className="mb-2  sm:mr-6 scroll-smooth">
-        <PreMintMasks id={id} url={url}/>
+        {/* <PreMintMasks id={id} url={url}/> */}
       </div>
 
       <div className="text-center">
@@ -306,7 +308,7 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
           
         </div>
         <div className="mt-1">
-          <button onClick={() => onMint(address, id, url, name, cost, title, details, description, scanner, filter)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
+          <button onClick={() => onMint(address, id, url, name, cost, title, details, description, scanner, filter, modalDescription)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
             Preview
           </button>
         </div>
