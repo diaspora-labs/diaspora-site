@@ -13,6 +13,7 @@ import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana"
 import { NFTCollection } from "@thirdweb-dev/sdk"
 import dynamic from "next/dynamic"
 import { Closeinactive } from "../components/Icons/Closeinactive"
+import ReactPlayer from "react-player"
 
 const Wallet = dynamic(() => import("../components/Wallet"), {
   ssr: false,
@@ -35,7 +36,9 @@ const Mint = () => {
     cost: "",
     title: "",
     details: "",
-    description: "",
+    description : "",
+    scanner: "",
+    filter: "",
   })
   
   useEffect(() => {
@@ -51,40 +54,55 @@ const Mint = () => {
   // });
 
 
-  const mintMembership = async (nftAddress, id, url, name, cost, title, details, description) => {
+  const mintMembership = async (nftAddress, id, url, name, cost, title, details, description, scanner, filter) => {
 
-    const sdk = ThirdwebSDK.fromNetwork("devnet");
-    // Signer can be a keypair or browser wallet adapter
-    // sdk.wallet.connect(signer);
-    // Here, we pass in the address of our deployed program
+    // const sdk = ThirdwebSDK.fromNetwork("devnet");
+    // // Signer can be a keypair or browser wallet adapter
+    // // sdk.wallet.connect(signer);
+    // // Here, we pass in the address of our deployed program
     
-    const program = await sdk.getNFTCollection(nftAddress);
-    // // And now we can read data off our program, like getting all the NFTs from our collection
-    const nfts = await program.getAll()
-    // // The amount of additional NFTs to mint
-    const amount = 1
-    // // Mint an additional NFT of the original NFT
-    const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
-    // console.log('mint ', mint)
+    // const program = await sdk.getNFTCollection(nftAddress);
+    // // // And now we can read data off our program, like getting all the NFTs from our collection
+    // const nfts = await program.getAll()
+    // // // The amount of additional NFTs to mint
+    // const amount = 1
+    // // // Mint an additional NFT of the original NFT
+    // const mint = await program.mintAdditionalSupplyTo(wallet.publicKey.toString(), nftAddress, amount)
+    // // console.log('mint ', mint)
 
-    const programNFTDrop = await sdk.getNFTDrop(nftAddress);
-    // const tx = await programNFTDrop.lazyMint(metadata);
+    // const programNFTDrop = await sdk.getNFTDrop(nftAddress);
+    // // const tx = await programNFTDrop.lazyMint(metadata);
 
-    // we'll add the boolean value of mint to the state
-    if ( mint ) {
-      mintNFT({
-        ...minted,
-        nftAddress,
-        id,
-        url,
-        name,
-        cost,
-        title,
-        details,
-        description
-      });
-      setShowModal(true);
-    }
+    // // we'll add the boolean value of mint to the state
+    // if ( mint ) {
+    //   mintNFT({
+    //     ...minted,
+    //     nftAddress,
+    //     id,
+    //     url,
+    //     name,
+    //     cost,
+    //     title,
+    //     details,
+    //     description
+    //   });
+    //   setShowModal(true);
+    // }
+    mintNFT({
+      ...minted,
+      nftAddress,
+      id,
+      url,
+      name,
+      cost,
+      title,
+      details,
+      description,
+      scanner,
+      filter
+    });
+
+    setShowModal(true);
 
   };
 
@@ -208,11 +226,10 @@ const Mint = () => {
 }
 
 // create a modal component
-const Modal = ({ id, url, name, cost, title, details, description, setModal }) => {
-
+const Modal = ({ id, url, name, cost, title, details, description, scanner, filter, setModal }) => {
   return (
     <div className="fixed z-10 inset-0 overflow-y-auto overflow-x-auto">
-      <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div className="flex items-end justify-center min-h-screen md:mt-0 mt-20 pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
@@ -222,14 +239,16 @@ const Modal = ({ id, url, name, cost, title, details, description, setModal }) =
                   
         <div className="items-center inline-block align-bottom bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
           <div className="md:flex items-center bg-black rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full">
-            <div className="mb-30 mr-7 ml-7 lg:mb-30 lg:mr-5 lg:ml-7">
+            <div className="mb-30 mr-7 ml-7 lg:mb-30 lg:mr-5 lg:ml-7 pt-10 md:pt-5">
               <div
-                className={`h-[350px] md:h-[380px] md:w-[250px]`}
+                // className={`h-[350px] md:h-[380px] md:w-[250px]`}
+                // className={`h-[350px] md:h-[380px] md:w-[250px]`}
               >
-                <PreMintMasks id={id} url={url}/>
+                {/* <PreMintMasks id={id} url={url}/> */}
+                <ReactPlayer width={300} height={300} url={scanner} playing={true} />
               </div>
             </div>
-            <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4 mt-16">
+            <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                   <div className="text-3xl font-bold text-white mb-5 mt-3">{name}</div>
@@ -258,9 +277,10 @@ const Modal = ({ id, url, name, cost, title, details, description, setModal }) =
             </div>
           </div>
 
-          <div className="bg-black-50 px-4 py-3 sm:px-6 text-center">
+          <div className="bg-black-50 px-4 py-3 sm:px-6 text-center mb-4">
             <button onClick={() => setModal(false)} type="button" className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
-              Success!
+              {/* Success! */}
+              Done
             </button>
           </div>
         </div>
@@ -269,8 +289,7 @@ const Modal = ({ id, url, name, cost, title, details, description, setModal }) =
   )
 }
       
-const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText, address, onMint }) => {
-  
+const Mask = ({ id, url, name, cost, description, image, windowSize, title, details, hideText, setHideText, address, onMint, scanner, filter }) => {
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       {/* sm:mr-6 md:ml-6 */}
@@ -287,9 +306,8 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
           
         </div>
         <div className="mt-1">
-                                                                                                                                          {/* bg-purple-med */}
-          <button disabled onClick={() => onMint(address, id, url, name, cost, title, details, description)} className="mt-2 rounded-lg bg-purple-dark px-4 w-44 py-2 text-white">
-            Mint
+          <button onClick={() => onMint(address, id, url, name, cost, title, details, description, scanner, filter)} className="mt-2 rounded-lg bg-purple-med px-4 w-44 py-2 text-white">
+            Preview
           </button>
         </div>
 
