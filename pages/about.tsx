@@ -40,6 +40,37 @@ const about = () => {
         };
     })
 
+    // for smaller devices
+    if (typeof window !== "undefined") {
+        // browser code
+        let tl2 = gsap.timeline()
+        if(window.innerWidth < 640){
+            useLayoutEffect(() => {
+                tl2.fromTo(neff, {duration: 1, opacity: 0}, {duration: 1, opacity: 1, immediateRender: false})
+                .fromTo(dao, {duration: 1, opacity: 0, "margin-left":"20%" }, {duration: 1, opacity: 1, "margin-left":"14.5%", delay: 0.5, immediateRender: false})
+                .fromTo(diaspora, {duration: 1, opacity: 0, "margin-left":"-25%" }, {duration: 1, opacity: 1, "margin-left":"-17%", immediateRender: false} , "<")
+                .fromTo(africa, {duration: 1, opacity: 0}, {duration: 1, opacity: 1, immediateRender: false})
+        
+                .fromTo(dotmbambi, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-35.7%", "margin-top":"-9%", delay: 0.5, immediateRender: false})
+                .fromTo(dotcote, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"24.3%", "margin-top":"23.55%", immediateRender: false}, "<"	)
+                .fromTo(dotinfra, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"18.3%", "margin-top":"-16.2%", immediateRender: false}, "<")
+                .fromTo(dotwalet, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-21.75%", "margin-top":"14.25%", immediateRender: false}, "<")
+                
+                .fromTo(mbambi, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-40.5%", "margin-top":"-9%", delay: 0.5, immediateRender: false})
+                .fromTo(cote, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"30", "margin-top":"25.5%", immediateRender: false}, "<"	)
+                .fromTo(infra, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-28.5%", "margin-top":"15%", immediateRender: false}, "<")
+                .fromTo(walet, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"25.5%", "margin-top":"-15%", immediateRender: false}, "<")
+        
+                return () => {
+                    tl2.kill();
+                };
+            })
+        }
+      }
+    
+            
+            
+
     // fix strict mode rerender issue	
 
 
