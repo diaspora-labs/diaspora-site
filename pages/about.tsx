@@ -1,24 +1,69 @@
-import React from 'react'
+import React, {useRef, useEffect, useLayoutEffect} from 'react'
 import { Layout } from "../components/Layout"
-import {HomeFooter} from '../components/Home/HomeFooter'
+import { HomeFooter } from '../components/Home/HomeFooter'
+import {gsap, Power3} from 'gsap'
+
+
 
 const about = () => {
+    let neff = useRef(null)
+    let africa = useRef(null)
+    let mbambi = useRef(null)
+    let cote = useRef(null)
+    let infra = useRef(null)
+    let walet = useRef(null)
+    let diaspora = useRef(null)
+    let dao = useRef(null)
+    let dotcote = useRef(null)
+    let dotmbambi = useRef(null)
+    let dotwalet = useRef(null)
+    let dotinfra = useRef(null)
+    let tl = gsap.timeline()
+    useLayoutEffect(() => {
+        tl.fromTo(neff, {duration: 1, opacity: 0}, {duration: 1, opacity: 1, immediateRender: false})
+        .fromTo(dao, {duration: 1, opacity: 0, "margin-left":"15%" }, {duration: 1, opacity: 1, "margin-left":"11.5%", delay: 0.5, immediateRender: false})
+        .fromTo(diaspora, {duration: 1, opacity: 0, "margin-left":"-20%" }, {duration: 1, opacity: 1, "margin-left":"-13%", immediateRender: false} , "<")
+        .fromTo(africa, {duration: 1, opacity: 0}, {duration: 1, opacity: 1, immediateRender: false})
+
+        .fromTo(dotmbambi, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-23.8%", "margin-top":"-6%", delay: 0.5, immediateRender: false})
+        .fromTo(dotcote, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"16.2%", "margin-top":"15.7%", immediateRender: false}, "<"	)
+        .fromTo(dotinfra, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"12.2%", "margin-top":"-10.8%", immediateRender: false}, "<")
+        .fromTo(dotwalet, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-14.5%", "margin-top":"9.5%", immediateRender: false}, "<")
+        
+        .fromTo(mbambi, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-27%", "margin-top":"-6%", delay: 0.5, immediateRender: false})
+        .fromTo(cote, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"20", "margin-top":"17%", immediateRender: false}, "<"	)
+        .fromTo(infra, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-19%", "margin-top":"10%", immediateRender: false}, "<")
+        .fromTo(walet, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"17%", "margin-top":"-10%", immediateRender: false}, "<")
+
+        return () => {
+            tl.kill();
+        };
+    })
+
+    // fix strict mode rerender issue	
+
+
+
+   
+ 
+
+
   return (
     <Layout>
         <section className="relative h-screen flex flex-col justify-center items-center max-2xl:h-[90vh] max-xl:h-[75vh] max-lg:h-[50vh] max-md:h-[40vh] max-sm:h-[35vh] max-smm-[18vh]">
             <div className="flex justify-center items-center w-full h-auto relative">
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 mt-[5%] w-[48%] max-sm:w-[72%]" src="images/about/Vector.png" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[28%] max-sm:w-[42%]" src="images/about/neef.png" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[23%] ml-[11.5%] mt-[5%] max-sm:w-[34.5%]" src="images/about/dao.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[6%] mt-[-5%] ml-[-13%] max-sm:w-[9%]" src="images/about/diaspora.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[4.5%] ml-[20%] mt-[17%] max-sm:w-[6.75%]" src="images/about/cote.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[4%] mt-[-6%] ml-[-27%] max-sm:w-[6%]" src="images/about/mbambi.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[4%] mt-[-10%] ml-[17%] max-sm:w-[6%]" src="images/about/wallet.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[5.2%] ml-[-19%] mt-[10%] max-sm:w-[7.8%]" src="images/about/infrastructure.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[1%] mt-[-6%] ml-[-23.8%] max-sm:w-[1.5%]" src="images/about/dot.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[1%] ml-[16.2%] mt-[15.7%] max-sm:w-[1.5%]" src="images/about/dot.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[1%] mt-[-10.8%] ml-[12.2%] max-sm:w-[1.5%]" src="images/about/dot.svg" alt="" />
-                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[1%] ml-[-14.5%] mt-[9.5%] max-sm:w-[1.5%]" src="images/about/dot.svg" alt="" />
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 mt-[5%] w-[48%] opacity-0 max-sm:w-[72%]" src="images/about/Vector.png" alt="" ref = {el => africa = el} />
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[28%] opacity-0 max-sm:w-[42%]" src="images/about/neef.png" alt="" ref = {el => neff = el}/>
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[23%] ml-[11.5%] mt-[5%] opacity-0 max-sm:w-[34.5%]" src="images/about/dao.svg" alt="" ref = {el => dao = el}/>
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[6%] mt-[-5%] ml-[-13%] opacity-0 max-sm:w-[9%]" src="images/about/diaspora.svg" alt="" ref = {el => diaspora = el}/>
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[4.5%] ml-[20%] mt-[17%] opacity-0 max-sm:w-[6.75%]" src="images/about/cote.svg" alt="" ref = {el => cote = el}/>
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[4%] mt-[-6%] ml-[-27%] opacity-0 max-sm:w-[6%]" src="images/about/mbambi.svg" alt="" ref = {el => mbambi = el}/>
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[4%] mt-[-10%] ml-[17%] opacity-0 max-sm:w-[6%]" src="images/about/wallet.svg" alt="" ref = {el => walet = el} />
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[5.2%] ml-[-19%] mt-[10%] opacity-0 max-sm:w-[7.8%]" src="images/about/infrastructure.svg" alt=""  ref = {el => infra = el}/>
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[1%] mt-[-6%] ml-[-23.8%] opacity-0 max-sm:w-[1.5%]" src="images/about/dot.svg" alt="" ref = {el => dotmbambi = el}/>
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[1%] ml-[16.2%] mt-[15.7%] opacity-0 max-sm:w-[1.5%]" src="images/about/dot.svg" alt="" ref = {el => dotcote = el}/>
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[1%] mt-[-10.8%] ml-[12.2%] opacity-0 max-sm:w-[1.5%]" src="images/about/dot.svg" alt="" ref = {el => dotwalet = el} />
+                <img className="absolute h-auto -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 w-[1%] ml-[-14.5%] mt-[9.5%] opacity-0 max-sm:w-[1.5%]" src="images/about/dot.svg" alt="" ref = {el => dotinfra = el} />
             </div>
     </section>
     <section className="relative w-full h-auto text-[white] flex flex-col justify-center items-center mt-[-9vw] pb-[5%] px-[25%] py-0 max-md:px-[15%] max-sm:px-[10%]">
