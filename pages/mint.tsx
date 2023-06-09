@@ -247,7 +247,7 @@ const Modal = ({ id, url, name, cost, title, details, description, scanner, filt
                 // className={`h-[350px] md:h-[380px] md:w-[250px]`}
               >
                 {/* <PreMintMasks id={id} url={url}/> */}
-                <ReactPlayer width={300} height={300} url={scanner} playing={true} />
+                <ReactPlayer width={300} height={300} url={scanner} playing={true} loop={true}/>
               </div>
             </div>
             <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
@@ -296,7 +296,7 @@ const Mask = ({ id, url, name, cost, description, image, windowSize, title, deta
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
       {/* sm:mr-6 md:ml-6 */}
       <div className="mb-2  sm:mr-6 scroll-smooth">
-        {/* <PreMintMasks id={id} url={url}/> */}
+        <PreMintMasks id={id} url={url}/>
       </div>
 
       <div className="text-center">
