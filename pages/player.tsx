@@ -3,18 +3,14 @@ import { Layout } from "../components/Layout"
 
 const Player = () => {
   useEffect(() => {
-    // window.addEventListener("message", handleMessage)
-    // window.parent.postMessage(
-    //   {
-    //     type: "itemKey",
-    //     data: {
-    //       fun1: () => {
-    //         console.log("Testing")
-    //       },
-    //     },
-    //   },
-    //   "https://journey-taupe.vercel.app"
-    // )
+    window.addEventListener("message", handleMessage)
+    window.parent.postMessage(
+      {
+        type: "itemKey",
+        data: { hello: "world" },
+      },
+      "https://journey-taupe.vercel.app"
+    )
     const iframe = document.getElementById("my-iframe")
     // iframe.contentWindow.postMessage(
     //   {
