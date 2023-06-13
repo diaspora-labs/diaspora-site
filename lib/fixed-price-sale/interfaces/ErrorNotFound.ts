@@ -1,4 +1,4 @@
-import { AnyPublicKey } from './AnyPublicKey';
+import { PublicKey } from "@solana/web3.js"
 
 enum ErrorCode {
   ERROR_INVALID_OWNER = 0,
@@ -7,17 +7,12 @@ enum ErrorCode {
   ERROR_ACCOUNT_NOT_FOUND = 3,
 }
 class MetaplexError extends Error {
-  errorCode: ErrorCode;
+  errorCode: ErrorCode
   constructor(errorCode: ErrorCode, message: string) {
-    super(message);
-    this.errorCode = errorCode;
+    super(message)
+    this.errorCode = errorCode
   }
 }
-export const ERROR_ACCOUNT_NOT_FOUND = (
-  pubkey: AnyPublicKey
-): MetaplexError => {
-  return new MetaplexError(
-    ErrorCode.ERROR_ACCOUNT_NOT_FOUND,
-    `Unable to find account: ${pubkey}`
-  );
-};
+export const ERROR_ACCOUNT_NOT_FOUND = (pubkey: PublicKey): MetaplexError => {
+  return new MetaplexError(ErrorCode.ERROR_ACCOUNT_NOT_FOUND, `Unable to find account: ${pubkey}`)
+}
