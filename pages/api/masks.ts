@@ -26,7 +26,7 @@ export default function handler(req, res) {
       title: ["More Accessible.", "Limited to just 1000 passes."],
       nftId: "8BHrrMQLCRLJUuVxniBbfr43q9tivStLeV4sij1XtErY",
       fpsMarketId: "PCCbUmeKg2nK9Ndy8oCSRnjRREHRibYvvCytsDeHMLr",
-      details: ["Discord access", "Augmented Reality filter"],
+      details: ["Discord access", "Augmented Reality filter",  "Comes with merchandise",],
       description:
         "Great option for those who want to be part of the action but may not be ready to commit to the exclusivity of the Red Mbambi Mask.",
       modalDescription:
