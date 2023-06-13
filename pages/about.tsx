@@ -47,20 +47,20 @@ const about = () => {
         let tl2 = gsap.timeline()
         if(window.innerWidth < 640){
             useLayoutEffect(() => {
-                tl2.fromTo(neff, {duration: 1, opacity: 0}, {duration: 1, opacity: 1, immediateRender: false})
-                .fromTo(dao, {duration: 1, opacity: 0, "margin-left":"20%" }, {duration: 1, opacity: 1, "margin-left":"14.5%", delay: 0.5, immediateRender: false})
-                .fromTo(diaspora, {duration: 1, opacity: 0, "margin-left":"-25%" }, {duration: 1, opacity: 1, "margin-left":"-17%", immediateRender: false} , "<")
-                .fromTo(africa, {duration: 1, opacity: 0}, {duration: 1, opacity: 1, immediateRender: false})
+                tl2.fromTo(neff.current, {duration: 1, opacity: 0}, {duration: 1, opacity: 1, immediateRender: false})
+                .fromTo(dao.current, {duration: 1, opacity: 0, "margin-left":"20%" }, {duration: 1, opacity: 1, "margin-left":"14.5%", delay: 0.5, immediateRender: false})
+                .fromTo(diaspora.current, {duration: 1, opacity: 0, "margin-left":"-25%" }, {duration: 1, opacity: 1, "margin-left":"-17%", immediateRender: false} , "<")
+                .fromTo(africa.current, {duration: 1, opacity: 0}, {duration: 1, opacity: 1, immediateRender: false})
         
-                .fromTo(dotmbambi, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-35.7%", "margin-top":"-9%", delay: 0.5, immediateRender: false})
-                .fromTo(dotcote, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"24.3%", "margin-top":"23.55%", immediateRender: false}, "<"	)
-                .fromTo(dotinfra, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"18.3%", "margin-top":"-16.2%", immediateRender: false}, "<")
-                .fromTo(dotwalet, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-21.75%", "margin-top":"14.25%", immediateRender: false}, "<")
+                .fromTo(dotmbambi.current, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-35.7%", "margin-top":"-9%", delay: 0.5, immediateRender: false})
+                .fromTo(dotcote.current, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"24.3%", "margin-top":"23.55%", immediateRender: false}, "<"	)
+                .fromTo(dotinfra.current, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"18.3%", "margin-top":"-16.2%", immediateRender: false}, "<")
+                .fromTo(dotwalet.current, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-21.75%", "margin-top":"14.25%", immediateRender: false}, "<")
                 
-                .fromTo(mbambi, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-40.5%", "margin-top":"-9%", delay: 0.5, immediateRender: false})
-                .fromTo(cote, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"30", "margin-top":"25.5%", immediateRender: false}, "<"	)
-                .fromTo(infra, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-28.5%", "margin-top":"15%", immediateRender: false}, "<")
-                .fromTo(walet, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"25.5%", "margin-top":"-15%", immediateRender: false}, "<")
+                .fromTo(mbambi.current, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-40.5%", "margin-top":"-9%", delay: 0.5, immediateRender: false})
+                .fromTo(cote.current, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"30", "margin-top":"25.5%", immediateRender: false}, "<"	)
+                .fromTo(infra.current, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"-28.5%", "margin-top":"15%", immediateRender: false}, "<")
+                .fromTo(walet.current, {duration: 1, opacity: 0, "margin-left":"0%", "margin-top":"0%"}, {duration: 1, opacity: 1, "margin-left":"25.5%", "margin-top":"-15%", immediateRender: false}, "<")
         
                 return () => {
                     tl2.kill();
@@ -118,9 +118,9 @@ const about = () => {
             </div>
             <div className='flex flex-col items-start justify-start gap-5'>
                 <img className='mb-[5px]' src="images/about/icon2.svg" alt=""/>
-                <h2 className='not-italic font-normal text-xl leading-[120%] text-[#FF7A00] uppercase;'>Upskilling & Masterclass</h2>
+                <h2 className='not-italic font-normal text-xl leading-[120%] text-[#FF7A00] uppercase;'>Augmented Experiences & New Product Incubation</h2>
                 <p className='not-italic font-normal text-base leading-[160%] text-[#9A9A9A] w-[90%] max-xl:text-[17px] max-lg:text-[16px] max-md:text-[15px] max-sm:text-[14px] max-smm:text-[13px]'>
-                    Part of Diaspora’s community building is by investing in the community. The DAO’s incubator will give support to help develop, launch, and grow projects across different stages. The Dispaora’s DAO will play an investor role long term by providing funds and mentorship to projects.
+                    Through the integration of augmented reality (AR) technology, we aim to enhance the way people interact with digital assets, NFTs, and decentralized platforms. Diaspora DAO is also dedicated to building products that align with our four pillars while also supporting members that would like to do so as well with the DAO's support.
                 </p>
             </div>
         </div>

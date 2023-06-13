@@ -135,93 +135,111 @@ const Home: NextPage = () => {
               "flex flex-col justify-center items-center w-screen mt-0 gap-[100px]"
             }
           >
-            <div className={"flex justify-center items-center gap-[40vw]"}>
+            <div className={"flex justify-center items-center gap-[38vw]"}>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-end justify-end font-light text-s text-gray-400 leading-[135%]"}>
+                  Background(s)
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+                  
                 </p>
               </div>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-start justify-start font-light text-s text-gray-400 leading-[135%]"}>
+                  Gender
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+                  
                 </p>
               </div>
             </div>
             <div className={"flex justify-center items-center gap-[45vw]"}>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-end justify-end text-right font-light text-s text-gray-400 leading-[135%]"}>
+                  Artifact(s)
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[134%]"}>
-                  Lorem ipsum
+                  
                 </p>
               </div>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"text-center flex flex-col items-start justify-start font-light text-s text-gray-400 leading-[135%]"}>
+                  Cybernetic <br /> Augmentations
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+                
                 </p>
               </div>
             </div>
             <div className={"flex justify-center items-center gap-[48vw]"}>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-end justify-end text-right font-light text-s text-gray-400 leading-[135%]"}>
+                  Metals & Alloys
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+
                 </p>
               </div>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-start justify-start font-light text-s text-gray-400 leading-[135%]"}>
+                  Companion
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+          
                 </p>
               </div>
             </div>
             <div className={"flex justify-center items-center gap-[45vw]"}>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-end justify-end font-light text-s text-gray-400 leading-[135%]"}>
+                  Masks
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+                 
                 </p>
               </div>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-start justify-start font-light text-s text-gray-400 leading-[135%]"}>
+                  Phenotype
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+                  
                 </p>
               </div>
             </div>
             <div className={"flex justify-center items-center gap-[40vw]"}>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-end justify-end font-light text-s text-gray-400 leading-[135%]"}>
+                  Animation
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+                
                 </p>
               </div>
               <div className={"flex flex-col items-center justify-center"}>
-                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Trait name
+                <p className={"flex flex-col items-start justify-start font-light text-s text-gray-400 leading-[135%]"}>
+                  Artist Collab
                 </p>
                 <p className={"font-light text-s text-gray-500 leading-[135%]"}>
-                  Lorem ipsum
+                 
+                </p>
+              </div>
+            </div>
+            <div className={"flex justify-center items-center gap-[30vw]"}>
+              <div className={"flex flex-col items-center justify-center"}>
+                <p className={"text-center flex flex-col items-end justify-end font-light text-s text-gray-400 leading-[135%]"}>
+                  Clothing <br /> (Status, region, era)
+                </p>
+                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
+                
+                </p>
+              </div>
+              <div className={"flex flex-col items-center justify-center"}>
+                <p className={"flex flex-col items-start justify-start font-light text-s text-gray-400 leading-[135%]"}>
+                  Pose
+                </p>
+                <p className={"font-light text-s text-gray-500 leading-[135%]"}>
+                 
                 </p>
               </div>
             </div>
