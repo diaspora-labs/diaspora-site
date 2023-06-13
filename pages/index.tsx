@@ -68,7 +68,7 @@ const Home: NextPage = () => {
                 }
                 href="/mint"
               >
-                MASKS PASSES
+                MASK PASSES
               </a>
               <p
                 className={
