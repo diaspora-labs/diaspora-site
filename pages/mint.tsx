@@ -17,8 +17,8 @@ type Nft = {
   url: string
   name: string
   cost: string
-  title: string
-  details: string
+  title: string[]
+  details: string[]
   description: string
   nftId: string
   fpsMarketId: string
@@ -186,11 +186,11 @@ const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
     return null
   }
 
-  const { name, title, details, description, nftId, fpsMarketId, scanner, modalDescription, filter } = nft
+  const { id, url, name, title, details, description, nftId, fpsMarketId, scanner, modalDescription, filter } = nft
 
   return (
-    <div className="fixed inset-0 z-10 overflow-x-auto overflow-y-auto">
-      <div className="mt-20 flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0 md:mt-0">
+    <div className="z-100 fixed inset-0 overflow-x-auto overflow-y-auto">
+      <div className="relative mt-20 flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0 md:mt-0 ">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
@@ -200,15 +200,15 @@ const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
           &#8203;
         </span>
 
-        <div className="inline-block transform items-center overflow-hidden rounded-lg bg-black text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:align-middle">
-          <div className="transform items-center overflow-hidden rounded-lg bg-black text-left shadow-xl transition-all sm:my-8 sm:w-full sm:align-middle md:flex">
+        <div className="relative inline-block transform items-center overflow-hidden rounded-lg bg-black text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:align-middle">
+          <div className="transform items-center overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:align-middle md:flex">
             <div className="mb-30 lg:mb-30 mr-7 ml-7 pt-10 md:pt-5 lg:mr-5 lg:ml-7">
               <div>
-                {/* <PreMintMasks id={id} url={url}/> */}
-                <ReactPlayer width={300} height={300} url={scanner} playing={true} loop={true} />
+                {/* <PreMintMasks id={id} url={url} /> */}
+                <ReactPlayer width={"300px"} height={"450px"} url={scanner} playing={true} loop={true} />
               </div>
             </div>
-            <div className="bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div className="visible relative bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                   <div className="mb-5 mt-3 text-3xl font-bold text-white">{name}</div>
@@ -244,14 +244,13 @@ const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
               </div>
             </div>
           </div>
-
-          <div className="bg-black-50 mb-4 px-4 py-3 text-center sm:px-6">
+          <div className="bg-black-50 absolute top-0 right-0 mb-4 px-4 py-3 text-center sm:px-6">
             <button
               onClick={() => setModal(false)}
               type="button"
-              className="inline-flex w-full justify-center rounded-md border border-neutral-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-neutral-800 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
+              className="inline-flex w-full justify-center rounded-md border border-neutral-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-neutral-800 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
             >
-              Done
+              X
             </button>
           </div>
         </div>
@@ -282,7 +281,6 @@ const Mask = ({
 }) => {
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
-      {/* sm:mr-6 md:ml-6 */}
       <div className="mb-2  scroll-smooth sm:mr-6">
         <PreMintMasks id={id} url={url} />
       </div>
@@ -291,7 +289,6 @@ const Mask = ({
         <div className="text-2xl font-bold text-white">{name}</div>
 
         <div className="text-bold my-3 flex flex-row items-center justify-center">
-          {/* <span className="mr-2 mt-1">{cost}</span>{" "} */}
           <Image src="/images/logos/solana-sol-logo.png" width="20" height="20" />
         </div>
         <div className="mt-1">
