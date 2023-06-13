@@ -208,7 +208,7 @@ const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
               <div className="sm:flex sm:items-start">
                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                   <div className="mb-5 mt-3 text-3xl font-bold text-white">{name}</div>
-                  <h3 className="text-md gray-med font-light" id="modal-headline">
+                  {/* <h3 className="text-md gray-med font-light" id="modal-headline">
                     {title.map((maskTitle) => {
                       return (
                         <div key={maskTitle} className="text-md gray-med font-light">
@@ -216,8 +216,8 @@ const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
                         </div>
                       )
                     })}
-                  </h3>
-                  <div className="mt-4">
+                  </h3> */}
+                  {/* <div className="mt-4">
                     {details.map((detail) => {
                       return (
                         <li key={detail} className="text-md gray-med font-light">
@@ -225,7 +225,7 @@ const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
                         </li>
                       )
                     })}
-                  </div>
+                  </div> */}
 
                   <div className="mx-5 my-10 max-w-3xl lg:mx-auto">
                     {editionNft && (
