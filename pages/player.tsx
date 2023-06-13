@@ -3,8 +3,20 @@ import { Layout } from "../components/Layout"
 
 const Player = () => {
   useEffect(() => {
-    window.addEventListener("message", handleMessage)
-    window.parent.postMessage(
+    // window.addEventListener("message", handleMessage)
+    // window.parent.postMessage(
+    //   {
+    //     type: "itemKey",
+    //     data: {
+    //       fun1: () => {
+    //         console.log("Testing")
+    //       },
+    //     },
+    //   },
+    //   "https://journey-taupe.vercel.app"
+    // )
+    const iframe = document.getElementById("my-iframe")
+    iframe.contentWindow.postMessage(
       {
         type: "itemKey",
         data: {
@@ -15,11 +27,6 @@ const Player = () => {
       },
       "https://journey-taupe.vercel.app"
     )
-    // const iframe = document.getElementById("my-iframe")
-    // iframe.contentWindow.postMessage(
-    //   { type: "myFunction", data: { randomData: "Testing" } },
-    //   "https://journey-taupe.vercel.app"
-    // )
   }, [])
 
   function handleMessage(event) {
@@ -32,8 +39,8 @@ const Player = () => {
 
   return (
     <Layout>
-      <section className="relative h-screen flex flex-col justify-center items-center max-2xl:h-[90vh] max-xl:h-[75vh] max-lg:h-[40vh] max-md:h-[40vh] max-sm:h-[35vh] max-smm-[18vh]">
-        <iframe className="w-full h-5/6" id="my-iframe" src="https://journey-taupe.vercel.app"></iframe>
+      <section className="max-smm-[18vh] relative flex h-screen flex-col items-center justify-center max-2xl:h-[90vh] max-xl:h-[75vh] max-lg:h-[40vh] max-md:h-[40vh] max-sm:h-[35vh]">
+        <iframe className="h-5/6 w-full" id="my-iframe" src="https://journey-taupe.vercel.app"></iframe>
       </section>
     </Layout>
   )
