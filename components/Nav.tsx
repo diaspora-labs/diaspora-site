@@ -11,6 +11,7 @@ const routes: { [route: string]: string } = {
   // "/gallery": "gallery",
   "/mint": "mask pass",
   "/roadmap": "roadmap",
+  "/about": "about",
   // "/whitepaper": "whitepaper",
 }
 

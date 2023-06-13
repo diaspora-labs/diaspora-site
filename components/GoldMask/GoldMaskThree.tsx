@@ -44,7 +44,7 @@ function setupScene() {
     function (gltf) {
       obj = gltf.scene
       scene.add(obj)
-      const scale = isMobile ? 1 : 1
+      const scale = isMobile ? 1.0 : 1.0
       obj.scale.set(scale, scale, scale)
 
       setTimeout(animateOnLoad, 100)
@@ -161,6 +161,6 @@ function createRenderer({ canvas, sizes, animate }) {
   renderer.shadowMap.enabled = true
   renderer.shadowMap.type = THREE.PCFShadowMap
 
-
+  // renderer.setClearAlpha(1)
   return renderer
 }

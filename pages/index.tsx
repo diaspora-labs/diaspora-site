@@ -1,30 +1,30 @@
-import React, { useState, useRef } from "react"
-import { NextPage } from "next"
+import React, { useState, useRef } from "react";
+import { NextPage } from "next";
 
-import { HomeFooter } from "../components/Home/HomeFooter"
-import { Discord } from "../components/Icons/Discord"
-import { Envelop } from "../components/Icons/Envelop"
-import { Instagram } from "../components/Icons/Instagram"
-import { Twitter } from "../components/Icons/Twitter"
-import { ScrollDownIcon } from "../components/Icons/ScrollDownIcon"
+import { HomeFooter } from "../components/Home/HomeFooter";
+import { Discord } from "../components/Icons/Discord";
+import { Envelop } from "../components/Icons/Envelop";
+import { Instagram } from "../components/Icons/Instagram";
+import { Twitter } from "../components/Icons/Twitter";
+import { ScrollDownIcon } from "../components/Icons/ScrollDownIcon";
 
-import { Layout } from "../components/Layout"
-import { Visual } from "../components/HomeVisual"
+import { Layout } from "../components/Layout";
+import { Visual } from "../components/HomeVisual";
 
-import { PeopleSection } from "../components/Home/PeopleSection"
-import { GoldMaskThree } from "../components/GoldMask/GoldMaskThree"
-import styles from './animation.module.css'
+import { PeopleSection } from "../components/Home/PeopleSection";
+import { GoldMaskThree } from "../components/GoldMask/GoldMaskThree";
+import styles from "./animation.module.css";
 
 const Home: NextPage = () => {
-  const [showModal, setShowModal] = useState(false)
-  const secondPage = useRef(null)
+  const [showModal, setShowModal] = useState(false);
+  const secondPage = useRef(null);
   const scrollToSecondPage = () => {
     secondPage.current.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "start",
-    })
-  }
+    });
+  };
   return (
     <Layout showLogo>
       <section
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
                 className={
                   "font-light text-[18px] text-gray-200 bg-[#7233FF] rounded pt-3.5 pb-3.5 pl-4 pr-4 no-underline max-md:text-[14px] max-md:pt-3 max-md:pb-3"
                 }
-                href="#"
+                href="/mint"
               >
                 MASKS PASSES
               </a>
@@ -117,7 +117,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         className={"bg-black h-screen w-full flex justify-center items-center"}
       >
         <div className={"flex flex-col items-center justify-center"}>
@@ -232,13 +232,13 @@ const Home: NextPage = () => {
         >
           <GoldMaskThree />
         </div>
-      </section>
+      </section> */}
 
       <PeopleSection showModal={showModal} setShowModal={setShowModal} />
 
       <HomeFooter />
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

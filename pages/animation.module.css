@@ -1,6 +1,6 @@
 .changetext::before {
     content: "for the culture";
-    animation: animated 5s linear infinite;
+    animation: animated 12s linear infinite;
 }
 @keyframes animated {
 
@@ -25,13 +25,13 @@
     }
 }
 .changeimage {
-    background-image: url("../public/images/Dessaline0035.png");
+    content: url("../public/images/Dessaline0035.png");
     animation: animatedimage 15s linear infinite;
     height: 90%;
 }
 
 .changeimage::before {
-    background-image: url("../public/images/Dessaline0035.png");
+    content: url("../public/images/Dessaline0035.png");
     height: 90%;
     animation: opacity 30s linear infinite;
 }
