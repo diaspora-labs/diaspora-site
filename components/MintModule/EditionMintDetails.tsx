@@ -8,6 +8,7 @@ import { useWalletModal } from "@solana/wallet-adapter-react-ui"
 import React, { ReactNode, useEffect, useState } from "react"
 import { SolanaCurrencyIcon } from "components/Icons"
 import { IEditionMintDetails, IMintButtonConfig } from "./EditionMintModule"
+import cls from "classnames"
 
 export interface EditionMintDetailsProps {
   mintDetails: IEditionMintDetails
@@ -48,27 +49,35 @@ export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonCo
       // If there is a SOL price make sure they have enough funds in there wallet
       const notEnoughSol =
         onChainSolPrice !== undefined && solInWallet < onChainSolPrice + 0.014 + CREATE_TOKEN_METADATA_FEE_SOL
+
+      const buttonClasses =
+        "inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ml-3 sm:text-sm md:ml-0"
+
       if (notEnoughSol) {
         return setButton(
-          <Button size={"wideLg"} sx={buttonStyling} disabled>
+          <button className={cls(buttonClasses, "bg-neutral-600")} disabled>
             {mintStartedDetails.notEnoughFundsButton}
-          </Button>
+          </button>
         )
       }
 
       if (mintDetails.mintLimitReached) {
         return setButton(
-          <Button size={"wideLg"} sx={buttonStyling} disabled>
+          <button className={cls(buttonClasses, "bg-neutral-600")} disabled>
             {mintStartedDetails.mintLimitReached}
-          </Button>
+          </button>
         )
       }
 
       // This means they can mint! :D
       return setButton(
-        <Button size={"wideLg"} sx={buttonStyling} onClick={buttonConfig.onClick} disabled={buttonConfig.disabled}>
+        <button
+          className={cls(buttonClasses, { "bg-neutral-600 hover:bg-neutral-600": buttonConfig.disabled })}
+          onClick={buttonConfig.onClick}
+          disabled={buttonConfig.disabled}
+        >
           {buttonConfig.label}
-        </Button>
+        </button>
       )
     }
 
@@ -108,7 +117,7 @@ export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonCo
               <Text variant={"textLgBold"}>{mintDetails?.typeValue}</Text>
             </Box>
           </Flex>
-          {button}
+          <div className="mt-5">{button}</div>
         </Box>
       )}
     </Box>

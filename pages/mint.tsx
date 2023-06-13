@@ -301,7 +301,7 @@ const Mask = ({
             }
             className="mt-2 w-44 rounded-lg bg-purple-med px-4 py-2 text-white"
           >
-            Preview
+            Mint
           </button>
         </div>
 
