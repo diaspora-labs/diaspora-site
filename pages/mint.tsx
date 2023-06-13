@@ -71,10 +71,6 @@ const Mint = () => {
             </p>
           </div>
 
-          <div>
-            <Wallet />
-          </div>
-
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {nfts.map((item) => (
               <Mask key={item.id} {...item} onMint={mintMembership.bind(this, item)} />

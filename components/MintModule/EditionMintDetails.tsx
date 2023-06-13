@@ -35,12 +35,15 @@ export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonCo
   // Based on if the user has their wallet connected and available funds will depend what button is present
   useEffect(() => {
     const getButton = async () => {
+      const buttonClasses =
+        "inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ml-3 sm:text-sm md:ml-0"
+
       // This the user is not connected or there is no publickey from the wallet show they need to connect
       if (!connected || !publicKey) {
         return setButton(
-          <Button size={"wideLg"} sx={buttonStyling} onClick={onConnectClick}>
+          <button className={buttonClasses} onClick={onConnectClick}>
             {mintStartedDetails.connectWalletButton}
-          </Button>
+          </button>
         )
       }
 
@@ -49,9 +52,6 @@ export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonCo
       // If there is a SOL price make sure they have enough funds in there wallet
       const notEnoughSol =
         onChainSolPrice !== undefined && solInWallet < onChainSolPrice + 0.014 + CREATE_TOKEN_METADATA_FEE_SOL
-
-      const buttonClasses =
-        "inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ml-3 sm:text-sm md:ml-0"
 
       if (notEnoughSol) {
         return setButton(
