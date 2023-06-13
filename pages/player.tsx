@@ -29,7 +29,7 @@ const Player = () => {
     // )
   }, [])
 
-  function handleMessage(event) {
+  const handleMessage = (event) => {
     if (event.data.type === "itemKey") {
       console.log("Received message data from iFrame: ", event.data.data)
       // Here is where we call our NFT FUNCTION
