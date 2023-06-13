@@ -1,0 +1,1 @@
+export { getUmi } from "./getUmi"
