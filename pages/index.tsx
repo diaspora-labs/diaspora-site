@@ -66,7 +66,7 @@ const Home: NextPage = () => {
                 className={
                   "font-light text-[18px] text-gray-200 bg-[#7233FF] rounded pt-3.5 pb-3.5 pl-4 pr-4 no-underline max-md:text-[14px] max-md:pt-3 max-md:pb-3"
                 }
-                href="#"
+                href="/mint"
               >
                 MASKS PASSES
               </a>
