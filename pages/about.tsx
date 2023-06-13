@@ -100,7 +100,7 @@ const about = () => {
     </section>
     <section className="relative w-full h-auto text-[white] flex flex-col justify-center items-center mt-[-9vw] pb-[5%] px-[25%] py-0 max-md:px-[15%] max-sm:px-[10%]">
         <div className="w-full text-[aliceblue]">
-            <h1 className='not-italic font-light text-[50px] leading-[120%] text-[#CCCCCC] w-4/5 tracking-[1px] mb-5 max-xl:w-full max-xl:text-[40px] max-lg:text-[35px] max-md:text-[30px] max-sm:text-[25px] max-smm:text-[20px]'>Real World $ Metaverse Experience</h1>
+            <h1 className='not-italic font-light text-[50px] leading-[120%] text-[#CCCCCC] w-4/5 tracking-[1px] mb-5 max-xl:w-full max-xl:text-[40px] max-lg:text-[35px] max-md:text-[30px] max-sm:text-[25px] max-smm:text-[20px]'>Real World $ Virtual Experiences Experiences</h1>
             <p className='not-italic font-normal text-base leading-[160%] w-[70%] tracking-[0.01em] text-[#9A9A9A] max-xl:w-full max-xl:text-[17px] max-lg:text-[16px] max-md:text-[15px] max-sm:text-[14px] max-smm:text-[13px]'>Diaspora’s community will encourage experiences in a varied way to support the global
                 community. As part of the Web3 movement, we will provide unique metaverse experiences that
                 align with our pillars and allow for simultaneous global participation. As a companion, we will
