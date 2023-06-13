@@ -7,7 +7,7 @@ require("@solana/wallet-adapter-react-ui/styles.css")
 export const Wallet: FC = () => {
   return (
     <div className="flex items-center justify-center">
-      <WalletMultiButton style={{ fontFamily: "Korolev" }}></WalletMultiButton>
+      <WalletMultiButton disabled style={{ fontFamily: "Korolev" }}></WalletMultiButton>
       {/* <WalletDisconnectButton /> */}
     </div>
   )

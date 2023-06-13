@@ -6,7 +6,7 @@ export const people = [
     bio: "Born & raised Haitian American, Dervin is a Technologist and Networker with extensive experience building high performance teams, advising Start-Ups, Product Development & leveraging Technology trends to Seize Market Opportunities - namely coming from Google & Meta. Dervin has an insatiable thirst for leveraging technology to push the global Diaspora forward and has made it a LifeLong Quest. He is passionate about History, Traveling, Design, Fashion, Philanthropy and the synergy of them all with Tech.",
     image: "/images/team-images/Dutty-Boukman-Face.png",
     linkedIn: "https://www.linkedin.com/in/dervindimanche/",
-    cyber: "https://www.cyber.xyz/w0rldpr0test",
+    // cyber: "https://www.cyber.xyz/w0rldpr0test",
   },
   {
     id: "2",
@@ -33,7 +33,7 @@ export const people = [
     name: "Johnny Jacques",
     title: "Technology Advisor",
     bio: "Award-winning technologist, with nearly 20 years of experience in the tech industry. Worked in various roles such as art director, developer, animator, and trusted adviser for client and operational teams. For various companies such as Unity, R/GA, and Nickelodeon. With a focus on emerging technologies, Johnny spent over 6 years creating AR solutions for Shazam's brand partners and labels leading up to their 2018 acquisition by Apple.",
-    image: "/images/team-images/profile-image-2.jpg",
+    image: "/images/team-images/profile-image-2.jpeg",
     linkedIn: "https://www.linkedin.com/in/johnnyjacques",
   },
   {
