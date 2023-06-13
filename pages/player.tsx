@@ -9,20 +9,9 @@ const Player = () => {
         type: "itemKey",
         data: { hello: "world" },
       },
-      "https://journey-taupe.vercel.app"
+      "*"
+      // "https://journey-taupe.vercel.app"
     )
-    const iframe = document.getElementById("my-iframe")
-    // iframe.contentWindow.postMessage(
-    //   {
-    //     type: "itemKey",
-    //     data: {
-    //       fun1: () => {
-    //         console.log("Testing")
-    //       },
-    //     },
-    //   },
-    //   "https://journey-taupe.vercel.app"
-    // )
   }, [])
 
   const handleMessage = (event) => {
