@@ -1,5 +1,14 @@
-import { VideoPlayer } from "../components/VideoPlayer/VideoPlayer"
+import App from "@diaspora-labs/journey/src/App"
+import { Layout } from "../components/Layout"
 
 export const Player = () => {
-  return <VideoPlayer />
+  return (
+    <Layout>
+      <App
+      // onNFTSelected={(nft) => {
+      //   console.log(nft)
+      // }}
+      />
+    </Layout>
+  )
 }
