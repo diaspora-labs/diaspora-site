@@ -117,7 +117,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      {/* <section
+      <section
         className={"bg-black h-screen w-full flex justify-center items-center"}
       >
         <div className={"flex flex-col items-center justify-center"}>
@@ -250,7 +250,7 @@ const Home: NextPage = () => {
         >
           <GoldMaskThree />
         </div>
-      </section> */}
+      </section>
 
       <PeopleSection showModal={showModal} setShowModal={setShowModal} />
 
