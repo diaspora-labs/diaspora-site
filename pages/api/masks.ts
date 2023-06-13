@@ -5,8 +5,8 @@ export default function handler(req, res) {
       image: "/images/masks/mask-3.png",
       url: "/mask3.glb",
       name: "Cote D'Ivoire",
-      nftId: "FbAmjby22kYiuMUZc66cGgoc39oEmiRqk52vi3tGQiDj",
-      fpsMarketId: "5d6bvUJUEEKzBgLi2AtyQtZNQbP8uKXiMEsMh6uwvYbV",
+      nftId: "8CbSeFmMzxcEhay2sMcfDwGL6m4fqKkKtKDKfz3ygUd6",
+      fpsMarketId: "4cSSA8Gu5RFfMzevXxJsXAmRjwK23RNQSkrW7viz9PsH",
       title: ["Unlimited number of users."],
       details: ["Discord access", "Augmented Reality filter"],
       description:
@@ -24,6 +24,8 @@ export default function handler(req, res) {
       url: "/mask1.glb",
       name: "DAN",
       title: ["More Accessible.", "Limited to just 1000 passes."],
+      nftId: "8BHrrMQLCRLJUuVxniBbfr43q9tivStLeV4sij1XtErY",
+      fpsMarketId: "PCCbUmeKg2nK9Ndy8oCSRnjRREHRibYvvCytsDeHMLr",
       details: ["Discord access", "Augmented Reality filter"],
       description:
         "Great option for those who want to be part of the action but may not be ready to commit to the exclusivity of the Red Mbambi Mask.",
@@ -40,6 +42,8 @@ export default function handler(req, res) {
       url: "/mask2.glb",
       name: "Red Mbambi",
       title: ["Highly exclusive.", "333 available for minting."],
+      nftId: "3e9WBonRobvys6zfJNH5PJJeEFmJ7TEMQqQaDeb3vZx1",
+      fpsMarketId: "9srpKmea8Dpxf5YeUg8ZoASq9UJCGpLgGpA6HnktZaRG",
       details: [
         "Discord access",
         "Augmented Reality filter",

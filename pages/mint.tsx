@@ -244,11 +244,11 @@ const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
               </div>
             </div>
           </div>
-          <div className="bg-black-50 absolute top-0 right-0 mb-4 px-4 py-3 text-center sm:px-6">
+          <div className="bg-black-50 absolute top-0 right-0 mb-4 py-3 text-center sm:px-6">
             <button
               onClick={() => setModal(false)}
               type="button"
-              className="inline-flex w-full justify-center rounded-md border border-neutral-700 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-neutral-800 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
+              className="inline-flex w-full justify-center px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-neutral-800 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
             >
               X
             </button>
