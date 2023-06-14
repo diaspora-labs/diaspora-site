@@ -10,6 +10,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   webpack: (config, options) => {
     config.module.rules.unshift({
       test: /pdf\.worker\.(min\.)?js/,

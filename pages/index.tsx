@@ -250,7 +250,6 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-
       </section>
 
       <PeopleSection showModal={showModal} setShowModal={setShowModal} />
@@ -261,3 +260,5 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+

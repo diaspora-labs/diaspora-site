@@ -12,6 +12,8 @@ import { ThirdwebSDKProvider } from "@thirdweb-dev/react/solana"
 import { useWallet } from "@solana/wallet-adapter-react"
 import type { FC } from "react"
 import React, { useMemo } from "react"
+import { RecoilRoot } from "recoil"
+import { getEndpoint } from "@/lib/utils"
 
 // Use require instead of import since order matters
 require("@solana/wallet-adapter-react-ui/styles.css")
@@ -22,7 +24,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
   const network = WalletAdapterNetwork.Devnet
 
   // You can also provide a custom RPC endpoint
-  const endpoint = useMemo(() => clusterApiUrl(network), [network])
+  const endpoint = getEndpoint()
 
   const wallets = useMemo(
     () => [
@@ -61,11 +63,13 @@ const AppWrapper = ({ Component, pageProps }) => {
   const wallet = useWallet()
 
   return (
-    <ThirdwebSDKProvider network={"devnet"} wallet={wallet}>
-      <ParallaxProvider>
-        <Component {...pageProps} />
-      </ParallaxProvider>
-    </ThirdwebSDKProvider>
+    <RecoilRoot>
+      <ThirdwebSDKProvider network={"devnet"} wallet={wallet}>
+        <ParallaxProvider>
+          <Component {...pageProps} />
+        </ParallaxProvider>
+      </ThirdwebSDKProvider>
+    </RecoilRoot>
   )
 }
 
