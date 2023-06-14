@@ -25,13 +25,13 @@
     }
 }
 .changeimage {
-    content: url("../public/images/Dessaline0035.png");
+    content: url("../public/images/about/Dessaline_transparent0030-min.png");
     animation: animatedimage 20s linear infinite;
     height: 90%;
 }
 
 .changeimage::before {
-    content: url("../public/images/Dessaline0035.png");
+    content: url("../public/images/about/Dessaline_transparent0030-min.png");
     height: 90%;
     animation: opacity 40s linear infinite;
 }
@@ -52,15 +52,15 @@
 @keyframes animatedimage {
 
     0% {
-        content: url("../public/images/Dessaline0035.png");
+        content: url("../public/images/about/Dessaline_transparent0030-min.png");
     }
   
     50% {
-        content: url("../public/images/nef.png");
+        content: url("../public/images/about/nef_alpha-min.png");
     }
   
     100% {
-        content: url("../public/images/bass_2.png");
+        content: url("../public/images/about/bass_2_no_background-min.png");
     }
 
 }
