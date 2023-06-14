@@ -44,7 +44,7 @@ function setupScene() {
     function (gltf) {
       obj = gltf.scene
       scene.add(obj)
-      const scale = isMobile ? 1.0 : 1.0
+      const scale = isMobile ? 1.5 : 1.0
       obj.scale.set(scale, scale, scale)
 
       setTimeout(animateOnLoad, 100)
@@ -55,9 +55,9 @@ function setupScene() {
 
   setupLights(scene)
 
-  if (sizes.width > 600) {
-    window.addEventListener("resize", onWindowResize)
-  }
+  // if (sizes.width > 600) {
+  //   window.addEventListener("resize", onWindowResize)
+  // }
 
   function onWindowResize() {
     // Update sizes
