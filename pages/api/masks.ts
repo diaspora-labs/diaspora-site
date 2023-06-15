@@ -5,8 +5,10 @@ export default function handler(req, res) {
       image: "/images/masks/mask-3.png",
       url: "/mask3.glb",
       name: "Cote D'Ivoire",
-      nftId: "8CbSeFmMzxcEhay2sMcfDwGL6m4fqKkKtKDKfz3ygUd6",
-      fpsMarketId: "4cSSA8Gu5RFfMzevXxJsXAmRjwK23RNQSkrW7viz9PsH",
+      // nftId: "8CbSeFmMzxcEhay2sMcfDwGL6m4fqKkKtKDKfz3ygUd6",
+      // fpsMarketId: "4cSSA8Gu5RFfMzevXxJsXAmRjwK23RNQSkrW7viz9PsH",
+      nftId: "DoyQdjDkY9oA6joAED8NToUzt9WVFsYFNDobqvUHcchS",
+      fpsMarketId: "DStseqhXhozmnkhaCLiTF4EBXw2Nxp6KYG4vN2hwWCQx",
       title: ["Unlimited number of users."],
       details: ["Discord access", "Augmented Reality filter"],
       description:

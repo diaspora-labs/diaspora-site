@@ -7,16 +7,22 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import { useWalletModal } from "@solana/wallet-adapter-react-ui"
 import React, { ReactNode, useEffect, useState } from "react"
 import { SolanaCurrencyIcon } from "components/Icons"
-import { IEditionMintDetails, IMintButtonConfig } from "./EditionMintModule"
+import { EditionMintModalState, IEditionMintDetails, IMintButtonConfig } from "./EditionMintModule"
 import cls from "classnames"
 
 export interface EditionMintDetailsProps {
   mintDetails: IEditionMintDetails
   buttonConfig: IMintButtonConfig
   primaryColor?: string
+  modalState: EditionMintModalState
 }
 
-export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonConfig, mintDetails, primaryColor }) => {
+export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({
+  buttonConfig,
+  mintDetails,
+  primaryColor,
+  modalState,
+}) => {
   const { connection } = useConnection()
   const { publicKey, connected } = useWallet()
   const { visible, setVisible } = useWalletModal()
@@ -65,6 +71,24 @@ export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonCo
         return setButton(
           <button className={cls(buttonClasses, "bg-neutral-600")} disabled>
             {mintStartedDetails.mintLimitReached}
+          </button>
+        )
+      }
+
+      console.log("modal state", modalState)
+
+      if (modalState === EditionMintModalState.STARTED) {
+        return setButton(
+          <button className={cls(buttonClasses)} disabled>
+            {mintStartedDetails.mintingNftModalTitle}
+          </button>
+        )
+      }
+
+      if (modalState === EditionMintModalState.COMPLETED) {
+        return setButton(
+          <button className={cls(buttonClasses, "bg-green-500")} disabled>
+            {mintStartedDetails.mintedNftModalTitle}
           </button>
         )
       }

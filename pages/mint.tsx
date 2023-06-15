@@ -200,7 +200,6 @@ const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
           <div className="transform items-center overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:align-middle md:flex">
             <div className="mb-30 lg:mb-30 mr-7 ml-7 pt-10 md:pt-5 lg:mr-5 lg:ml-7">
               <div>
-                {/* <PreMintMasks id={id} url={url} /> */}
                 <ReactPlayer width={"300px"} height={"450px"} url={scanner} playing={true} loop={true} />
               </div>
             </div>

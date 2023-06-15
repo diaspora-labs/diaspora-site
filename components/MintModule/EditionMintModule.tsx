@@ -26,9 +26,7 @@ import dayjs, { Dayjs } from "dayjs"
 import { useRouter } from "next/router"
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { useRecoilState, useRecoilValue } from "recoil"
-// import { CopyWidgetType } from "../../CopyWidget"
-// import { OmniModal, OmniModalImageSize, OmniModalProps } from '../../OmniModal';
-// import { ShareIconButtonsType } from "../../ShareIconButtons"
+import { OmniModal, OmniModalImageSize, OmniModalProps } from "components/OmniModal"
 import { EditionMintDetails } from "./EditionMintDetails"
 
 export interface EditionMintModuleProps {
@@ -37,7 +35,7 @@ export interface EditionMintModuleProps {
   primaryColor?: string
 }
 
-enum EditionMintModalState {
+export enum EditionMintModalState {
   STARTED = "started",
   COMPLETED = "completed",
   ERROR = "error",
@@ -79,8 +77,6 @@ export const EditionMintModule: React.FC<EditionMintModuleProps> = ({ editionNft
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const isProjectPage = router.asPath.includes("/project/")
-
   const getUsdPrice = async () => {
     if (!artwork?.market.price) return
     setUsdPrice(await convertSolToUsd(lamportsToSol(Number(artwork.market.price))))
@@ -105,7 +101,7 @@ export const EditionMintModule: React.FC<EditionMintModuleProps> = ({ editionNft
     setMintButtonConfig({
       disabled: !mintActive,
       label,
-      onClick: isProjectPage ? mint : () => null,
+      onClick: mint,
     })
 
     const price = artwork?.market.price ? lamportsToSol(Number(artwork?.market.price)).toString() : ""
@@ -150,13 +146,15 @@ export const EditionMintModule: React.FC<EditionMintModuleProps> = ({ editionNft
         throw new Error("Wallet not connected")
       }
 
-      const transferTx = new Transaction().add(
-        SystemProgram.transfer({
-          fromPubkey: publicKey,
-          toPubkey: new PublicKey(getEditionMintFeeWallet()),
-          lamports: solToLamports(getGlobalEditionMintFeeSol()),
-        })
-      )
+      const transferTx = new Transaction()
+
+      // .add(
+      //   SystemProgram.transfer({
+      //     fromPubkey: publicKey,
+      //     toPubkey: new PublicKey(getEditionMintFeeWallet()),
+      //     lamports: solToLamports(getGlobalEditionMintFeeSol()),
+      //   })
+      // )
 
       const signatures = await buyMembershipToken({
         art: artwork,
@@ -193,20 +191,10 @@ export const EditionMintModule: React.FC<EditionMintModuleProps> = ({ editionNft
     }
   }, [artwork, connection, wallet])
 
-  //   const modalProps: Pick<
-  //     OmniModalProps,
-  //     'iconConfig' | 'title' | 'description' | 'allowClose'
-  //   >
-
   const modalProps = useMemo(() => {
     switch (modalState) {
       case EditionMintModalState.STARTED: {
         return {
-          iconConfig: {
-            // icon: faSpinnerThird,
-            spin: true,
-            color: "accent.default",
-          },
           title: components.mintStartedDetails.mintingNftModalTitle,
           description: components.mintStartedDetails.mintingNftModalDescription,
           allowClose: false,
@@ -215,11 +203,9 @@ export const EditionMintModule: React.FC<EditionMintModuleProps> = ({ editionNft
       case EditionMintModalState.COMPLETED: {
         return {
           imageSrc: editionNft.json?.image || "",
-          //   imageSize: OmniModalImageSize.PREVIEW,
           title: `Minted ${editionNft.json?.name}`,
           description: components.mintStartedDetails.mintedNftModalDescription,
           allowClose: true,
-          //   shareButtons: [ShareIconButtonsType.Twitter, ShareIconButtonsType.Telegram],
           shareButtonsConfig: {
             link: `/${mintedNft}`,
             text: components.mintStartedDetails.mintedShareText,
@@ -232,11 +218,6 @@ export const EditionMintModule: React.FC<EditionMintModuleProps> = ({ editionNft
       }
       case EditionMintModalState.ERROR: {
         return {
-          iconConfig: {
-            // icon: faCircleExclamation,
-            spin: false,
-            color: "error.default",
-          },
           title: generics.error,
           description: errorMessage || "",
           allowClose: true,
@@ -253,7 +234,12 @@ export const EditionMintModule: React.FC<EditionMintModuleProps> = ({ editionNft
   return (
     <>
       {mintDetails?.price ? (
-        <EditionMintDetails mintDetails={mintDetails} buttonConfig={buttonConfig} primaryColor={primaryColor} />
+        <EditionMintDetails
+          mintDetails={mintDetails}
+          buttonConfig={buttonConfig}
+          primaryColor={primaryColor}
+          modalState={modalState}
+        />
       ) : null}
       {/* <OmniModal isOpen={isOpen} onClose={onClose} {...modalProps} /> */}
     </>

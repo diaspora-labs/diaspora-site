@@ -16,3 +16,9 @@ export enum SaleState {
   SoldOut = 4,
   Ended = 5,
 }
+
+export enum OptimizedImageSize {
+  PREVIEW = "PREVIEW",
+  THUMBNAIL = "THUMBNAIL",
+  LARGE = "LARGE",
+}
