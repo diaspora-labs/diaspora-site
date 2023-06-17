@@ -6,7 +6,7 @@ export const people = [
     bio: "Born & raised Haitian American, Dervin is a Technologist and Networker with extensive experience building high performance teams, advising Start-Ups, Product Development & leveraging Technology trends to Seize Market Opportunities - namely coming from Google & Meta. Dervin has an insatiable thirst for leveraging technology to push the global Diaspora forward and has made it a LifeLong Quest. He is passionate about History, Traveling, Design, Fashion, Philanthropy and the synergy of them all with Tech.",
     image: "/images/team-images/Dutty-Boukman-Face.png",
     linkedIn: "https://www.linkedin.com/in/dervindimanche/",
-    cyber: "https://www.cyber.xyz/w0rldpr0test",
+    // cyber: "https://www.cyber.xyz/w0rldpr0test",
   },
   {
     id: "2",
