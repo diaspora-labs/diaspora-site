@@ -1,6 +1,8 @@
 .changetext::before {
     content: "for the culture";
-    animation: animated 18s linear infinite;
+    animation: 
+    animated 25s linear infinite,
+    opacity 5s linear infinite;
 }
 @keyframes animated {
 
@@ -26,28 +28,59 @@
 }
 .changeimage {
     content: url("../public/images/about/Dessaline_transparent0030-min.png");
-    animation: animatedimage 20s linear infinite;
-    height: 90%;
+    animation: animatedimage 21s linear infinite,
+            opacity2 7s linear infinite;
+    height: 100%;
 }
 
 .changeimage::before {
     content: url("../public/images/about/Dessaline_transparent0030-min.png");
-    height: 90%;
+    height: 100%;
     animation: opacity 40s linear infinite;
 }
 @keyframes opacity {
     
         0% {
-            opacity: 0;
+            opacity: 1;
         }
-    
+
+        25% {
+            opacity: 1;
+        }
+
         50% {
+            opacity: 0.1;
+        }
+
+        75% {
             opacity: 1;
         }
     
         100% {
-            opacity: 0;
+            opacity: 1;
         }
+}
+@keyframes opacity2 {
+    
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 @keyframes animatedimage {
 
@@ -55,11 +88,11 @@
         content: url("../public/images/about/Dessaline_transparent0030-min.png");
     }
   
-    50% {
+    33.3% {
         content: url("../public/images/about/nef_alpha-min.png");
     }
   
-    100% {
+    66.6% {
         content: url("../public/images/about/bass_2_no_background-min.png");
     }
 
