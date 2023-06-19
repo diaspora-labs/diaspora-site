@@ -80,7 +80,7 @@ const Roadmap = () => {
 const sections = [
   {
     icon: CrowdFundingIcon,
-    title: "Launch Crowdfund",
+    title: "Mask Pass",
     list: [],
     completed: false,
   },
