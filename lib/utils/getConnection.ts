@@ -2,7 +2,7 @@ import { clusterApiUrl, Connection } from "@solana/web3.js"
 
 export const getEndpoint = () => {
   // return clusterApiUrl("mainnet-beta");
-  return "https://solana-api.syndica.io/access-token/uAEZYdZhTbajmrmkDYdMox8sRXEQeBYelMHaSbEKG0DWzbGPHv9NmENZCRI6dAoo/rpc"
+  return "https://quiet-winter-card.solana-mainnet.discover.quiknode.pro/f2ffa7a70f87b71860490cdebd2f21d804add611"
 }
 
 const connectionCache: Record<string, Connection> = {}
