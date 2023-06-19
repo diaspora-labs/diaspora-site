@@ -41,8 +41,7 @@ export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonCo
       // This the user is not connected or there is no publickey from the wallet show they need to connect
       if (!connected || !publicKey) {
         return setButton(
-          // <button className={buttonClasses} onClick={onConnectClick}>
-          <button className={cls(buttonClasses, "bg-neutral-600")} onClick={onConnectClick} disabled>
+          <button className={buttonClasses} onClick={onConnectClick}>
             {mintStartedDetails.connectWalletButton}
           </button>
         )

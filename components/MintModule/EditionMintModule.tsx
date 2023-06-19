@@ -138,6 +138,7 @@ export const EditionMintModule: React.FC<EditionMintModuleProps> = ({ editionNft
   }
 
   const mint = useCallback(async () => {
+    debugger
     try {
       setModalState(EditionMintModalState.STARTED)
       setMintedNft(undefined)
