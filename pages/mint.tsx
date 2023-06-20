@@ -7,6 +7,7 @@ import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
 import { NFTModal, Nft } from "@/components/NFTModal"
 import { Mask } from "@/components/Mask"
+import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer"
 
 const Mint = () => {
   const wallet = useWallet()
@@ -30,7 +31,7 @@ const Mint = () => {
 
   return (
     <Layout>
-      <div className="absolute inset-0 z-0 w-full bg-roadmap-bg bg-contain"></div>
+      <div className="absolute inset-0 z-0 w-full"></div>
       <div className="fixed inset-0 z-10 w-full bg-black opacity-40"></div>
 
       <div className="mb-30 relative z-20 mx-auto mt-40 lg:max-w-4xl">
@@ -47,7 +48,11 @@ const Mint = () => {
               unlock many benefits to holders that mint.
             </p>
           </div>
+        </div>
 
+        <VideoPlayer />
+
+        <div className="mx-auto lg:max-w-4xl">
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {nfts.map((item) => (
               <Mask key={item.id} {...item} onMint={mintMembership.bind(this, item)} />
