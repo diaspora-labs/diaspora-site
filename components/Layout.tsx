@@ -9,7 +9,7 @@ import { useRouter } from "next/router"
 
 export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) => {
   const router = useRouter()
-  const isPlayer = router.pathname === "/player"
+  const hidePlayer = ["/player", "/mint"].includes(router.pathname)
 
   return (
     <div
@@ -21,7 +21,7 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
     >
       <NavHeader />
       <Chatbot />
-      {!isPlayer && <MusicPlayer playlist={playlist} fixed />}
+      {!hidePlayer && <MusicPlayer playlist={playlist} fixed />}
       <div className="mt-20 md:mt-10">{children}</div>
     </div>
   )

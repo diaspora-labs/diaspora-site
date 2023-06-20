@@ -34,8 +34,8 @@ const Mint = () => {
       <div className="absolute inset-0 z-0 w-full"></div>
       <div className="fixed inset-0 z-10 w-full bg-black opacity-40"></div>
 
-      <div className="mb-30 relative z-20 mx-auto mt-40 lg:max-w-4xl">
-        <div className="my-10 flex flex-col">
+      <div className="relative z-20 mx-auto mt-40 lg:max-w-4xl">
+        <div className="mt-10 flex flex-col">
           <div className="mx-5 lg:mx-auto lg:w-full lg:max-w-3xl">
             <p className="pb-8 text-2xl tracking-wide text-white lg:text-4xl">
               Introducing &ldquo;Masks&rdquo;
@@ -49,9 +49,11 @@ const Mint = () => {
             </p>
           </div>
         </div>
-
+      </div>
+      <div className="relative z-20">
         <VideoPlayer />
-
+      </div>
+      <div className="relative z-20 mx-auto">
         <div className="mx-auto lg:max-w-4xl">
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {nfts.map((item) => (

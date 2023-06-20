@@ -2,7 +2,6 @@ import { NFTModal } from "@/components/NFTModal"
 import React, { useEffect, useState } from "react"
 
 export const VideoPlayer = () => {
-  const [editionNft, setEditionNft] = useState(undefined)
   const [nft, setNft] = useState(undefined)
   const [showModal, setShowModal] = useState(false)
 
@@ -24,7 +23,7 @@ export const VideoPlayer = () => {
 
   return (
     <div className="max-smm-[18vh] relative flex h-screen flex-col items-center justify-center max-2xl:h-[90vh] max-xl:h-[75vh] max-lg:h-[40vh] max-md:h-[40vh] max-sm:h-[35vh]">
-      <iframe className="h-5/6 w-full" id="my-iframe" src="http://localhost:19006/"></iframe>
+      <iframe className="h-5/6 w-full" src="https://web-build-five-woad.vercel.app/"></iframe>
 
       {showModal && nft && <NFTModal nft={nft} setModal={setShowModal} />}
     </div>
