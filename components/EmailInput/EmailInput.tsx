@@ -21,7 +21,7 @@ export const EmailInput = () => {
         </div>
         <div className="mb-5 w-1/2 rounded-2xl rounded-l-none bg-purple-light py-2 px-4 text-center transition ease-in-out hover:bg-opacity-80">
           <button type="submit" className="m-auto" disabled={state.submitting}>
-            Add me to the list
+          Sign up
           </button>
         </div>
       </div>

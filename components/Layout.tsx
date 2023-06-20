@@ -20,7 +20,6 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
       )}
     >
       <NavHeader />
-      <Chatbot />
       {!hidePlayer && <MusicPlayer playlist={playlist} fixed />}
       <div className="mt-20 md:mt-10">{children}</div>
     </div>
