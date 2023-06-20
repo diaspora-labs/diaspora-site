@@ -2,34 +2,12 @@ import React, { useState, useEffect } from "react"
 import { useWallet } from "@solana/wallet-adapter-react"
 import { HomeFooter } from "../components/Home/HomeFooter"
 import { Layout } from "../components/Layout"
-import Image from "next/image"
 import { Instagram } from "../components/Icons/Instagram"
 import { Twitter } from "../components/Icons/Twitter"
 import { Discord } from "../components/Icons/Discord"
-import { PreMintMasks } from "../components/PreMintMasks/PreMintMasks"
-import dynamic from "next/dynamic"
-import { safeFetchNft } from "../lib/mpl/tokenMetadata/fetchNft"
-import { EditionMintModule } from "@/components/MintModule"
-import ReactPlayer from "react-player"
-
-type Nft = {
-  id: string
-  url: string
-  name: string
-  cost: string
-  title: string[]
-  details: string[]
-  description: string
-  nftId: string
-  fpsMarketId: string
-  scanner: string
-  filter: string
-  modalDescription: string
-}
-
-const Wallet = dynamic(() => import("../components/Wallet"), {
-  ssr: false,
-})
+import { NFTModal, Nft } from "@/components/NFTModal"
+import { Mask } from "@/components/Mask"
+import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer"
 
 const Mint = () => {
   const wallet = useWallet()
@@ -53,11 +31,11 @@ const Mint = () => {
 
   return (
     <Layout>
-      <div className="absolute inset-0 z-0 w-full bg-roadmap-bg bg-contain"></div>
+      <div className="absolute inset-0 z-0 w-full"></div>
       <div className="fixed inset-0 z-10 w-full bg-black opacity-40"></div>
 
-      <div className="mb-30 relative z-20 mx-auto mt-40 lg:max-w-4xl">
-        <div className="my-10 flex flex-col">
+      <div className="relative z-20 mx-auto mt-40 lg:max-w-4xl">
+        <div className="mt-10 flex flex-col">
           <div className="mx-5 lg:mx-auto lg:w-full lg:max-w-3xl">
             <p className="pb-8 text-2xl tracking-wide text-white lg:text-4xl">
               Introducing &ldquo;Masks&rdquo;
@@ -70,14 +48,20 @@ const Mint = () => {
               unlock many benefits to holders that mint.
             </p>
           </div>
-
+        </div>
+      </div>
+      <div className="relative z-20">
+        <VideoPlayer />
+      </div>
+      <div className="relative z-20 mx-auto">
+        <div className="mx-auto lg:max-w-4xl">
           <div className="mx-auto mt-20 flex flex-row flex-wrap">
             {nfts.map((item) => (
               <Mask key={item.id} {...item} onMint={mintMembership.bind(this, item)} />
             ))}
           </div>
 
-          {showModal && <Modal nft={minted} setModal={setShowModal} />}
+          {showModal && <NFTModal nft={minted} setModal={setShowModal} />}
 
           <div className="mt-20 mb-20 text-center">
             <p className="mb-10 text-lg text-white">
@@ -157,187 +141,6 @@ const Mint = () => {
 
       <HomeFooter />
     </Layout>
-  )
-}
-
-// create a modal component
-const Modal = ({ nft, setModal }: { nft: Nft; setModal: any }) => {
-  const [editionNft, setEditionNft] = useState(undefined)
-
-  useEffect(() => {
-    const loadData = async () => {
-      if (nft && nft.nftId) {
-        const editionNft = await safeFetchNft({
-          publicKey: nft.nftId,
-          loadJson: true,
-        })
-        console.log("edition nft", editionNft)
-        setEditionNft(editionNft)
-      }
-    }
-    loadData()
-  }, [nft])
-
-  if (!nft) {
-    return null
-  }
-
-  const { id, url, name, title, details, description, nftId, fpsMarketId, scanner, modalDescription, filter } = nft
-
-  return (
-    <div className="z-100 fixed inset-0 overflow-x-auto overflow-y-auto">
-      <div className="relative mt-20 flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0 md:mt-0 ">
-        <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-          <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
-        </div>
-
-        {/* This element is to trick the browser into centering the modal contents. */}
-        <span className="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">
-          &#8203;
-        </span>
-
-        <div className="relative inline-block transform items-center overflow-hidden rounded-lg bg-black text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:align-middle">
-          <div className="transform items-center overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:align-middle md:flex">
-            <div className="mb-30 lg:mb-30 mr-7 ml-7 pt-10 md:pt-5 lg:mr-5 lg:ml-7">
-              <div>
-                {/* <PreMintMasks id={id} url={url} /> */}
-                <ReactPlayer width={"300px"} height={"450px"} url={scanner} playing={true} loop={true} />
-              </div>
-            </div>
-            <div className="visible relative bg-black px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-              <div className="sm:flex sm:items-start">
-                <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                  <div className="mb-5 mt-3 text-3xl font-bold text-white">{name}</div>
-                  {/* <h3 className="text-md gray-med font-light" id="modal-headline">
-                    {title.map((maskTitle) => {
-                      return (
-                        <div key={maskTitle} className="text-md gray-med font-light">
-                          {maskTitle}
-                        </div>
-                      )
-                    })}
-                  </h3> */}
-                  {/* <div className="mt-4">
-                    {details.map((detail) => {
-                      return (
-                        <li key={detail} className="text-md gray-med font-light">
-                          {detail}
-                        </li>
-                      )
-                    })}
-                  </div> */}
-
-                  <div className="mx-5 my-10 max-w-3xl lg:mx-auto">
-                    {editionNft && (
-                      <EditionMintModule editionNft={editionNft} fpsMarketId={fpsMarketId} primaryColor="#000" />
-                    )}
-                  </div>
-
-                  <div className="text-md gray-med scrollbar-thumb-gray-500 scrollbar-track-gray-300 my-2 mt-3 max-h-40 overflow-y-auto font-light md:pr-8">
-                    {modalDescription}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="bg-black-50 absolute top-0 right-0 mb-4 py-3 text-center sm:px-6">
-            <button
-              onClick={() => setModal(false)}
-              type="button"
-              className="inline-flex w-full justify-center px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-neutral-800 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              X
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const Mask = ({
-  id,
-  url,
-  name,
-  cost,
-  nftId,
-  fpsMarketId,
-  description,
-  image,
-  windowSize,
-  title,
-  details,
-  hideText,
-  setHideText,
-  address,
-  onMint,
-  scanner,
-  filter,
-  modalDescription,
-}) => {
-  return (
-    <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">
-      <div className="mb-2  scroll-smooth sm:mr-6">
-        <PreMintMasks id={id} url={url} />
-      </div>
-
-      <div className="text-center">
-        <div className="text-2xl font-bold text-white">{name}</div>
-
-        <div className="text-bold my-3 flex flex-row items-center justify-center">
-          <Image src="/images/logos/solana-sol-logo.png" width="20" height="20" />
-        </div>
-        <div className="mt-1">
-          <button
-            onClick={() =>
-              onMint(address, id, url, name, cost, title, details, description, scanner, filter, modalDescription)
-            }
-            className="mt-2 w-44 rounded-lg bg-purple-med px-4 py-2 text-white"
-          >
-            Mint
-          </button>
-        </div>
-
-        <div
-          className="text-md gray-med my-2 mt-5 items-center font-light md:invisible"
-          onClick={() => setHideText(!hideText)}
-        >
-          <div className="inline-block pr-2">Memeber benefits</div>
-          <Image
-            className="inline-block"
-            src={!hideText ? "/images/arrow-up.png" : "/images/arrow-down.png"}
-            width="12"
-            height="12"
-          />
-        </div>
-
-        {!hideText && (
-          <div className="md:left-88 ml-20 mt-10 text-left sm:w-44 md:ml-5 md:w-64">
-            <div className="mb-8">
-              {title.map((maskTitle) => {
-                return (
-                  <div key={maskTitle} className={"text-md gray-med font-light"}>
-                    {maskTitle}
-                  </div>
-                )
-              })}
-            </div>
-
-            <div>
-              {details.map((detail) => {
-                return (
-                  <li key={detail} className={"text-md gray-med font-light"}>
-                    {detail}
-                  </li>
-                )
-              })}
-            </div>
-
-            <div className="text-md gray-med my-2 mt-5 pr-16 font-light md:pr-0">{description}</div>
-          </div>
-        )}
-      </div>
-    </div>
   )
 }
 

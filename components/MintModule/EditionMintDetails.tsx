@@ -41,8 +41,7 @@ export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonCo
       // This the user is not connected or there is no publickey from the wallet show they need to connect
       if (!connected || !publicKey) {
         return setButton(
-          // <button className={buttonClasses} onClick={onConnectClick}>
-          <button className={cls(buttonClasses, "bg-neutral-600")} onClick={onConnectClick} disabled>
+          <button className={buttonClasses} onClick={onConnectClick}>
             {mintStartedDetails.connectWalletButton}
           </button>
         )
@@ -54,32 +53,32 @@ export const EditionMintDetails: React.FC<EditionMintDetailsProps> = ({ buttonCo
       const notEnoughSol =
         onChainSolPrice !== undefined && solInWallet < onChainSolPrice + 0.014 + CREATE_TOKEN_METADATA_FEE_SOL
 
-      // if (notEnoughSol) {
-      //   return setButton(
-      //     <button className={cls(buttonClasses, "bg-neutral-600")} disabled>
-      //       {mintStartedDetails.notEnoughFundsButton}
-      //     </button>
-      //   )
-      // }
+      if (notEnoughSol) {
+        return setButton(
+          <button className={cls(buttonClasses, "bg-neutral-600")} disabled>
+            {mintStartedDetails.notEnoughFundsButton}
+          </button>
+        )
+      }
 
-      // if (mintDetails.mintLimitReached) {
-      //   return setButton(
-      //     <button className={cls(buttonClasses, "bg-neutral-600")} disabled>
-      //       {mintStartedDetails.mintLimitReached}
-      //     </button>
-      //   )
-      // }
+      if (mintDetails.mintLimitReached) {
+        return setButton(
+          <button className={cls(buttonClasses, "bg-neutral-600")} disabled>
+            {mintStartedDetails.mintLimitReached}
+          </button>
+        )
+      }
 
       // This means they can mint! :D
-      // return setButton(
-      //   <button
-      //     className={cls(buttonClasses, { "bg-neutral-600 hover:bg-neutral-600": buttonConfig.disabled })}
-      //     onClick={buttonConfig.onClick}
-      //     disabled={buttonConfig.disabled}
-      //   >
-      //     {buttonConfig.label}
-      //   </button>
-      // )
+      return setButton(
+        <button
+          className={cls(buttonClasses, { "bg-neutral-600 hover:bg-neutral-600": buttonConfig.disabled })}
+          onClick={buttonConfig.onClick}
+          disabled={buttonConfig.disabled}
+        >
+          {buttonConfig.label}
+        </button>
+      )
     }
 
     getButton()
