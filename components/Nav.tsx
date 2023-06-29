@@ -12,7 +12,7 @@ const routes: { [route: string]: string } = {
   "/mint": "mask pass",
   "/roadmap": "roadmap",
   "/about": "about",
-  "/player": "player",
+  // "/player": "player",
   // "/whitepaper": "whitepaper",
 }
 
