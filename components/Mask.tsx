@@ -19,7 +19,7 @@ export const Mask = ({
   onMint,
   scanner,
   filter,
-  modalDescription,
+  modalDescription
 }) => {
   return (
     <div className="mx-auto mb-10 w-full flex-col items-center justify-center text-center lg:mx-5 lg:w-[250px]">

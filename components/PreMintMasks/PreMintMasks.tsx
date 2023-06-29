@@ -6,9 +6,10 @@ import { Easing, Tween, update } from "@tweenjs/tween.js"
 export const PreMintMasks = (mask) => {
   useEffect(() => setupScene(mask), [mask])
   return (
-    <>
+    <div className="relative flex items-center justify-center">
+      <img src={`images/masks/nft-${mask.id}.jpg`} alt="mask" id={`mask${mask.id}`} className="mx-0 px-0 absolute flex justify-center items-center w-[180%] h-[70%]" />
       <canvas className={"mx-auto transparent justify-center item-center webgl" + mask.id}></canvas>
-    </>
+    </div>
   )
 }
 
@@ -18,6 +19,23 @@ function setupScene(mask) {
   const url = mask.url
   // scene
   const scene2 = new THREE.Scene()
+
+  const manager = new THREE.LoadingManager();
+
+  manager.onLoad = function () {
+    console.log("Loading complete!");
+    var loadingScreen = document.getElementById(`mask${mask.id}`);
+    loadingScreen.style.display = "none";
+  };
+  
+  manager.onProgress = function (url, itemsLoaded, itemsTotal) {
+    console.log("Loading file: " + url + ".\nLoaded " + itemsLoaded + " of " + itemsTotal + " files.");
+  };
+  
+  manager.onError = function (url) {
+    console.log("There was an error loading " + url);
+  };
+
 
   const isMobile = window.innerWidth < 768
 
@@ -34,7 +52,7 @@ function setupScene(mask) {
   scene2.add(camera)
 
   // spline scene
-  const loader = new GLTFLoader()
+  const loader = new GLTFLoader( manager )
 
   let obj
   loader.load(
