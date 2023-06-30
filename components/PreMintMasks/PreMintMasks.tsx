@@ -23,17 +23,17 @@ function setupScene(mask) {
   const manager = new THREE.LoadingManager();
 
   manager.onLoad = function () {
-    console.log("Loading complete!");
+    // console.log("Loading complete!");
     var loadingScreen = document.getElementById(`mask${mask.id}`);
     loadingScreen.style.display = "none";
   };
   
   manager.onProgress = function (url, itemsLoaded, itemsTotal) {
-    console.log("Loading file: " + url + ".\nLoaded " + itemsLoaded + " of " + itemsTotal + " files.");
+    // console.log("Loading file: " + url + ".\nLoaded " + itemsLoaded + " of " + itemsTotal + " files.");
   };
   
   manager.onError = function (url) {
-    console.log("There was an error loading " + url);
+    // console.log("There was an error loading " + url);
   };
 
 
