@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { NextPage } from "next";
+import Image from "next/image";
 
 import { HomeFooter } from "../components/Home/HomeFooter";
 import { Discord } from "../components/Icons/Discord";
@@ -80,7 +81,14 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className={"flex justify-center items-center max-md:w-[140%] bg-[linear-gradient(90deg,rgba(0,0,0,1)_0%,rgba(32,0,50,1)_100%)] max-lg:bg-[linear-gradient(0deg,rgba(32,0,50,1)_0%,rgba(0,0,0,1)_100%)]"}>
-            <img className={styles.changeimage} src="" alt="" />
+            {/* <img className={styles.changeimage} src="" alt="" /> */}
+            <Image
+              src="/images/about/Dessaline_transparent0030-min.png"
+              alt="a"
+              className={styles.changeimage}
+              width={2000}
+              height={2000}
+            />
           </div>
         </div>
       </section>
