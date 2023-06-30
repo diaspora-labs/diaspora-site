@@ -32,7 +32,7 @@ export const Mask = ({
 
         <div className="text-bold my-3 flex flex-row items-center justify-center">
           <Image src="/images/logos/solana-sol-logo.png" width="20" height="20" />
-          <div className="ml-1 mt-1 text-2xl font-light">{cost}</div>
+          <div className="ml-1 mt-1 text-2xl font-bold">{cost}</div>
         </div>
         <div className="mt-1">
           <button
