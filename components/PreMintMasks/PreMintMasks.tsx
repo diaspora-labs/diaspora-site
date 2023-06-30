@@ -2,12 +2,21 @@ import * as THREE from "three"
 import { useEffect } from "react"
 import { GLTFLoader } from "three-stdlib"
 import { Easing, Tween, update } from "@tweenjs/tween.js"
+import Image from "next/image"
 
 export const PreMintMasks = (mask) => {
   useEffect(() => setupScene(mask), [mask])
   return (
     <div className="relative flex items-center justify-center">
-      <img src={`images/masks/nft-${mask.id}.jpg`} alt="mask" id={`mask${mask.id}`} className="mx-0 px-0 absolute flex justify-center items-center w-[180%] h-[70%]" />
+      <div className="mx-0 px-0 absolute flex justify-center items-center">
+        <Image
+          id={`mask${mask.id}`}
+          alt="mask" 
+          src={`/images/masks/masknft-${mask.id}.png`}
+          width="247"
+          height="400"
+        />
+      </div>
       <canvas className={"mx-auto transparent justify-center item-center webgl" + mask.id}></canvas>
     </div>
   )
