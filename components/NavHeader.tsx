@@ -7,7 +7,7 @@ export const NavHeader = () => {
   const [navbar, setNavbar] = useState(false)
 
   return (
-    <nav className="fixed z-50 w-full bg-black/30 backdrop-blur-md">
+    <nav className="fixed z-50 w-full bg-transparent backdrop-blur-md top-[20px]">
       <div className="flex w-full items-center justify-between">
         <div className="flex flex-1 items-center justify-between px-4 py-2 md:py-4">
           <Link href="/">
