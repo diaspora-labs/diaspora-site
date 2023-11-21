@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           "bg-black h-screen w-full flex justify-center items-center relative max-lg:h-auto max-lg:relative max-lg:mt-[5vh] max-smm:mt-[5vh]"
         }
       >
-
+        
       </section>
       {/* <span
         ref={secondPage}
