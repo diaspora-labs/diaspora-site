@@ -71,17 +71,7 @@ const Home: NextPage = () => {
               </div>
               <div className="inline-flex items-center justify-center gap-[10px] px-[24px] py-[16px] rounded-[12px] border border-solid border-[#7233ff] relative flex-[0_0_auto]">
                 <div className="relative w-fit mt-[-1.00px] [font-family:'Korolev-Light',Helvetica] font-light text-white text-[18px] tracking-[0.72px] leading-[27px] whitespace-nowrap">
-                  AR
-                </div>
-              </div>
-              <div className="inline-flex items-center justify-center gap-[10px] px-[24px] py-[16px] rounded-[12px] border border-solid border-[#7233ff] relative flex-[0_0_auto]">
-                <div className="relative w-fit mt-[-1.00px] [font-family:'Korolev-Light',Helvetica] font-light text-white text-[18px] tracking-[0.72px] leading-[27px] whitespace-nowrap">
                   Smart Contracts
-                </div>
-              </div>
-              <div className="inline-flex items-center justify-center gap-[10px] px-[24px] py-[16px] rounded-[12px] border border-solid border-[#7233ff] relative flex-[0_0_auto]">
-                <div className="relative w-fit mt-[-1.00px] [font-family:'Korolev-Light',Helvetica] font-light text-white text-[18px] tracking-[0.72px] leading-[27px] whitespace-nowrap">
-                  VR
                 </div>
               </div>
               <div className="inline-flex items-center justify-center gap-[10px] px-[24px] py-[16px] rounded-[12px] border border-solid border-[#7233ff] relative flex-[0_0_auto]">
