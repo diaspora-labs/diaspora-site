@@ -30,24 +30,8 @@ const Home: NextPage = () => {
         
         <div className="flex flex-col w-[852px] items-start gap-[60px] relative">
           <div className="flex flex-col w-[692px] items-start gap-[28px] relative flex-[0_0_auto]">
-            <p className="relative self-stretch h-[78px] mt-[-1.00px] [font-family:'Korolev-Regular',Helvetica] font-normal text-white text-[102px] leading-[normal] whitespace-nowrap">
-              <span className="tracking-[-10.20px]">D</span>
-              <span className="tracking-[-7.14px]">I</span>
-              <span className="tracking-[-10.20px]">A</span>
-              <span className="tracking-[-9.18px]">S</span>
-              <span className="tracking-[-8.16px]">P</span>
-              <span className="tracking-[-10.20px]">O</span>
-              <span className="tracking-[-7.14px]">R</span>
-              <span className="tracking-[-10.20px]">A</span>
-              <span className="tracking-[0]">&nbsp;</span>
-              <span className="tracking-[-1.02px]">L</span>
-              <span className="tracking-[-6.12px]">AB</span>
-              <span className="tracking-[-10.20px]">S</span>
-            </p>
-            <p className="relative self-stretch [font-family:'Korolev-Light',Helvetica] font-light text-white text-[22px] tracking-[0] leading-[33px]">
-              Diaspora is a DAO and Research Lab leveraging AI, Web 3, and Mixed Reality technology for the betterment of
-              underrepresented communities in both the physical and digital worlds.
-            </p>
+            <div className="w-[692px] h-[78px] mb-5"><span className="text-white text-[102px] font-black font-['Korolev']">D</span><span className="text-white text-[102px] font-black font-['Korolev']">I</span><span className="text-white text-[102px] font-black font-['Korolev']">A</span><span className="text-white text-[102px] font-black font-['Korolev']">S</span><span className="text-white text-[102px] font-black font-['Korolev']">P</span><span className="text-white text-[102px] font-black font-['Korolev']">O</span><span className="text-white text-[102px] font-black font-['Korolev']">R</span><span className="text-white text-[102px] font-black font-['Korolev']">A</span><span className="text-white text-[102px] font-black font-['Korolev']"> </span><span className="text-white text-[102px] font-black font-['Korolev']">L</span><span className="text-white text-[102px] font-black font-['Korolev']">AB</span><span className="text-white text-[102px] font-black font-['Korolev']">S</span></div>
+            <div class="w-[692px] text-white text-[22px] font-light font-['Korolev'] leading-[33px]">Diaspora is a DAO and Research Lab leveraging AI, Web 3, and Mixed Reality technology for the betterment of underrepresented communities in both the physical and digital worlds.</div>
           </div>
           <div className="flex flex-col w-[852px] items-start gap-[26px] relative flex-[0_0_auto]">
             <div className="relative w-fit mt-[-1.00px] [font-family:'Korolev-Light',Helvetica] font-light text-white text-[22px] tracking-[0] leading-[33px] whitespace-nowrap">
