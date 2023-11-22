@@ -9,8 +9,10 @@ module.exports = {
       },
       backgroundImage: {
         "home-bg": 'url("/images/home-bg.png")',
+        "home-bg-labs": 'url("/images/background-image-labs.png")',
         "roadmap-bg": 'url("/images/background-image.png")',
         "roadmap-mask": 'url("/images/roadmap/mask.png")',
+        "gradient-radial": 'radial-gradient(var(--tw-gradient-stops))',
       },
       colors: {
         purple: {
@@ -24,8 +26,15 @@ module.exports = {
           hover: "#00AA8E",
         },
         gray: {
-          med: "#98989A"
-        }
+          med: "#98989A",
+          ligth: "#313131",
+          dark: "#54565A",
+        },
+        custom: {
+          black: "#000000",
+          purple: "#7233ff",
+          overlay: "#313131",
+        },
       },
       screens: {
         "max-2xl": { max: "1535px" },

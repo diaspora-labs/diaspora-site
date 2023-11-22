@@ -1,7 +1,6 @@
 import React from "react"
 import cls from "classnames"
 import { NavHeader } from "./NavHeader"
-import { DiasporaBackgroundImg } from "./DiasporaBackgroundImg"
 // import { MusicPlayer } from "../components/MusicPlayer"
 // import { playlist } from "../data/playlist"
 // import Chatbot from "../components/Chatbot"
@@ -14,12 +13,11 @@ export const Layout: React.FC<any> = ({ children, classes, showLogo = true }) =>
   return (
     <div
       className={cls(
-        `bg-container max-w-screen min-h-screen flex-col overflow-hidden text-white`,
+        `bg-container max-w-screen min-h-screen flex-col overflow-hidden text-white bg-black`,
         // `flex flex-col min-h-screen overflow-hidden text-white relative`,
         classes
       )}
     >
-      <DiasporaBackgroundImg />
 
       <NavHeader />
       {/* {!hidePlayer && <MusicPlayer playlist={playlist} fixed />} */}
