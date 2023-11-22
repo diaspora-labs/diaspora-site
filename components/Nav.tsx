@@ -10,10 +10,10 @@ const routes: { [route: string]: string } = {
   "/": "home",
   // "/gallery": "gallery",
   // "/mint": "mask pass",
-  "/roadmap": "roadmap",
-  "/crowd": "crowd funding",
+  // "/roadmap": "roadmap",
+  // "/crowd": "crowd funding",
   "/about": "about",
-  // "/player": "player",
+  "/player": "player",
   // "/whitepaper": "whitepaper",
 }
 
