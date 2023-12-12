@@ -31,9 +31,12 @@ module.exports = {
           dark: "#54565A",
         },
         custom: {
-          black: "#000000",
+          black: "#451087",
           purple: "#7233ff",
           overlay: "#313131",
+          zinc: "#313131",
+          light: "#321672",
+          dark: "#070311"
         },
       },
       screens: {

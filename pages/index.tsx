@@ -26,8 +26,10 @@ const Home: NextPage = () => {
   return (
     <Layout showLogo>
       <div className="relative bg-home-bg-labs bg-cover min-h-screen flex flex-col items-center justify-center text-white">
-        <div className="absolute inset-0 bg-gradient-to-r mix-blend-overlay from-custom-black to-custom-purple opacity-80"></div>
-        
+        {/* <div className="absolute inset-0 bg-gradient-to-r mix-blend-overlay bg-zinc-800 from-custom-black to-custom-purple opacity-80"></div> */}
+        <div className="absolute inset-0 mix-blend-multiply from-custom-zinc"></div>
+        <div className="absolute inset-0 mix-blend-multiply bg-gradient-to-r from-custom-black to-custom-purple opacity-80"></div>
+
         <div className="flex flex-col w-[852px] items-start gap-[60px] relative">
           <div className="flex flex-col w-[692px] items-start gap-[28px] relative flex-[0_0_auto]">
             <div className="w-[692px] h-[78px] mb-5"><span className="text-white text-[102px] font-black font-['Korolev']">D</span><span className="text-white text-[102px] font-black font-['Korolev']">I</span><span className="text-white text-[102px] font-black font-['Korolev']">A</span><span className="text-white text-[102px] font-black font-['Korolev']">S</span><span className="text-white text-[102px] font-black font-['Korolev']">P</span><span className="text-white text-[102px] font-black font-['Korolev']">O</span><span className="text-white text-[102px] font-black font-['Korolev']">R</span><span className="text-white text-[102px] font-black font-['Korolev']">A</span><span className="text-white text-[102px] font-black font-['Korolev']"> </span><span className="text-white text-[102px] font-black font-['Korolev']">L</span><span className="text-white text-[102px] font-black font-['Korolev']">AB</span><span className="text-white text-[102px] font-black font-['Korolev']">S</span></div>
