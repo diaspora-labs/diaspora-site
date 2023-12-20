@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 
         <div className="flex flex-col w-full max-w-[852px] items-start gap-[60px] relative px-4 md:px-0">
           <div className="flex flex-col w-full max-w-[692px] items-start gap-[28px] relative">
-            <div className="w-[692px] h-[78px]"><span style={{ fontSize: 'clamp(50px, 8vw, 102px)' }} className="text-white text-[102px] lg:text-[50px] font-black font-['Korolev']">DIASPORA LABS</span></div>
+            <div className="mb-5 mt-20"><span className="text-white font-black font-['Korolev'] tracking-tighter lg:tracking-normal text-6xl sm:text-8xl lg:text-[102px]">DIASPORA LABS</span></div>
             <div className="max-w-[692px] text-white text-[22px] font-light font-['Korolev'] leading-[33px]">Diaspora is a DAO and Research Lab leveraging AI, Web 3, and Mixed Reality technology for the betterment of underrepresented communities in both the physical and digital worlds.</div>
           </div>
           <div className="flex flex-col w-full max-w-[852px] items-start gap-[26px] relative">
