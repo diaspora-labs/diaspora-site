@@ -30,16 +30,16 @@ const Home: NextPage = () => {
         <div className="absolute inset-0 mix-blend-multiply from-custom-zinc"></div>
         <div className="absolute inset-0 mix-blend-multiply bg-gradient-to-r from-custom-black to-custom-purple opacity-80"></div>
 
-        <div className="flex flex-col w-[852px] items-start gap-[60px] relative">
-          <div className="flex flex-col w-[692px] items-start gap-[28px] relative flex-[0_0_auto]">
-            <div className="w-[692px] h-[78px] mb-5"><span className="text-white text-[102px] font-black font-['Korolev']">D</span><span className="text-white text-[102px] font-black font-['Korolev']">I</span><span className="text-white text-[102px] font-black font-['Korolev']">A</span><span className="text-white text-[102px] font-black font-['Korolev']">S</span><span className="text-white text-[102px] font-black font-['Korolev']">P</span><span className="text-white text-[102px] font-black font-['Korolev']">O</span><span className="text-white text-[102px] font-black font-['Korolev']">R</span><span className="text-white text-[102px] font-black font-['Korolev']">A</span><span className="text-white text-[102px] font-black font-['Korolev']"> </span><span className="text-white text-[102px] font-black font-['Korolev']">L</span><span className="text-white text-[102px] font-black font-['Korolev']">AB</span><span className="text-white text-[102px] font-black font-['Korolev']">S</span></div>
-            <div className="w-[692px] text-white text-[22px] font-light font-['Korolev'] leading-[33px]">Diaspora is a DAO and Research Lab leveraging AI, Web 3, and Mixed Reality technology for the betterment of underrepresented communities in both the physical and digital worlds.</div>
+        <div className="flex flex-col w-full max-w-[852px] items-start gap-[60px] relative px-4 md:px-0">
+          <div className="flex flex-col w-full max-w-[692px] items-start gap-[28px] relative">
+            <div className="w-[692px] h-[78px]"><span style={{ fontSize: 'clamp(50px, 8vw, 102px)' }} className="text-white text-[102px] lg:text-[50px] font-black font-['Korolev']">DIASPORA LABS</span></div>
+            <div className="max-w-[692px] text-white text-[22px] font-light font-['Korolev'] leading-[33px]">Diaspora is a DAO and Research Lab leveraging AI, Web 3, and Mixed Reality technology for the betterment of underrepresented communities in both the physical and digital worlds.</div>
           </div>
-          <div className="flex flex-col w-[852px] items-start gap-[26px] relative flex-[0_0_auto]">
+          <div className="flex flex-col w-full max-w-[852px] items-start gap-[26px] relative">
             <div className="relative w-fit mt-[-1.00px] [font-family:'Korolev-Light',Helvetica] font-light text-white text-[22px] tracking-[0] leading-[33px] whitespace-nowrap">
               Specializing in:
             </div>
-            <div className="flex flex-wrap w-[852px] items-start gap-[20px_20px] relative flex-[0_0_auto]">
+            <div className="flex flex-wrap justify-start gap-[20px]">
               <div className="inline-flex items-center justify-center gap-[10px] px-[24px] py-[16px] rounded-[12px] border border-solid border-[#7233ff] relative flex-[0_0_auto]">
                 <div className="relative w-fit mt-[-1.00px] [font-family:'Korolev-Light',Helvetica] font-light text-white text-[18px] tracking-[0.72px] leading-[27px] whitespace-nowrap">
                   Blockchain
