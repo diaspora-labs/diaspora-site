@@ -12,7 +12,7 @@ const routes: { [route: string]: string } = {
   // "/mint": "mask pass",
   // "/roadmap": "roadmap",
   // "/crowd": "crowd funding",
-  "/about": "about",
+  // "/about": "about",
   "/player": "player",
   // "/whitepaper": "whitepaper",
 }
@@ -31,7 +31,7 @@ export const Nav = ({ show = true, mobile }: { show?: boolean; mobile?: boolean 
         } ${mobile ? "mt-2 w-full flex-col" : ""}`
       )}
     >
-      {Object.keys(routes).map((route, i) => (
+      {/* {Object.keys(routes).map((route, i) => (
         <div
           className={cls("mx-1 p-4", {
             "w-full border-b-[1px] border-neutral-800 first:border-t-[1px]": mobile,
@@ -42,7 +42,7 @@ export const Nav = ({ show = true, mobile }: { show?: boolean; mobile?: boolean 
             <a className={cls(baseClasses, router.pathname == route ? "koro text-purple-nav" : "")}>{routes[route]}</a>
           </Link>
         </div>
-      ))}
+      ))} */}
       <span
         className={cls("flex flex-row items-center space-x-8 pl-10 pr-4 ", {
           " w-full justify-center border-b-[1px] border-neutral-800 py-6": mobile,
