@@ -2,13 +2,23 @@ import * as THREE from "three"
 import { useEffect } from "react"
 import { GLTFLoader } from "three-stdlib"
 import { Easing, Tween, update } from "@tweenjs/tween.js"
+import Image from "next/image"
 
 export const PreMintMasks = (mask) => {
   useEffect(() => setupScene(mask), [mask])
   return (
-    <>
+    <div className="relative flex items-center justify-center">
+      <div className="mx-0 px-0 absolute flex justify-center items-center">
+        <Image
+          id={`mask${mask.id}`}
+          alt="mask" 
+          src={`/images/masks/masknft-${mask.id}.png`}
+          width="247"
+          height="400"
+        />
+      </div>
       <canvas className={"mx-auto transparent justify-center item-center webgl" + mask.id}></canvas>
-    </>
+    </div>
   )
 }
 
@@ -18,6 +28,23 @@ function setupScene(mask) {
   const url = mask.url
   // scene
   const scene2 = new THREE.Scene()
+
+  const manager = new THREE.LoadingManager();
+
+  manager.onLoad = function () {
+    // console.log("Loading complete!");
+    var loadingScreen = document.getElementById(`mask${mask.id}`);
+    loadingScreen.style.display = "none";
+  };
+  
+  manager.onProgress = function (url, itemsLoaded, itemsTotal) {
+    // console.log("Loading file: " + url + ".\nLoaded " + itemsLoaded + " of " + itemsTotal + " files.");
+  };
+  
+  manager.onError = function (url) {
+    // console.log("There was an error loading " + url);
+  };
+
 
   const isMobile = window.innerWidth < 768
 
@@ -34,7 +61,7 @@ function setupScene(mask) {
   scene2.add(camera)
 
   // spline scene
-  const loader = new GLTFLoader()
+  const loader = new GLTFLoader( manager )
 
   let obj
   loader.load(
